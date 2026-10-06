@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<!-- Lección 7.1 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 7.1 · Texto argumentado: tesis, razones con hechos y transiciones</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+  /* ── Tema 7: taller de escritura, plantilla, rúbrica y marcas ── */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:200px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .plantilla{background:#fff;border:2px dashed var(--cp);border-radius:10px;padding:10px 16px;margin:10px 0}
+  .plantilla p{margin:6px 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+  /* Marcas en los textos modelo: color + borde distinto + etiqueta escrita */
+  .m-te{background:#ede9fe;color:#3b1578;border-bottom:3px solid #4c1d95;font-weight:600}
+  .m-ra{background:#fff3e0;color:#6b3300;border-bottom:3px dashed #8a4b00}
+  .m-he{background:#e3f2fd;color:#0d3c78;border-bottom:3px dotted #0d3c78}
+  .m-tr{background:#e8f5e9;color:#1b5e20;border:2px solid #2e7d32;border-radius:4px;padding:0 3px;font-weight:700}
+  .etq{font-weight:700;font-size:.8em;white-space:nowrap}
+  .oculta-marcas .m-te,.oculta-marcas .m-ra,.oculta-marcas .m-he,.oculta-marcas .m-tr{background:none;color:inherit;border:none;font-weight:inherit;padding:0}
+  .oculta-marcas .etq{display:none}
+  .leyenda-marcas{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;font-size:.92rem}
+  .leyenda-marcas span{padding:2px 8px}
+  .subjetivo{border-left:6px solid #b91c1c;background:#fff5f5}
+  .subjetivo::before{content:"✖️ Tono subjetivo";display:block;font-weight:700;color:#8b1414;margin-bottom:4px;font-family:inherit}
+</style>
+</head>
+<body>
+<h1>Lección 7.1 · Texto argumentado: tesis, razones con hechos y transiciones</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 7: Escritura argumentada e informativa con análisis · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Escribir una <strong>tesis</strong> clara, específica y discutible.</li>
+    <li>Apoyar cada razón con <strong>hechos</strong> que se pueden comprobar, y responder a una objeción.</li>
+    <li>Organizar los párrafos en un orden lógico y unirlos con <strong>transiciones</strong>.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.W.TT.1 · 3.W.PD.1 · WHST.6-8.1</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-opinion">De la opinión al argumento</a></li>
+    <li><a href="#s-2-tesis">La tesis</a></li>
+    <li><a href="#s-3-modelo">Texto modelo: la hora de entrada</a></li>
+    <li><a href="#s-4-razones">Razones con hechos</a></li>
+    <li><a href="#s-5-orden">El orden y las transiciones</a></li>
+    <li><a href="#s-6-taller">Taller: escribe tu texto argumentado</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>En el Tema 5 aprendiste a <strong>evaluar</strong> los argumentos de otros: buscar la afirmación, revisar si las razones tienen evidencia. Ahora te toca <strong>construir</strong> el tuyo. En el Nivel 2 escribiste textos de opinión; en este nivel das un paso más: una tesis precisa, razones apoyadas en hechos de fuentes confiables, una objeción respondida y párrafos que se encadenan. Es exactamente lo que vas a necesitar en la Respuesta Extendida del GED.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-opinion">
+<summary>1. De la opinión al argumento <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<table class="tabla">
+  <caption class="sr-solo">Diferencias entre un texto de opinión y un texto argumentado</caption>
+  <thead><tr><th scope="col">Texto de opinión (Nivel 2)</th><th scope="col">Texto argumentado (Nivel 3)</th></tr></thead>
+  <tbody>
+    <tr><td>Una <strong>postura</strong>: «Creo que…».</td><td>Una <strong>tesis</strong>: la postura más las razones, en una oración precisa.</td></tr>
+    <tr><td>Razones con ejemplos de la vida diaria.</td><td>Razones con <strong>hechos</strong>: datos, estudios, leyes, expertos, con su fuente.</td></tr>
+    <tr><td>Conectores dentro del párrafo.</td><td><strong>Transiciones</strong> que unen un párrafo con otro y muestran el camino del razonamiento.</td></tr>
+    <tr><td>La objeción es opcional.</td><td>Se reconoce una <strong>objeción</strong> y se responde.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 ¿Necesitas repasar?</strong> La <a href="https://zhemaria.github.io/clases_leng2/clase_7-1.html" target="_blank" rel="noopener noreferrer" style="color:var(--cp-oscuro);font-weight:700">Lección 7.1 del Nivel 2</a> explica el texto de opinión y sus conectores. Se abre en una pestaña nueva.</div>
+</div>
+</details>
+
+<details id="s-2-tesis">
+<summary>2. La tesis <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>La <span class="palabra-clave">tesis</span> es la oración que dice qué defiendes y, casi siempre, por qué. Una buena tesis cumple tres condiciones:</p>
+<table class="tabla">
+  <caption class="sr-solo">Tres condiciones de una buena tesis, con ejemplos</caption>
+  <thead><tr><th scope="col">Condición</th><th scope="col">✖️ No la cumple</th><th scope="col">✔️ La cumple</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Es discutible:</strong> alguien podría estar en desacuerdo.</td><td>«Dormir es necesario para la salud.» (Nadie lo discute: es un hecho.)</td><td>«Las secundarias deberían empezar a las 8:30 o más tarde.»</td></tr>
+    <tr><td><strong>Es específica:</strong> dice exactamente qué propone.</td><td>«Hay que cambiar algo en las escuelas.»</td><td>«…empezar a las 8:30 o más tarde.»</td></tr>
+    <tr><td><strong>Anuncia las razones:</strong> adelanta el camino del texto.</td><td>«Las secundarias deberían empezar más tarde y punto.»</td><td>«…porque los adolescentes necesitan dormir más y porque ya se ha hecho con éxito.»</td></tr>
+  </tbody>
+</table>
+<div class="clasificador apilado" id="clasif-tesis"></div>
+<div class="puntaje" id="puntaje-tesis" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l7-1.html#tesis" target="_blank" rel="noopener noreferrer">🎯 Practica más: la mejor tesis
+  <span>Temas variados con varias tesis posibles: eliges la que es discutible, específica y anuncia razones. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-3-modelo">
+<summary>3. Texto modelo: la hora de entrada <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura analítica</span> Individual · sigue el hilo</h4>
+  <p style="margin:0">Lee el texto. Busca la tesis y sigue el camino del razonamiento con las transiciones. Después pulsa el botón para ver las partes marcadas.</p>
+</div>
+<div class="leyenda-marcas" aria-label="Leyenda de las marcas">
+  <span class="m-te">Tesis</span><span class="m-ra">Razón</span><span class="m-he">Hecho con su fuente</span><span class="m-tr">Transición</span>
+</div>
+<div class="texto-lectura oculta-marcas" id="lectura">
+  <h3 style="margin-top:0">Que la secundaria empiece más tarde</h3>
+  <p><span class="num-p" aria-hidden="true">1</span>Muchos estudiantes de secundaria salen de casa antes de que amanezca y llegan a su primera clase medio dormidos. <span class="m-te">Las escuelas secundarias deberían empezar a las 8:30 de la mañana o más tarde, porque los adolescentes necesitan dormir más y porque la medida ya se ha aplicado con éxito.<span class="etq"> [tesis]</span></span></p>
+  <p><span class="num-p" aria-hidden="true">2</span><span class="m-tr">En primer lugar,</span> <span class="m-ra">los adolescentes no duermen lo que necesitan.<span class="etq"> [razón 1]</span></span> <span class="m-he">La Academia Estadounidense de Medicina del Sueño recomienda que los jóvenes de 13 a 18 años duerman entre 8 y 10 horas. Sin embargo, según los Centros para el Control y la Prevención de Enfermedades (CDC), en 2015 casi tres de cada cuatro estudiantes de secundaria dormían menos de 8 horas en las noches de escuela.<span class="etq"> [hechos]</span></span> Además, en la adolescencia el cuerpo tiende a dormirse y a despertarse más tarde, así que acostarse temprano no siempre es la solución.</p>
+  <p><span class="num-p" aria-hidden="true">3</span><span class="m-tr">Por otra parte,</span> <span class="m-ra">la medida no es una idea imposible: ya se ha aplicado.<span class="etq"> [razón 2]</span></span> <span class="m-he">En 2014, la Academia Estadounidense de Pediatría recomendó que las escuelas intermedias y secundarias no empezaran antes de las 8:30. California fue más lejos: desde 2022, una ley estatal prohíbe que sus escuelas secundarias empiecen antes de esa hora.<span class="etq"> [hechos]</span></span> Si un estado con millones de estudiantes pudo organizarse, otros distritos también pueden.</p>
+  <p><span class="num-p" aria-hidden="true">4</span><span class="m-tr">Es cierto que</span> cambiar el horario trae problemas: los autobuses, los deportes y los trabajos de la tarde tendrían que ajustarse. <span class="m-tr">No obstante,</span> esos son problemas de organización, que se resuelven con planificación, mientras que la falta de sueño afecta cada día la salud y el aprendizaje de los jóvenes.</p>
+  <p><span class="num-p" aria-hidden="true">5</span><span class="m-tr">En conclusión,</span> empezar las clases más tarde es una medida que recomiendan los médicos y que ya funciona en un estado entero. Por eso, los distritos escolares deberían dar ese paso: sus estudiantes llegarían a clase despiertos y listos para aprender.</p>
+  <p style="font-size:.9rem;margin-bottom:0"><em>Texto escrito para esta lección con datos comprobados (ver las fuentes en el cierre).</em></p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar el texto</button>
+  <button type="button" class="btn btn-secundario" id="ver-partes" aria-pressed="false">Mostrar las partes</button>
+</div>
+<div class="clasificador apilado" id="clasif-modelo"></div>
+<div class="puntaje" id="puntaje-modelo" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-4-razones">
+<summary>4. Razones con hechos <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Una razón dice <strong>por qué</strong> debemos aceptar la tesis. Un hecho <strong>demuestra</strong> que la razón es verdad. En un texto argumentado, cada razón necesita al menos un hecho, y cada hecho, su <strong>fuente</strong>.</p>
+<ul class="lista-bonita">
+  <li><strong>Razón sin hecho:</strong> «Los adolescentes están cansados.» ¿Quién lo dice? ¿Cuántos?</li>
+  <li><strong>Razón con hecho:</strong> «Según los CDC, en 2015 casi tres de cada cuatro estudiantes de secundaria dormían menos de 8 horas.»</li>
+</ul>
+<p>Frases para presentar un hecho con su fuente: <em>según…, de acuerdo con…, un estudio de… encontró que…, los datos de… muestran que…, la ley… establece que…</em></p>
+<div class="clasificador" id="clasif-razones"></div>
+<div class="puntaje" id="puntaje-razones" role="status" aria-live="polite"></div>
+<div class="tip"><strong>⚠️ Recuerda la Lección 6.2:</strong> un hecho se puede comprobar; un juicio no. En un texto argumentado, la tesis es un juicio, pero las razones se apoyan en hechos.</div>
+</div>
+</details>
+
+<details id="s-5-orden">
+<summary>5. El orden y las transiciones <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Un texto argumentado de cinco párrafos sigue casi siempre este orden: <strong>introducción con la tesis → razón 1 → razón 2 → objeción y respuesta → conclusión</strong>. Las <span class="palabra-clave">transiciones</span> son las palabras que abren cada párrafo y le dicen al lector qué relación tiene con el anterior.</p>
+<table class="tabla">
+  <caption class="sr-solo">Transiciones entre párrafos según su función</caption>
+  <thead><tr><th scope="col">Para…</th><th scope="col">Transiciones</th></tr></thead>
+  <tbody>
+    <tr><td>Empezar la primera razón</td><td><em>En primer lugar · Para empezar · La primera razón es que</em></td></tr>
+    <tr><td>Añadir otra razón</td><td><em>Por otra parte · Además · En segundo lugar · Asimismo</em></td></tr>
+    <tr><td>Reconocer una objeción</td><td><em>Es cierto que · Algunos dirán que · Se podría pensar que</em></td></tr>
+    <tr><td>Responder a la objeción</td><td><em>No obstante · Sin embargo · Aun así</em></td></tr>
+    <tr><td>Mostrar una consecuencia</td><td><em>Por lo tanto · Por eso · En consecuencia</em></td></tr>
+    <tr><td>Concluir</td><td><em>En conclusión · En definitiva · Por todo lo anterior</em></td></tr>
+  </tbody>
+</table>
+<h3>Ordena el argumento</h3>
+<p>Estos párrafos de otro texto están desordenados. ¿Qué lugar ocupa cada uno?</p>
+<div class="clasificador" id="clasif-ordena"></div>
+<div class="puntaje" id="puntaje-ordena" role="status" aria-live="polite"></div>
+<h3>Elige la transición</h3>
+<div class="clasificador apilado" id="clasif-transicion"></div>
+<div class="puntaje" id="puntaje-transicion" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l7-1.html#ordena" target="_blank" rel="noopener noreferrer">🔢 Practica más: ordena el argumento
+  <span>Argumentos desordenados para decidir qué párrafo va después. Se abre en una pestaña nueva.</span></a>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l7-1.html#transiciones" target="_blank" rel="noopener noreferrer">🔗 Practica más: las transiciones
+  <span>Pares de párrafos para elegir la transición que los une.</span></a>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> «Ordena el argumento». Escriban cada párrafo del texto modelo en un papel, sin las transiciones, y mézclenlos. El otro los ordena y dice qué transición pondría al principio de cada uno.</div>
+</div>
+</details>
+
+<details id="s-6-taller">
+<summary>6. Taller: escribe tu texto argumentado <span class="caja-tiempo">40 min</span></summary>
+<div class="contenido-detalle">
+<p><strong>Elige un tema</strong> (o propón uno tuyo): ¿Deberían los empleadores dar tiempo pagado para estudiar? · ¿Debería ser gratis el transporte público para los estudiantes adultos? · ¿Deberían las escuelas prohibir los teléfonos celulares en clase? · ¿Debería tu ciudad tener más ciclovías?</p>
+<p><strong>Antes de escribir,</strong> busca al menos dos hechos con su fuente (un dato, una ley, un estudio, un experto). Después planifica:</p>
+<div class="plantilla">
+  <p><strong>Párrafo 1 · Tesis:</strong> ______ debería ______, porque ______ y porque ______.</p>
+  <p><strong>Párrafo 2 · Razón 1:</strong> En primer lugar, ______. Según ______, ______.</p>
+  <p><strong>Párrafo 3 · Razón 2 y objeción:</strong> Por otra parte, ______. De acuerdo con ______, ______. Es cierto que ______; no obstante, ______.</p>
+  <p><strong>Cierre · Conclusión:</strong> En conclusión, ______. Por eso, ______.</p>
+</div>
+<p style="font-size:.95rem">El plan curricular pide <strong>dos o tres párrafos</strong>: puedes juntar la razón 2 y la objeción en un párrafo y cerrar con una o dos oraciones de conclusión.</p>
+<div class="taller" id="taller-71"></div>
+<h3>Rúbrica: así se evaluará tu texto</h3>
+<table class="tabla rubrica">
+  <caption class="sr-solo">Rúbrica del texto argumentado: cuatro criterios en cuatro niveles</caption>
+  <thead><tr><th scope="col">Criterio</th><th scope="col">4 · Excelente</th><th scope="col">3 · Bien</th><th scope="col">2 · En camino</th><th scope="col">1 · Inicial</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Tesis clara</th><td>Discutible, específica y anuncia las razones</td><td>Discutible y específica, sin anunciar razones</td><td>Vaga o difícil de encontrar</td><td>No hay tesis</td></tr>
+    <tr><th scope="row">Ideas organizadas</th><td>Orden lógico; cada párrafo cumple una función</td><td>Orden lógico con algún salto</td><td>Ideas mezcladas entre párrafos</td><td>Sin orden reconocible</td></tr>
+    <tr><th scope="row">Razones con hechos</th><td>Cada razón tiene un hecho con su fuente</td><td>Hay hechos, pero falta alguna fuente</td><td>Una sola razón con hecho</td><td>Solo opiniones</td></tr>
+    <tr><th scope="row">Transiciones</th><td>Variadas y unen los párrafos con sentido</td><td>Correctas pero repetidas</td><td>Pocas o mal usadas</td><td>Ninguna</td></tr>
+  </tbody>
+</table>
+<p style="font-size:.92rem">Total: 16 puntos.</p>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>7. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Termina tu texto</strong> del taller, revísalo con la lista y compártelo en el foro del curso.</li>
+  <li><strong>Lee el de un compañero</strong> y responde: ¿Cuál es su tesis? ¿Qué hecho es el más fuerte? ¿Qué transición le añadirías?</li>
+  <li><strong>Busca una carta al editor</strong> en un periódico. Subraya la tesis y di si las razones tienen hechos con fuente.</li>
+</ul>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>8. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Varias preguntas se refieren al texto modelo de la sección 3. Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>9. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>La tesis es discutible, específica y anuncia las razones.</li>
+  <li>Cada razón se apoya en un hecho con su fuente.</li>
+  <li>Reconocer una objeción y responderla hace más fuerte el argumento.</li>
+  <li>Las transiciones abren cada párrafo y muestran el camino del razonamiento.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Puedes decir la tesis del texto modelo con tus palabras?</li>
+    <li>¿Qué hecho apoya la razón 2, y de qué fuente sale?</li>
+    <li>¿Qué transición usa el texto para responder a la objeción?</li>
+  </ul>
+</div>
+<div class="tip"><strong>➡️ Sigue con la próxima lección:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_7-2.html" style="color:var(--cp-oscuro);font-weight:700">Lección 7.2 · Texto informativo con vocabulario de dominio y análisis</a>.</div>
+<p style="font-size:.9rem"><strong>Fuentes del texto modelo:</strong> CDC, «Short Sleep Duration Among Middle School and High School Students — United States, 2015», <em>MMWR</em> 67(3), 2018 (incluye la recomendación de la Academia Estadounidense de Medicina del Sueño); Academia Estadounidense de Pediatría, «School Start Times for Adolescents» (2014); California, ley SB 328 (2019), vigente desde el 1 de julio de 2022.</p>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 7 · Lección 7.1</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+/* ===== Taller de escritura (Tema 7) =====
+   tallerEscritura('id-caja',{clave:'n2-7-1', conectores:[...], meta:{oraciones:6, palabras:60}, lista:['…','…']})
+   Arma: área de texto, contadores, conectores detectados, lista de revisión, escuchar, copiar y borrar.
+   El borrador se guarda en este navegador (si el navegador lo permite). */
+function tallerEscritura(id,o){
+  var caja=document.getElementById(id), k='gph-borrador-'+o.clave;
+  var h='<label class="tl-etq" for="'+id+'-txt">'+(o.etiqueta||'Escribe aquí tu texto')+'</label>'+
+    '<textarea class="tl-txt" id="'+id+'-txt" rows="10" spellcheck="true" lang="es"'+(o.guia?' placeholder="'+o.guia.replace(/"/g,'&quot;')+'"':'')+'></textarea>'+
+    '<div class="tl-cuenta" id="'+id+'-cuenta" aria-live="polite"></div>';
+  if(o.conectores)h+='<div class="tl-conect" id="'+id+'-con" aria-live="polite"></div>';
+  h+='<div class="botones" style="justify-content:flex-start">'+
+    '<button type="button" class="btn btn-secundario" id="'+id+'-oir">🔊 Escuchar mi texto</button>'+
+    '<button type="button" class="btn btn-secundario" id="'+id+'-copiar">📋 Copiar mi texto</button>'+
+    '<button type="button" class="btn btn-secundario" id="'+id+'-borrar">🗑️ Borrar</button></div>'+
+    '<div class="tl-aviso" id="'+id+'-aviso" role="status" aria-live="polite"></div>';
+  if(o.lista){
+    h+='<fieldset class="tl-lista"><legend>✅ Revisa tu texto antes de entregarlo</legend>'+
+      o.lista.map(function(t,i){return '<label><input type="checkbox" id="'+id+'-c'+i+'"> '+t+'</label>';}).join('')+
+      '<p class="tl-listo" id="'+id+'-listo" aria-live="polite"></p></fieldset>';
+  }
+  caja.innerHTML=h;
+  var ta=document.getElementById(id+'-txt'), cu=document.getElementById(id+'-cuenta'), co=document.getElementById(id+'-con'), av=document.getElementById(id+'-aviso');
+  try{var g=localStorage.getItem(k); if(g)ta.value=g;}catch(e){}
+  function avisar(t){av.textContent=t; clearTimeout(avisar.t); avisar.t=setTimeout(function(){av.textContent='';},4000);}
+  function contar(){
+    var t=ta.value.trim(), pal=t?t.split(/\s+/).length:0, ora=(t.match(/[^.!?…]+[.!?…]+/g)||[]).length;
+    var m=o.meta||{}, s='Palabras: '+pal+(m.palabras?' (meta: '+m.palabras+' o más)':'')+' · Oraciones: '+ora+(m.oraciones?' (meta: '+m.oraciones+' o más)':'');
+    if(m.oraciones&&ora>=m.oraciones&&(!m.palabras||pal>=m.palabras))s+=' · 🎯 ¡Llegaste a la meta de extensión!';
+    cu.textContent=s;
+    if(co){
+      var low=' '+t.toLowerCase().replace(/[.,;:¡!¿?«»"()—]/g,' ')+' ', us=o.conectores.filter(function(c){return low.indexOf(' '+c.toLowerCase()+' ')>=0;});
+      co.innerHTML=us.length?(o.titLista||'Conectores que usaste')+': '+us.map(function(c){return '<span class="tl-chip">'+c+'</span>';}).join(' '):(o.vacioLista||'Todavía no aparece ningún conector de la lista. Recuerda unir tus ideas con ellos.');
+    }
+    try{localStorage.setItem(k,ta.value);}catch(e){}
+  }
+  ta.addEventListener('input',contar); contar();
+  document.getElementById(id+'-oir').addEventListener('click',function(){
+    if(!ta.value.trim()){avisar('Primero escribe algo para poder escucharlo.');return;}
+    hablar(ta.value,0.9);
+  });
+  document.getElementById(id+'-copiar').addEventListener('click',function(){
+    if(!ta.value.trim()){avisar('Todavía no hay texto para copiar.');return;}
+    function ok(){avisar('✓ Texto copiado. Ya puedes pegarlo en el foro o en un correo.');}
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(ta.value).then(ok,function(){ta.select();document.execCommand('copy');ok();});
+    else{ta.select();document.execCommand('copy');ok();}
+  });
+  var borrarListo=false;
+  document.getElementById(id+'-borrar').addEventListener('click',function(){
+    if(!borrarListo){borrarListo=true;avisar('¿Seguro? Pulsa «Borrar» otra vez para borrar todo el texto.');setTimeout(function(){borrarListo=false;},4000);return;}
+    borrarListo=false; ta.value=''; contar(); avisar('Texto borrado.'); ta.focus();
+  });
+  if(o.lista){
+    var cbs=caja.querySelectorAll('.tl-lista input'), li=document.getElementById(id+'-listo');
+    function rev(){var n=Array.prototype.filter.call(cbs,function(c){return c.checked;}).length;var t=ta.value.trim(),m=o.meta||{},pal=t?t.split(/\s+/).length:0,ora=(t.match(/[^.!?…]+[.!?…]+/g)||[]).length,corto=(m.oraciones&&ora<m.oraciones)||(m.palabras&&pal<m.palabras);
+    li.textContent=n<cbs.length?'Revisado: '+n+' de '+cbs.length:(corto?'Marcaste toda la lista, pero tu texto todavía no llega a la meta de extensión. Añade algo más.':'🎉 ¡Todo revisado! Tu texto está listo para compartir.');}
+    ta.addEventListener('input',rev);
+    cbs.forEach(function(c){c.addEventListener('change',rev);}); rev();
+  }
+}
+/* Rúbricas: cada celda recibe el nombre de su nivel para mostrarlo en el móvil */
+document.querySelectorAll('table.rubrica').forEach(function(t){
+  var cab=Array.prototype.map.call(t.querySelectorAll('thead th'),function(th){return th.textContent;});
+  t.querySelectorAll('tbody tr').forEach(function(tr){Array.prototype.forEach.call(tr.children,function(c,i){if(c.tagName==='TD')c.setAttribute('data-et',cab[i]);});});
+});
+
+
+(function(){
+  var t=document.getElementById('lectura'), v=document.getElementById('ver-partes');
+  document.getElementById('leer-lectura').addEventListener('click',function(){
+    var c=t.cloneNode(true); c.querySelectorAll('.etq,.num-p').forEach(function(e){e.remove();}); hablar(c.textContent.trim(),0.9);});
+  v.addEventListener('click',function(){var on=!t.classList.toggle('oculta-marcas');v.setAttribute('aria-pressed',on?'true':'false');v.textContent=on?'Ocultar las partes':'Mostrar las partes';});
+})();
+
+clasificador('clasif-tesis','puntaje-tesis',[
+  {p:'Tema: los teléfonos en clase. ¿Cuál es la mejor tesis?',ops:['Las escuelas deberían guardar los teléfonos durante las clases, porque distraen y afectan las notas.','Los teléfonos celulares se inventaron hace más de cincuenta años, en los Estados Unidos.','Los teléfonos en clase son un tema del que se habla mucho hoy en día en todas las escuelas.'],c:0,n:'Es discutible, específica y anuncia dos razones. La segunda es un hecho; la tercera no toma postura.'},
+  {p:'«El agua es necesaria para la vida.» ¿Por qué no sirve como tesis?',ops:['Nadie lo discute: es un hecho, no una postura','Es demasiado larga y complicada para ser una tesis','No tiene ninguna palabra de transición al principio'],c:0,n:'Una tesis tiene que ser discutible: alguien podría pensar lo contrario.'},
+  {p:'«Hay que mejorar el transporte.» ¿Qué le falta a esta tesis?',ops:['Decir qué cambio concreto se propone y por qué','Una cifra de la cantidad de pasajeros al año','Un conector como «en conclusión» al final'],c:0,n:'Es vaga: ¿más autobuses?, ¿más baratos?, ¿más seguros?'},
+  {p:'¿Cuál de estas tesis <strong>anuncia sus razones</strong>?',ops:['La ciudad debería abrir más clínicas, porque hay largas esperas y muchos barrios sin servicio.','La ciudad debería abrir más clínicas en todos los barrios de la ciudad que lo necesiten.','La ciudad debería abrir más clínicas lo antes posible, este mismo año, sin perder más tiempo.'],c:0,n:'Las otras dos dicen qué, pero no por qué.'}
+],null,false);
+
+clasificador('clasif-modelo','puntaje-modelo',[
+  {p:'¿Dónde está la tesis del texto modelo?',ops:['En la última oración del párrafo 1','En la primera oración del párrafo 2','En el párrafo 5, la conclusión'],c:0,n:'Tras una oración que presenta el problema, el párrafo 1 termina con la tesis.'},
+  {p:'¿Qué hecho apoya la razón 1?',ops:['Casi tres de cada cuatro estudiantes dormían menos de 8 horas','Una ley de California desde 2022 fija la hora de entrada','Los autobuses y los deportes tendrían que ajustarse'],c:0,n:'Viene de los CDC. La ley de California apoya la razón 2; lo de los autobuses es la objeción.'},
+  {p:'¿Qué hace el párrafo 4?',ops:['Reconoce una objeción y la responde','Da una tercera razón con un hecho','Presenta la tesis por primera vez'],c:0,n:'«Es cierto que…» reconoce; «No obstante…» responde.'},
+  {p:'¿Qué transición abre la segunda razón?',ops:['Por otra parte','En primer lugar','En conclusión'],c:0,n:'Párrafo 3: añade una razón distinta.'}
+],null,false);
+
+clasificador('clasif-razones','puntaje-razones',[
+  {p:'«Según la Oficina del Censo, más de 40 millones de personas en Estados Unidos hablan español en casa.»',c:0,n:'Un dato con su fuente: se puede comprobar.'},
+  {p:'«Todos sabemos que estudiar de noche es lo más difícil del mundo.»',c:1,n:'«Todos sabemos» y «lo más difícil del mundo» no prueban nada.'},
+  {p:'«La ley federal exige que los empleadores paguen al menos el salario mínimo federal.»',c:0,n:'Es una ley que se puede consultar.'},
+  {p:'«Los parques hacen más feliz a la gente, sin duda.»',c:1,n:'«Sin duda» no es una fuente.'},
+  {p:'«Según la Oficina de Estadísticas Laborales, en 2024 el desempleo de los adultos sin diploma fue de 6.2 %.»',c:0,n:'Un dato con su fuente: lo comprobaste en la Lección 6.2.'},
+  {p:'«Me parece que el autobús siempre llega tarde.»',c:1,n:'«Me parece» y «siempre» son una impresión personal, no un dato.'}
+],['Razón con hecho','Opinión sin hecho'],false);
+
+clasificador('clasif-ordena','puntaje-ordena',[
+  {p:'«Algunos dirán que las ciclovías quitan espacio a los autos. No obstante, cada persona en bicicleta es un auto menos en el tráfico.»',c:3,n:'Reconoce una objeción y la responde.'},
+  {p:'«En conclusión, las ciclovías son seguras, baratas y descongestionan la ciudad. Por eso, el concejo debería aprobar las nuevas rutas.»',c:4,n:'Cierra y pide una acción.'},
+  {p:'«Muchos vecinos usan la bicicleta para ir al trabajo. La ciudad debería construir más ciclovías protegidas, porque reducen los accidentes y cuestan menos que una calle nueva.»',c:0,n:'Presenta el tema y termina con la tesis.'},
+  {p:'«Por otra parte, una ciclovía cuesta mucho menos que ampliar una calle para autos, según el departamento de transporte de la ciudad.»',c:2,n:'«Por otra parte» añade la segunda razón: el costo.'},
+  {p:'«En primer lugar, las ciclovías protegidas reducen los accidentes, según los datos de la policía de tránsito.»',c:1,n:'«En primer lugar» abre la primera razón: la seguridad.'}
+],['Introducción con la tesis','Razón 1','Razón 2','Objeción y respuesta','Conclusión'],false);
+
+clasificador('clasif-transicion','puntaje-transicion',[
+  {p:'Párrafo anterior: la primera razón. Este párrafo: <em>«___, las clínicas de barrio atienden a quienes no tienen auto.»</em>',ops:['Por otra parte','En conclusión','Es cierto que'],c:0,n:'Añade otra razón.'},
+  {p:'<em>«___ abrir más clínicas cuesta dinero.»</em> (El autor va a reconocer una objeción.)',ops:['Es cierto que','Por lo tanto','En primer lugar'],c:0,n:'Reconoce lo que diría alguien en contra.'},
+  {p:'<em>«Es cierto que cuesta dinero. ___, atender a tiempo evita gastos mayores en emergencias.»</em>',ops:['No obstante','Además','Por ejemplo'],c:0,n:'Responde a la objeción con un contraste.'},
+  {p:'Último párrafo: <em>«___, más clínicas significan una ciudad más sana.»</em>',ops:['En definitiva','En primer lugar','Sin embargo'],c:0,n:'Anuncia el cierre.'}
+],null,false);
+
+tallerEscritura('taller-71',{clave:'7-1',etiqueta:'Tu texto argumentado (dos o tres párrafos)',
+  guia:'… debería …, porque … y porque …  En primer lugar, … Según …  Por otra parte, …  Es cierto que …; no obstante, …  En conclusión, …',
+  meta:{oraciones:8,palabras:150},
+  conectores:['en primer lugar','para empezar','por otra parte','además','en segundo lugar','asimismo','es cierto que','algunos dirán que','no obstante','sin embargo','aun así','por lo tanto','por eso','en consecuencia','en conclusión','en definitiva','por todo lo anterior','según','de acuerdo con'],
+  titLista:'Transiciones y frases de fuente que usaste',
+  vacioLista:'Todavía no aparece ninguna transición ni frase de fuente («según…»). Úsalas para unir los párrafos y presentar los hechos.',
+  lista:['Mi tesis es discutible, específica y anuncia mis razones.','Cada razón tiene un hecho con su fuente («según…»).','Reconozco una objeción y la respondo.','Cada párrafo empieza con una transición.','Mi conclusión retoma la tesis con otras palabras.','Escuché mi texto en voz alta y revisé la ortografía.']});
+
+iniciarQuiz([
+  {t:'¿Qué es la <strong>tesis</strong> de un texto argumentado?',o:['La oración que dice qué defiende el autor y por qué','El dato más importante que aparece en el texto','La última oración del texto, en la conclusión'],c:0,r:'<a href="#s-2-tesis">Sección 2</a>'},
+  {t:'¿Cuál de estas oraciones es una tesis <strong>discutible</strong>?',o:['La ciudad debería prohibir los autos en el centro los domingos.','Chicago es la tercera ciudad más poblada de Estados Unidos.','Los autos funcionan con gasolina, con diésel o con electricidad.'],c:0,r:'<a href="#s-2-tesis">Sección 2</a>'},
+  {t:'¿Cuál es la tesis del texto modelo?',o:['Las secundarias deberían empezar a las 8:30 o más tarde','Los adolescentes duermen menos de 8 horas al día','California aprobó una ley sobre la hora de entrada'],c:0,r:'<a href="#s-3-modelo">Sección 3</a>'},
+  {t:'Según el texto modelo, ¿cuántas horas deberían dormir los jóvenes de 13 a 18 años?',o:['Entre 8 y 10 horas','Entre 6 y 8 horas','Exactamente 7 horas'],c:0,r:'<a href="#s-3-modelo">Sección 3, párrafo 2</a>'},
+  {t:'¿Qué hecho del texto modelo apoya la idea de que la medida ya se aplicó?',o:['Una ley de California vigente desde 2022','La recomendación de dormir de 8 a 10 horas','El problema de los autobuses escolares'],c:0,r:'<a href="#s-3-modelo">Sección 3, párrafo 3</a>'},
+  {t:'¿Cuál es una <strong>razón con hecho</strong>?',o:['Según los CDC, la mayoría de los estudiantes duerme menos de 8 horas.','Todo el mundo sabe que los jóvenes de hoy duermen muy poco.','Me parece que los estudiantes están siempre cansados en clase.'],c:0,r:'<a href="#s-4-razones">Sección 4</a>'},
+  {t:'¿Para qué sirve reconocer una objeción en un argumento?',o:['Para responderla y hacer más fuerte la tesis','Para cambiar de tesis a mitad del texto','Para que el texto quede más largo y completo'],c:0,r:'<a href="#s-5-orden">Sección 5</a>'},
+  {t:'¿Qué transición sirve para <strong>responder</strong> a una objeción?',o:['No obstante','En primer lugar','Asimismo'],c:0,r:'<a href="#s-5-orden">Sección 5</a>'},
+  {t:'¿Qué transición sirve para <strong>añadir</strong> otra razón?',o:['Por otra parte','En conclusión','Es cierto que'],c:0,r:'<a href="#s-5-orden">Sección 5</a>'},
+  {t:'¿Cuál es el orden más lógico de un texto argumentado?',o:['Tesis, razones, objeción y respuesta, conclusión','Conclusión, razones, tesis, objeción y respuesta','Objeción, conclusión, tesis y después razones'],c:0,r:'<a href="#s-5-orden">Sección 5</a>'},
+  {t:'¿Qué frase sirve para presentar un hecho con su fuente?',o:['De acuerdo con…','Sin duda alguna…','Todos sabemos que…'],c:0,r:'<a href="#s-4-razones">Sección 4</a>'},
+  {t:'¿Qué debe hacer la conclusión de un texto argumentado?',o:['Retomar la tesis con otras palabras y cerrar','Presentar una razón nueva que no se dijo antes','Repetir palabra por palabra la primera oración'],c:0,r:'<a href="#s-5-orden">Sección 5</a>'}
+],{meta:10,
+   bien:'Ya sabes construir un texto argumentado con tesis, razones con hechos, objeción y transiciones. Sigue con la Lección 7.2.',
+   repaso:'Vuelve a las secciones 2, 4 y 5 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<!-- Lección 8.2 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 8.2 · Discusiones colegiadas y comprensión auditiva</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+  figure.graf{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:12px 14px;margin:14px 0;text-align:center}
+  figure.graf figcaption{font-weight:700;color:var(--cp-oscuro);margin-bottom:6px;text-align:left}
+  figure.graf .fuente{font-size:.85rem;color:#555;text-align:left;margin:4px 0 0}
+  .ver-datos{text-align:left;margin-top:6px}
+  .ver-datos summary{padding:8px 12px;font-size:.95rem}
+  .mini{border-collapse:collapse;margin:6px 0;font-size:.95rem;font-weight:400}
+  .mini th,.mini td{border:1px solid #9aa9b7;padding:4px 10px}
+  .mini th{background:#4c1d95;color:#fff}
+  .leyenda-txt{font-size:.92rem;text-align:left;margin:4px 0 0}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .tabla-ancha{overflow-x:auto}
+  .enun figure.graf{margin:8px 0}
+  /* ── Tema 7: taller de escritura, plantilla, rúbrica y marcas ── */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:200px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .plantilla{background:#fff;border:2px dashed var(--cp);border-radius:10px;padding:10px 16px;margin:10px 0}
+  .plantilla p{margin:6px 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+  /* Marcas en los textos modelo: color + borde distinto + etiqueta escrita */
+  .m-te{background:#ede9fe;color:#3b1578;border-bottom:3px solid #4c1d95;font-weight:600}
+  .m-ra{background:#fff3e0;color:#6b3300;border-bottom:3px dashed #8a4b00}
+  .m-he{background:#e3f2fd;color:#0d3c78;border-bottom:3px dotted #0d3c78}
+  .m-tr{background:#e8f5e9;color:#1b5e20;border:2px solid #2e7d32;border-radius:4px;padding:0 3px;font-weight:700}
+  .etq{font-weight:700;font-size:.8em;white-space:nowrap}
+  .oculta-marcas .m-te,.oculta-marcas .m-ra,.oculta-marcas .m-he,.oculta-marcas .m-tr{background:none;color:inherit;border:none;font-weight:inherit;padding:0}
+  .oculta-marcas .etq{display:none}
+  .leyenda-marcas{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;font-size:.92rem}
+  .leyenda-marcas span{padding:2px 8px}
+  .subjetivo{border-left:6px solid #b91c1c;background:#fff5f5}
+  .subjetivo::before{content:"✖️ Tono subjetivo";display:block;font-weight:700;color:#8b1414;margin-bottom:4px;font-family:inherit}
+  .flujo{list-style:none;margin:14px auto;padding:0;max-width:520px;counter-reset:fl}
+  .flujo>li{counter-increment:fl;position:relative;background:#fff;border:2px solid #6d28d9;border-radius:10px;padding:10px 12px 10px 46px;margin:0 0 34px;font-weight:600;color:#1a2332}
+  .flujo>li::before{content:counter(fl);position:absolute;left:10px;top:9px;width:26px;height:26px;border-radius:50%;background:#6d28d9;color:#fff;font-weight:700;text-align:center;line-height:26px;font-size:.9rem}
+  .flujo>li:not(:last-child)::after{content:"↓" / "";position:absolute;left:50%;bottom:-31px;transform:translateX(-50%);font-size:1.5rem;color:#4c1d95;line-height:1}
+  .flujo>li.decision,.flujo>li.ciclo{counter-increment:none}
+  .flujo>li{text-align:left}
+  .flujo>li.decision{border-style:dashed;border-color:#b45309;background:#fff8ee}
+  .flujo>li.decision::before{content:"?";background:#b45309}
+  .flujo>li.ciclo{border-style:double;border-width:4px}
+  .flujo>li.ciclo::before{content:"↻";}
+  .flujo .ramas{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;font-weight:400;font-size:.93rem}
+  .flujo .ramas span{flex:1 1 140px;background:#fff;border:1px solid #9aa9b7;border-radius:6px;padding:5px 8px}
+  .pendiente{border:2px dashed #6d28d9;background:#f5f3ff;border-radius:10px;padding:12px 14px;margin:12px 0}
+  .notas-modelo{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:12px 0}
+  .nota{background:#fffdf0;border:2px solid #a16207;border-radius:8px;padding:10px 12px;box-shadow:2px 2px 0 #e7d9a8}
+  .nota p{margin:0 0 4px}
+  .nota-fuente{font-weight:700;color:#5c3d00}
+  .nota-tema{font-style:italic;color:#333}
+  .nota ul{margin:4px 0 0;padding-left:1.2em}
+  .lista-fuentes p{padding-left:2em;text-indent:-2em;overflow-wrap:anywhere}
+  .escucha{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:12px 14px;margin:12px 0}
+  .escucha h4{margin:0 0 8px;color:var(--cp-oscuro)}
+  .pasadas{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+  .velocidad{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0;font-size:.95rem}
+  .velocidad button[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  .estado-esc{font-weight:700;color:var(--cp-oscuro);min-height:1.4em}
+  .transcripcion summary{font-size:.95rem}
+  .dialogo p{margin:8px 0}
+  .dialogo .quien{font-weight:700;color:var(--cp-oscuro)}
+  .grabadora{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:12px 0;text-align:center}
+  .grabadora .reloj{font-size:2rem;font-weight:700;color:var(--cp-oscuro);font-variant-numeric:tabular-nums;margin:6px 0}
+  .grabadora .estado{font-weight:700;min-height:1.4em}
+  .grabadora audio{width:100%;margin-top:8px}
+  .grabando{color:#b3261e}
+  /* Diapositivas del proyecto modelo */
+  .diapos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+  .diapo{margin:0;background:#fff;border:2px solid var(--cp-oscuro);border-radius:10px;padding:10px 12px;text-align:center;box-shadow:0 2px 0 #c4b5fd}
+  .diapo p{margin:4px 0}
+  .diapo-num{font-size:.8rem;font-weight:700;color:#555;text-align:left}
+  .diapo-tit{font-weight:700;font-size:1.15rem;color:var(--cp-oscuro)}
+  .diapo-pie{font-size:.8rem;color:#555}
+  .diapo .ver-datos{font-size:.9rem}
+  /* Autoevaluación con la rúbrica */
+  .autoev fieldset{border:2px solid var(--cp);border-radius:10px;padding:8px 14px;margin:10px 0;background:#fff}
+  .autoev legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .autoev label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .autoev input{width:20px;height:20px;flex-shrink:0;margin-top:3px;accent-color:var(--cp-oscuro)}
+  .autoev-total{font-weight:700;font-size:1.1rem;color:var(--cp-oscuro);text-align:center;margin:10px 0}
+  /* Evaluación final */
+  .ev-area{background:var(--cp-oscuro);color:#fff;border-radius:10px;padding:8px 14px;margin:22px 0 6px;font-size:1.1rem}
+  .ev-estimulo{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:12px 14px;margin:10px 0}
+  .ev-nombre{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
+  .ev-nombre input{font:inherit;padding:8px 10px;border:2px solid #9aa9b7;border-radius:8px;min-width:200px;flex:1}
+  .ev-aviso{font-weight:700;color:#8a3d0c;min-height:1.4em}
+  #resumen-final{display:none;background:#fff;border:3px solid var(--cp-oscuro);border-radius:12px;padding:16px 18px;margin:20px 0}
+  #resumen-final.visible{display:block}
+  #resumen-final h2{margin-top:0}
+  .rf-total{font-size:1.4rem;font-weight:700;text-align:center;padding:10px;border-radius:10px;margin:8px 0}
+  .rf-barra{background:#e6ebef;border-radius:6px;height:14px;min-width:50px;position:relative;overflow:hidden}
+  .rf-barra span{position:absolute;left:0;top:0;bottom:0;background:var(--cp);border-radius:6px}
+  .rf-lista li{margin:8px 0}
+  .rf-url{display:none}
+  @media print{
+    body>*:not(#resumen-final){display:none !important}
+    body{background:#fff !important;padding:0 !important;margin:0 !important}
+    #resumen-final{display:block;border:none;margin:0;padding:0}
+    #resumen-final .no-imprimir{display:none}
+    .rf-url{display:inline;font-size:.8rem;color:#333;word-break:break-all}
+    .rf-barra{border:1px solid #333}
+    .rf-barra span{background:#555 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    #resumen-final th{color:#000 !important;background:#fff !important;border-bottom:2px solid #000 !important}
+    #resumen-final a{color:#000}
+  }
+</style>
+</head>
+<body>
+<h1>Lección 8.2 · Discusiones colegiadas y comprensión auditiva</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 8: Investigación, oralidad y proyecto final · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Llegar <strong>preparado</strong> a una discusión, con ideas y evidencia.</li>
+    <li>Seguir las <strong>normas colegiadas</strong> y expresar tus ideas con claridad.</li>
+    <li><strong>Parafrasear</strong> lo que dicen otros y <strong>resumir</strong> información que llega por el oído, en gráficas y en números.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.S.CC.1 · 3.S.CC.2 · 3.S.CC.3</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-preparado">Llegar preparado</a></li>
+    <li><a href="#s-2-normas">Las normas de una discusión colegiada</a></li>
+    <li><a href="#s-3-mesa">Discusión modelo: la hora de entrada</a></li>
+    <li><a href="#s-4-parafrasear">Parafrasear y resumir lo que dicen otros</a></li>
+    <li><a href="#s-5-presentacion">Escuchar una presentación con datos</a></li>
+    <li><a href="#s-6-tu-mesa">Tu mesa de discusión</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Una reunión de padres, una junta de vecinos, una entrevista de trabajo en grupo, una clase por Zoom: en todas se discute, y en todas se nota quién llegó preparado y quién escucha de verdad. En el Nivel 2 aprendiste las normas básicas de una conversación. Ahora vas a participar en una <strong>discusión colegiada</strong>: una conversación seria entre iguales, con un tema preparado, reglas acordadas y el compromiso de escuchar y responder a lo que dicen los demás.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-preparado">
+<summary>1. Llegar preparado <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>En una discusión colegiada nadie improvisa: todos leyeron lo mismo y traen algo que aportar. Antes de la discusión, llena una <strong>hoja de preparación</strong>:</p>
+<div class="plantilla">
+  <p><strong>El tema:</strong> ¿Deberían las secundarias empezar más tarde?</p>
+  <p><strong>Mi posición:</strong> Sí / No / Depende, porque ______.</p>
+  <p><strong>Mi evidencia 1:</strong> ______ (fuente: ______).</p>
+  <p><strong>Mi evidencia 2:</strong> ______ (fuente: ______).</p>
+  <p><strong>Una objeción que me pueden hacer:</strong> ______.</p>
+  <p><strong>Una pregunta para el grupo:</strong> ¿______?</p>
+</div>
+<div class="clasificador apilado" id="clasif-preparado"></div>
+<div class="puntaje" id="puntaje-preparado" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l8-2.html#preparacion" target="_blank" rel="noopener noreferrer">📋 Practica más: ¿llega preparado?
+  <span>Situaciones antes y durante una discusión para decidir quién llegó preparado. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-2-normas">
+<summary>2. Las normas de una discusión colegiada <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>Las normas no las impone nadie desde fuera: el grupo las <strong>acuerda</strong> antes de empezar. Estas son las más comunes:</p>
+<table class="tabla">
+  <caption class="sr-solo">Normas de una discusión colegiada y cómo se ven en la práctica</caption>
+  <thead><tr><th scope="col">Norma</th><th scope="col">Cómo se ve</th></tr></thead>
+  <tbody>
+    <tr><td>Pedir la palabra y respetar el turno</td><td>Levantar la mano (o el botón de Zoom); no interrumpir.</td></tr>
+    <tr><td>Hablar del tema, con evidencia</td><td>«Según…», «En el texto dice…».</td></tr>
+    <tr><td>Responder a lo que dijo el anterior</td><td>Parafrasear antes de añadir o discrepar.</td></tr>
+    <tr><td>Discrepar de las ideas, no de las personas</td><td>«No estoy de acuerdo con ese punto, porque…», nunca «Eso es una tontería».</td></tr>
+    <tr><td>Cuidar el tiempo</td><td>Intervenciones de un minuto como máximo para que todos hablen.</td></tr>
+  </tbody>
+</table>
+<p>Y estos son los <strong>papeles</strong> que se reparten: el <strong>moderador</strong> da la palabra y mantiene el tema; el <strong>cronometrista</strong> cuida el tiempo; el <strong>relator</strong> toma notas y resume al final.</p>
+</div>
+</details>
+
+<details id="s-3-mesa">
+<summary>3. Discusión modelo: la hora de entrada <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<p>Cuatro vecinos discuten el tema de la Lección 7.1. Escucha la discusión en dos pasadas: la primera para entender las posiciones, la segunda para fijarte en <strong>cómo</strong> hablan.</p>
+<div class="escucha">
+  <h4>🎧 Mesa de discusión: «¿Deberían las secundarias empezar más tarde?»</h4>
+  <div class="velocidad" role="group" aria-label="Velocidad del audio">Velocidad:
+    <button type="button" class="btn btn-secundario vel" data-v="0.8" aria-pressed="false">🐢 Más lenta</button>
+    <button type="button" class="btn btn-secundario vel" data-v="0.95" aria-pressed="true">Normal</button>
+  </div>
+  <div class="pasadas">
+    <button type="button" class="btn btn-primario" data-audio="t-mesa" data-p="1">▶️ Primera pasada: las posiciones</button>
+    <button type="button" class="btn btn-primario" data-audio="t-mesa" data-p="2">▶️ Segunda pasada: cómo hablan</button>
+    <button type="button" class="btn btn-secundario parar">⏹️ Parar</button>
+  </div>
+  <p class="estado-esc" role="status" aria-live="polite"></p>
+  <details class="transcripcion">
+    <summary>📄 Ver la transcripción (después de escuchar)</summary>
+    <div class="texto-lectura dialogo" id="t-mesa">
+      <p><span class="quien">Rosa (moderadora):</span> Buenas noches. Acordamos un minuto por intervención y pedir la palabra con la mano. El tema es si las secundarias deberían empezar más tarde. Luis, empiezas tú.</p>
+      <p><span class="quien">Luis:</span> Gracias. Yo creo que sí. Según los CDC, en 2015 casi tres de cada cuatro estudiantes de secundaria dormían menos de ocho horas. Mi hijo sale de casa a las seis y media y llega dormido a clase.</p>
+      <p><span class="quien">Rosa:</span> Gracias, Luis. Carmen, levantaste la mano.</p>
+      <p><span class="quien">Carmen:</span> Si entiendo bien, Luis dice que los jóvenes no duermen lo suficiente y que empezar más tarde lo resolvería. Estoy de acuerdo con el problema, pero no con la solución. Yo entro a trabajar a las siete; si mi hija entra más tarde, no tengo quién la lleve.</p>
+      <p><span class="quien">Pedro:</span> ¡Pero eso no tiene nada que ver! Lo importante es…</p>
+      <p><span class="quien">Rosa:</span> Pedro, perdona: Carmen todavía estaba hablando. Te anoto para el siguiente turno. Carmen, ¿terminaste?</p>
+      <p><span class="quien">Carmen:</span> Sí. Solo quería decir que el horario de los padres también cuenta.</p>
+      <p><span class="quien">Rosa:</span> Pedro, ahora sí.</p>
+      <p><span class="quien">Pedro:</span> Disculpa, Carmen. Lo que dices es que el cambio complica el transporte de las familias, ¿verdad? Es un punto válido. Pero en California, desde 2022, una ley prohíbe que las secundarias empiecen antes de las ocho y media, y los distritos tuvieron que organizarse. ¿No podríamos pedir más autobuses?</p>
+      <p><span class="quien">Ana:</span> Yo tengo una pregunta para Pedro: ¿sabes cuánto les costó a esos distritos? Porque sin ese dato no sabemos si aquí es posible.</p>
+      <p><span class="quien">Pedro:</span> No lo sé. Es una buena pregunta; lo puedo buscar para la próxima reunión.</p>
+      <p><span class="quien">Rosa:</span> Se acaba el tiempo. Resumo: todos estamos de acuerdo en que los jóvenes duermen poco. Luis y Pedro proponen empezar más tarde; Carmen y Ana señalan el problema del transporte y del costo. Queda pendiente averiguar cuánto costó el cambio en California. Gracias a todos.</p>
+    </div>
+  </details>
+</div>
+<p style="font-size:.9rem;color:#555">Discusión inventada para la lección; los datos que citan los participantes son reales (Lección 7.1).</p>
+<div class="clasificador apilado" id="clasif-mesa"></div>
+<div class="puntaje" id="puntaje-mesa" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-4-parafrasear">
+<summary>4. Parafrasear y resumir lo que dicen otros <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>En la Lección 8.1 parafraseaste textos escritos. En una discusión se parafrasea <strong>de oído</strong>, y sirve para dos cosas: demostrar que escuchaste y comprobar que entendiste bien antes de responder.</p>
+<table class="tabla">
+  <caption class="sr-solo">Frases para parafrasear y resumir en una discusión</caption>
+  <thead><tr><th scope="col">Para…</th><th scope="col">Frases</th></tr></thead>
+  <tbody>
+    <tr><td>Parafrasear</td><td><em>Si entiendo bien, lo que dices es que… · O sea, que según tú… · Lo que propones es…, ¿verdad?</em></td></tr>
+    <tr><td>Pedir que aclaren</td><td><em>¿Podrías dar un ejemplo? · ¿De dónde sale ese dato?</em></td></tr>
+    <tr><td>Resumir</td><td><em>Resumo: … · Hasta ahora se han dicho dos ideas… · En lo que todos coincidimos es…</em></td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 Una buena paráfrasis oral</strong> es más corta que lo que se dijo, conserva la idea principal y no añade tu opinión. Fíjate en Carmen: primero repite la idea de Luis con sus palabras, y <strong>después</strong> dice que no está de acuerdo.</div>
+<div class="clasificador apilado" id="clasif-parafrasea"></div>
+<div class="puntaje" id="puntaje-parafrasea" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l8-2.html#parafrasea" target="_blank" rel="noopener noreferrer">🗣️ Practica más: parafrasea la intervención
+  <span>Intervenciones de una discusión para elegir la paráfrasis que conserva la idea. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-5-presentacion">
+<summary>5. Escuchar una presentación con datos <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<p>Muchas presentaciones combinan lo que se <strong>oye</strong> con lo que se <strong>ve</strong>: una gráfica, una tabla, una foto. Escucha la presentación mirando la gráfica. Antes, lee las preguntas de abajo.</p>
+<div class="escucha">
+  <h4>🎧 Presentación: «Chicago en 120 años»</h4>
+  <div class="velocidad" role="group" aria-label="Velocidad del audio">Velocidad:
+    <button type="button" class="btn btn-secundario vel" data-v="0.8" aria-pressed="false">🐢 Más lenta</button>
+    <button type="button" class="btn btn-secundario vel" data-v="0.95" aria-pressed="true">Normal</button>
+  </div>
+  <div class="pasadas">
+    <button type="button" class="btn btn-primario" data-audio="t-pres" data-p="1">▶️ Primera pasada: idea general</button>
+    <button type="button" class="btn btn-primario" data-audio="t-pres" data-p="2">▶️ Segunda pasada: los números</button>
+    <button type="button" class="btn btn-secundario parar">⏹️ Parar</button>
+  </div>
+  <p class="estado-esc" role="status" aria-live="polite"></p>
+  <figure class="graf" id="fig-chicago">
+    <figcaption>Población de la ciudad de Chicago según el censo, 1900–2020 (en millones)</figcaption>
+    <div id="graf-chicago"></div>
+    <p class="fuente">Fuente: Oficina del Censo de los Estados Unidos. Cifras redondeadas a una décima de millón.</p>
+  </figure>
+  <details class="transcripcion">
+    <summary>📄 Ver la transcripción (después de escuchar)</summary>
+    <div class="texto-lectura" id="t-pres">
+      <p>Buenas tardes. Hoy les voy a mostrar cómo ha cambiado la población de Chicago en los últimos ciento veinte años. Miren la gráfica. En 1900, la ciudad tenía casi un millón setecientos mil habitantes. Durante la primera mitad del siglo creció sin parar, hasta llegar a su punto más alto en 1950: tres millones seiscientos mil habitantes. A partir de ahí la línea baja. En 1990 la ciudad había perdido más de ochocientos mil habitantes; según los historiadores, muchas familias se mudaron a los suburbios. En 2000 hubo una pequeña recuperación, y desde entonces la población se ha mantenido alrededor de dos millones setecientos mil. Es decir, hoy Chicago tiene más o menos la misma población que en 1920. En resumen, la ciudad creció muy rápido hasta 1950, perdió una parte importante de su población en las décadas siguientes y en los últimos treinta años se ha mantenido estable. Gracias.</p>
+    </div>
+  </details>
+</div>
+<p style="font-size:.9rem;color:#555">Presentación escrita para la lección con datos reales del censo.</p>
+<div class="clasificador apilado" id="clasif-pres"></div>
+<div class="puntaje" id="puntaje-pres" role="status" aria-live="polite"></div>
+<div class="tip"><strong>💡 Para resumir información visual o numérica:</strong> di (1) qué se mide, (2) la tendencia general, (3) el punto más alto o más bajo, y (4) qué significa. Nada de leer todos los números.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l8-2.html#resume" target="_blank" rel="noopener noreferrer">📊 Practica más: resume la información
+  <span>Gráficas, tablas y fragmentos de presentaciones para elegir el mejor resumen. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-6-tu-mesa">
+<summary>6. Tu mesa de discusión <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<p><strong>En la clase sincrónica</strong> participarás en una «Mesa de discusión» de cuatro o cinco personas, con moderador, cronometrista y relator. El tema lo anunciará tu profesor; prepara tu hoja de preparación de la sección 1.</p>
+<p><strong>Si estudias por tu cuenta,</strong> haz la mesa en casa: elige un tema (¿debería tu ciudad tener transporte gratis para estudiantes? ¿deberían las tiendas cobrar las bolsas de plástico?) y discútelo con dos personas de tu familia. Tú haces de moderador y, al final, resumes las posiciones como Rosa.</p>
+<h3>Rúbrica de la discusión</h3>
+<table class="tabla rubrica">
+  <caption class="sr-solo">Rúbrica de la discusión colegiada: cuatro criterios en cuatro niveles</caption>
+  <thead><tr><th scope="col">Criterio</th><th scope="col">4 · Excelente</th><th scope="col">3 · Bien</th><th scope="col">2 · En camino</th><th scope="col">1 · Inicial</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Llega preparado</th><td>Posición, dos evidencias con fuente y una pregunta</td><td>Posición y una evidencia</td><td>Solo una opinión</td><td>Sin preparación</td></tr>
+    <tr><th scope="row">Sigue las normas</th><td>Pide la palabra, respeta el tiempo y discrepa con respeto</td><td>Sigue casi todas las normas</td><td>Interrumpe o se sale del tema a veces</td><td>No sigue las normas</td></tr>
+    <tr><th scope="row">Expresa sus ideas con claridad</th><td>Ideas claras, ordenadas y con evidencia</td><td>Claras, con poca evidencia</td><td>Confusas o muy largas</td><td>No participa</td></tr>
+    <tr><th scope="row">Parafrasea y resume</th><td>Parafrasea antes de responder y resume con precisión</td><td>Parafrasea a veces</td><td>Responde sin mostrar que escuchó</td><td>No parafrasea ni resume</td></tr>
+  </tbody>
+</table>
+<p style="font-size:.92rem">Total: 16 puntos.</p>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>7. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Resume en el foro</strong> la presentación «Chicago en 120 años» en tres o cuatro oraciones, siguiendo los cuatro pasos del recuadro.</li>
+  <li><strong>Parafrasea a un compañero:</strong> elige una idea de otro estudiante del foro y escríbela con tus palabras: «Si entiendo bien, ___ dice que…».</li>
+  <li><strong>Escucha una noticia de radio o un pódcast</strong> de cinco minutos y resume en tres oraciones lo que oíste.</li>
+</ul>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>8. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Varias preguntas se refieren a la discusión modelo y a la presentación con la gráfica. Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>9. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>En una discusión colegiada se llega preparado con posición, evidencia y una pregunta.</li>
+  <li>Las normas las acuerda el grupo; los papeles son moderador, cronometrista y relator.</li>
+  <li>Parafrasear antes de responder demuestra que escuchaste y evita malentendidos.</li>
+  <li>Para resumir datos: qué se mide, la tendencia, el punto más alto o más bajo y qué significa.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Qué norma rompió Pedro y cómo lo arregló?</li>
+    <li>¿Cómo resumirías en una oración la gráfica de la población de Chicago?</li>
+    <li>¿Qué frase usarías para parafrasear a alguien antes de discrepar?</li>
+  </ul>
+</div>
+<div class="tip"><strong>➡️ Sigue con la próxima lección:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_8-3.html" style="color:var(--cp-oscuro);font-weight:700">Lección 8.3 · Presentación multimedia, proyecto final y evaluación del nivel</a>.</div>
+<p style="font-size:.9rem"><strong>Fuente de los datos:</strong> Oficina del Censo de los Estados Unidos, censos decenales de 1900 a 2020, población de la ciudad de Chicago.</p>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 8 · Lección 8.2</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+/* ===== Gráficas en SVG (barras, barras dobles, líneas múltiples) =====
+   Basado en la biblioteca del Nivel 2. Las series se distinguen por color Y por trazo o trama
+   (línea continua / discontinua / punteada; barra lisa / rayada), lleva valores escritos o en la
+   descripción, y una tabla con los datos: nada depende solo del color. */
+var GCOL=['#6d28d9','#c2410c','#0e7490','#a16207'];
+var GDASH=['','8 5','2 5','12 4 2 4'], GID=0;
+function anchoG(){return Math.round(Math.min(600,Math.max(320,(window.innerWidth||600)-56)));}
+function etiq(s,x,y,t,W){var p=String(t).indexOf('|')>=0?String(t).split('|'):String(t).split(' ');if(String(t).indexOf('|')>=0||(W<480&&p.length>1)){txtSvg(s,x,y-2,p[0],{tam:11});txtSvg(s,x,y+11,p.slice(1).join(' '),{tam:11});}else txtSvg(s,x,y,t,{tam:W<480?11:12});}
+function svgEl(t,a,txt){var e=document.createElementNS('http://www.w3.org/2000/svg',t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
+function marcoSvg(caja,ancho,alto,desc){
+  var s=svgEl('svg',{viewBox:'0 0 '+ancho+' '+alto,width:ancho,height:alto,role:'img','aria-label':desc});
+  s.style.maxWidth='100%'; s.style.height='auto'; caja.innerHTML=''; caja.appendChild(s); return s;
+}
+function txtSvg(s,x,y,t,o){o=o||{};s.appendChild(svgEl('text',{x:x,y:y,'text-anchor':o.ancla||'middle','font-size':o.tam||12,'font-weight':o.peso||'normal',fill:o.color||'#333','font-family':'Arial'},t));}
+function cuadricula(s,W,L,R,T,B,H,min,max,paso,fmt){
+  for(var v=min;v<=max+0.0001;v+=paso){var y=T+(H-T-B)*(1-(v-min)/(max-min));
+    s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:y,y2:y,stroke:'#dfe5ea','stroke-width':1}));
+    txtSvg(s,L-8,y+4,fmt?fmt(v):(Math.round(v*10)/10),{ancla:'end',color:'#555'});}
+}
+function rotulos(s,W,H,L,R,T,B,o){
+  if(o.ejeY)s.appendChild(svgEl('text',{x:14,y:(H-B+T)/2,transform:'rotate(-90 14 '+((H-B+T)/2)+')','text-anchor':'middle','font-size':12,fill:'#333','font-family':'Arial'},o.ejeY));
+  if(o.ejeX)txtSvg(s,(W-R+L)/2,H-6,o.ejeX);
+}
+function leyenda(s,x,y,series,tipo,pid){
+  series.forEach(function(se,k){
+    var yy=y+k*20;
+    if(tipo==='barra'){s.appendChild(svgEl('rect',{x:x,y:yy-11,width:22,height:14,fill:k===1?'url(#'+pid+')':GCOL[k],stroke:GCOL[k],'stroke-width':1.5}));}
+    else{s.appendChild(svgEl('line',{x1:x,x2:x+26,y1:yy-4,y2:yy-4,stroke:GCOL[k],'stroke-width':3,'stroke-dasharray':GDASH[k]}));}
+    txtSvg(s,x+32,yy,se.nombre,{ancla:'start',peso:'bold',color:'#1a2332'});
+  });
+}
+/* barrasDobles(caja, {titulo, etiquetas, series:[{nombre, valores}], min, max, paso, ejeY, ejeX, fmt}) */
+function graficaBarrasDobles(caja,o){
+  var W=anchoG(),H=W<480?300:330,L=50,R=10,T=48,B=W<480?52:48,min=o.min||0,max=o.max,n=o.etiquetas.length;
+  var desc=o.titulo+(o.series.length===1?'. Gráfica de barras. ':'. Gráfica de barras dobles. ')+o.etiquetas.map(function(e,i){return String(e).replace('|',' ')+': '+o.series.map(function(se){return se.nombre+' '+se.valores[i];}).join(', ');}).join('; ');
+  var s=marcoSvg(caja,W,H,desc);
+  var d=svgEl('defs',{}),pid='rayas'+(++GID),p=svgEl('pattern',{id:pid,width:6,height:6,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'});
+  p.appendChild(svgEl('rect',{width:6,height:6,fill:'#fff'}));p.appendChild(svgEl('line',{x1:0,y1:0,x2:0,y2:6,stroke:GCOL[1],'stroke-width':4}));d.appendChild(p);s.appendChild(d);
+  cuadricula(s,W,L,R,T,B,H,min,max,o.paso,o.fmt);
+  var ancho=(W-L-R)/n,bw=o.series.length===1?Math.min(56,ancho*0.6):Math.min(30,ancho*0.36);
+  o.etiquetas.forEach(function(e,i){
+    o.series.forEach(function(se,k){
+      var v=se.valores[i],x=L+ancho*i+ancho/2-(o.series.length===1?(bw-2)/2:bw)+k*bw,h=(H-T-B)*(v-min)/(max-min),y=H-B-h;
+      var r=svgEl('rect',{x:x,y:y,width:bw-2,height:h,fill:k===1?'url(#'+pid+')':GCOL[k],stroke:GCOL[k],'stroke-width':1.5});
+      r.appendChild(svgEl('title',{},String(e).replace('|',' ')+', '+se.nombre+': '+v+(o.unidad||'')));s.appendChild(r);
+      txtSvg(s,x+(bw-2)/2,y-5,v,{tam:11,peso:'bold',color:'#1a2332'});
+    });
+    etiq(s,L+ancho*i+ancho/2,H-B+18,e,W);
+  });
+  s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:'#555','stroke-width':1.5}));
+  rotulos(s,W,H,L,R,T,B,o); leyenda(s,L+10,18,o.series,'barra',pid);
+}
+/* lineas(caja, {titulo, etiquetas, series:[{nombre, valores}], min, max, paso, ejeY, ejeX, unidad, valoresVisibles}) */
+function graficaLineas(caja,o){
+  var W=anchoG(),H=W<480?300:320,L=50,R=W<480?14:24,T=52,B=48,min=o.min||0,max=o.max,n=o.etiquetas.length;
+  var s=marcoSvg(caja,W,H,o.titulo+'. Gráfica de líneas. '+o.series.map(function(se){return se.nombre+': '+o.etiquetas.map(function(e,i){return e+' '+se.valores[i];}).join(', ');}).join('. '));
+  function Y(v){return T+(H-T-B)*(1-(v-min)/(max-min));} function X(i){return L+(W-L-R)*i/(n-1);}
+  cuadricula(s,W,L,R,T,B,H,min,max,o.paso);
+  o.etiquetas.forEach(function(e,i){if(W<480&&n>8&&i%2)return;txtSvg(s,X(i),H-B+18,e,{tam:W<480?10:11});});
+  o.series.forEach(function(se,k){
+    var c=GCOL[k],d=se.valores.map(function(v,i){return (i?'L':'M')+X(i)+','+Y(v);}).join(' ');
+    s.appendChild(svgEl('path',{d:d,fill:'none',stroke:c,'stroke-width':3,'stroke-linejoin':'round','stroke-dasharray':GDASH[k]}));
+    se.valores.forEach(function(v,i){
+      var m=k%2===0?svgEl('circle',{cx:X(i),cy:Y(v),r:4.5,fill:c,stroke:'#fff','stroke-width':1.5}):svgEl('rect',{x:X(i)-4.5,y:Y(v)-4.5,width:9,height:9,fill:c,stroke:'#fff','stroke-width':1.5});
+      m.appendChild(svgEl('title',{},se.nombre+', '+o.etiquetas[i]+': '+v+(o.unidad||'')));s.appendChild(m);
+      if(o.valoresVisibles&&(W>=480||n<=7))txtSvg(s,X(i),Y(v)+(k===0?-9:18),v,{tam:10.5,color:'#1a2332'});
+    });
+  });
+  s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:'#555','stroke-width':1.5}));
+  rotulos(s,W,H,L,R,T,B,o); leyenda(s,L+10,18,o.series,'linea');
+}
+/* Tabla de datos accesible, plegada debajo de la gráfica */
+function tablaDatos(caja,titulo,cabeceras,filas){
+  var h='<details class="ver-datos"><summary>Ver los datos en una tabla</summary><div class="tabla-ancha"><table class="tabla"><caption class="sr-solo">'+titulo+'</caption><thead><tr>'+cabeceras.map(function(c){return '<th scope="col">'+c+'</th>';}).join('')+'</tr></thead><tbody>'+
+    filas.map(function(f){return '<tr>'+f.map(function(c){return '<td>'+c+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div></details>';
+  caja.insertAdjacentHTML('beforeend',h);
+}
+/* Devuelve el SVG como texto (para los ejercicios) */
+function svgTexto(fn,o){var d=document.createElement('div');fn(d,o);return d.innerHTML;}
+/* Reproductores de escucha: velocidad, dos pasadas y parar */
+document.querySelectorAll('.escucha').forEach(function(c){
+  var vel=0.95, est=c.querySelector('.estado-esc');
+  c.querySelectorAll('.vel').forEach(function(b){b.addEventListener('click',function(){
+    vel=parseFloat(b.dataset.v); c.querySelectorAll('.vel').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+  });});
+  c.querySelectorAll('[data-audio]').forEach(function(b){b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.audio).textContent.replace(/\s+/g,' ').trim();
+    est.textContent=b.dataset.p==='1'?'🎧 Primera pasada: escucha sin escribir. ¿De qué trata?':'✏️ Segunda pasada: anota nombres, números y palabras clave.';
+    hablar(t,vel,function(){est.textContent=b.dataset.p==='1'?'Terminó la primera pasada. ¿Cuál es la idea general? Ahora escucha otra vez para los detalles.':'Terminó la segunda pasada. Responde las preguntas y comprueba con la transcripción.';});
+  });});
+  c.querySelector('.parar').addEventListener('click',function(){callar(); est.textContent='Audio detenido.';});
+});
+
+/* Gráfica de la presentación: población de Chicago por censo (datos reales) */
+(function(){
+  var A=['1900','1910','1920','1930','1940','1950','1960','1970','1980','1990','2000','2010','2020'];
+  var P=[1698575,2185283,2701705,3376438,3396808,3620962,3550404,3366957,3005072,2783726,2896016,2695598,2746388];
+  var M=P.map(function(p){return Math.round(p/10000)/100;});
+  graficaLineas(document.getElementById('graf-chicago'),{titulo:'Población de la ciudad de Chicago según el censo, 1900 a 2020, en millones',etiquetas:A,
+    series:[{nombre:'Población (millones)',valores:M}],min:1,max:4,paso:0.5,ejeY:'Millones de habitantes',unidad:' millones',valoresVisibles:true});
+  tablaDatos(document.getElementById('graf-chicago'),'Población de Chicago por censo',['Año','Habitantes'],A.map(function(a,i){return [a,P[i].toLocaleString('en-US').replace(/,/g,' ')];}));
+})();
+
+clasificador('clasif-preparado','puntaje-preparado',[
+  {p:'¿Quién llega mejor preparado a la discusión?',ops:['Marta: trae su posición, dos datos con su fuente y una pregunta','Jorge: piensa decir lo que se le ocurra en el momento de hablar','Lidia: leyó el título del artículo en el autobús, camino a la mesa'],c:0,n:'Posición, evidencia y una pregunta: la hoja de preparación completa.'},
+  {p:'¿Para qué sirve anotar una <strong>objeción</strong> que te pueden hacer?',ops:['Para tener pensada una respuesta antes de la discusión','Para cambiar de posición en cuanto alguien empiece a hablar','Para decirla tú primero y así ganar la discusión'],c:0,n:'Así no te toma por sorpresa y respondes con calma.'}
+],null,false);
+
+clasificador('clasif-mesa','puntaje-mesa',[
+  {p:'¿Qué norma rompe Pedro?',ops:['Interrumpe a Carmen mientras habla','Habla de un tema que no es el de la mesa','Usa un dato que no tiene ninguna fuente'],c:0,n:'«¡Pero eso no tiene nada que ver!» mientras Carmen hablaba.'},
+  {p:'¿Cómo arregla Pedro su error?',ops:['Se disculpa y parafrasea a Carmen antes de responder','Repite su idea más fuerte para que todos lo oigan','Se queda callado el resto de la discusión'],c:0,n:'«Disculpa, Carmen. Lo que dices es que…».'},
+  {p:'¿Qué hace Carmen antes de discrepar con Luis?',ops:['Parafrasea lo que dijo Luis','Le pide a Luis la fuente de su dato','Cambia de tema para no discutir'],c:0,n:'«Si entiendo bien, Luis dice que…».'},
+  {p:'¿Qué hace Ana con su intervención?',ops:['Pide un dato que falta para poder decidir','Ataca a Pedro porque no está de acuerdo','Resume todo lo que se dijo en la mesa'],c:0,n:'Pregunta por el costo: una pregunta que hace avanzar la discusión.'},
+  {p:'¿Qué papel cumple Rosa al final?',ops:['Resume las posiciones y lo que queda pendiente','Da su propia opinión y cierra el tema','Anuncia quién ganó la discusión'],c:0,n:'Es la moderadora y, además, hace de relatora.'}
+],null,false);
+
+clasificador('clasif-parafrasea','puntaje-parafrasea',[
+  {p:'Luis dice: <em>«Mi hijo sale a las seis y media y llega dormido; además, los CDC dicen que la mayoría duerme menos de ocho horas.»</em> ¿Cuál es la mejor paráfrasis?',ops:['Si entiendo bien, dices que los jóvenes no duermen lo suficiente, y lo ves en tu hijo y en los datos.','O sea, que tu hijo es muy perezoso y no quiere levantarse temprano por las mañanas.','Lo que dices es que los CDC deberían cambiar la hora de entrada de todas las escuelas.'],c:0,n:'Conserva la idea, es más breve y no añade opiniones. Las otras cambian lo que dijo.'},
+  {p:'Ana dice: <em>«Sin saber cuánto costó en California, no podemos saber si aquí es posible.»</em> ¿Cuál es la mejor paráfrasis?',ops:['Lo que planteas es que nos falta el dato del costo para poder decidir.','O sea, que estás en contra de cambiar el horario de las escuelas.','Lo que dices es que en California el cambio costó demasiado dinero.'],c:0,n:'Ana no dijo que estuviera en contra ni que costara mucho: dijo que falta el dato.'}
+],null,false);
+
+clasificador('clasif-pres','puntaje-pres',[
+  {p:'¿En qué año tuvo Chicago su mayor población?',ops:['En 1950','En 2020','En 1900'],c:0,n:'El punto más alto de la línea: 3.62 millones.'},
+  {p:'Según la presentación, ¿qué pasó entre 1950 y 1990?',ops:['La ciudad perdió más de 800 000 habitantes','La ciudad duplicó su número de habitantes','La población se mantuvo exactamente igual'],c:0,n:'De 3.62 a 2.78 millones: unos 837 000 menos.'},
+  {p:'¿Qué dato de la presentación viene de los historiadores y <strong>no</strong> de la gráfica?',ops:['Que muchas familias se mudaron a los suburbios','Que en 1950 vivían 3.6 millones de personas','Que en 2000 hubo una pequeña recuperación'],c:0,n:'La gráfica muestra cuánto bajó, no por qué. La causa la explica el presentador citando a los historiadores.'},
+  {p:'¿Cuál es el mejor resumen de la presentación?',ops:['Chicago creció hasta 1950, perdió población hasta 1990 y desde entonces se ha mantenido estable.','En 1900 Chicago tenía 1.7 millones y en 1910 tenía 2.2 millones de habitantes.','Chicago es una ciudad muy grande que tiene muchos habitantes desde hace años.'],c:0,n:'Da la tendencia completa. La segunda solo lee dos números; la tercera no dice nada concreto.'}
+],null,false);
+
+iniciarQuiz([
+  {t:'¿Qué significa llegar <strong>preparado</strong> a una discusión colegiada?',o:['Traer una posición, evidencia con su fuente y una pregunta','Haber dormido bien la noche antes de la reunión del grupo','Llevar escrito todo lo que se va a decir, palabra por palabra'],c:0,r:'<a href="#s-1-preparado">Sección 1</a>'},
+  {t:'¿Quién acuerda las normas de una discusión colegiada?',o:['El propio grupo, antes de empezar','Solo el participante que habla más','Nadie: cada uno hace lo que quiere'],c:0,r:'<a href="#s-2-normas">Sección 2</a>'},
+  {t:'¿Qué hace el <strong>relator</strong>?',o:['Toma notas y resume al final','Da la palabra a los participantes','Cuida que nadie pase del minuto'],c:0,r:'<a href="#s-2-normas">Sección 2</a>'},
+  {t:'¿Cuál es una forma respetuosa de discrepar?',o:['«No estoy de acuerdo con ese punto, porque…»','«Eso que dices es una tontería.»','«Tú nunca sabes de lo que hablas.»'],c:0,r:'<a href="#s-2-normas">Sección 2</a>'},
+  {t:'En la discusión modelo, ¿qué propone Pedro para resolver el problema del transporte?',o:['Pedir más autobuses','Que los padres entren más tarde al trabajo','Que los jóvenes caminen a la escuela'],c:0,r:'<a href="#s-3-mesa">Sección 3</a>'},
+  {t:'¿Qué queda pendiente al final de la discusión modelo?',o:['Averiguar cuánto costó el cambio en California','Decidir quién será el próximo moderador','Votar si se cambia el horario de la escuela'],c:0,r:'<a href="#s-3-mesa">Sección 3</a>'},
+  {t:'¿Para qué sirve parafrasear a otro antes de responderle?',o:['Para mostrar que escuchaste y comprobar que entendiste','Para ganar tiempo mientras piensas qué decir','Para repetir su idea y hacerla tuya'],c:0,r:'<a href="#s-4-parafrasear">Sección 4</a>'},
+  {t:'¿Qué frase sirve para parafrasear?',o:['«Si entiendo bien, lo que dices es que…»','«Yo opino exactamente lo contrario.»','«Eso no tiene nada que ver con el tema.»'],c:0,r:'<a href="#s-4-parafrasear">Sección 4</a>'},
+  {t:'Una buena paráfrasis oral…',o:['es más corta y conserva la idea principal','es más larga y añade tu opinión','repite las mismas palabras exactas'],c:0,r:'<a href="#s-4-parafrasear">Sección 4</a>'},
+  {t:'Según la gráfica, ¿cuántos habitantes tenía Chicago en 2020, aproximadamente?',o:['2.7 millones','3.6 millones','1.7 millones'],c:0,r:'<a href="#s-5-presentacion">Sección 5</a>'},
+  {t:'Según la presentación, Chicago tiene hoy una población parecida a la de…',o:['1920','1950','1900'],c:0,r:'<a href="#s-5-presentacion">Sección 5</a>'},
+  {t:'Para resumir una gráfica, ¿qué conviene decir?',o:['Qué se mide, la tendencia, el punto más alto o más bajo y qué significa','Todos los números de la gráfica, uno por uno y en el mismo orden','Solo el último número de la gráfica y el título que aparece arriba'],c:0,r:'<a href="#s-5-presentacion">Sección 5</a>'}
+],{meta:10,
+   bien:'Ya llegas preparado a una discusión, sigues las normas, parafraseas a los demás y resumes información que escuchas y ves. Sigue con la Lección 8.3.',
+   repaso:'Vuelve a las secciones 2 a 5 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

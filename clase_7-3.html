@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!-- Lección 7.3 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 7.3 · Escribir en las materias: evidencia y tono objetivo</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+  /* ── Tema 7: taller de escritura, plantilla, rúbrica y marcas ── */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:200px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .plantilla{background:#fff;border:2px dashed var(--cp);border-radius:10px;padding:10px 16px;margin:10px 0}
+  .plantilla p{margin:6px 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+  /* Marcas en los textos modelo: color + borde distinto + etiqueta escrita */
+  .m-te{background:#ede9fe;color:#3b1578;border-bottom:3px solid #4c1d95;font-weight:600}
+  .m-ra{background:#fff3e0;color:#6b3300;border-bottom:3px dashed #8a4b00}
+  .m-he{background:#e3f2fd;color:#0d3c78;border-bottom:3px dotted #0d3c78}
+  .m-tr{background:#e8f5e9;color:#1b5e20;border:2px solid #2e7d32;border-radius:4px;padding:0 3px;font-weight:700}
+  .etq{font-weight:700;font-size:.8em;white-space:nowrap}
+  .oculta-marcas .m-te,.oculta-marcas .m-ra,.oculta-marcas .m-he,.oculta-marcas .m-tr{background:none;color:inherit;border:none;font-weight:inherit;padding:0}
+  .oculta-marcas .etq{display:none}
+  .leyenda-marcas{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;font-size:.92rem}
+  .leyenda-marcas span{padding:2px 8px}
+  .subjetivo{border-left:6px solid #b91c1c;background:#fff5f5}
+  .subjetivo::before{content:"✖️ Tono subjetivo";display:block;font-weight:700;color:#8b1414;margin-bottom:4px;font-family:inherit}
+</style>
+</head>
+<body>
+<h1>Lección 7.3 · Escribir en las materias: evidencia y tono objetivo</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 7: Escritura argumentada e informativa con análisis · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Escribir una <strong>afirmación</strong> propia de una materia (historia o ciencias) y apoyarla con <strong>evidencia de una fuente</strong>.</li>
+    <li><strong>Citar</strong> bien: con comillas, con la fuente y con la puntuación correcta.</li>
+    <li>Mantener un <strong>tono objetivo</strong> y <strong>revisar</strong> el texto con herramientas digitales.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.W.PD.2 · WHST.6-8.1 · WHST.6-8.9</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-materias">Argumentar en historia y en ciencias</a></li>
+    <li><a href="#s-2-fuente">La fuente: Brown contra el Consejo de Educación</a></li>
+    <li><a href="#s-3-modelo">El argumento modelo</a></li>
+    <li><a href="#s-4-citar">Citar la evidencia</a></li>
+    <li><a href="#s-5-tono">El tono objetivo</a></li>
+    <li><a href="#s-6-revisar">Revisar con tecnología</a></li>
+    <li><a href="#s-7-taller">Taller: tu argumento con evidencia</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>En los exámenes de Estudios Sociales y de Ciencias del GED hay preguntas de respuesta escrita: te dan una fuente y te piden una afirmación apoyada en ella. No basta con saber del tema: hay que <strong>mostrar en la fuente</strong> de dónde sale lo que dices, y decirlo con la voz neutral de un historiador o de un científico. Esta lección une todo el Tema 7: la tesis y las razones de la 7.1, la precisión de la 7.2 y, ahora, la evidencia citada y el tono.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-materias">
+<summary>1. Argumentar en historia y en ciencias <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>En las materias, un argumento breve tiene tres piezas:</p>
+<table class="tabla">
+  <caption class="sr-solo">Las tres piezas de un argumento en las materias, con ejemplos de historia y de ciencias</caption>
+  <thead><tr><th scope="col">Pieza</th><th scope="col">Qué es</th><th scope="col">En historia</th><th scope="col">En ciencias</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Afirmación</strong></td><td>Lo que sostienes, sobre la materia.</td><td>«La Orden 8802 fue el resultado de la presión de la marcha anunciada.»</td><td>«La luz es necesaria para que la planta se mantenga sana.»</td></tr>
+    <tr><td><strong>Evidencia</strong></td><td>Lo que dice la fuente, citado o parafraseado.</td><td>Las fechas del documento y lo que dice la orden.</td><td>Los datos del experimento: altura, color de las hojas.</td></tr>
+    <tr><td><strong>Razonamiento</strong></td><td>Por qué esa evidencia prueba la afirmación.</td><td>Explica la relación entre la amenaza y la firma.</td><td>Explica el dato con la fotosíntesis.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 La diferencia con la Lección 7.1:</strong> allí podías buscar hechos donde quisieras. Aquí la evidencia sale de <strong>una fuente dada</strong>, y el lector tiene que poder encontrarla en ella.</div>
+</div>
+</details>
+
+<details id="s-2-fuente">
+<summary>2. La fuente: Brown contra el Consejo de Educación <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>En 1896, en <em>Plessy contra Ferguson</em>, el Tribunal Supremo había aceptado que se separara a las personas por su raza si las instalaciones eran «iguales». En 1954, el tribunal revisó esa doctrina en el caso <em>Brown contra el Consejo de Educación de Topeka</em>. Estos son tres pasajes de su decisión unánime, escrita por el presidente del tribunal, Earl Warren:</p>
+<div class="texto-lectura" id="fuente">
+  <h3 style="margin-top:0">Brown contra el Consejo de Educación (17 de mayo de 1954) · Pasajes</h3>
+  <p><span class="num-p" aria-hidden="true">1</span>Llegamos entonces a la cuestión planteada: la segregación de los niños en las escuelas públicas únicamente por razón de la raza, aun cuando las instalaciones físicas y otros factores “tangibles” sean iguales, ¿priva a los niños del grupo minoritario de una igualdad de oportunidades educativas? Creemos que sí.</p>
+  <p><span class="num-p" aria-hidden="true">2</span>Separarlos de otros de edad y aptitudes semejantes únicamente por su raza genera un sentimiento de inferioridad respecto de su posición en la comunidad, que puede afectar a su corazón y a su entendimiento de un modo que difícilmente se deshaga nunca.</p>
+  <p><span class="num-p" aria-hidden="true">3</span>Concluimos que, en el campo de la educación pública, la doctrina de “separados pero iguales” no tiene cabida. Las instalaciones educativas separadas son intrínsecamente desiguales.</p>
+  <p style="font-size:.9rem;margin-bottom:0"><em>Traducción del Archivo de fuentes de GEDparaHispanos, cotejada con la transcripción de los Archivos Nacionales.</em> <a href="https://zhemaria.github.io/sociales/fuentes/brown-v-board-1954.html" target="_blank" rel="noopener noreferrer">Ver el documento completo en el Archivo de fuentes</a> (se abre en una pestaña nueva).</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-fuente">🔊 Escuchar los pasajes</button>
+</div>
+<div class="tip"><strong>💡 Comillas dentro de comillas:</strong> en esta lección, el texto de la fuente usa comillas inglesas (“ ”) para sus propias citas, porque cuando tú lo cites irá dentro de comillas latinas (« »). En español, el orden es « “ ‘ ’ ” ».</div>
+</div>
+</details>
+
+<details id="s-3-modelo">
+<summary>3. El argumento modelo <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<div class="leyenda-marcas" aria-label="Leyenda de las marcas">
+  <span class="m-te">Afirmación</span><span class="m-he">Evidencia citada</span><span class="m-ra">Razonamiento</span>
+</div>
+<div class="texto-lectura oculta-marcas" id="modelo">
+  <h3 style="margin-top:0">Argumento modelo · tono objetivo</h3>
+  <p><span class="m-te">En <em>Brown contra el Consejo de Educación</em> (1954), el Tribunal Supremo rechazó la doctrina de «separados pero iguales» porque concluyó que la segregación escolar perjudicaba a los niños aunque las escuelas fueran materialmente iguales.<span class="etq"> [afirmación]</span></span> <span class="m-he">El tribunal planteó si la segregación priva a los niños de igualdad de oportunidades «aun cuando las instalaciones físicas y otros factores “tangibles” sean iguales», y respondió: «Creemos que sí» (pasaje 1).<span class="etq"> [evidencia]</span></span> <span class="m-he">Según la decisión, separar a los niños por su raza «genera un sentimiento de inferioridad respecto de su posición en la comunidad» (pasaje 2).<span class="etq"> [evidencia]</span></span> <span class="m-ra">Este razonamiento cambió el centro del debate: ya no importaba solo si los edificios o los libros eran iguales, sino el efecto de la separación misma.<span class="etq"> [razonamiento]</span></span> <span class="m-ra">Por esa razón, el tribunal pudo concluir que las escuelas separadas «son intrínsecamente desiguales» (pasaje 3), es decir, desiguales por su propia naturaleza.<span class="etq"> [razonamiento con evidencia]</span></span></p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-modelo">🔊 Escuchar el modelo</button>
+  <button type="button" class="btn btn-secundario" id="ver-partes" aria-pressed="false">Mostrar las partes</button>
+</div>
+<p>Ahora compáralo con esta versión del mismo tema:</p>
+<div class="texto-lectura subjetivo">
+  <p>Yo creo que la decisión de Brown fue increíble y que los jueces por fin hicieron lo correcto. ¡Obviamente la segregación era terrible y cualquiera se daba cuenta! Los jueces dijeron que separar a los niños estaba mal y punto. Fue el mejor día de la historia del país.</p>
+</div>
+<div class="clasificador apilado" id="clasif-modelo"></div>
+<div class="puntaje" id="puntaje-modelo" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-4-citar">
+<summary>4. Citar la evidencia <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Hay dos maneras de usar la evidencia de una fuente:</p>
+<ul class="lista-bonita">
+  <li><span class="palabra-clave">Cita directa</span>: copias las palabras exactas, entre comillas latinas (« »). Úsala cuando las palabras mismas son importantes: «son intrínsecamente desiguales».</li>
+  <li><span class="palabra-clave">Paráfrasis</span>: dices la idea con tus palabras, sin comillas, pero sigues diciendo de dónde sale: <em>Según el tribunal, la separación hacía sentir inferiores a los niños.</em></li>
+</ul>
+<h3>Cuatro reglas para citar bien</h3>
+<table class="tabla">
+  <caption class="sr-solo">Reglas para citar, con ejemplos correctos e incorrectos</caption>
+  <thead><tr><th scope="col">Regla</th><th scope="col">✔️ Así</th><th scope="col">✖️ No así</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Presenta la cita:</strong> di quién lo dice.</td><td>Según el tribunal, la segregación «genera un sentimiento de inferioridad».</td><td>«Genera un sentimiento de inferioridad». (¿Quién lo dice?)</td></tr>
+    <tr><td><strong>Cita lo que necesitas:</strong> la parte que prueba tu afirmación.</td><td>Las escuelas separadas «son intrínsecamente desiguales».</td><td>Copiar el párrafo entero.</td></tr>
+    <tr><td><strong>Respeta las palabras exactas.</strong> Si quitas algo, pon […].</td><td>«La segregación […] priva a los niños…»</td><td>Cambiar palabras dentro de las comillas.</td></tr>
+    <tr><td><strong>Puntúa como en español:</strong> el punto va después de cerrar las comillas.</td><td>…«Creemos que sí».</td><td>…«Creemos que sí.»</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 Repaso:</strong> la regla del punto después de las comillas la viste en la <a href="https://zhemaria.github.io/clases_leng3/clase_2-1.html" target="_blank" rel="noopener noreferrer" style="color:var(--cp-oscuro);font-weight:700">Lección 2.1</a>.</div>
+<h3>¿Qué evidencia sirve?</h3>
+<div class="clasificador apilado" id="clasif-evidencia"></div>
+<div class="puntaje" id="puntaje-evidencia" role="status" aria-live="polite"></div>
+<h3>¿Qué cita está bien hecha?</h3>
+<div class="clasificador apilado" id="clasif-cita"></div>
+<div class="puntaje" id="puntaje-cita" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l7-3.html#evidencia" target="_blank" rel="noopener noreferrer">🔎 Practica más: la evidencia relevante
+  <span>Afirmaciones de historia y de ciencias con varias citas: eliges la que de verdad la prueba. Se abre en una pestaña nueva.</span></a>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l7-3.html#cita" target="_blank" rel="noopener noreferrer">«» Practica más: la cita bien hecha
+  <span>Citas con y sin presentación, exactas o cambiadas, bien o mal puntuadas.</span></a>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> «Argumenta con evidencia». Uno escribe una afirmación sobre la fuente de Brown. El otro busca en los pasajes la cita que mejor la apoya y la lee en voz alta, presentándola con «Según…».</div>
+</div>
+</details>
+
+<details id="s-5-tono">
+<summary>5. El tono objetivo <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>El <span class="palabra-clave">tono objetivo</span> es la voz de quien informa o argumenta con pruebas, no con emociones. No significa no tener postura: el argumento modelo defiende una afirmación, pero lo hace con evidencia y con palabras neutrales.</p>
+<table class="tabla">
+  <caption class="sr-solo">Cómo pasar de un tono subjetivo a uno objetivo</caption>
+  <thead><tr><th scope="col">✖️ Subjetivo</th><th scope="col">✔️ Objetivo</th><th scope="col">Qué cambió</th></tr></thead>
+  <tbody>
+    <tr><td>Yo creo que la decisión fue increíble.</td><td>La decisión rechazó una doctrina vigente desde 1896.</td><td>Sin «yo creo»; un hecho en lugar de un adjetivo emocional.</td></tr>
+    <tr><td>¡Obviamente la segregación era terrible!</td><td>El tribunal concluyó que la segregación perjudicaba a los niños.</td><td>Sin exclamación, sin «obviamente»; se atribuye a la fuente.</td></tr>
+    <tr><td>Los jueces dijeron que estaba mal y punto.</td><td>Los jueces sostuvieron que las escuelas separadas eran desiguales.</td><td>Verbo preciso (<em>sostuvieron</em>) y la idea exacta.</td></tr>
+  </tbody>
+</table>
+<p>Verbos útiles para presentar lo que dice una fuente: <em>afirma, sostiene, concluye, explica, señala, plantea, muestra, indica</em>.</p>
+<div class="clasificador" id="clasif-tono"></div>
+<div class="puntaje" id="puntaje-tono" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l7-3.html#tono" target="_blank" rel="noopener noreferrer">⚖️ Practica más: ¿objetivo o subjetivo?
+  <span>Oraciones de historia y de ciencias para clasificar y reescribir en tono objetivo. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-6-revisar">
+<summary>6. Revisar con tecnología <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>Revisar no es «pasarle el corrector». Cada herramienta encuentra un tipo distinto de problema:</p>
+<table class="tabla">
+  <caption class="sr-solo">Herramientas digitales de revisión y para qué sirve cada una</caption>
+  <thead><tr><th scope="col">Herramienta</th><th scope="col">Encuentra…</th><th scope="col">Ojo con…</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Corrector ortográfico en español</strong> (las palabras subrayadas en rojo)</td><td>Palabras mal escritas y algunas tildes.</td><td>No detecta palabras bien escritas pero mal usadas: <em>haber / a ver, esta / está</em>. Comprueba que esté en español.</td></tr>
+    <tr><td><strong>Escuchar el texto</strong> (el botón 🔊 del taller)</td><td>Oraciones demasiado largas, palabras repetidas, ideas que no se entienden.</td><td>Escucha con el texto delante y marca donde te pierdes.</td></tr>
+    <tr><td><strong>Buscar</strong> (Ctrl + F o «Buscar en la página»)</td><td>Palabras que repites demasiado: <em>muy, cosa, también</em>.</td><td>Busca también tus comillas: ¿cada cita tiene su fuente?</td></tr>
+    <tr><td><strong>Comentarios de un compañero</strong> (en el foro del curso o en un documento compartido)</td><td>Lo que no se entiende desde fuera.</td><td>Pídele que responda tres preguntas concretas (ver la tarea).</td></tr>
+  </tbody>
+</table>
+<div class="clasificador" id="clasif-herramienta"></div>
+<div class="puntaje" id="puntaje-herramienta" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-7-taller">
+<summary>7. Taller: tu argumento con evidencia <span class="caja-tiempo">40 min</span></summary>
+<div class="contenido-detalle">
+<p><strong>Elige una fuente</strong> y escribe un argumento breve (un párrafo de 5 a 8 oraciones) con una afirmación, al menos <strong>dos citas</strong> presentadas y un razonamiento:</p>
+<ul class="lista-bonita">
+  <li><strong>Historia:</strong> los pasajes de Brown de la sección 2, o la <a href="https://zhemaria.github.io/sociales/fuentes/orden-8802-1941.html" target="_blank" rel="noopener noreferrer">Orden Ejecutiva 8802 (1941)</a> del Archivo de fuentes.</li>
+  <li><strong>Ciencias:</strong> el texto «¿Por qué las plantas necesitan luz?» de la <a href="https://zhemaria.github.io/clases_leng3/clase_7-2.html#s-2-modelo" target="_blank" rel="noopener noreferrer">Lección 7.2</a>.</li>
+</ul>
+<div class="plantilla">
+  <p><strong>Afirmación:</strong> En ______, ______ porque ______.</p>
+  <p><strong>Evidencia 1:</strong> Según ______, «______» (pasaje ___).</p>
+  <p><strong>Evidencia 2:</strong> Además, la fuente ______ que «______».</p>
+  <p><strong>Razonamiento:</strong> Esto muestra que ______. Por esa razón, ______.</p>
+</div>
+<div class="taller" id="taller-73"></div>
+<h3>Rúbrica: así se evaluará tu texto</h3>
+<table class="tabla rubrica">
+  <caption class="sr-solo">Rúbrica de la escritura en las materias: cuatro criterios en cuatro niveles</caption>
+  <thead><tr><th scope="col">Criterio</th><th scope="col">4 · Excelente</th><th scope="col">3 · Bien</th><th scope="col">2 · En camino</th><th scope="col">1 · Inicial</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Afirmación disciplinar clara</th><td>Precisa, sobre la materia y defendible con la fuente</td><td>Clara pero general</td><td>Vaga o solo resume la fuente</td><td>No hay afirmación</td></tr>
+    <tr><th scope="row">Evidencia relevante de la fuente</th><td>Dos o más citas presentadas, exactas y pertinentes</td><td>Dos citas; una poco pertinente o sin presentar</td><td>Una cita, o citas sin fuente</td><td>Sin evidencia de la fuente</td></tr>
+    <tr><th scope="row">Tono objetivo</th><td>Neutral en todo el texto, con verbos precisos</td><td>Neutral con algún adjetivo emocional</td><td>Mezcla de opinión personal y evidencia</td><td>Tono personal y emocional</td></tr>
+    <tr><th scope="row">Revisión con tecnología</th><td>Usó corrector, escucha y comentarios; el texto final lo muestra</td><td>Usó dos herramientas</td><td>Usó solo el corrector</td><td>No hay revisión visible</td></tr>
+  </tbody>
+</table>
+<p style="font-size:.92rem">Total: 16 puntos.</p>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>8. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Publica tu argumento</strong> en el foro del curso.</li>
+  <li><strong>Revisa el de un compañero</strong> con un comentario que responda: 1) ¿Cuál es su afirmación? 2) ¿Qué cita la apoya mejor? 3) ¿Hay alguna palabra que no suene objetiva?</li>
+  <li><strong>Corrige tu texto</strong> con los comentarios que recibas y publica la versión final, diciendo qué cambiaste.</li>
+</ul>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>9. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Varias preguntas se refieren a los pasajes de la sección 2 y al argumento modelo. Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>10. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Un argumento en las materias tiene afirmación, evidencia de la fuente y razonamiento.</li>
+  <li>La cita se presenta («Según…»), es exacta, es la parte necesaria y lleva el punto después de las comillas.</li>
+  <li>El tono objetivo no usa «yo creo», exclamaciones ni adjetivos emocionales; usa verbos precisos.</li>
+  <li>Cada herramienta de revisión encuentra un problema distinto; juntas, mejoran el texto.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Qué cita de Brown usarías para probar que el tribunal se fijó en el daño a los niños?</li>
+    <li>¿Puedes convertir «¡Fue una decisión increíble!» en una oración objetiva?</li>
+    <li>¿Qué problema encuentra el botón 🔊 que no encuentra el corrector?</li>
+  </ul>
+</div>
+<div class="tip"><strong>🎉 Terminaste el Tema 7.</strong> <strong>➡️ Sigue con el Tema 8:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_8-1.html" style="color:var(--cp-oscuro);font-weight:700">Lección 8.1 · Proyecto de investigación corto: fuentes, notas y paráfrasis</a>.</div>
+<p style="font-size:.9rem"><strong>Fuente:</strong> <em>Brown v. Board of Education of Topeka</em>, 347 U.S. 483 (1954), traducción del Archivo de fuentes de GEDparaHispanos, cotejada con la transcripción de los Archivos Nacionales.</p>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 7 · Lección 7.3</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+/* ===== Taller de escritura (Tema 7) =====
+   tallerEscritura('id-caja',{clave:'n2-7-1', conectores:[...], meta:{oraciones:6, palabras:60}, lista:['…','…']})
+   Arma: área de texto, contadores, conectores detectados, lista de revisión, escuchar, copiar y borrar.
+   El borrador se guarda en este navegador (si el navegador lo permite). */
+function tallerEscritura(id,o){
+  var caja=document.getElementById(id), k='gph-borrador-'+o.clave;
+  var h='<label class="tl-etq" for="'+id+'-txt">'+(o.etiqueta||'Escribe aquí tu texto')+'</label>'+
+    '<textarea class="tl-txt" id="'+id+'-txt" rows="10" spellcheck="true" lang="es"'+(o.guia?' placeholder="'+o.guia.replace(/"/g,'&quot;')+'"':'')+'></textarea>'+
+    '<div class="tl-cuenta" id="'+id+'-cuenta" aria-live="polite"></div>';
+  if(o.conectores)h+='<div class="tl-conect" id="'+id+'-con" aria-live="polite"></div>';
+  h+='<div class="botones" style="justify-content:flex-start">'+
+    '<button type="button" class="btn btn-secundario" id="'+id+'-oir">🔊 Escuchar mi texto</button>'+
+    '<button type="button" class="btn btn-secundario" id="'+id+'-copiar">📋 Copiar mi texto</button>'+
+    '<button type="button" class="btn btn-secundario" id="'+id+'-borrar">🗑️ Borrar</button></div>'+
+    '<div class="tl-aviso" id="'+id+'-aviso" role="status" aria-live="polite"></div>';
+  if(o.lista){
+    h+='<fieldset class="tl-lista"><legend>✅ Revisa tu texto antes de entregarlo</legend>'+
+      o.lista.map(function(t,i){return '<label><input type="checkbox" id="'+id+'-c'+i+'"> '+t+'</label>';}).join('')+
+      '<p class="tl-listo" id="'+id+'-listo" aria-live="polite"></p></fieldset>';
+  }
+  caja.innerHTML=h;
+  var ta=document.getElementById(id+'-txt'), cu=document.getElementById(id+'-cuenta'), co=document.getElementById(id+'-con'), av=document.getElementById(id+'-aviso');
+  try{var g=localStorage.getItem(k); if(g)ta.value=g;}catch(e){}
+  function avisar(t){av.textContent=t; clearTimeout(avisar.t); avisar.t=setTimeout(function(){av.textContent='';},4000);}
+  function contar(){
+    var t=ta.value.trim(), pal=t?t.split(/\s+/).length:0, ora=(t.match(/[^.!?…]+[.!?…]+/g)||[]).length;
+    var m=o.meta||{}, s='Palabras: '+pal+(m.palabras?' (meta: '+m.palabras+' o más)':'')+' · Oraciones: '+ora+(m.oraciones?' (meta: '+m.oraciones+' o más)':'');
+    if(m.oraciones&&ora>=m.oraciones&&(!m.palabras||pal>=m.palabras))s+=' · 🎯 ¡Llegaste a la meta de extensión!';
+    cu.textContent=s;
+    if(co){
+      var low=' '+t.toLowerCase().replace(/[.,;:¡!¿?«»"()—]/g,' ')+' ', us=o.conectores.filter(function(c){return low.indexOf(' '+c.toLowerCase()+' ')>=0;});
+      co.innerHTML=us.length?(o.titLista||'Conectores que usaste')+': '+us.map(function(c){return '<span class="tl-chip">'+c+'</span>';}).join(' '):(o.vacioLista||'Todavía no aparece ningún conector de la lista. Recuerda unir tus ideas con ellos.');
+    }
+    try{localStorage.setItem(k,ta.value);}catch(e){}
+  }
+  ta.addEventListener('input',contar); contar();
+  document.getElementById(id+'-oir').addEventListener('click',function(){
+    if(!ta.value.trim()){avisar('Primero escribe algo para poder escucharlo.');return;}
+    hablar(ta.value,0.9);
+  });
+  document.getElementById(id+'-copiar').addEventListener('click',function(){
+    if(!ta.value.trim()){avisar('Todavía no hay texto para copiar.');return;}
+    function ok(){avisar('✓ Texto copiado. Ya puedes pegarlo en el foro o en un correo.');}
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(ta.value).then(ok,function(){ta.select();document.execCommand('copy');ok();});
+    else{ta.select();document.execCommand('copy');ok();}
+  });
+  var borrarListo=false;
+  document.getElementById(id+'-borrar').addEventListener('click',function(){
+    if(!borrarListo){borrarListo=true;avisar('¿Seguro? Pulsa «Borrar» otra vez para borrar todo el texto.');setTimeout(function(){borrarListo=false;},4000);return;}
+    borrarListo=false; ta.value=''; contar(); avisar('Texto borrado.'); ta.focus();
+  });
+  if(o.lista){
+    var cbs=caja.querySelectorAll('.tl-lista input'), li=document.getElementById(id+'-listo');
+    function rev(){var n=Array.prototype.filter.call(cbs,function(c){return c.checked;}).length;var t=ta.value.trim(),m=o.meta||{},pal=t?t.split(/\s+/).length:0,ora=(t.match(/[^.!?…]+[.!?…]+/g)||[]).length,corto=(m.oraciones&&ora<m.oraciones)||(m.palabras&&pal<m.palabras);
+    li.textContent=n<cbs.length?'Revisado: '+n+' de '+cbs.length:(corto?'Marcaste toda la lista, pero tu texto todavía no llega a la meta de extensión. Añade algo más.':'🎉 ¡Todo revisado! Tu texto está listo para compartir.');}
+    ta.addEventListener('input',rev);
+    cbs.forEach(function(c){c.addEventListener('change',rev);}); rev();
+  }
+}
+/* Rúbricas: cada celda recibe el nombre de su nivel para mostrarlo en el móvil */
+document.querySelectorAll('table.rubrica').forEach(function(t){
+  var cab=Array.prototype.map.call(t.querySelectorAll('thead th'),function(th){return th.textContent;});
+  t.querySelectorAll('tbody tr').forEach(function(tr){Array.prototype.forEach.call(tr.children,function(c,i){if(c.tagName==='TD')c.setAttribute('data-et',cab[i]);});});
+});
+
+
+(function(){
+  var m=document.getElementById('modelo'), v=document.getElementById('ver-partes');
+  function leer(id){var c=document.getElementById(id).cloneNode(true); c.querySelectorAll('.etq,.num-p,a').forEach(function(e){e.remove();}); hablar(c.textContent.trim(),0.9);}
+  document.getElementById('leer-fuente').addEventListener('click',function(){leer('fuente');});
+  document.getElementById('leer-modelo').addEventListener('click',function(){leer('modelo');});
+  v.addEventListener('click',function(){var on=!m.classList.toggle('oculta-marcas');v.setAttribute('aria-pressed',on?'true':'false');v.textContent=on?'Ocultar las partes':'Mostrar las partes';});
+})();
+
+clasificador('clasif-modelo','puntaje-modelo',[
+  {p:'¿Cuál es la afirmación del argumento modelo?',ops:['El tribunal rechazó «separados pero iguales» porque la segregación perjudicaba a los niños.','El Tribunal Supremo decidió el caso Brown el 17 de mayo de 1954, por unanimidad.','La segregación en las escuelas fue, sin duda, lo peor de toda la historia del país.'],c:0,n:'Es la primera oración. La segunda es un hecho; la tercera, una opinión emocional.'},
+  {p:'¿De qué pasaje sale la cita «genera un sentimiento de inferioridad»?',ops:['Del pasaje 2','Del pasaje 1','Del pasaje 3'],c:0,n:'El modelo lo indica entre paréntesis: (pasaje 2).'},
+  {p:'¿Por qué la versión «Yo creo que la decisión de Brown fue increíble…» no tiene tono objetivo?',ops:['Usa «yo creo», exclamaciones y adjetivos emocionales en lugar de evidencia','Porque habla de un tema de historia que todavía hoy se discute en las escuelas','Porque es más corta que el argumento modelo y tiene menos datos sobre la fecha'],c:0,n:'Además, no cita la fuente: «estaba mal y punto» no es lo que dijo el tribunal.'},
+  {p:'¿Qué hace la oración «Este razonamiento cambió el centro del debate…»?',ops:['Explica por qué la evidencia prueba la afirmación','Copia palabra por palabra una frase de la fuente','Presenta una objeción contra la afirmación'],c:0,n:'Es el razonamiento: une las citas con la afirmación.'}
+],null,false);
+
+clasificador('clasif-evidencia','puntaje-evidencia',[
+  {p:'Afirmación: <em>El tribunal se fijó en el daño que la segregación causaba a los niños.</em> ¿Qué cita la apoya mejor?',ops:['«genera un sentimiento de inferioridad respecto de su posición en la comunidad»','«la doctrina de “separados pero iguales” no tiene cabida» en la educación pública','«Llegamos entonces a la cuestión planteada» por los cinco casos'],c:0,n:'Habla del efecto en los niños. La segunda es la conclusión legal; la tercera solo introduce la pregunta.'},
+  {p:'Afirmación: <em>Para el tribunal, no bastaba con que los edificios fueran iguales.</em> ¿Qué cita la apoya mejor?',ops:['«aun cuando las instalaciones físicas y otros factores “tangibles” sean iguales»','«puede afectar a su corazón y a su entendimiento de un modo que difícilmente se deshaga»','«Concluimos que, en el campo de la educación pública»'],c:0,n:'Dice que, aunque lo material fuera igual, había privación de oportunidades.'},
+  {p:'Afirmación (ciencias): <em>Sin luz, la planta no puede mantenerse sana.</em> ¿Qué evidencia la apoya mejor?',ops:['«sus hojas salen pálidas o amarillentas porque sin luz no fabrica clorofila»','«Dentro de ella hay dos cotiledones, las “mitades” del frijol, que guardan alimento»','«La fotosíntesis ocurre en los cloroplastos, unas estructuras diminutas de las células»'],c:0,n:'Relaciona la falta de luz con un síntoma de mala salud. Las otras son datos ciertos pero no prueban esta afirmación.'}
+],null,false);
+
+clasificador('clasif-cita','puntaje-cita',[
+  {p:'¿Qué cita está bien hecha?',ops:['Según el tribunal, las escuelas separadas «son intrínsecamente desiguales».','Las escuelas separadas «son intrínsecamente desiguales.» Según el tribunal','«Son intrínsecamente desiguales» y por eso cambió todo, dijo alguien.'],c:0,n:'Se presenta la fuente y el punto va después de las comillas.'},
+  {p:'¿Qué cita respeta las palabras exactas del pasaje 3?',ops:['«Las instalaciones educativas separadas son intrínsecamente desiguales».','«Las escuelas separadas son totalmente desiguales para los niños».','«Las instalaciones separadas son desiguales e injustas siempre».'],c:0,n:'Dentro de las comillas van las palabras exactas. Si cambias palabras, ya no es una cita: es una paráfrasis, sin comillas.'},
+  {p:'¿Qué <strong>paráfrasis</strong> del pasaje 2 es correcta?',ops:['El tribunal explicó que la separación hacía sentir inferiores a los niños negros.','El tribunal dijo «que la separación hacía sentir inferiores a los niños».','La separación hacía sentir inferiores a los niños, y punto, como todos sabían.'],c:0,n:'La paráfrasis va sin comillas y dice de dónde sale la idea.'}
+],null,false);
+
+clasificador('clasif-tono','puntaje-tono',[
+  {p:'«El tribunal concluyó que la doctrina de “separados pero iguales” no tenía cabida en la educación pública.»',c:0,n:'Atribuye la idea a la fuente con un verbo preciso.'},
+  {p:'«¡Qué vergüenza que hubiera escuelas separadas!»',c:1,n:'Exclamación y emoción: no informa nada comprobable.'},
+  {p:'«La planta de la maceta C midió más que las otras, pero sus hojas eran amarillentas.»',c:0,n:'Describe lo observado.'},
+  {p:'«Obviamente, cualquiera sabe que las plantas necesitan luz.»',c:1,n:'«Obviamente» y «cualquiera sabe» sustituyen a la evidencia.'},
+  {p:'«Yo creo que el experimento salió súper bien.»',c:1,n:'«Yo creo» y «súper bien» son subjetivos: ¿qué salió bien y cómo se sabe?'},
+  {p:'«Los datos del experimento indican que la luz influyó en el color de las hojas.»',c:0,n:'Verbo preciso (indican) y una relación que se puede comprobar.'}
+],['Objetivo','Subjetivo'],false);
+
+clasificador('clasif-herramienta','puntaje-herramienta',[
+  {p:'Escribiste «desicion» en lugar de «decisión».',c:0,n:'El corrector ortográfico la subraya en rojo.'},
+  {p:'Una oración tuya ocupa cinco líneas y cuesta seguirla.',c:1,n:'Al escucharla, te quedas sin aire: hay que dividirla.'},
+  {p:'Usaste la palabra «muy» ocho veces en un párrafo.',c:2,n:'Busca «muy» y verás cuántas veces aparece.'},
+  {p:'Tu afirmación es clara para ti, pero no sabes si se entiende desde fuera.',c:3,n:'Un compañero te dice qué entendió él.'}
+],['Corrector ortográfico','Escuchar el texto','Buscar (Ctrl + F)','Comentarios de un compañero'],false);
+
+tallerEscritura('taller-73',{clave:'7-3',etiqueta:'Tu argumento con evidencia (5 a 8 oraciones)',
+  guia:'En …, … porque …  Según …, «…» (pasaje …).  Además, la fuente señala que «…».  Esto muestra que …',
+  meta:{oraciones:5,palabras:100},
+  conectores:['según','de acuerdo con','afirma','sostiene','concluye','explica','señala','plantea','muestra','indica','esto muestra que','por esa razón','es decir','por lo tanto','además'],
+  titLista:'Frases de cita y razonamiento que usaste',
+  vacioLista:'Todavía no aparece ninguna frase para presentar la evidencia («según…», «el tribunal sostiene…») ni para razonar («esto muestra que…»).',
+  lista:['Mi afirmación es precisa y se puede defender con la fuente.','Uso al menos dos citas, presentadas con «según…» u otro verbo.','Las palabras entre comillas son exactas y el punto va después de las comillas.','Explico por qué la evidencia prueba mi afirmación.','No uso «yo creo», exclamaciones ni adjetivos emocionales.','Revisé con el corrector en español, escuché mi texto con 🔊 y busqué palabras repetidas.']});
+
+iniciarQuiz([
+  {t:'¿Cuáles son las tres piezas de un argumento en las materias?',o:['Afirmación, evidencia y razonamiento','Título, resumen y opinión personal','Pregunta, materiales y procedimiento'],c:0,r:'<a href="#s-1-materias">Sección 1</a>'},
+  {t:'¿Qué doctrina rechazó el tribunal en Brown?',o:['«Separados pero iguales»','La separación de poderes','El voto del Colegio Electoral'],c:0,r:'<a href="#s-2-fuente">Sección 2</a>'},
+  {t:'Según el pasaje 2, ¿qué genera separar a los niños por su raza?',o:['Un sentimiento de inferioridad','Escuelas con más recursos','Una mejor educación para todos'],c:0,r:'<a href="#s-2-fuente">Sección 2, pasaje 2</a>'},
+  {t:'Afirmación: «El tribunal consideró que la igualdad de los edificios no bastaba». ¿Qué cita es la evidencia más relevante?',o:['«aun cuando las instalaciones físicas y otros factores “tangibles” sean iguales»','«Llegamos entonces a la cuestión planteada» por el tribunal','«Concluimos que, en el campo de la educación pública»'],c:0,r:'<a href="#s-4-citar">Sección 4</a>'},
+  {t:'¿Qué cita está bien puntuada?',o:['El tribunal respondió: «Creemos que sí».','El tribunal respondió: «Creemos que sí.»','El tribunal respondió: Creemos que sí».'],c:0,r:'<a href="#s-4-citar">Sección 4</a>'},
+  {t:'¿En qué se diferencia una paráfrasis de una cita directa?',o:['La paráfrasis usa tus palabras y va sin comillas','La paráfrasis copia las palabras exactas entre comillas','La paráfrasis no necesita decir de qué fuente sale'],c:0,r:'<a href="#s-4-citar">Sección 4</a>'},
+  {t:'Si quitas palabras en medio de una cita, ¿qué pones?',o:['[…]','(¿?)','***'],c:0,r:'<a href="#s-4-citar">Sección 4</a>'},
+  {t:'¿Qué oración tiene tono <strong>objetivo</strong>?',o:['La decisión puso fin a una doctrina vigente desde 1896.','¡La decisión fue lo mejor que le pasó al país en su historia!','Yo creo que los jueces de ese tribunal fueron muy valientes.'],c:0,r:'<a href="#s-5-tono">Sección 5</a>'},
+  {t:'¿Qué palabra es una señal de tono subjetivo?',o:['Obviamente','Sostiene','Indica'],c:0,r:'<a href="#s-5-tono">Sección 5</a>'},
+  {t:'¿Qué verbo conviene para presentar lo que dice una fuente?',o:['Sostiene','Grita','Opina uno'],c:0,r:'<a href="#s-5-tono">Sección 5</a>'},
+  {t:'¿Qué problema <strong>no</strong> encuentra el corrector ortográfico?',o:['Escribir «haber» en lugar de «a ver»','Escribir «desicion» sin la c ni la tilde','Escribir «esuela» en lugar de «escuela»'],c:0,r:'<a href="#s-6-revisar">Sección 6</a>'},
+  {t:'¿Para qué sirve escuchar tu texto en voz alta?',o:['Para notar oraciones muy largas o confusas','Para contar las palabras exactas del texto','Para traducir el texto al inglés'],c:0,r:'<a href="#s-6-revisar">Sección 6</a>'}
+],{meta:10,
+   bien:'Ya escribes un argumento con evidencia citada y tono objetivo, y lo revisas con herramientas digitales. ¡Terminaste el Tema 7!',
+   repaso:'Vuelve a las secciones 3 a 6 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

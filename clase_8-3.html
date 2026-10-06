@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<!-- Lección 8.3 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 8.3 · Presentación multimedia, proyecto final y evaluación del nivel</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+  figure.graf{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:12px 14px;margin:14px 0;text-align:center}
+  figure.graf figcaption{font-weight:700;color:var(--cp-oscuro);margin-bottom:6px;text-align:left}
+  figure.graf .fuente{font-size:.85rem;color:#555;text-align:left;margin:4px 0 0}
+  .ver-datos{text-align:left;margin-top:6px}
+  .ver-datos summary{padding:8px 12px;font-size:.95rem}
+  .mini{border-collapse:collapse;margin:6px 0;font-size:.95rem;font-weight:400}
+  .mini th,.mini td{border:1px solid #9aa9b7;padding:4px 10px}
+  .mini th{background:#4c1d95;color:#fff}
+  .leyenda-txt{font-size:.92rem;text-align:left;margin:4px 0 0}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .tabla-ancha{overflow-x:auto}
+  .enun figure.graf{margin:8px 0}
+  /* ── Tema 7: taller de escritura, plantilla, rúbrica y marcas ── */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:200px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .plantilla{background:#fff;border:2px dashed var(--cp);border-radius:10px;padding:10px 16px;margin:10px 0}
+  .plantilla p{margin:6px 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+  /* Marcas en los textos modelo: color + borde distinto + etiqueta escrita */
+  .m-te{background:#ede9fe;color:#3b1578;border-bottom:3px solid #4c1d95;font-weight:600}
+  .m-ra{background:#fff3e0;color:#6b3300;border-bottom:3px dashed #8a4b00}
+  .m-he{background:#e3f2fd;color:#0d3c78;border-bottom:3px dotted #0d3c78}
+  .m-tr{background:#e8f5e9;color:#1b5e20;border:2px solid #2e7d32;border-radius:4px;padding:0 3px;font-weight:700}
+  .etq{font-weight:700;font-size:.8em;white-space:nowrap}
+  .oculta-marcas .m-te,.oculta-marcas .m-ra,.oculta-marcas .m-he,.oculta-marcas .m-tr{background:none;color:inherit;border:none;font-weight:inherit;padding:0}
+  .oculta-marcas .etq{display:none}
+  .leyenda-marcas{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;font-size:.92rem}
+  .leyenda-marcas span{padding:2px 8px}
+  .subjetivo{border-left:6px solid #b91c1c;background:#fff5f5}
+  .subjetivo::before{content:"✖️ Tono subjetivo";display:block;font-weight:700;color:#8b1414;margin-bottom:4px;font-family:inherit}
+  .flujo{list-style:none;margin:14px auto;padding:0;max-width:520px;counter-reset:fl}
+  .flujo>li{counter-increment:fl;position:relative;background:#fff;border:2px solid #6d28d9;border-radius:10px;padding:10px 12px 10px 46px;margin:0 0 34px;font-weight:600;color:#1a2332}
+  .flujo>li::before{content:counter(fl);position:absolute;left:10px;top:9px;width:26px;height:26px;border-radius:50%;background:#6d28d9;color:#fff;font-weight:700;text-align:center;line-height:26px;font-size:.9rem}
+  .flujo>li:not(:last-child)::after{content:"↓" / "";position:absolute;left:50%;bottom:-31px;transform:translateX(-50%);font-size:1.5rem;color:#4c1d95;line-height:1}
+  .flujo>li.decision,.flujo>li.ciclo{counter-increment:none}
+  .flujo>li{text-align:left}
+  .flujo>li.decision{border-style:dashed;border-color:#b45309;background:#fff8ee}
+  .flujo>li.decision::before{content:"?";background:#b45309}
+  .flujo>li.ciclo{border-style:double;border-width:4px}
+  .flujo>li.ciclo::before{content:"↻";}
+  .flujo .ramas{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;font-weight:400;font-size:.93rem}
+  .flujo .ramas span{flex:1 1 140px;background:#fff;border:1px solid #9aa9b7;border-radius:6px;padding:5px 8px}
+  .pendiente{border:2px dashed #6d28d9;background:#f5f3ff;border-radius:10px;padding:12px 14px;margin:12px 0}
+  .notas-modelo{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:12px 0}
+  .nota{background:#fffdf0;border:2px solid #a16207;border-radius:8px;padding:10px 12px;box-shadow:2px 2px 0 #e7d9a8}
+  .nota p{margin:0 0 4px}
+  .nota-fuente{font-weight:700;color:#5c3d00}
+  .nota-tema{font-style:italic;color:#333}
+  .nota ul{margin:4px 0 0;padding-left:1.2em}
+  .lista-fuentes p{padding-left:2em;text-indent:-2em;overflow-wrap:anywhere}
+  .escucha{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:12px 14px;margin:12px 0}
+  .escucha h4{margin:0 0 8px;color:var(--cp-oscuro)}
+  .pasadas{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+  .velocidad{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0;font-size:.95rem}
+  .velocidad button[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  .estado-esc{font-weight:700;color:var(--cp-oscuro);min-height:1.4em}
+  .transcripcion summary{font-size:.95rem}
+  .dialogo p{margin:8px 0}
+  .dialogo .quien{font-weight:700;color:var(--cp-oscuro)}
+  .grabadora{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:12px 0;text-align:center}
+  .grabadora .reloj{font-size:2rem;font-weight:700;color:var(--cp-oscuro);font-variant-numeric:tabular-nums;margin:6px 0}
+  .grabadora .estado{font-weight:700;min-height:1.4em}
+  .grabadora audio{width:100%;margin-top:8px}
+  .grabando{color:#b3261e}
+  /* Diapositivas del proyecto modelo */
+  .diapos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+  .diapo{margin:0;background:#fff;border:2px solid var(--cp-oscuro);border-radius:10px;padding:10px 12px;text-align:center;box-shadow:0 2px 0 #c4b5fd}
+  .diapo p{margin:4px 0}
+  .diapo-num{font-size:.8rem;font-weight:700;color:#555;text-align:left}
+  .diapo-tit{font-weight:700;font-size:1.15rem;color:var(--cp-oscuro)}
+  .diapo-pie{font-size:.8rem;color:#555}
+  .diapo .ver-datos{font-size:.9rem}
+  /* Autoevaluación con la rúbrica */
+  .autoev fieldset{border:2px solid var(--cp);border-radius:10px;padding:8px 14px;margin:10px 0;background:#fff}
+  .autoev legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .autoev label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .autoev input{width:20px;height:20px;flex-shrink:0;margin-top:3px;accent-color:var(--cp-oscuro)}
+  .autoev-total{font-weight:700;font-size:1.1rem;color:var(--cp-oscuro);text-align:center;margin:10px 0}
+  /* Evaluación final */
+  .ev-area{background:var(--cp-oscuro);color:#fff;border-radius:10px;padding:8px 14px;margin:22px 0 6px;font-size:1.1rem}
+  .ev-estimulo{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:12px 14px;margin:10px 0}
+  .ev-nombre{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
+  .ev-nombre input{font:inherit;padding:8px 10px;border:2px solid #9aa9b7;border-radius:8px;min-width:200px;flex:1}
+  .ev-aviso{font-weight:700;color:#8a3d0c;min-height:1.4em}
+  #resumen-final{display:none;background:#fff;border:3px solid var(--cp-oscuro);border-radius:12px;padding:16px 18px;margin:20px 0}
+  #resumen-final.visible{display:block}
+  #resumen-final h2{margin-top:0}
+  .rf-total{font-size:1.4rem;font-weight:700;text-align:center;padding:10px;border-radius:10px;margin:8px 0}
+  .rf-barra{background:#e6ebef;border-radius:6px;height:14px;min-width:50px;position:relative;overflow:hidden}
+  .rf-barra span{position:absolute;left:0;top:0;bottom:0;background:var(--cp);border-radius:6px}
+  .rf-lista li{margin:8px 0}
+  .rf-url{display:none}
+  @media print{
+    body>*:not(#resumen-final){display:none !important}
+    body{background:#fff !important;padding:0 !important;margin:0 !important}
+    #resumen-final{display:block;border:none;margin:0;padding:0}
+    #resumen-final .no-imprimir{display:none}
+    .rf-url{display:inline;font-size:.8rem;color:#333;word-break:break-all}
+    .rf-barra{border:1px solid #333}
+    .rf-barra span{background:#555 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    #resumen-final th{color:#000 !important;background:#fff !important;border-bottom:2px solid #000 !important}
+    #resumen-final a{color:#000}
+  }
+</style>
+</head>
+<body>
+<h1>Lección 8.3 · Presentación multimedia, proyecto final y evaluación del nivel</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 8: Investigación, oralidad y proyecto final · Unas 3 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Presentar un <strong>proyecto final</strong> organizado y apoyado en hechos, con <strong>apoyo visual</strong> y fuentes.</li>
+    <li><strong>Adaptar tu forma de hablar</strong> al público y al contexto, y publicar tu trabajo en línea.</li>
+    <li>Demostrar lo aprendido en el nivel en la <strong>evaluación final</strong> de 25 preguntas.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.S.PK.1 · 3.S.PK.2 · 3.S.PK.4 · 3.W.PD.3</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-proyecto">El proyecto final</a></li>
+    <li><a href="#s-2-modelo">Proyecto modelo: el río que corre al revés</a></li>
+    <li><a href="#s-3-habla">Adaptar el habla al contexto</a></li>
+    <li><a href="#s-4-estrategias">Estrategias de examen: cinco preguntas modelo</a></li>
+    <li><a href="#s-5-tu-proyecto">Tu proyecto, paso a paso</a></li>
+    <li><a href="#s-6-autoevaluacion">Autoevaluación con la rúbrica</a></li>
+    <li><a href="#s-7-evaluacion">Evaluación final del nivel</a></li>
+    <li><a href="#s-cierre">Cierre del nivel</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Llegaste a la última lección del Nivel 3. Aquí se junta todo: la investigación de la 8.1, la claridad de la discusión de la 8.2, la escritura del Tema 7 y la lectura de datos del Tema 6. Vas a preparar y presentar tu <strong>proyecto final</strong>, vas a practicar con <strong>cinco preguntas tipo examen</strong> y, al final, harás la <strong>evaluación del nivel</strong>, con un resumen para imprimir que te dice qué repasar.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-proyecto">
+<summary>1. El proyecto final <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>Tu proyecto final es una <strong>presentación de 4 a 5 minutos</strong> sobre el tema que investigaste en la Lección 8.1. Tiene cinco partes, las mismas cinco de la rúbrica:</p>
+<table class="tabla">
+  <caption class="sr-solo">Las cinco partes del proyecto final</caption>
+  <thead><tr><th scope="col">Parte</th><th scope="col">Qué incluye</th><th scope="col">Lo aprendiste en</th></tr></thead>
+  <tbody>
+    <tr><td><strong>1. Un tema organizado, con hechos</strong></td><td>Pregunta, respuesta en orden lógico, datos con su fuente.</td><td>Lecciones 7.1 y 7.2</td></tr>
+    <tr><td><strong>2. Apoyo visual o multimedia</strong></td><td>Tres a cinco diapositivas o carteles: una gráfica, un diagrama, una foto con su pie.</td><td>Lecciones 6.1 y 6.3</td></tr>
+    <tr><td><strong>3. Fuentes con notas y paráfrasis</strong></td><td>Al menos una fuente impresa y una digital, parafraseadas y en la lista final.</td><td>Lección 8.1</td></tr>
+    <tr><td><strong>4. Habla clara y adaptada</strong></td><td>Registro formal, ritmo tranquilo, sin leer todo el tiempo.</td><td>Lecciones 8.2 y 8.3</td></tr>
+    <tr><td><strong>5. Publicación y colaboración</strong></td><td>Publicar el proyecto en el foro y comentar el de dos compañeros.</td><td>Lección 7.3</td></tr>
+  </tbody>
+</table>
+</div>
+</details>
+
+<details id="s-2-modelo">
+<summary>2. Proyecto modelo: el río que corre al revés <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<p>Este es el proyecto que empezó como investigación en la Lección 8.1, convertido en presentación. Mira las diapositivas y lee (o escucha) el guion. Fíjate en cómo el guion <strong>se refiere</strong> a cada diapositiva.</p>
+<div class="diapos" aria-label="Diapositivas del proyecto modelo">
+  <figure class="diapo"><p class="diapo-num">Diapositiva 1</p><p class="diapo-tit">El río que corre al revés</p><p>¿Por qué Chicago invirtió el curso de su río?</p><p class="diapo-pie">Proyecto final · Artes del Lenguaje, Nivel 3</p></figure>
+  <figure class="diapo"><p class="diapo-num">Diapositiva 2</p><p class="diapo-tit">Una ciudad que crecía sin parar</p><div id="graf-crece"></div><p class="diapo-pie">Fuente: Oficina del Censo de los Estados Unidos.</p></figure>
+  <figure class="diapo"><p class="diapo-num">Diapositiva 3</p><p class="diapo-tit">Antes y después de 1900</p>
+    <svg viewBox="0 0 320 170" role="img" aria-label="Diagrama. Antes de 1900, el río Chicago desembocaba en el lago Michigan y llevaba allí los desechos. Después de 1900, el río corre al revés, hacia un canal que lo une al sistema del río Misisipi, lejos del lago." style="width:100%;height:auto;max-width:420px">
+      <rect x="230" y="10" width="80" height="150" rx="8" fill="#bfdbfe" stroke="#1e3a8a"/><text x="270" y="88" text-anchor="middle" font-size="12" font-family="Arial" fill="#1e3a8a">Lago</text><text x="270" y="102" text-anchor="middle" font-size="12" font-family="Arial" fill="#1e3a8a">Michigan</text>
+      <text x="10" y="30" font-size="12" font-weight="bold" font-family="Arial" fill="#1a2332">Antes</text>
+      <line x1="40" y1="50" x2="222" y2="50" stroke="#92400e" stroke-width="6"/><polygon points="222,42 232,50 222,58" fill="#92400e"/><text x="120" y="42" text-anchor="middle" font-size="11" font-family="Arial" fill="#333">río → lago</text>
+      <text x="10" y="110" font-size="12" font-weight="bold" font-family="Arial" fill="#1a2332">Después</text>
+      <line x1="228" y1="130" x2="50" y2="130" stroke="#1d4ed8" stroke-width="6" stroke-dasharray="10 5"/><polygon points="50,122 38,130 50,138" fill="#1d4ed8"/><text x="130" y="122" text-anchor="middle" font-size="11" font-family="Arial" fill="#333">el río se aleja del lago</text><text x="40" y="155" font-size="11" font-family="Arial" fill="#333">hacia el Misisipi</text>
+    </svg>
+    <p class="diapo-pie">Diagrama hecho para el proyecto.</p></figure>
+  <figure class="diapo"><p class="diapo-num">Diapositiva 4</p><p class="diapo-tit">El mito de 1885</p><p>«90 000 muertos» ✖️<br>Registros de la época: no hubo esa epidemia ✔️</p><p class="diapo-pie">Fuente: Hill (2000).</p></figure>
+  <figure class="diapo"><p class="diapo-num">Diapositiva 5</p><p class="diapo-tit">Fuentes</p><p style="text-align:left;font-size:.85rem">Hill, L. (2000). <em>The Chicago River: A natural and unnatural history</em>. Lake Claremont Press.<br>WTTW. (s. f.). <em>How Chicago reversed its river</em>.<br>Oficina del Censo de los Estados Unidos.</p></figure>
+</div>
+<div class="texto-lectura" id="guion">
+  <h3 style="margin-top:0">Guion de la presentación (unos 4 minutos)</h3>
+  <p><strong>[Diapositiva 1]</strong> Buenas tardes. Me llamo Daniel y mi pregunta de investigación fue esta: ¿por qué Chicago invirtió el curso de su río? Les voy a contar el problema, la solución y un mito que encontré mientras investigaba.</p>
+  <p><strong>[Diapositiva 2]</strong> Empecemos por el problema. Miren esta gráfica, con datos del censo: en 1850, Chicago tenía unos 30 000 habitantes; en 1900, casi 1.7 millones. En cincuenta años la ciudad se multiplicó por más de cincuenta. Y todos esos habitantes producían desechos.</p>
+  <p><strong>[Diapositiva 3]</strong> En este diagrama ven el problema y la solución. Antes, el río llevaba los desechos al lago Michigan, que era justamente de donde la ciudad sacaba el agua para beber. La solución fue construir un canal y hacer que el río corriera al revés, lejos del lago. Según la televisión pública WTTW, el 2 de enero de 1900 se abrió la última presa, y desde entonces el río corre hacia el sistema del Misisipi.</p>
+  <p><strong>[Diapositiva 4]</strong> Ahora, el mito. Si buscan en internet, van a leer que en 1885 murieron 90 000 personas en una epidemia. Yo también lo leí. Pero la investigadora Libby Hill revisó los registros y los periódicos de la época, y esa epidemia no aparece. El peligro para el agua era real; la catástrofe de 1885, no. Esto me enseñó a comprobar siempre un dato, por muy repetido que esté.</p>
+  <p><strong>[Diapositiva 5]</strong> En resumen: Chicago creció tan rápido que contaminaba su propia agua, y por eso invirtió su río. Estas son mis fuentes. ¿Tienen alguna pregunta?</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-guion">🔊 Escuchar el guion</button>
+</div>
+<div class="tip"><strong>💡 Fíjate:</strong> el guion no lee las diapositivas; las <strong>comenta</strong> («Miren esta gráfica…», «En este diagrama ven…»). Las diapositivas tienen pocas palabras y mucha información visual. Y Daniel cierra invitando a hacer preguntas.</div>
+</div>
+</details>
+
+<details id="s-3-habla">
+<summary>3. Adaptar el habla al contexto <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>No hablamos igual con los amigos que en una entrevista de trabajo. En una presentación académica se usa un <span class="palabra-clave">registro formal</span>, pero cercano:</p>
+<table class="tabla">
+  <caption class="sr-solo">Cómo adaptar el habla en una presentación</caption>
+  <thead><tr><th scope="col">Aspecto</th><th scope="col">✖️ Evita</th><th scope="col">✔️ Prefiere</th></tr></thead>
+  <tbody>
+    <tr><td>Saludo</td><td>«¿Qué onda, gente?»</td><td>«Buenas tardes. Me llamo…»</td></tr>
+    <tr><td>Vocabulario</td><td>«La cosa esa del río estaba bien fea.»</td><td>«El río llevaba los desechos al lago.»</td></tr>
+    <tr><td>Muletillas</td><td>«Este… o sea… tipo… ¿me explico?»</td><td>Una pausa breve en silencio.</td></tr>
+    <tr><td>Ritmo y volumen</td><td>Hablar muy rápido o muy bajo.</td><td>Despacio, con pausas, a un volumen que se oiga al fondo.</td></tr>
+    <tr><td>Mirada</td><td>Leer todo el tiempo del papel.</td><td>Mirar al público (o a la cámara) y usar notas breves.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 El contexto manda:</strong> si presentas a niños, usa ejemplos más sencillos; si presentas por Zoom, mira a la cámara y comprueba antes el sonido; si el público no conoce el tema, define los términos de dominio, como en la Lección 7.2.</div>
+<div class="clasificador apilado" id="clasif-habla"></div>
+<div class="puntaje" id="puntaje-habla" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-4-estrategias">
+<summary>4. Estrategias de examen: cinco preguntas modelo <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>El GED combina textos con gráficas. Estas cinco preguntas usan el guion y la gráfica de la diapositiva 2. Después de responder, lee la <strong>estrategia</strong> de cada una: te servirá en la evaluación final y en el examen.</p>
+<div class="clasificador apilado" id="clasif-modelo-examen"></div>
+<div class="puntaje" id="puntaje-modelo-examen" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-5-tu-proyecto">
+<summary>5. Tu proyecto, paso a paso <span class="caja-tiempo">60 min</span></summary>
+<div class="contenido-detalle">
+<ol class="lista-bonita">
+  <li><strong>Revisa tu investigación</strong> de la Lección 8.1: pregunta, notas, paráfrasis y lista de fuentes.</li>
+  <li><strong>Ordena tu respuesta</strong> en tres partes: el problema o el contexto, lo principal (con hechos) y el cierre.</li>
+  <li><strong>Prepara de 3 a 5 diapositivas</strong> (en Google Slides, PowerPoint o carteles en papel): título, una gráfica o diagrama, una imagen con su pie y las fuentes. Pocas palabras por diapositiva.</li>
+  <li><strong>Escribe tu guion</strong> en el taller de abajo, marcando <em>[Diapositiva 1]</em>, <em>[Diapositiva 2]</em>…</li>
+  <li><strong>Ensaya y grábate</strong> con la grabadora: escúchate y corrige el ritmo y las muletillas.</li>
+  <li><strong>Presenta</strong> en la clase sincrónica («Presento mi investigación») y responde las preguntas del grupo.</li>
+  <li><strong>Publica</strong> tu proyecto en el foro (el guion, las diapositivas o tu grabación) y comenta el de dos compañeros con algo concreto: qué aprendiste y una sugerencia.</li>
+</ol>
+<div class="taller" id="taller-83"></div>
+<h3>Ensaya con la grabadora</h3>
+<p>Puedes grabarte aquí mismo. El navegador te pedirá permiso para usar el micrófono. La grabación <strong>no se envía a ningún lugar</strong>: se queda en tu equipo hasta que la descargues.</p>
+<div class="grabadora">
+  <div class="reloj" id="gr-reloj" aria-hidden="true">0:00</div>
+  <p class="estado" id="gr-estado" role="status" aria-live="polite">Listo para grabar.</p>
+  <div class="botones">
+    <button type="button" class="btn btn-primario" id="gr-grabar">🎙️ Grabar</button>
+    <button type="button" class="btn btn-secundario" id="gr-parar" disabled>⏹️ Detener</button>
+  </div>
+  <audio id="gr-audio" controls hidden></audio>
+  <p><a class="btn btn-secundario" id="gr-bajar" hidden download="mi-presentacion">⬇️ Descargar mi grabación</a></p>
+</div>
+<p style="font-size:.95rem">Si prefieres, usa la grabadora de voz de tu celular. La meta es de 4 a 5 minutos: el reloj te avisará a los 4.</p>
+</div>
+</details>
+
+<details id="s-6-autoevaluacion">
+<summary>6. Autoevaluación con la rúbrica <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>Antes de presentar, evalúa tu proyecto con la misma rúbrica que usará tu profesor (5 criterios × 4 niveles = 20 puntos). Sé honesto: sirve para mejorar antes de entregar.</p>
+<div class="autoev" id="autoev"></div>
+<p class="autoev-total" id="autoev-total" role="status" aria-live="polite"></p>
+</div>
+</details>
+
+<details id="s-7-evaluacion">
+<summary>7. Evaluación final del nivel <span class="caja-tiempo">60 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>📝 Evaluación final · 25 preguntas · unos 60 minutos</h4>
+  <p style="margin:0 0 6px">Cinco preguntas por cada área del nivel: <strong>gramática y convenciones</strong>, <strong>vocabulario académico</strong>, <strong>comprensión inferencial y evidencia</strong>, <strong>análisis de fuentes y datos</strong> y <strong>escritura argumentada e informativa</strong>. Las opciones cambian de orden cada vez.</p>
+  <p style="margin:0">Responde todas y pulsa <strong>Ver mi resultado</strong>. Recibirás un <strong>resumen para imprimir</strong> con tu puntaje por área y un enlace a la lección exacta de cada pregunta que convenga repasar. Esta evaluación te sirve de práctica y de diagnóstico; si tu programa la pide, la oficial está en Brightspace.</p>
+</div>
+<div class="ev-nombre"><label for="ev-nombre-in"><strong>Tu nombre</strong> (aparecerá en el resumen):</label><input type="text" id="ev-nombre-in" autocomplete="name"></div>
+<div id="ev-cuerpo"></div>
+<p class="ev-aviso" id="ev-aviso" role="status" aria-live="polite"></p>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="ev-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="ev-reintentar" style="display:none">Hacer la evaluación otra vez</button>
+</div>
+</div>
+</details>
+
+<section id="resumen-final" aria-labelledby="rf-titulo" tabindex="-1">
+  <h2 id="rf-titulo">📋 Resumen de mi evaluación final · Nivel 3</h2>
+  <p id="rf-datos"></p>
+  <div class="rf-total" id="rf-total"></div>
+  <table class="tabla">
+    <caption>Resultado por área</caption>
+    <thead><tr><th scope="col">Área</th><th scope="col">Aciertos</th><th scope="col">Avance</th></tr></thead>
+    <tbody id="rf-areas"></tbody>
+  </table>
+  <h3>Para repasar</h3>
+  <ol class="rf-lista" id="rf-lista"></ol>
+  <p id="rf-consejo"></p>
+  <div class="botones no-imprimir">
+    <button type="button" class="btn btn-primario" id="rf-imprimir">🖨️ Imprimir mi resumen</button>
+  </div>
+  <p style="font-size:.85rem;color:#555">GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · José M. Fernández, Harry S. Truman College — City Colleges of Chicago · CC BY-NC-SA 4.0</p>
+</section>
+
+<details id="s-cierre">
+<summary>8. Cierre del nivel <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>🎓 ¡Terminaste el Nivel 3!</h3>
+<p>En estas dieciséis semanas aprendiste a:</p>
+<ul class="lista-bonita">
+  <li>Escribir oraciones complejas con <strong>relativos, tiempos compuestos</strong> y una puntuación cuidada.</li>
+  <li>Usar <strong>raíces griegas y latinas</strong>, vocabulario académico y lenguaje figurado.</li>
+  <li><strong>Inferir</strong> con evidencia, resumir con objetividad y reconocer la estructura de un texto.</li>
+  <li><strong>Evaluar argumentos</strong>, integrar dos textos y trabajar con fuentes primarias y secundarias.</li>
+  <li>Leer <strong>gráficas complejas</strong>, distinguir hechos, juicios y especulaciones, y seguir procedimientos.</li>
+  <li><strong>Escribir</strong> textos argumentados e informativos con evidencia y tono objetivo.</li>
+  <li><strong>Investigar</strong>, discutir con normas y presentar tu trabajo.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Presentaste y publicaste tu proyecto con sus cinco partes?</li>
+    <li>¿Imprimiste o guardaste el resumen de tu evaluación final?</li>
+    <li>¿Qué tres lecciones vas a repasar antes de empezar el Nivel 4?</li>
+  </ul>
+</div>
+<div class="tip"><strong>📅 Lo que viene:</strong> en el Nivel 4 te prepararás directamente para el examen GED: el análisis crítico de la validez de los argumentos, la síntesis de varias fuentes, la ironía y la sátira, y la Respuesta Extendida. Puedes volver a cualquier lección desde la <a href="https://zhemaria.github.io/clases_leng3/bienvenida.html" style="color:var(--cp-oscuro);font-weight:700">Bienvenida del Nivel 3</a>.</div>
+<p style="font-size:.9rem"><strong>Fuentes del proyecto modelo:</strong> Hill, L. (2000), <em>The Chicago River: A Natural and Unnatural History</em>; WTTW, «How Chicago Reversed Its River»; Oficina del Censo de los Estados Unidos, población de Chicago de 1850 a 2020.</p>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 8 · Lección 8.3</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+/* ===== Gráficas en SVG (barras, barras dobles, líneas múltiples) =====
+   Basado en la biblioteca del Nivel 2. Las series se distinguen por color Y por trazo o trama
+   (línea continua / discontinua / punteada; barra lisa / rayada), lleva valores escritos o en la
+   descripción, y una tabla con los datos: nada depende solo del color. */
+var GCOL=['#6d28d9','#c2410c','#0e7490','#a16207'];
+var GDASH=['','8 5','2 5','12 4 2 4'], GID=0;
+function anchoG(){return Math.round(Math.min(600,Math.max(320,(window.innerWidth||600)-56)));}
+function etiq(s,x,y,t,W){var p=String(t).indexOf('|')>=0?String(t).split('|'):String(t).split(' ');if(String(t).indexOf('|')>=0||(W<480&&p.length>1)){txtSvg(s,x,y-2,p[0],{tam:11});txtSvg(s,x,y+11,p.slice(1).join(' '),{tam:11});}else txtSvg(s,x,y,t,{tam:W<480?11:12});}
+function svgEl(t,a,txt){var e=document.createElementNS('http://www.w3.org/2000/svg',t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
+function marcoSvg(caja,ancho,alto,desc){
+  var s=svgEl('svg',{viewBox:'0 0 '+ancho+' '+alto,width:ancho,height:alto,role:'img','aria-label':desc});
+  s.style.maxWidth='100%'; s.style.height='auto'; caja.innerHTML=''; caja.appendChild(s); return s;
+}
+function txtSvg(s,x,y,t,o){o=o||{};s.appendChild(svgEl('text',{x:x,y:y,'text-anchor':o.ancla||'middle','font-size':o.tam||12,'font-weight':o.peso||'normal',fill:o.color||'#333','font-family':'Arial'},t));}
+function cuadricula(s,W,L,R,T,B,H,min,max,paso,fmt){
+  for(var v=min;v<=max+0.0001;v+=paso){var y=T+(H-T-B)*(1-(v-min)/(max-min));
+    s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:y,y2:y,stroke:'#dfe5ea','stroke-width':1}));
+    txtSvg(s,L-8,y+4,fmt?fmt(v):(Math.round(v*10)/10),{ancla:'end',color:'#555'});}
+}
+function rotulos(s,W,H,L,R,T,B,o){
+  if(o.ejeY)s.appendChild(svgEl('text',{x:14,y:(H-B+T)/2,transform:'rotate(-90 14 '+((H-B+T)/2)+')','text-anchor':'middle','font-size':12,fill:'#333','font-family':'Arial'},o.ejeY));
+  if(o.ejeX)txtSvg(s,(W-R+L)/2,H-6,o.ejeX);
+}
+function leyenda(s,x,y,series,tipo,pid){
+  series.forEach(function(se,k){
+    var yy=y+k*20;
+    if(tipo==='barra'){s.appendChild(svgEl('rect',{x:x,y:yy-11,width:22,height:14,fill:k===1?'url(#'+pid+')':GCOL[k],stroke:GCOL[k],'stroke-width':1.5}));}
+    else{s.appendChild(svgEl('line',{x1:x,x2:x+26,y1:yy-4,y2:yy-4,stroke:GCOL[k],'stroke-width':3,'stroke-dasharray':GDASH[k]}));}
+    txtSvg(s,x+32,yy,se.nombre,{ancla:'start',peso:'bold',color:'#1a2332'});
+  });
+}
+/* barrasDobles(caja, {titulo, etiquetas, series:[{nombre, valores}], min, max, paso, ejeY, ejeX, fmt}) */
+function graficaBarrasDobles(caja,o){
+  var W=anchoG(),H=W<480?300:330,L=50,R=10,T=48,B=W<480?52:48,min=o.min||0,max=o.max,n=o.etiquetas.length;
+  var desc=o.titulo+(o.series.length===1?'. Gráfica de barras. ':'. Gráfica de barras dobles. ')+o.etiquetas.map(function(e,i){return String(e).replace('|',' ')+': '+o.series.map(function(se){return se.nombre+' '+se.valores[i];}).join(', ');}).join('; ');
+  var s=marcoSvg(caja,W,H,desc);
+  var d=svgEl('defs',{}),pid='rayas'+(++GID),p=svgEl('pattern',{id:pid,width:6,height:6,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'});
+  p.appendChild(svgEl('rect',{width:6,height:6,fill:'#fff'}));p.appendChild(svgEl('line',{x1:0,y1:0,x2:0,y2:6,stroke:GCOL[1],'stroke-width':4}));d.appendChild(p);s.appendChild(d);
+  cuadricula(s,W,L,R,T,B,H,min,max,o.paso,o.fmt);
+  var ancho=(W-L-R)/n,bw=o.series.length===1?Math.min(56,ancho*0.6):Math.min(30,ancho*0.36);
+  o.etiquetas.forEach(function(e,i){
+    o.series.forEach(function(se,k){
+      var v=se.valores[i],x=L+ancho*i+ancho/2-(o.series.length===1?(bw-2)/2:bw)+k*bw,h=(H-T-B)*(v-min)/(max-min),y=H-B-h;
+      var r=svgEl('rect',{x:x,y:y,width:bw-2,height:h,fill:k===1?'url(#'+pid+')':GCOL[k],stroke:GCOL[k],'stroke-width':1.5});
+      r.appendChild(svgEl('title',{},String(e).replace('|',' ')+', '+se.nombre+': '+v+(o.unidad||'')));s.appendChild(r);
+      txtSvg(s,x+(bw-2)/2,y-5,v,{tam:11,peso:'bold',color:'#1a2332'});
+    });
+    etiq(s,L+ancho*i+ancho/2,H-B+18,e,W);
+  });
+  s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:'#555','stroke-width':1.5}));
+  rotulos(s,W,H,L,R,T,B,o); leyenda(s,L+10,18,o.series,'barra',pid);
+}
+/* lineas(caja, {titulo, etiquetas, series:[{nombre, valores}], min, max, paso, ejeY, ejeX, unidad, valoresVisibles}) */
+function graficaLineas(caja,o){
+  var W=anchoG(),H=W<480?300:320,L=50,R=W<480?14:24,T=52,B=48,min=o.min||0,max=o.max,n=o.etiquetas.length;
+  var s=marcoSvg(caja,W,H,o.titulo+'. Gráfica de líneas. '+o.series.map(function(se){return se.nombre+': '+o.etiquetas.map(function(e,i){return e+' '+se.valores[i];}).join(', ');}).join('. '));
+  function Y(v){return T+(H-T-B)*(1-(v-min)/(max-min));} function X(i){return L+(W-L-R)*i/(n-1);}
+  cuadricula(s,W,L,R,T,B,H,min,max,o.paso);
+  o.etiquetas.forEach(function(e,i){if(W<480&&n>8&&i%2)return;txtSvg(s,X(i),H-B+18,e,{tam:W<480?10:11});});
+  o.series.forEach(function(se,k){
+    var c=GCOL[k],d=se.valores.map(function(v,i){return (i?'L':'M')+X(i)+','+Y(v);}).join(' ');
+    s.appendChild(svgEl('path',{d:d,fill:'none',stroke:c,'stroke-width':3,'stroke-linejoin':'round','stroke-dasharray':GDASH[k]}));
+    se.valores.forEach(function(v,i){
+      var m=k%2===0?svgEl('circle',{cx:X(i),cy:Y(v),r:4.5,fill:c,stroke:'#fff','stroke-width':1.5}):svgEl('rect',{x:X(i)-4.5,y:Y(v)-4.5,width:9,height:9,fill:c,stroke:'#fff','stroke-width':1.5});
+      m.appendChild(svgEl('title',{},se.nombre+', '+o.etiquetas[i]+': '+v+(o.unidad||'')));s.appendChild(m);
+      if(o.valoresVisibles&&(W>=480||n<=7))txtSvg(s,X(i),Y(v)+(k===0?-9:18),v,{tam:10.5,color:'#1a2332'});
+    });
+  });
+  s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:'#555','stroke-width':1.5}));
+  rotulos(s,W,H,L,R,T,B,o); leyenda(s,L+10,18,o.series,'linea');
+}
+/* Tabla de datos accesible, plegada debajo de la gráfica */
+function tablaDatos(caja,titulo,cabeceras,filas){
+  var h='<details class="ver-datos"><summary>Ver los datos en una tabla</summary><div class="tabla-ancha"><table class="tabla"><caption class="sr-solo">'+titulo+'</caption><thead><tr>'+cabeceras.map(function(c){return '<th scope="col">'+c+'</th>';}).join('')+'</tr></thead><tbody>'+
+    filas.map(function(f){return '<tr>'+f.map(function(c){return '<td>'+c+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div></details>';
+  caja.insertAdjacentHTML('beforeend',h);
+}
+/* Devuelve el SVG como texto (para los ejercicios) */
+function svgTexto(fn,o){var d=document.createElement('div');fn(d,o);return d.innerHTML;}
+/* ===== Taller de escritura (Tema 7) =====
+   tallerEscritura('id-caja',{clave:'n2-7-1', conectores:[...], meta:{oraciones:6, palabras:60}, lista:['…','…']})
+   Arma: área de texto, contadores, conectores detectados, lista de revisión, escuchar, copiar y borrar.
+   El borrador se guarda en este navegador (si el navegador lo permite). */
+function tallerEscritura(id,o){
+  var caja=document.getElementById(id), k='gph-borrador-'+o.clave;
+  var h='<label class="tl-etq" for="'+id+'-txt">'+(o.etiqueta||'Escribe aquí tu texto')+'</label>'+
+    '<textarea class="tl-txt" id="'+id+'-txt" rows="10" spellcheck="true" lang="es"'+(o.guia?' placeholder="'+o.guia.replace(/"/g,'&quot;')+'"':'')+'></textarea>'+
+    '<div class="tl-cuenta" id="'+id+'-cuenta" aria-live="polite"></div>';
+  if(o.conectores)h+='<div class="tl-conect" id="'+id+'-con" aria-live="polite"></div>';
+  h+='<div class="botones" style="justify-content:flex-start">'+
+    '<button type="button" class="btn btn-secundario" id="'+id+'-oir">🔊 Escuchar mi texto</button>'+
+    '<button type="button" class="btn btn-secundario" id="'+id+'-copiar">📋 Copiar mi texto</button>'+
+    '<button type="button" class="btn btn-secundario" id="'+id+'-borrar">🗑️ Borrar</button></div>'+
+    '<div class="tl-aviso" id="'+id+'-aviso" role="status" aria-live="polite"></div>';
+  if(o.lista){
+    h+='<fieldset class="tl-lista"><legend>✅ Revisa tu texto antes de entregarlo</legend>'+
+      o.lista.map(function(t,i){return '<label><input type="checkbox" id="'+id+'-c'+i+'"> '+t+'</label>';}).join('')+
+      '<p class="tl-listo" id="'+id+'-listo" aria-live="polite"></p></fieldset>';
+  }
+  caja.innerHTML=h;
+  var ta=document.getElementById(id+'-txt'), cu=document.getElementById(id+'-cuenta'), co=document.getElementById(id+'-con'), av=document.getElementById(id+'-aviso');
+  try{var g=localStorage.getItem(k); if(g)ta.value=g;}catch(e){}
+  function avisar(t){av.textContent=t; clearTimeout(avisar.t); avisar.t=setTimeout(function(){av.textContent='';},4000);}
+  function contar(){
+    var t=ta.value.trim(), pal=t?t.split(/\s+/).length:0, ora=(t.match(/[^.!?…]+[.!?…]+/g)||[]).length;
+    var m=o.meta||{}, s='Palabras: '+pal+(m.palabras?' (meta: '+m.palabras+' o más)':'')+' · Oraciones: '+ora+(m.oraciones?' (meta: '+m.oraciones+' o más)':'');
+    if(m.oraciones&&ora>=m.oraciones&&(!m.palabras||pal>=m.palabras))s+=' · 🎯 ¡Llegaste a la meta de extensión!';
+    cu.textContent=s;
+    if(co){
+      var low=' '+t.toLowerCase().replace(/[.,;:¡!¿?«»"()—]/g,' ')+' ', us=o.conectores.filter(function(c){return low.indexOf(' '+c.toLowerCase()+' ')>=0;});
+      co.innerHTML=us.length?(o.titLista||'Conectores que usaste')+': '+us.map(function(c){return '<span class="tl-chip">'+c+'</span>';}).join(' '):(o.vacioLista||'Todavía no aparece ningún conector de la lista. Recuerda unir tus ideas con ellos.');
+    }
+    try{localStorage.setItem(k,ta.value);}catch(e){}
+  }
+  ta.addEventListener('input',contar); contar();
+  document.getElementById(id+'-oir').addEventListener('click',function(){
+    if(!ta.value.trim()){avisar('Primero escribe algo para poder escucharlo.');return;}
+    hablar(ta.value,0.9);
+  });
+  document.getElementById(id+'-copiar').addEventListener('click',function(){
+    if(!ta.value.trim()){avisar('Todavía no hay texto para copiar.');return;}
+    function ok(){avisar('✓ Texto copiado. Ya puedes pegarlo en el foro o en un correo.');}
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(ta.value).then(ok,function(){ta.select();document.execCommand('copy');ok();});
+    else{ta.select();document.execCommand('copy');ok();}
+  });
+  var borrarListo=false;
+  document.getElementById(id+'-borrar').addEventListener('click',function(){
+    if(!borrarListo){borrarListo=true;avisar('¿Seguro? Pulsa «Borrar» otra vez para borrar todo el texto.');setTimeout(function(){borrarListo=false;},4000);return;}
+    borrarListo=false; ta.value=''; contar(); avisar('Texto borrado.'); ta.focus();
+  });
+  if(o.lista){
+    var cbs=caja.querySelectorAll('.tl-lista input'), li=document.getElementById(id+'-listo');
+    function rev(){var n=Array.prototype.filter.call(cbs,function(c){return c.checked;}).length;var t=ta.value.trim(),m=o.meta||{},pal=t?t.split(/\s+/).length:0,ora=(t.match(/[^.!?…]+[.!?…]+/g)||[]).length,corto=(m.oraciones&&ora<m.oraciones)||(m.palabras&&pal<m.palabras);
+    li.textContent=n<cbs.length?'Revisado: '+n+' de '+cbs.length:(corto?'Marcaste toda la lista, pero tu texto todavía no llega a la meta de extensión. Añade algo más.':'🎉 ¡Todo revisado! Tu texto está listo para compartir.');}
+    ta.addEventListener('input',rev);
+    cbs.forEach(function(c){c.addEventListener('change',rev);}); rev();
+  }
+}
+/* Rúbricas: cada celda recibe el nombre de su nivel para mostrarlo en el móvil */
+document.querySelectorAll('table.rubrica').forEach(function(t){
+  var cab=Array.prototype.map.call(t.querySelectorAll('thead th'),function(th){return th.textContent;});
+  t.querySelectorAll('tbody tr').forEach(function(tr){Array.prototype.forEach.call(tr.children,function(c,i){if(c.tagName==='TD')c.setAttribute('data-et',cab[i]);});});
+});
+
+
+/* ===== Gráfica de la diapositiva 2 (datos reales del censo) ===== */
+var CA=['1850','1860','1870','1880','1890','1900'], CP=[29963,112172,298977,503185,1099850,1698575];
+graficaLineas(document.getElementById('graf-crece'),{titulo:'Población de Chicago, 1850 a 1900, en miles de habitantes',etiquetas:CA,
+  series:[{nombre:'Habitantes (miles)',valores:CP.map(function(p){return Math.round(p/1000);})}],min:0,max:1800,paso:300,ejeY:'Miles de habitantes',unidad:' mil',valoresVisibles:true});
+tablaDatos(document.getElementById('graf-crece'),'Población de Chicago, 1850 a 1900',['Año','Habitantes'],CA.map(function(a,i){return [a,CP[i].toLocaleString('en-US').replace(/,/g,' ')];}));
+
+document.getElementById('leer-guion').addEventListener('click',function(){
+  hablar(document.getElementById('guion').textContent.replace(/\[Diapositiva \d\]/g,'').replace('Guion de la presentación (unos 4 minutos)','').trim(),0.9);});
+
+clasificador('clasif-habla','puntaje-habla',[
+  {p:'¿Cuál es el mejor comienzo para una presentación en clase?',ops:['«Buenas tardes. Me llamo Daniel y hoy les voy a hablar del río de Chicago.»','«¿Qué onda, gente? Bueno, este… les voy a hablar de la cosa esa del río.»','«Eh… no sé muy bien por dónde empezar, pero bueno, aquí estoy, ¿no?»'],c:0,n:'Saludo formal, presentación y tema en una oración.'},
+  {p:'Presentas por Zoom. ¿Qué conviene hacer?',ops:['Probar el sonido antes y mirar a la cámara al hablar','Leer el guion completo sin levantar la vista de la hoja','Apagar la cámara para estar más tranquilo y relajado'],c:0,n:'La cámara es tu público.'},
+  {p:'Tu público son niños de primaria. ¿Cómo adaptas la presentación?',ops:['Uso ejemplos sencillos y explico cada palabra difícil','Hablo más rápido para que no se aburran tanto','Uso todos los términos técnicos que aprendí'],c:0,n:'El contexto decide el vocabulario y los ejemplos.'},
+  {p:'Notas que dices «o sea» a cada rato. ¿Qué haces?',ops:['Hacer una pausa breve en silencio en su lugar','Cambiarlo por «tipo» para variar un poco','Hablar más rápido para que no se note'],c:0,n:'Una pausa da tiempo para pensar y suena más segura que una muletilla.'}
+],null,false);
+
+clasificador('clasif-modelo-examen','puntaje-modelo-examen',[
+  {p:'<strong>1.</strong> Según la gráfica de la diapositiva 2, ¿en qué década creció más la población de Chicago?',ops:['Entre 1880 y 1890','Entre 1850 y 1860','Entre 1890 y 1900'],c:0,n:'De 503 mil a 1 100 mil: casi 600 mil más. <strong>Estrategia:</strong> en una gráfica de líneas, el tramo más empinado es el de mayor cambio; compruébalo restando los valores.'},
+  {p:'<strong>2.</strong> ¿Qué oración del guion expresa la idea central de la presentación?',ops:['«Chicago creció tan rápido que contaminaba su propia agua, y por eso invirtió su río.»','«Me llamo Daniel y mi pregunta de investigación fue esta.»','«Si buscan en internet, van a leer que en 1885 murieron 90 000 personas.»'],c:0,n:'<strong>Estrategia:</strong> la idea central suele estar al principio o en el resumen final («En resumen…»). Las otras son una presentación personal y un detalle.'},
+  {p:'<strong>3.</strong> ¿Qué evidencia usa Daniel para mostrar que la epidemia de 1885 es un mito?',ops:['Una investigadora revisó los registros y periódicos y no la encontró','Muchas páginas de internet repiten el mismo dato de las muertes','La gráfica del censo muestra que la población siguió creciendo'],c:0,n:'<strong>Estrategia:</strong> busca la evidencia en el párrafo que habla del tema de la pregunta (diapositiva 4). Desconfía de la opción que suena lógica pero no está en el texto.'},
+  {p:'<strong>4.</strong> ¿Qué se puede inferir de la frase «Yo también lo leí»?',ops:['Que Daniel creyó el mito al principio, antes de comprobarlo','Que Daniel nunca usa internet para investigar sus temas','Que Daniel escribió una de las páginas que repiten el mito'],c:0,n:'<strong>Estrategia:</strong> una inferencia válida se apoya en el texto sin ir más allá. Daniel dice que lo leyó y después explica cómo comprobó que era falso.'},
+  {p:'<strong>5.</strong> ¿Por qué Daniel incluye una gráfica en la diapositiva 2?',ops:['Para mostrar con datos lo rápido que crecía la ciudad','Para que la presentación dure más tiempo del previsto','Para demostrar que en 1885 hubo una gran epidemia'],c:0,n:'<strong>Estrategia:</strong> las preguntas de «¿por qué el autor incluye…?» piden el propósito. Relaciónalo con lo que dice el texto en ese momento: «Empecemos por el problema».'}
+],null,false);
+
+tallerEscritura('taller-83',{clave:'8-3',etiqueta:'El guion de tu presentación (4 a 5 minutos)',
+  guia:'[Diapositiva 1] Buenas tardes. Me llamo … y mi pregunta fue …  [Diapositiva 2] Miren esta gráfica …  [Diapositiva 5] En resumen, …',
+  meta:{oraciones:15,palabras:400},
+  conectores:['diapositiva','buenas tardes','miren','en este diagrama','según','de acuerdo con','en resumen','alguna pregunta'],
+  titLista:'Marcas de presentación que usaste',
+  vacioLista:'Todavía no aparecen marcas de presentación: un saludo, las diapositivas, «según…» y un cierre con «En resumen…».',
+  lista:['Empiezo con un saludo, mi nombre y mi pregunta.','Cada parte del guion dice a qué diapositiva corresponde.','Comento las imágenes y las gráficas, no las leo.','Uso al menos dos fuentes y digo de dónde sale cada dato.','Cierro con un resumen y una invitación a hacer preguntas.','Me grabé, me escuché y quité las muletillas.']});
+
+/* ===== Grabadora: todo queda en el equipo del estudiante ===== */
+(function(){
+  var bG=document.getElementById('gr-grabar'), bP=document.getElementById('gr-parar'), est=document.getElementById('gr-estado'),
+      reloj=document.getElementById('gr-reloj'), au=document.getElementById('gr-audio'), bajar=document.getElementById('gr-bajar');
+  var rec=null, trozos=[], t0=0, tic=null, flujo=null;
+  if(!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&window.MediaRecorder)){
+    bG.disabled=true; est.textContent='Este navegador no permite grabar aquí. Usa la grabadora de voz de tu celular.'; return;
+  }
+  function mmss(s){return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2);}
+  bG.addEventListener('click',function(){
+    callar();
+    navigator.mediaDevices.getUserMedia({audio:true}).then(function(f){
+      flujo=f; trozos=[]; rec=new MediaRecorder(f);
+      rec.ondataavailable=function(e){if(e.data&&e.data.size)trozos.push(e.data);};
+      rec.onstop=function(){
+        var tipo=rec.mimeType||'audio/webm', blob=new Blob(trozos,{type:tipo}), url=URL.createObjectURL(blob);
+        au.src=url; au.hidden=false; bajar.href=url; bajar.hidden=false;
+        bajar.download='mi-presentacion.'+(tipo.indexOf('mp4')>=0?'m4a':tipo.indexOf('ogg')>=0?'ogg':'webm');
+        flujo.getTracks().forEach(function(t){t.stop();});
+        est.textContent='✓ Grabación lista ('+reloj.textContent+'). Escúchala y, si te gusta, descárgala.'; est.classList.remove('grabando');
+      };
+      rec.start(); t0=Date.now(); reloj.textContent='0:00';
+      tic=setInterval(function(){var s=Math.round((Date.now()-t0)/1000);reloj.textContent=mmss(s);
+        if(s===240)est.textContent='🔴 Grabando… Ya llevas cuatro minutos: ve cerrando tu presentación.';
+        if(s===300)est.textContent='🔴 Grabando… Llegaste a los cinco minutos: termina con tu resumen.';},500);
+      bG.disabled=true; bP.disabled=false; au.hidden=true; bajar.hidden=true;
+      est.textContent='🔴 Grabando… Habla con calma. Pulsa «Detener» al terminar.'; est.classList.add('grabando');
+    }).catch(function(){
+      est.textContent='No se pudo usar el micrófono. Revisa que el navegador tenga permiso o usa la grabadora de tu celular.';
+    });
+  });
+  bP.addEventListener('click',function(){
+    if(rec&&rec.state!=='inactive')rec.stop(); clearInterval(tic); bG.disabled=false; bP.disabled=true; bG.textContent='🎙️ Grabar otra vez';
+  });
+})();
+
+/* ===== Autoevaluación: rúbrica del proyecto final, 5 criterios × 4 niveles = 20 puntos ===== */
+(function(){
+  var C=[
+    ['Tema organizado y apoyado en hechos',['Pregunta clara, orden lógico y hechos con fuente en cada parte','Organizado, con algún hecho sin fuente','Ideas sueltas o pocos hechos','Sin orden y sin hechos']],
+    ['Integración de recursos multimedia o visuales',['Diapositivas con gráfica o diagrama que el guion comenta','Buen apoyo visual, pero el guion no lo comenta','Diapositivas con demasiado texto','Sin apoyo visual']],
+    ['Uso de fuentes con notas y paráfrasis',['Una fuente impresa y una digital, parafraseadas y en la lista','Dos fuentes; falta alguna en la lista','Una fuente, o fragmentos copiados','Sin fuentes']],
+    ['Claridad y adaptación del habla al contexto',['Registro formal, ritmo tranquilo, sin muletillas; responde preguntas','Clara, pero lee bastante','Se entiende, con muchas muletillas o muy rápida','Difícil de seguir']],
+    ['Publicación y colaboración en línea',['Publica el proyecto y comenta a dos compañeros con sugerencias concretas','Publica y comenta a uno','Publica sin comentar','No publica']]
+  ];
+  var caja=document.getElementById('autoev'), tot=document.getElementById('autoev-total');
+  caja.innerHTML=C.map(function(c,i){
+    return '<fieldset><legend>'+(i+1)+'. '+c[0]+'</legend>'+c[1].map(function(t,j){var pts=4-j;return '<label><input type="radio" name="ae'+i+'" value="'+pts+'"> <span><strong>'+pts+'</strong> · '+t+'</span></label>';}).join('')+'</fieldset>';
+  }).join('');
+  function sumar(){
+    var s=0,n=0; for(var i=0;i<C.length;i++){var r=caja.querySelector('input[name="ae'+i+'"]:checked'); if(r){s+=+r.value;n++;}}
+    tot.textContent=n<C.length?'Has marcado '+n+' de '+C.length+' criterios. Puntaje parcial: '+s:'Tu autoevaluación: '+s+' de 20 puntos. '+(s>=16?'¡Proyecto sólido! Preséntalo con confianza.':s>=12?'Buen trabajo. Mejora los criterios con 2 o menos antes de presentar.':'Revisa los criterios más bajos: todavía estás a tiempo de mejorarlos.');
+  }
+  caja.addEventListener('change',sumar); sumar();
+})();
+
+/* ===== Evaluación final del nivel: 25 preguntas, 5 por área, con resumen para imprimir ===== */
+var BASE='https://zhemaria.github.io/clases_leng3/';
+function L(cl,anc,nom){return {u:BASE+'clase_'+cl+'.html#'+anc,n:'Lección '+cl.replace('-','.')+' · '+nom};}
+var AREAS=['Gramática y convenciones','Vocabulario académico','Comprensión inferencial y evidencia','Análisis de fuentes y datos','Escritura argumentada e informativa'];
+var LECT='<div class="ev-estimulo"><p style="margin:0 0 6px"><strong>Lee el texto y responde las preguntas 11 a 14.</strong></p><div class="texto-lectura" style="margin:0"><p><strong>El primer turno</strong></p><p><span class="num-p" aria-hidden="true">1</span>Cuando Marta llegó a la panadería, todavía no había salido el sol. Encendió los hornos, se lavó las manos y empezó a amasar sin mirar el reloj: sus manos ya conocían el camino.</p><p><span class="num-p" aria-hidden="true">2</span>A las seis entró el señor Ortega, el dueño. Revisó las bandejas en silencio, probó un pan todavía caliente y asintió despacio. —Mañana te dejo las llaves —dijo antes de irse—. Yo ya no voy a venir tan temprano.</p><p><span class="num-p" aria-hidden="true">3</span>Marta se quedó quieta un momento, con la harina hasta los codos. Después siguió amasando, pero esta vez sonreía.</p><p style="font-size:.85rem;margin:0"><em>Texto escrito para la evaluación.</em></p></div></div>';
+var GRAF='<div class="ev-estimulo"><p style="margin:0 0 6px"><strong>Observa la gráfica y responde las preguntas 16 y 17.</strong></p><figure class="graf" style="margin:0"><figcaption>Población de la ciudad de Chicago según el censo, 1900–2020 (en millones)</figcaption><div class="lienzo" id="g-ev"></div><p class="fuente">Fuente: Oficina del Censo de los Estados Unidos.</p></figure></div>';
+var EV=[
+  /* Área 1 · Gramática y convenciones */
+  {a:0,t:'«Hablé con el vecino ___ hija estudia en mi clase.»',o:['cuya','que su','cuyo'],c:0,l:L('1-1','s-2-relativos','Los pronombres relativos')},
+  {a:0,t:'«Los empleados, que trabajaron el sábado, recibieron un bono.» ¿Qué significa la oración con esas comas?',o:['Que todos los empleados trabajaron el sábado y recibieron el bono','Que solo algunos empleados, los del sábado, recibieron el bono','Que nadie trabajó el sábado y aun así recibieron el bono'],c:0,l:L('1-1','s-3-comas','Con comas o sin comas: cambia el sentido')},
+  {a:0,t:'«Cuando llegué a la estación, el tren ya ___.»',o:['había salido','ha salido','está saliendo'],c:0,l:L('1-2','s-4-linea','La línea del tiempo: ¿qué pasó primero?')},
+  {a:0,t:'«Llovió toda la noche, las calles amanecieron inundadas.» ¿Cuál es la mejor corrección?',o:['Llovió toda la noche; las calles amanecieron inundadas.','Llovió toda la noche, y, las calles amanecieron inundadas.','Llovió toda la noche las calles amanecieron inundadas.'],c:0,l:L('1-3','s-3-corridas','Las oraciones corridas')},
+  {a:0,t:'¿Cuál está escrita según la norma española?',o:['El lunes leí <em>Cien años de soledad</em> en la biblioteca.','El Lunes leí «Cien Años De Soledad» en la biblioteca.','El lunes leí "Cien Años de Soledad" en la Biblioteca.'],c:0,l:L('2-1','s-2-titulos','Los títulos: cursiva o comillas')},
+  /* Área 2 · Vocabulario académico */
+  {a:1,t:'La raíz griega <strong>bio</strong> (como en <em>biología</em>) significa…',o:['vida','tierra','agua'],c:0,l:L('2-2','s-2-raices-griegas','Raíces griegas')},
+  {a:1,t:'La raíz latina <strong>port</strong> (como en <em>transportar</em> y <em>portátil</em>) significa…',o:['llevar','mirar','escribir'],c:0,l:L('2-2','s-3-raices-latinas','Raíces latinas')},
+  {a:1,t:'¿Qué verbo presenta con más precisión la idea de un autor que defiende una postura?',o:['El autor sostiene que…','El autor dice como que…','El autor pone que…'],c:0,l:L('2-3','s-3-citar','Los verbos para citar a un autor')},
+  {a:1,t:'¿Cuál es un antónimo de <strong>escaso</strong>?',o:['abundante','pequeño','reducido'],c:0,l:L('2-3','s-4-antonimos','Tres clases de antónimos')},
+  {a:1,t:'«Mi abuela es un roble: nada la tumba.» ¿Qué recurso es y qué significa?',o:['Una metáfora: la abuela es fuerte y resistente','Un símil: la abuela es alta como un árbol','Un refrán: hay que cuidar a los árboles viejos'],c:0,l:L('4-3','s-3-metafora','La metáfora')},
+  /* Área 3 · Comprensión inferencial y evidencia */
+  {a:2,pre:LECT,t:'¿Qué se puede inferir del señor Ortega?',o:['Confía en el trabajo de Marta','Está enojado con Marta','Piensa cerrar la panadería'],c:0,l:L('3-3','s-2-que-se-infiere','Qué se puede inferir')},
+  {a:2,t:'¿Qué detalle apoya mejor la idea de que Marta tiene mucha experiencia?',o:['«sus manos ya conocían el camino»','«todavía no había salido el sol»','«con la harina hasta los codos»'],c:0,l:L('3-2','s-4-mejor','Elegir la mejor evidencia')},
+  {a:2,t:'¿Cuál es el tema central del texto?',o:['La confianza que se gana con el trabajo bien hecho','La manera correcta de preparar el pan de cada día','Los horarios de trabajo de una panadería de barrio'],c:0,l:L('3-1','s-2-tema','Tema, tema central e ideas principales')},
+  {a:2,t:'¿Cuál es un resumen <strong>objetivo</strong> del texto?',o:['Marta trabaja de madrugada en una panadería; el dueño prueba el pan y le dice que le dejará las llaves.','Marta, la mejor panadera del mundo, por fin recibe el premio que siempre mereció de su jefe.','El señor Ortega es un dueño muy perezoso que ya no quiere levantarse temprano.'],c:0,l:L('3-1','s-5-resumen','El resumen objetivo')},
+  {a:2,t:'«Como el río llevaba los desechos al lago, la ciudad decidió invertir su curso. Como resultado, el agua del lago dejó de recibir esa suciedad.» ¿Qué estructura tiene este texto?',o:['Causa y efecto','Comparación y contraste','Orden cronológico de fechas'],c:0,l:L('4-1','s-2-estructuras','Las cinco estructuras')},
+  /* Área 4 · Análisis de fuentes y datos */
+  {a:3,pre:GRAF,t:'¿En qué año tuvo Chicago su mayor población?',o:['1950','2020','1900'],c:0,l:L('6-1','s-3-lineas','La gráfica de líneas')},
+  {a:3,t:'¿Qué conclusión respaldan los datos de la gráfica?',o:['Entre 1950 y 1990, la población de Chicago bajó.','Chicago perdió población porque subieron los alquileres.','Chicago volverá a tener 3.6 millones en el año 2050.'],c:0,l:L('6-1','s-5-conclusion','Conclusiones que los datos respaldan')},
+  {a:3,t:'«Probablemente Chicago volverá a crecer en la próxima década.» Este enunciado es…',o:['una especulación','un hecho comprobable','un juicio del autor'],c:0,l:L('6-2','s-4-hji','Hecho, juicio o especulación')},
+  {a:3,t:'Para estudiar la Gran Migración, ¿cuál es una fuente <strong>primaria</strong>?',o:['Una carta de 1917 de un obrero que quería mudarse a Chicago','Un libro de historia de 2010 sobre la Gran Migración','Un artículo de una enciclopedia en línea sobre el tema'],c:0,l:L('5-3','s-1-repaso','Primaria y secundaria')},
+  {a:3,t:'Texto A: «El horario de verano se creó para ahorrar energía.» Texto B: «Hoy ese ahorro es de menos del 1 %.» ¿Cómo se relacionan?',o:['El texto B pone en duda la razón que da el texto A','Los dos textos dicen exactamente lo mismo','El texto A contradice todo lo que dice el texto B'],c:0,l:L('5-2','s-2-relaciones','Tres relaciones entre dos textos')},
+  /* Área 5 · Escritura argumentada e informativa */
+  {a:4,t:'¿Cuál es la mejor <strong>tesis</strong>?',o:['La ciudad debería abrir más clínicas, porque hay largas esperas y barrios sin servicio.','Las clínicas de la ciudad atienden a miles de personas cada año en sus barrios.','Las clínicas son un tema importante del que se habla bastante en la ciudad.'],c:0,l:L('7-1','s-2-tesis','La tesis')},
+  {a:4,t:'«Es cierto que abrir clínicas cuesta dinero. ___, atender a tiempo evita gastos mayores.»',o:['No obstante','En primer lugar','Asimismo'],c:0,l:L('7-1','s-5-orden','El orden y las transiciones')},
+  {a:4,t:'Dato: «La clorofila refleja la luz verde.» ¿Qué oración añade <strong>análisis</strong>?',o:['Por eso las hojas sanas se ven verdes.','La clorofila está en los cloroplastos.','Las plantas también necesitan agua.'],c:0,l:L('7-2','s-5-analisis','Del dato al análisis')},
+  {a:4,t:'¿Qué oración tiene tono <strong>objetivo</strong>?',o:['El tribunal concluyó que las escuelas separadas eran desiguales.','¡La decisión del tribunal fue increíble y muy, muy valiente!','Yo creo que los jueces hicieron lo que todos querían desde siempre.'],c:0,l:L('7-3','s-5-tono','El tono objetivo')},
+  {a:4,t:'Original: «La biblioteca presta computadoras a los vecinos con tarjeta.» ¿Cuál es una paráfrasis correcta?',o:['Con la tarjeta de la biblioteca, los vecinos pueden llevarse una computadora prestada.','La biblioteca presta laptops a todos los residentes que tienen su tarjeta.','La biblioteca vende computadoras portátiles baratas a todos los vecinos del barrio.'],c:0,l:L('8-1','s-5-parafrasis','Parafrasear sin copiar')}
+];
+
+(function(){
+  var cuerpo=document.getElementById('ev-cuerpo'), elegidas={}, N=EV.length, area=-1, h='';
+  function barajarQ(a){for(var k=a.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=a[k];a[k]=a[r];a[r]=t;}return a;}
+  EV.forEach(function(p,i){
+    if(p.a!==area){area=p.a; h+='<h3 class="ev-area">Área '+(area+1)+' · '+AREAS[area]+'</h3>';}
+    if(p.pre)h+=p.pre;
+    var orden=barajarQ(p.o.map(function(_,j){return j;}));
+    h+='<div class="qz-preg" role="group" aria-labelledby="ev-e'+i+'" id="ev-p'+i+'"><p class="qz-enun" id="ev-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p><div class="qz-ops">'+
+      orden.map(function(j){return '<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';}).join('')+'</div></div>';
+  });
+  cuerpo.innerHTML=h;
+  var A=['1900','1910','1920','1930','1940','1950','1960','1970','1980','1990','2000','2010','2020'];
+  var M=[1.70,2.19,2.70,3.38,3.40,3.62,3.55,3.37,3.01,2.78,2.90,2.70,2.75], g=document.getElementById('g-ev');
+  graficaLineas(g,{titulo:'Población de Chicago según el censo, 1900 a 2020, en millones',etiquetas:A,series:[{nombre:'Población (millones)',valores:M}],min:1,max:4,paso:0.5,ejeY:'Millones de habitantes',unidad:' millones',valoresVisibles:true});
+  tablaDatos(g,'Población de Chicago por censo, en millones',['Año','Millones'],A.map(function(a,i){return [a,M[i]];}));
+
+  cuerpo.addEventListener('click',function(ev){
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+
+  var aviso=document.getElementById('ev-aviso'), bC=document.getElementById('ev-calificar'), bR=document.getElementById('ev-reintentar'), confirmar=false;
+  bC.addEventListener('click',function(){
+    var faltan=EV.filter(function(_,i){return elegidas[i]===undefined;}).length;
+    if(faltan&&!confirmar){confirmar=true; aviso.textContent='Te faltan '+faltan+' pregunta'+(faltan>1?'s':'')+' por responder. Pulsa «Ver mi resultado» otra vez si quieres terminar de todos modos.'; return;}
+    confirmar=false; aviso.textContent='';
+    var bien=0, porArea=AREAS.map(function(){return 0;}), fallos=[];
+    EV.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c){bien++;porArea[p.a]++;}
+      else{
+        fallos.push(i);
+        var nota=document.createElement('p'); nota.className='qz-repaso';
+        nota.innerHTML='📘 Para repasar: <a href="'+p.l.u+'" target="_blank" rel="noopener noreferrer">'+p.l.n+'</a>';
+        document.getElementById('ev-p'+i).appendChild(nota);
+      }
+    });
+    var nom=document.getElementById('ev-nombre-in').value.trim(), hoy=new Date().toLocaleDateString('es-US',{year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('rf-datos').innerHTML='<strong>Estudiante:</strong> '+(nom?nom.replace(/[<>&]/g,''):'(sin nombre)')+' · <strong>Fecha:</strong> '+hoy;
+    var tt=document.getElementById('rf-total'), pc=Math.round(bien/N*100);
+    tt.textContent='Resultado: '+bien+' de '+N+' ('+pc+' %)';
+    tt.style.background=pc>=80?'#d4edda':pc>=60?'#fff3cd':'#f8d7da'; tt.style.color=pc>=80?'#155724':pc>=60?'#5c3900':'#721c24';
+    document.getElementById('rf-areas').innerHTML=AREAS.map(function(a,k){
+      return '<tr><td>'+a+'</td><td>'+porArea[k]+' de 5</td><td><div class="rf-barra" role="img" aria-label="'+porArea[k]*20+' por ciento"><span style="width:'+porArea[k]*20+'%"></span></div></td></tr>';
+    }).join('');
+    var lis=document.getElementById('rf-lista');
+    if(!fallos.length)lis.innerHTML='<li>¡No tienes nada pendiente! Respondiste bien todas las preguntas.</li>';
+    else lis.innerHTML=fallos.map(function(i){var p=EV[i];return '<li>Pregunta '+(i+1)+' ('+AREAS[p.a]+'): <a href="'+p.l.u+'" target="_blank" rel="noopener noreferrer">'+p.l.n+'</a> <span class="rf-url">'+p.l.u+'</span></li>';}).join('');
+    var debil=AREAS.filter(function(_,k){return porArea[k]<=2;});
+    document.getElementById('rf-consejo').innerHTML=pc>=80?'🎉 <strong>¡Excelente!</strong> Dominas los contenidos del Nivel 3. Repasa los puntos de la lista, si los hay, y estarás listo para el Nivel 4.':
+      (pc>=60?'👍 <strong>Buen trabajo.</strong> ':'💪 <strong>Sigue adelante.</strong> ')+(debil.length?'Conviene que repases sobre todo: <strong>'+debil.join(', ')+'</strong>. ':'')+'Abre cada enlace de la lista, repasa la sección y vuelve a hacer la evaluación.';
+    var rf=document.getElementById('resumen-final'); rf.classList.add('visible');
+    bC.style.display='none'; bR.style.display='inline-block';
+    rf.scrollIntoView({behavior:'smooth',block:'start'}); rf.focus({preventScroll:true});
+  });
+  bR.addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    cuerpo.querySelectorAll('.qz-ops').forEach(function(o){Array.prototype.slice.call(o.children).sort(function(){return Math.random()-0.5;}).forEach(function(c){o.appendChild(c);});});
+    elegidas={}; document.getElementById('resumen-final').classList.remove('visible');
+    bR.style.display='none'; bC.style.display='inline-block';
+    document.getElementById('s-7-evaluacion').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  document.getElementById('rf-imprimir').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body>
+</html>
