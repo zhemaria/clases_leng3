@@ -209,6 +209,9 @@
   .flujo .ramas span{flex:1 1 140px;background:#fff;border:1px solid #9aa9b7;border-radius:6px;padding:5px 8px}
   .pendiente{border:2px dashed #6d28d9;background:#f5f3ff;border-radius:10px;padding:12px 14px;margin:12px 0}
   figure.infografia img{display:block;border-radius:6px}
+  .video-caja{position:relative;width:100%;max-width:820px;aspect-ratio:16/9;margin:12px auto;border-radius:10px;overflow:hidden;background:#000}
+  .video-caja iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .transcripcion summary{font-size:.95rem}
 </style>
 </head>
 <body>
@@ -297,6 +300,7 @@
     <li><strong>Compare el día final</strong> (día 20 o 21). Ponga las tres macetas juntas, calcule el promedio de altura de cada una y compárelo con su hipótesis.</li>
   </ol>
   <p><strong>⚠️ Ojo:</strong> si en alguna maceta no sale ninguna semilla en diez días, vuelva a sembrar las tres a la vez. Es mejor empezar de nuevo que comparar plantas de distinta edad.</p>
+  <p><strong>⚠️ Un resultado que puede sorprender:</strong> la planta de la maceta C (oscuridad) suele crecer más alta que las otras, pero delgada, con el tallo débil y las hojas pálidas o amarillentas: se estira buscando la luz. No es un error del experimento.</p>
   <p style="font-size:.9rem;margin-bottom:0"><em>Versión breve del procedimiento que siguió el maestro José M. Fernández para el video de esta lección.</em> <a href="https://zhemaria.github.io/clases_leng3/procedimiento-experimento-luz.html" target="_blank" rel="noopener noreferrer">Ver el procedimiento completo, con la hoja de registro</a> (se abre en una pestaña nueva).</p>
 </div>
 <div class="botones" style="justify-content:flex-start">
@@ -369,10 +373,37 @@
   </tbody>
 </table>
 <h3>El video</h3>
-<div class="pendiente" id="video-pendiente">
-  <p><strong>🎬 Muy pronto: el video del experimento.</strong> Tu maestro está haciendo el experimento con sus tres macetas y lo está grabando. Cuando esté listo, aparecerá aquí, con subtítulos en español y la transcripción completa.</p>
-  <p style="margin-bottom:0">Mientras tanto, piensa: ¿qué crees que mostrará el video mejor que el texto y que la infografía? ¿Qué podría faltar en el video?</p>
+<p>El mismo procedimiento, ahora en un video de unos seis minutos: diapositivas ilustradas con una voz que explica cada paso. Míralo completo y fíjate en tres cosas: qué coincide con el texto, qué añade y qué <strong>no</strong> coincide.</p>
+<div class="video-caja">
+  <iframe src="https://www.youtube-nocookie.com/embed/3nYqfImBu94" title="Video: El efecto de la luz en el crecimiento de una planta, procedimiento paso a paso" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
+<p style="font-size:.95rem">Si el video no se ve aquí, <a href="https://youtu.be/3nYqfImBu94" target="_blank" rel="noopener noreferrer">ábrelo en YouTube</a> (se abre en una pestaña nueva). Puedes activar los subtítulos con el botón <strong>CC</strong>.</p>
+<details class="transcripcion">
+  <summary>📄 Lo que muestra el video, parte por parte</summary>
+  <div class="texto-lectura">
+    <p><strong>Inicio.</strong> Título «Procedimiento paso a paso» y un índice con las seis partes.</p>
+    <p><strong>1 · Preparación y materiales.</strong> La pregunta «¿Cuál es la hipótesis principal del experimento?». La lista de materiales: 9 semillas, 3 macetas, etiquetas, regla y agua. Paso 1: poner las 9 semillas en un vaso de agua; paso 2: remojarlas de 8 a 12 horas.</p>
+    <p><strong>2 · Siembra paso a paso.</strong> Cuatro pasos unidos con flechas: llenar con tierra hasta 2 cm del borde, poner las etiquetas A, B y C, sembrar 3 semillas por maceta a 2–3 cm de profundidad y echar 60 ml de agua a cada una. Después, dejar germinar las macetas con luz indirecta hasta que salgan los brotes.</p>
+    <p><strong>3 · Medición del Día 0.</strong> «El Día 0 no ocurre cuando se entierran las semillas»: es el día en que las tres macetas tienen brotes. Acciones: medir, anotar los datos y tomar una foto del grupo. Una tabla indica dónde va cada maceta: A, luz plena, en la ventana; B, poca luz, en un rincón; C, ninguna luz, en una caja; todas a la misma temperatura.</p>
+    <p><strong>4 · Monitoreo de 21 días.</strong> Del día 1 al 21, regar igual a las tres, cada dos días y a la misma hora. Los días pares, medir y anotar la altura, el color y el número de hojas antes de regar. Una tabla dice cómo se mide cada cosa: la altura con la regla, el color mirando y las hojas contando.</p>
+    <p><strong>5 · Resultados y deducción.</strong> «¿Qué planta creció más bajo sus condiciones?» y «Compare el promedio calculado de altura con su hipótesis original».</p>
+    <p><strong>6 · Conclusiones finales.</strong> Promedio de altura frente a hipótesis original, y la pregunta «¿Se cumplió su hipótesis?», con un dibujo de tres plantas: luz plena, poca luz y oscuridad.</p>
+  </div>
+</details>
+<div class="pendiente" id="resultados-pendiente">
+  <p style="margin:0"><strong>🌱 Muy pronto: los resultados reales.</strong> Tu maestro está haciendo el experimento con sus tres macetas. Cuando termine, aquí estarán sus fotos, sus mediciones y la gráfica de crecimiento de A, B y C.</p>
+</div>
+<h3>Compara: el texto, la infografía y el video</h3>
+<table class="tabla">
+  <caption class="sr-solo">Qué muestra mejor cada formato del procedimiento</caption>
+  <thead><tr><th scope="col">Formato</th><th scope="col">Lo que hace mejor</th><th scope="col">Lo que le falta o hay que revisar</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Texto</strong></td><td>Todas las medidas y la advertencia de qué hacer si no germinan.</td><td>No muestra cómo se ve cada paso.</td></tr>
+    <tr><td><strong>Infografía</strong></td><td>Todo el proceso de un vistazo, en una sola página.</td><td>No da la cantidad de agua ni la advertencia.</td></tr>
+    <tr><td><strong>Video</strong></td><td>Una voz que explica cada paso mientras se ve; aclara muy bien qué es el Día 0.</td><td>Algunos dibujos no coinciden con el texto: hay que verlo con ojo crítico.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>⚠️ Mira con ojo crítico:</strong> los dibujos del video se hicieron con inteligencia artificial, y algunos tienen errores. Busca, por ejemplo, cuántas macetas aparecen en la diapositiva de los materiales, de qué clase son las semillas y cómo es la planta de la oscuridad en el dibujo final. ¿Coincide con lo que dice el texto de la sección 2 (⚠️ «Un resultado que puede sorprender»)? Un buen lector no cree una imagen solo porque se ve bonita: la compara con el texto.</div>
 <div class="clasificador apilado" id="clasif-multimedia"></div>
 <div class="puntaje" id="puntaje-multimedia" role="status" aria-live="polite"></div>
 <a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-3.html#texto-diagrama" target="_blank" rel="noopener noreferrer">🖼️ Practica más: texto y diagrama
@@ -608,7 +639,10 @@ clasificador('clasif-multimedia','puntaje-multimedia',[
   {p:'¿Qué información da el <strong>texto</strong> que <strong>no</strong> da la infografía?',ops:['La cantidad exacta de agua: 60 ml','Que la maceta C va dentro de una caja','Que las semillas se remojan de 8 a 12 horas'],c:0,n:'La infografía dice «la misma cantidad de agua», pero no cuánta.'},
   {p:'¿Qué muestra <strong>mejor</strong> la infografía que el texto?',ops:['Dónde se coloca cada maceta, con dibujos','Qué hacer si no germina ninguna semilla','La lista completa de materiales'],c:0,n:'La ventana, el rincón y la caja se ven de un vistazo.'},
   {p:'En la infografía hay 6 pasos y en el texto hay 9. ¿Por qué?',ops:['La infografía junta varios pasos del texto en uno','La infografía se saltó tres pasos del experimento','El texto repite tres pasos dos veces seguidas'],c:0,n:'Por ejemplo, «Siembre y riegue igual» junta los pasos 2, 3 y 4 del texto.'},
-  {p:'¿Qué podría mostrar el <strong>video</strong> mejor que el texto y que la infografía?',ops:['Cómo se ven de verdad las plantas al crecer','La cantidad exacta de horas del remojo','La definición de la variable dependiente'],c:0,n:'El video enseña el resultado real: el color, el grosor del tallo, cómo se inclinan hacia la luz.'}
+  {p:'¿Qué aclara muy bien el <strong>video</strong> sobre el Día 0?',ops:['Que no es el día de la siembra, sino cuando las tres macetas tienen brotes','Que es el primer día en que se riegan las tres macetas con 60 ml','Que es el día en que se calcula el promedio de altura de las plantas'],c:0,n:'«El Día 0 no ocurre cuando se entierran las semillas», dice una de sus diapositivas.'},
+  {p:'En el dibujo final del video, la planta de la oscuridad aparece <strong>pequeña</strong>. ¿Qué dice el texto?',ops:['Que suele crecer más alta, pero delgada y pálida','Que no llega a germinar en ningún caso','Que crece igual que la planta de la ventana'],c:0,n:'El dibujo contradice el texto: por eso hay que comparar los formatos y no creer una imagen solo porque se ve bien.'},
+  {p:'En la diapositiva de materiales del video se ven semillas de varias clases. ¿Qué pide el texto?',ops:['Semillas de frijol del mismo paquete','Semillas distintas para comparar mejor','Cualquier semilla que haya en casa'],c:0,n:'La semilla es una variable controlada: tiene que ser igual en las tres macetas.'},
+  {p:'¿Qué tiene el video que <strong>no</strong> tienen ni el texto ni la infografía?',ops:['Una voz que explica cada paso mientras se ve','Las medidas exactas de cada paso del experimento','La advertencia de qué hacer si no germinan'],c:0,n:'Texto, infografía y video se complementan: cada uno aporta algo distinto.'}
 ],null,false);
 
 iniciarQuiz([
