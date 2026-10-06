@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<!-- Lección 1.1 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 1.1 · Pronombres relativos y conjunciones subordinantes</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+  /* ── Nivel 3 · Lección 1.1: marcas de cláusulas ── */
+  .rel{color:#4c1d95;font-weight:700;border-bottom:3px solid #6d28d9}
+  .cj{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .sub-ej{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:#6d28d9}
+  .texto-lectura .rel,.texto-lectura .cj{color:inherit;font-weight:inherit;border:none;background:none;padding:0}
+  .ver-cl .rel{color:#4c1d95;font-weight:700;border-bottom:3px solid #6d28d9}
+  .ver-cl .cj{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 3px;border-radius:4px}
+  .ver-cl .sub{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:#6d28d9}
+</style>
+</head>
+<body>
+<h1>Lección 1.1 · Pronombres relativos y conjunciones subordinantes</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 1: Gramática avanzada de la oración · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Usar los <strong>pronombres relativos</strong> <em>que, quien, el cual, cuyo</em> y <em>donde</em> para unir dos ideas sin repetir palabras.</li>
+    <li>Elegir la <strong>conjunción subordinante</strong> que expresa lo que quieres decir: causa, obstáculo, tiempo, condición o finalidad.</li>
+    <li>Distinguir la <strong>cláusula principal</strong> de la <strong>subordinada</strong> y puntuarlas bien.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.W.CS.1</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-repaso">Repaso: la oración compleja</a></li>
+    <li><a href="#s-2-relativos">Los pronombres relativos</a></li>
+    <li><a href="#s-3-comas">Con comas o sin comas: cambia el sentido</a></li>
+    <li><a href="#s-4-conjunciones">Las conjunciones subordinantes</a></li>
+    <li><a href="#s-5-lectura">Lectura: «El Gran Incendio de Chicago»</a></li>
+    <li><a href="#s-6-practica">Práctica: elige el relativo y el conector</a></li>
+    <li><a href="#s-7-une">Práctica: une con precisión</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Compara: <em>«Tengo un vecino. El hijo de mi vecino arregla computadoras. Mi vecino vive en el segundo piso.»</em> con <em>«Mi vecino del segundo piso, <strong>cuyo</strong> hijo arregla computadoras, me ayudó ayer.»</em> La segunda versión no repite <em>vecino</em> tres veces: lo une todo con un <strong>pronombre relativo</strong>. En el GED, una buena parte de las preguntas de edición te piden justamente esto: unir ideas con la palabra precisa y la puntuación correcta.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-repaso">
+<summary>1. Repaso: la oración compleja <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>En el Nivel 2 aprendiste que una <span class="palabra-clave">oración compleja</span> tiene una <strong>cláusula principal</strong>, que se sostiene sola, y una <strong>cláusula subordinada</strong>, que depende de ella y empieza con una palabra de enlace:</p>
+<table class="tabla">
+  <caption class="sr-solo">Cláusula principal y cláusula subordinada en tres ejemplos</caption>
+  <thead><tr><th scope="col">Cláusula principal</th><th scope="col">Cláusula subordinada</th></tr></thead>
+  <tbody>
+    <tr><td>No fui a trabajar</td><td><span class="cx">porque</span> estaba enferma.</td></tr>
+    <tr><td>Terminé la tarea</td><td><span class="cx">aunque</span> estaba cansado.</td></tr>
+    <tr><td>El libro … es muy bueno.</td><td><span class="cx">que</span> me prestaste</td></tr>
+  </tbody>
+</table>
+<p>En esta lección conocerás más palabras de enlace de los dos tipos: los <strong>pronombres relativos</strong> (como <em>que</em>), que unen una idea a un sustantivo, y las <strong>conjunciones subordinantes</strong> (como <em>porque</em> o <em>aunque</em>), que unen una idea a todo lo que pasa en la oración principal.</p>
+<div class="tip"><strong>💡 ¿Necesitas repasar?</strong> La <a href="https://zhemaria.github.io/clases_leng2/clase_2-3.html#s-3-compleja" target="_blank" rel="noopener noreferrer" style="color:var(--cp-oscuro);font-weight:700">Lección 2.3 del Nivel 2</a> explica la oración compleja desde el principio. Se abre en una pestaña nueva.</div>
+</div>
+</details>
+
+<details id="s-2-relativos">
+<summary>2. Los pronombres relativos <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<p>Un <span class="palabra-clave">pronombre relativo</span> se refiere a una palabra que ya apareció (su <em>antecedente</em>) y la conecta con más información, sin repetirla:</p>
+<p class="ejemplo">Compré una lámpara. <u>La lámpara</u> no funciona. → La lámpara <span class="rel">que</span> compré no funciona.</p>
+<table class="tabla">
+  <caption class="sr-solo">Pronombres relativos: uso y ejemplo</caption>
+  <thead><tr><th scope="col">Relativo</th><th scope="col">Se usa para…</th><th scope="col">Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td><span class="rel">que</span></td><td>Personas o cosas. Es el más común.</td><td>El fuego <span class="rel">que</span> comenzó en el granero duró dos días.</td></tr>
+    <tr><td><span class="rel">quien</span>, <span class="rel">quienes</span></td><td>Solo personas. Sobre todo después de una preposición o entre comas.</td><td>La señora <span class="rel">a quien</span> ayudé me dio las gracias.</td></tr>
+    <tr><td><span class="rel">el cual</span>, <span class="rel">la cual</span>, <span class="rel">los cuales</span>, <span class="rel">las cuales</span></td><td>Personas o cosas, casi siempre después de una preposición. Concuerda con el antecedente.</td><td>Esa es la razón <span class="rel">por la cual</span> renuncié.</td></tr>
+    <tr><td><span class="rel">cuyo</span>, <span class="rel">cuya</span>, <span class="rel">cuyos</span>, <span class="rel">cuyas</span></td><td>Posesión: algo que pertenece al antecedente.</td><td>Conocí a un señor <span class="rel">cuya</span> hija es médica.</td></tr>
+    <tr><td><span class="rel">donde</span></td><td>Lugares.</td><td>Esta es la fábrica <span class="rel">donde</span> trabajo.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>⚠️ <em>Cuyo</em> concuerda con lo que se posee, no con el dueño:</strong> <em>el señor <strong>cuya</strong> hija</em> (concuerda con <em>hija</em>), <em>la señora <strong>cuyo</strong> carro</em> (concuerda con <em>carro</em>), <em>los vecinos <strong>cuyas</strong> ventanas</em> (con <em>ventanas</em>).</div>
+<div class="tip"><strong>⚠️ El error «que su»:</strong> en la conversación se oye mucho <em>«el vecino <s>que su</s> hijo arregla computadoras»</em>. En la escritura formal, y en el GED, se escribe <em>«el vecino <strong>cuyo</strong> hijo arregla computadoras»</em>. Si ves <em>que su</em>, casi siempre puedes cambiarlo por <em>cuyo</em>.</div>
+<div class="tip"><strong>⚠️ <em>Quien</em> no sirve para cosas:</strong> <em>la caja <s>quien</s> llegó</em> está mal; se dice <em>la caja <strong>que</strong> llegó</em>. Y recuerda su plural: <em>mis primos, <strong>quienes</strong> viven en Cicero</em>.</div>
+<div class="tip"><strong>💡 Sin tilde:</strong> los relativos <em>que, quien, cual, donde</em> no llevan tilde. La tilde aparece solo cuando preguntan o exclaman: <em>¿<strong>Qué</strong> compraste?</em>, <em>¿<strong>Dónde</strong> trabajas?</em></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-1.html#relativos" target="_blank" rel="noopener noreferrer">🧩 Practica más: elige el relativo
+  <span>Oraciones nuevas cada vez, con <em>que, quien, el cual, cuyo</em> y <em>donde</em>. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-3-comas">
+<summary>3. Con comas o sin comas: cambia el sentido <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Una cláusula con relativo puede ir <strong>sin comas</strong> o <strong>entre comas</strong>, y no es lo mismo:</p>
+<table class="tabla">
+  <caption class="sr-solo">Diferencia entre la cláusula de relativo sin comas y entre comas</caption>
+  <thead><tr><th scope="col">Oración</th><th scope="col">Qué significa</th></tr></thead>
+  <tbody>
+    <tr><td>Los empleados <span class="rel">que</span> trabajaron el sábado cobrarán extra.</td><td><strong>Solo algunos</strong> trabajaron el sábado, y solo esos cobrarán extra. La cláusula <em>separa</em> a un grupo del resto.</td></tr>
+    <tr><td>Los empleados<strong>,</strong> <span class="rel">que</span> trabajaron el sábado<strong>,</strong> cobrarán extra.</td><td><strong>Todos</strong> los empleados trabajaron el sábado, y todos cobrarán extra. La cláusula solo <em>añade</em> un dato.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 La prueba del paréntesis:</strong> si puedes quitar la cláusula y la oración sigue diciendo lo mismo sobre las mismas personas o cosas, va entre comas. <em>Mi madre, que vive en Durango, me llama cada domingo.</em> Solo tienes una madre: la cláusula añade un dato, así que va entre comas.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-1.html#comas" target="_blank" rel="noopener noreferrer">✏️ Practica más: ¿con comas o sin comas?
+  <span>Decides qué significa cada oración según sus comas.</span></a>
+</div>
+</details>
+
+<details id="s-4-conjunciones">
+<summary>4. Las conjunciones subordinantes <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<p>Las <span class="palabra-clave">conjunciones subordinantes</span> unen una cláusula a la principal y dicen <strong>qué relación</strong> hay entre las dos. Conviene aprenderlas por grupos, según lo que expresan:</p>
+<table class="tabla">
+  <caption class="sr-solo">Conjunciones subordinantes agrupadas por lo que expresan</caption>
+  <thead><tr><th scope="col">Expresan…</th><th scope="col">Conjunciones</th><th scope="col">Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Causa</strong>: por qué</td><td><span class="cj">porque</span>, <span class="cj">ya que</span>, <span class="cj">puesto que</span>, <span class="cj">como</span> (al principio)</td><td><span class="cj">Como</span> había tráfico, llegué tarde.</td></tr>
+    <tr><td><strong>Obstáculo</strong> que no impide la acción</td><td><span class="cj">aunque</span>, <span class="cj">a pesar de que</span>, <span class="cj">si bien</span></td><td><span class="cj">A pesar de que</span> llovía, se jugó el partido.</td></tr>
+    <tr><td><strong>Tiempo</strong>: cuándo</td><td><span class="cj">cuando</span>, <span class="cj">mientras</span>, <span class="cj">en cuanto</span>, <span class="cj">antes de que</span>, <span class="cj">después de que</span>, <span class="cj">hasta que</span></td><td>Esperé <span class="cj">hasta que</span> me llamaron.</td></tr>
+    <tr><td><strong>Condición</strong></td><td><span class="cj">si</span>, <span class="cj">siempre que</span>, <span class="cj">a menos que</span>, <span class="cj">en caso de que</span></td><td>Puedes usar el carro <span class="cj">siempre que</span> lo devuelvas lleno.</td></tr>
+    <tr><td><strong>Finalidad</strong>: para qué</td><td><span class="cj">para que</span>, <span class="cj">a fin de que</span></td><td>Te dejo la llave <span class="cj">para que</span> puedas entrar.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>⚠️ Las que piden subjuntivo:</strong> después de <em>para que, antes de que, a menos que</em> y <em>en caso de que</em>, el verbo va siempre en subjuntivo: <em>para que <strong>vengas</strong></em> (no <em><s>para que vienes</s></em>), <em>antes de que <strong>salga</strong></em>, <em>a menos que <strong>llueva</strong></em>.</div>
+<div class="tip"><strong>⚠️ «Pienso de que…»:</strong> sobra el <em>de</em>. Este error se llama <em>dequeísmo</em> y aparece en el GED. Haz la prueba de cambiar la cláusula por <em>eso</em>: <em>pienso eso</em> (sin <em>de</em>), así que <em>pienso <strong>que</strong>…</em>; pero <em>estoy seguro <strong>de</strong> eso</em>, así que <em>estoy seguro <strong>de que</strong>…</em></div>
+<div class="tip"><strong>💡 La coma:</strong> como en el Nivel 2, si la cláusula subordinada va <strong>primero</strong>, se separa con coma: <em>Como había tráfico<strong>,</strong> llegué tarde.</em></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-1.html#conectores" target="_blank" rel="noopener noreferrer">🔗 Practica más: elige la conjunción
+  <span>Completas oraciones con la conjunción que da el sentido correcto.</span></a>
+</div>
+</details>
+
+<details id="s-5-lectura">
+<summary>5. Lectura: «El Gran Incendio de Chicago» <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura</span> Individual · lectura analítica</h4>
+  <p style="margin:0">Lee el texto una vez para entenderlo. Después pulsa <strong>Mostrar las cláusulas</strong>: verás <span class="rel">los relativos</span>, <span class="cj">las conjunciones</span> y, <span class="sub-ej">subrayada</span>, cada cláusula subordinada. Para cada una, piensa: ¿de qué palabra o de qué idea depende?</p>
+</div>
+<div class="texto-lectura" id="lectura">
+  <p>La noche del 8 de octubre de 1871, un fuego <span class="sub"><span class="rel">que</span> comenzó en el granero de la familia O'Leary</span>, en la calle DeKoven, empezó a extenderse por Chicago. <span class="sub"><span class="cj">Como</span> el verano había sido muy seco</span>, la madera de las casas y de las aceras ardía con facilidad.</p>
+  <p><span class="sub"><span class="cj">Aunque</span> los bomberos trabajaron sin descanso</span>, el viento empujó las llamas hacia el norte y el este. El fuego cruzó el río Chicago, <span class="sub"><span class="rel">cuyas</span> orillas estaban llenas de almacenes y depósitos de madera</span>, y llegó al centro, <span class="sub"><span class="rel">donde</span> estaban los bancos, los hoteles y los periódicos</span>.</p>
+  <p>El incendio no se apagó <span class="sub"><span class="cj">hasta que</span> empezó a llover</span>, el 10 de octubre. Murieron unas 300 personas, se destruyeron más de 17 000 edificios y unas 90 000 personas, <span class="sub"><span class="rel">que</span> eran más de la cuarta parte de los habitantes</span>, se quedaron sin hogar.</p>
+  <p>Durante años se culpó a una vaca <span class="sub"><span class="rel">que</span>, según la leyenda, había pateado una lámpara</span>. Nadie lo probó nunca, y en 1997 el Concejo Municipal declaró inocentes a Catherine O'Leary y a su vaca.</p>
+  <p>Uno de los pocos edificios <span class="sub"><span class="rel">que</span> sobrevivieron</span> fue la Torre del Agua, <span class="sub"><span class="rel">la cual</span> todavía se puede visitar en la avenida Michigan</span>. <span class="sub"><span class="cj">Para que</span> una tragedia así no se repitiera</span>, la ciudad adoptó reglas más estrictas para construir. <span class="sub"><span class="cj">Mientras</span> se reconstruía</span>, Chicago levantó algunos de los primeros rascacielos del mundo.</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar el texto</button>
+  <button type="button" class="btn btn-secundario" id="ver-cl" aria-pressed="false">Mostrar las cláusulas</button>
+</div>
+<h3>¿De qué depende cada cláusula?</h3>
+<div class="clasificador apilado" id="clasif-lectura"></div>
+<div class="puntaje" id="puntaje-lectura" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-6-practica">
+<summary>6. Práctica: elige el relativo y el conector <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<h3>¿Qué relativo va?</h3>
+<div class="clasificador" id="clasif-rel"></div>
+<div class="puntaje" id="puntaje-rel" role="status" aria-live="polite"></div>
+<h3>¿Qué conjunción va?</h3>
+<div class="clasificador" id="clasif-cj"></div>
+<div class="puntaje" id="puntaje-cj" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-7-une">
+<summary>7. Práctica: une con precisión <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-actividad">Actividad</span> Individual · en tu cuaderno</h4>
+  <p>Une cada par de oraciones en una sola, con la palabra de enlace que se pide. No repitas el sustantivo y pon la coma donde haga falta.</p>
+  <ul class="lista-bonita" style="margin-bottom:0">
+    <li><em>Tengo una vecina. Su hijo arregla computadoras.</em> → posesión (<em>cuyo</em>)</li>
+    <li><em>Visité la escuela. Allí estudié de niño.</em> → lugar (<em>donde</em>)</li>
+    <li><em>Ahorro cada semana. Quiero que mis hijos estudien.</em> → finalidad (<em>para que</em>)</li>
+    <li><em>Hacía frío. Salimos a caminar.</em> → obstáculo (<em>aunque</em>, al principio)</li>
+    <li><em>El jefe felicitó a Marta. Marta terminó el proyecto a tiempo.</em> → relativo de persona (<em>quien</em>, entre comas)</li>
+  </ul>
+</div>
+<details style="margin-top:10px"><summary>Ver las respuestas</summary><div class="contenido-detalle">
+Tengo una vecina cuyo hijo arregla computadoras. · Visité la escuela donde estudié de niño. · Ahorro cada semana para que mis hijos estudien. · Aunque hacía frío, salimos a caminar. · El jefe felicitó a Marta, quien terminó el proyecto a tiempo.
+</div></details>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-1.html#une" target="_blank" rel="noopener noreferrer">🧵 Practica más: ¿cuál es la mejor unión?
+  <span>Dos oraciones y tres maneras de unirlas: eliges la que conserva el sentido y está bien escrita.</span></a>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> uno dice dos oraciones cortas («Tengo un primo. Mi primo maneja un tráiler.») y el otro las une en voz alta con un relativo («Tengo un primo que maneja un tráiler»). Luego cambien de papel.</div>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>8. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Tres oraciones complejas.</strong> Escribe sobre tu barrio o tu trabajo una oración con <em>que</em>, otra con <em>cuyo</em> (o <em>cuya</em>) y otra con una conjunción subordinante de esta lección. Subraya la cláusula subordinada.</li>
+  <li><strong>Corrige.</strong> Reescribe bien estas oraciones: «La señora que su carro está mal estacionado debe moverlo» · «Te llamo para que me ayudas» · «Pienso de que el examen será fácil» · «La caja quien llegó ayer está rota».</li>
+  <li><strong>Con y sin comas.</strong> Escribe un par de oraciones como las de la sección 3 (una con comas y otra sin ellas) y explica en una línea qué cambia.</li>
+</ul>
+<details style="margin-top:6px"><summary>Ver las respuestas de «Corrige»</summary><div class="contenido-detalle">
+«La señora <strong>cuyo</strong> carro está mal estacionado debe moverlo.» · «Te llamo para que me <strong>ayudes</strong>.» · «Pienso <strong>que</strong> el examen será fácil.» · «La caja <strong>que</strong> llegó ayer está rota.»
+</div></details>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>9. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>10. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Los relativos <em>que, quien, el cual, cuyo</em> y <em>donde</em> unen una idea a un sustantivo sin repetirlo.</li>
+  <li><em>Cuyo</em> concuerda con lo poseído y sustituye al «<em>que su</em>» de la conversación.</li>
+  <li>Sin comas, la cláusula separa a un grupo; entre comas, solo añade un dato.</li>
+  <li>Las conjunciones subordinantes expresan causa, obstáculo, tiempo, condición o finalidad; algunas piden subjuntivo.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Puedes decir una oración con <em>cuyo</em> sobre alguien que conoces?</li>
+    <li>¿Sabes explicar qué cambia entre «Los empleados que…» y «Los empleados, que…»?</li>
+    <li>¿Puedes nombrar una conjunción de causa, una de obstáculo y una de finalidad?</li>
+  </ul>
+</div>
+<div class="tip"><strong>➡️ Sigue con la próxima lección:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_1-2.html" style="color:var(--cp-oscuro);font-weight:700">Lección 1.2 · Tiempos compuestos y la forma progresiva</a>.</div>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 1 · Lección 1.1</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+clasificador('clasif-lectura','puntaje-lectura',[
+  {p:'«<em>que comenzó en el granero de la familia O\'Leary</em>» da información sobre…',ops:['el fuego','la calle DeKoven','la noche del 8 de octubre'],c:0,n:'El relativo <em>que</em> se refiere a <em>un fuego</em>: el fuego comenzó en el granero.'},
+  {p:'«<em>cuyas orillas estaban llenas de almacenes</em>»: ¿de quién son las orillas?',ops:['del río Chicago','del centro de la ciudad','de los almacenes de madera'],c:0,n:'<em>Cuyas</em> indica posesión: las orillas del río. Concuerda con <em>orillas</em> (femenino plural).'},
+  {p:'«<em>Como el verano había sido muy seco</em>» expresa…',ops:['la causa de que la madera ardiera','un obstáculo que no detuvo el fuego','el momento en que llegó la lluvia'],c:0,n:'<em>Como</em> al principio de la oración expresa causa.'},
+  {p:'«<em>Aunque los bomberos trabajaron sin descanso</em>» expresa…',ops:['un obstáculo que no detuvo el fuego','la causa de que el viento cambiara','la finalidad del trabajo de los bomberos'],c:0,n:'<em>Aunque</em> presenta un obstáculo: el esfuerzo de los bomberos no detuvo las llamas.'},
+  {p:'«<em>la cual todavía se puede visitar en la avenida Michigan</em>» se refiere a…',ops:['la Torre del Agua','uno de los edificios destruidos','la ciudad de Chicago'],c:0,n:'<em>La cual</em> es femenino singular, como <em>la Torre del Agua</em>.'},
+  {p:'«<em>Para que una tragedia así no se repitiera</em>» expresa…',ops:['la finalidad de las reglas nuevas','la causa de un incendio tan grande','el momento de la reconstrucción'],c:0,n:'<em>Para que</em> expresa finalidad, y por eso el verbo va en subjuntivo: <em>se repitiera</em>.'}
+],null,false);
+
+clasificador('clasif-rel','puntaje-rel',[
+  {p:'La señora ___ hija estudia conmigo es enfermera.',ops:['cuya','cuyo','que su'],c:0,n:'<em>Cuya</em> concuerda con <em>hija</em>. «Que su» es un error de la conversación.'},
+  {p:'El taller ___ trabaja mi hermano está en Pilsen.',ops:['donde','quien','cuyo'],c:0,n:'Es un lugar: <em>donde</em>.'},
+  {p:'Ese es el motivo por ___ renuncié.',ops:['el cual','quien','cual'],c:0,n:'Después de una preposición: <em>por el cual</em>. <em>Quien</em> no sirve para cosas.'},
+  {p:'Mis vecinos, ___ llegaron de Puebla, abrieron una panadería.',ops:['quienes','quien','cuyos'],c:0,n:'Personas en plural, entre comas: <em>quienes</em>.'},
+  {p:'Busco el libro ___ me recomendaste.',ops:['que','quien','donde'],c:0,n:'Una cosa: <em>que</em>.'},
+  {p:'El edificio ___ ventanas son azules es la biblioteca.',ops:['cuyas','cuyos','que sus'],c:0,n:'<em>Cuyas</em> concuerda con <em>ventanas</em>, no con <em>edificio</em>.'}
+],null,false);
+
+clasificador('clasif-cj','puntaje-cj',[
+  {p:'___ había mucho tráfico, llegué tarde.',ops:['Como','Aunque','Para que'],c:0,n:'Causa al principio de la oración: <em>como</em>.'},
+  {p:'Llegué tarde ___ salí muy temprano.',ops:['aunque','ya que','para que'],c:0,n:'Salir temprano no impidió llegar tarde: obstáculo, <em>aunque</em>.'},
+  {p:'Te dejo la llave ___ puedas entrar.',ops:['para que','porque','si bien'],c:0,n:'Finalidad: <em>para que</em>, con subjuntivo (<em>puedas</em>).'},
+  {p:'Lee el contrato ___ lo firmes.',ops:['antes de que','ya que','aunque'],c:0,n:'Tiempo: <em>antes de que</em>, con subjuntivo (<em>firmes</em>).'},
+  {p:'Puedes usar el carro ___ lo devuelvas lleno.',ops:['siempre que','porque','ya que'],c:0,n:'Condición: <em>siempre que</em>, con subjuntivo.'},
+  {p:'Esperamos en la sala ___ el médico nos llamó.',ops:['hasta que','para que','a menos que'],c:0,n:'Tiempo, hasta un momento: <em>hasta que</em>.'}
+],null,false);
+
+(function(){
+  var t=document.getElementById('lectura'), v=document.getElementById('ver-cl');
+  document.getElementById('leer-lectura').addEventListener('click',function(){hablar(t.textContent.trim(),0.9);});
+  v.addEventListener('click',function(){var on=t.classList.toggle('ver-cl');v.setAttribute('aria-pressed',on?'true':'false');v.textContent=on?'Ocultar las cláusulas':'Mostrar las cláusulas';});
+})();
+
+iniciarQuiz([
+  {t:'¿Qué relativo se usa <strong>solo para personas</strong>?',o:['quien','cuyo','donde'],c:0,r:'<a href="#s-2-relativos">Sección 2</a>'},
+  {t:'Completa: «La mujer ___ carro está mal estacionado debe moverlo.»',o:['cuyo','cuya','que su'],c:0,r:'<a href="#s-2-relativos">Sección 2: <em>cuyo</em> concuerda con lo poseído</a>'},
+  {t:'¿Cuál oración está bien escrita?',o:['El vecino cuyo perro ladra se mudó.','El vecino que su perro ladra se mudó.','El vecino quien perro ladra se mudó.'],c:0,r:'<a href="#s-2-relativos">Sección 2: el error «que su»</a>'},
+  {t:'«Los alumnos que aprobaron recibirán un diploma.» ¿Quiénes lo recibirán?',o:['Solo los alumnos que aprobaron','Todos los alumnos, sin excepción','Los que todavía no aprobaron'],c:0,r:'<a href="#s-3-comas">Sección 3</a>'},
+  {t:'«Los alumnos, que aprobaron, recibirán un diploma.» Las comas indican que…',o:['todos los alumnos aprobaron','solo algunos alumnos aprobaron','ningún alumno aprobó todavía'],c:0,r:'<a href="#s-3-comas">Sección 3</a>'},
+  {t:'Completa: «Ese es el banco en ___ abrí mi cuenta.»',o:['el cual','quien','cuyo'],c:0,r:'<a href="#s-2-relativos">Sección 2</a>'},
+  {t:'¿Qué expresa <strong>aunque</strong>?',o:['Un obstáculo que no impide la acción','La causa por la que algo sucede','El momento en que algo sucede'],c:0,r:'<a href="#s-4-conjunciones">Sección 4</a>'},
+  {t:'Completa: «Te mando el mapa para que no te ___.»',o:['pierdas','pierdes','perdiste'],c:0,r:'<a href="#s-4-conjunciones">Sección 4: las que piden subjuntivo</a>'},
+  {t:'¿Qué conjunción expresa <strong>causa</strong>?',o:['ya que','a menos que','para que'],c:0,r:'<a href="#s-4-conjunciones">Sección 4</a>'},
+  {t:'¿Cuál oración está bien escrita?',o:['Creo que mañana va a llover.','Creo de que mañana va a llover.','Creo que de mañana va a llover.'],c:0,r:'<a href="#s-4-conjunciones">Sección 4: «pienso de que»</a>'},
+  {t:'En «El taller donde trabajo cierra a las seis», ¿cuál es la cláusula principal?',o:['El taller cierra a las seis','Trabajo en un taller','Donde trabajo hasta las seis'],c:0,r:'<a href="#s-1-repaso">Sección 1</a>'},
+  {t:'¿Cuál es la mejor manera de unir «Llovía mucho. El partido no se suspendió.»?',o:['A pesar de que llovía mucho, el partido no se suspendió.','Como llovía mucho, el partido no se suspendió por eso.','Para que lloviera mucho, el partido no se suspendió aquel día.'],c:0,r:'<a href="#s-7-une">Sección 7</a>'}
+],{meta:10,
+   bien:'Ya unes ideas con relativos y conjunciones precisas. Sigue con la Lección 1.2.',
+   repaso:'Vuelve a las secciones 2 a 4 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<!-- Lección 1.3 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 1.3 · Corregir fragmentos y oraciones corridas</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+
+  /* ── Nivel 3 · Lección 1.3: fragmentos y oraciones corridas ── */
+  .frag{background:#fff3cd;color:#5c3900;border-bottom:3px dotted #8a5a00;padding:0 3px;border-radius:3px}
+  .corr{background:#ede9fe;color:#4c1d95;border-bottom:3px solid #6d28d9;padding:0 3px;border-radius:3px}
+  .texto-lectura .frag,.texto-lectura .corr{background:none;color:inherit;border:none;padding:0}
+  .ver-err .frag{background:#fff3cd;color:#5c3900;border-bottom:3px dotted #8a5a00;padding:0 3px;border-radius:3px}
+  .ver-err .corr{background:#ede9fe;color:#4c1d95;border-bottom:3px solid #6d28d9;padding:0 3px;border-radius:3px}
+  .ver-err .frag::before,.ver-err .corr::before{content:attr(data-et);font-family:'Segoe UI',Arial,sans-serif;font-size:.62em;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-right:4px;vertical-align:super}
+</style>
+</head>
+<body>
+<h1>Lección 1.3 · Corregir fragmentos y oraciones corridas</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 1: Gramática avanzada de la oración · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Reconocer un <strong>fragmento</strong>: un grupo de palabras con punto que no es una oración completa.</li>
+    <li>Reconocer una <strong>oración corrida</strong>: dos oraciones completas pegadas sin la puntuación o el conector que las separe.</li>
+    <li>Corregir los dos errores de cuatro maneras y explicar la regla que aplicas.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.W.CS.1 · 3.W.CS.2</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-repaso">Repaso: ¿qué es una oración completa?</a></li>
+    <li><a href="#s-2-fragmentos">Los fragmentos</a></li>
+    <li><a href="#s-3-corridas">Las oraciones corridas</a></li>
+    <li><a href="#s-4-clasifica">Práctica: correcta, fragmento o corrida</a></li>
+    <li><a href="#s-5-lectura">Editor por un día: «La carta de Lucía»</a></li>
+    <li><a href="#s-6-corrige">Práctica: elige la mejor corrección</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>En las preguntas de edición del GED aparece un párrafo con errores y tienes que elegir la mejor corrección. Dos errores salen una y otra vez: el <strong>fragmento</strong> (<em>«Porque perdí el autobús.»</em>) y la <strong>oración corrida</strong> (<em>«Perdí el autobús, llegué tarde al trabajo.»</em>). Los dos nacen de lo mismo: al escribir rápido, ponemos el punto donde no va o no lo ponemos donde sí va. En esta lección aprenderás a verlos y a arreglarlos con seguridad.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-repaso">
+<summary>1. Repaso: ¿qué es una oración completa? <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>Una <span class="palabra-clave">oración completa</span> necesita tres cosas:</p>
+<ul class="lista-bonita">
+  <li><strong>Un verbo conjugado</strong>, que dice quién hace la acción y cuándo: <em>trabaja, llegaron, había salido</em>.</li>
+  <li><strong>Un sujeto</strong>, que puede estar escrito (<em>Mi hermana trabaja</em>) o sobrentenderse por el verbo (<em>Trabajo de noche</em>: el sujeto es <em>yo</em>).</li>
+  <li><strong>Sentido completo</strong>: se entiende sola, sin esperar otra idea.</li>
+</ul>
+<p>Por eso <em>«Llegaron.»</em> es una oración completa, aunque tenga una sola palabra, y <em>«Los vecinos del segundo piso.»</em> no lo es, aunque tenga cinco.</p>
+<div class="tip"><strong>💡 Ya lo viste antes:</strong> en el Nivel 1 aprendiste a distinguir la oración del fragmento, y en la <a href="https://zhemaria.github.io/clases_leng2/clase_2-3.html#s-3-compleja" target="_blank" rel="noopener noreferrer" style="color:var(--cp-oscuro);font-weight:700">Lección 2.3 del Nivel 2</a>, la «prueba del fragmento» con las cláusulas que dependen de otra. Aquí lo llevamos a párrafos completos.</div>
+</div>
+</details>
+
+<details id="s-2-fragmentos">
+<summary>2. Los fragmentos <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Un <span class="palabra-clave">fragmento</span> empieza con mayúscula y termina con punto, pero no es una oración completa. Hay tres tipos frecuentes:</p>
+<table class="tabla">
+  <caption class="sr-solo">Tipos de fragmento y cómo corregirlos</caption>
+  <thead><tr><th scope="col">Tipo</th><th scope="col">Fragmento</th><th scope="col">Corrección</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Cláusula subordinada sola</strong>: empieza con <em>porque, aunque, cuando, si, que</em>…</td><td><span class="frag">Porque perdí el autobús.</span></td><td>Llegué tarde porque perdí el autobús.</td></tr>
+    <tr><td><strong>Sin verbo conjugado</strong>: solo un sujeto o una frase de lugar o tiempo.</td><td><span class="frag">Los trabajadores del turno de noche.</span></td><td>Los trabajadores del turno de noche cobran más.</td></tr>
+    <tr><td><strong>Con gerundio o infinitivo, sin verbo conjugado</strong>.</td><td><span class="frag">Esperando noticias del hospital.</span></td><td>Pasamos la noche esperando noticias del hospital.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 Dos maneras de arreglarlo:</strong> <strong>únelo</strong> a la oración de al lado (<em>Llegué tarde. Porque perdí el autobús.</em> → <em>Llegué tarde porque perdí el autobús.</em>) o <strong>complétalo</strong> con lo que le falta (<em>Esperando noticias.</em> → <em>Estamos esperando noticias.</em>).</div>
+<div class="tip"><strong>💡 La prueba en voz alta:</strong> lee el grupo de palabras solo, como si fuera lo único que alguien te dice. Si te quedas esperando el resto («¿porque perdiste el autobús… qué?»), es un fragmento.</div>
+</div>
+</details>
+
+<details id="s-3-corridas">
+<summary>3. Las oraciones corridas <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Una <span class="palabra-clave">oración corrida</span> es lo contrario de un fragmento: <strong>dos oraciones completas</strong> pegadas como si fueran una. Aparece de dos formas:</p>
+<ul class="lista-bonita">
+  <li><strong>Sin nada entre ellas:</strong> <span class="corr">Llegué tarde el jefe se enojó.</span></li>
+  <li><strong>Unidas solo con una coma:</strong> <span class="corr">Llegué tarde, el jefe se enojó.</span> La coma no tiene fuerza para separar dos oraciones completas.</li>
+</ul>
+<h3>Cuatro maneras de corregirla</h3>
+<table class="tabla">
+  <caption class="sr-solo">Cuatro maneras de corregir una oración corrida</caption>
+  <thead><tr><th scope="col">Manera</th><th scope="col">Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td>1. <strong>Punto</strong> y mayúscula: dos oraciones.</td><td>Llegué tarde<strong>.</strong> El jefe se enojó.</td></tr>
+    <tr><td>2. <strong>Punto y coma</strong>, si las ideas están muy relacionadas.</td><td>Llegué tarde<strong>;</strong> el jefe se enojó.</td></tr>
+    <tr><td>3. Un <strong>conector</strong> de la oración compuesta (<em>y, pero, sino</em>), con su coma si la lleva.</td><td>Llegué tarde <strong>y</strong> el jefe se enojó.</td></tr>
+    <tr><td>4. Una <strong>conjunción subordinante</strong> (Lección 1.1), que muestra la relación.</td><td><strong>Como</strong> llegué tarde, el jefe se enojó.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 ¿Cuál elegir?</strong> En el GED, la mejor corrección es la que <strong>conserva el sentido</strong>. Si la segunda idea es consecuencia de la primera, la conjunción (<em>como, porque</em>) o <em>y</em> lo muestran mejor que un punto. Si las ideas se oponen, usa <em>pero</em>.</div>
+<div class="tip"><strong>⚠️ No es corrida:</strong> una serie de acciones del mismo sujeto, separadas por comas y con <em>y</em> antes de la última: <em>El técnico vino, revisó el radiador y se fue.</em> Las comas separan los verbos de una enumeración, como en una lista de compras.</div>
+<div class="tip"><strong>📘 Un dato:</strong> los libros de gramática en español no usan el nombre «oración corrida», que viene de los materiales del GED en inglés (<em>run-on sentence</em>). Lo que dice la norma es lo mismo: la coma no separa dos oraciones independientes; para eso están el punto, el punto y coma o un conector.</div>
+</div>
+</details>
+
+<details id="s-4-clasifica">
+<summary>4. Práctica: correcta, fragmento o corrida <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<div class="clasificador" id="clasif-tipo"></div>
+<div class="puntaje" id="puntaje-tipo" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-3.html#clasifica" target="_blank" rel="noopener noreferrer">🧩 Practica más: clasifica oraciones
+  <span>Correcta, fragmento o corrida, con oraciones nuevas cada vez. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-5-lectura">
+<summary>5. Editor por un día: «La carta de Lucía» <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura</span> Individual · lectura de edición</h4>
+  <p style="margin:0">Lucía escribió esta carta al administrador de su edificio, pero la envió sin revisarla. Léela con ojos de editor: tiene <strong>tres fragmentos</strong> y <strong>tres oraciones corridas</strong>. Encuéntralos en tu cuaderno y luego pulsa <strong>Mostrar los errores</strong> para comprobarlo.</p>
+</div>
+<div class="texto-lectura" id="lectura">
+  <p>Estimado señor Ramírez:</p>
+  <p>Le escribo para informarle sobre la calefacción del apartamento 3B. <span class="frag" data-et="Fragmento">Desde el lunes pasado.</span> <span class="corr" data-et="Corrida">El radiador no calienta, mis hijos tienen frío por la noche.</span> <span class="corr" data-et="Corrida">Llamé dos veces a la oficina nadie contestó.</span> <span class="frag" data-et="Fragmento">Porque el buzón de voz estaba lleno.</span></p>
+  <p>El técnico vino el miércoles, revisó el radiador y dijo que faltaba una pieza. <span class="frag" data-et="Fragmento">Esperando la pieza desde entonces.</span> <span class="corr" data-et="Corrida">Le pido que resuelva el problema pronto, el pronóstico anuncia temperaturas bajo cero.</span></p>
+  <p>Atentamente,<br>Lucía Ortega</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar la carta</button>
+  <button type="button" class="btn btn-secundario" id="ver-err" aria-pressed="false">Mostrar los errores</button>
+</div>
+<div class="tip"><strong>💡 Fíjate:</strong> «El técnico vino el miércoles, revisó el radiador y dijo que faltaba una pieza» <strong>no</strong> es una oración corrida: es una serie de acciones del mismo sujeto, con <em>y</em> antes de la última.</div>
+<h3>¿Cuál es la mejor corrección?</h3>
+<div class="clasificador apilado" id="clasif-lectura"></div>
+<div class="puntaje" id="puntaje-lectura" role="status" aria-live="polite"></div>
+<details style="margin-top:10px"><summary>Ver la carta corregida</summary><div class="contenido-detalle">
+<p>Estimado señor Ramírez:</p>
+<p>Le escribo para informarle sobre la calefacción del apartamento 3B. Desde el lunes pasado, el radiador no calienta, y mis hijos tienen frío por la noche. Llamé dos veces a la oficina, pero nadie contestó porque el buzón de voz estaba lleno.</p>
+<p>El técnico vino el miércoles, revisó el radiador y dijo que faltaba una pieza. Desde entonces estamos esperando la pieza. Le pido que resuelva el problema pronto, ya que el pronóstico anuncia temperaturas bajo cero.</p>
+<p>Atentamente,<br>Lucía Ortega</p>
+<p style="font-size:.95rem"><em>Nota:</em> la coma antes de <em>y mis hijos</em> separa dos oraciones con sujetos distintos y evita leer «el radiador no calienta y mis hijos» como una sola cosa. Hay otras correcciones válidas; lo importante es que ninguna oración quede incompleta ni pegada a otra solo con una coma.</p>
+</div></details>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-3.html#editor" target="_blank" rel="noopener noreferrer">📝 Practica más: editor por un día
+  <span>Párrafos cortos en los que encuentras la parte que tiene el error.</span></a>
+</div>
+</details>
+
+<details id="s-6-corrige">
+<summary>6. Práctica: elige la mejor corrección <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<div class="clasificador apilado" id="clasif-corr"></div>
+<div class="puntaje" id="puntaje-corr" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-3.html#corrige" target="_blank" rel="noopener noreferrer">🔧 Practica más: elige la corrección
+  <span>Una oración con error y tres maneras de arreglarla: eliges la que conserva el sentido y está bien escrita.</span></a>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> pídele a alguien que te dicte un mensaje corto de varias oraciones, sin decirte dónde van los puntos. Escríbelo y después revisa juntos si quedó algún fragmento o alguna oración corrida.</div>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>7. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Revisa algo tuyo.</strong> Busca un mensaje o un correo que hayas escrito esta semana. Cópialo en tu cuaderno y revisa cada oración: ¿hay algún fragmento o alguna oración corrida? Corrígelos.</li>
+  <li><strong>Corrige de cuatro maneras.</strong> Corrige «Hoy hay examen, estudié toda la noche» de las cuatro maneras de la sección 3 (punto, punto y coma, conector, conjunción subordinante). ¿Cuál te parece más clara?</li>
+  <li><strong>Completa los fragmentos.</strong> Convierte en oraciones completas: «Cuando termine el semestre.» · «Los niños de la escuela de mi barrio.» · «Buscando un trabajo con mejor horario.»</li>
+</ul>
+<details style="margin-top:6px"><summary>Ver respuestas posibles</summary><div class="contenido-detalle">
+«Hoy hay examen. Estudié toda la noche.» · «Hoy hay examen; estudié toda la noche.» · «Hoy hay examen y estudié toda la noche.» · «Como hoy hay examen, estudié toda la noche.» (La última muestra mejor la relación de causa.)<br>
+«Cuando termine el semestre, buscaré otro trabajo.» · «Los niños de la escuela de mi barrio ganaron el concurso.» · «Estoy buscando un trabajo con mejor horario.»
+</div></details>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>8. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>9. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Una oración completa tiene un verbo conjugado, un sujeto (escrito o sobrentendido) y sentido completo.</li>
+  <li>Un <strong>fragmento</strong> se corrige uniéndolo a la oración de al lado o completándolo.</li>
+  <li>Una <strong>oración corrida</strong> se corrige con un punto, un punto y coma, un conector o una conjunción subordinante.</li>
+  <li>La mejor corrección es la que conserva el sentido; una enumeración de acciones con comas y <em>y</em> no es un error.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Puedes explicar por qué «Llegaron.» es completa y «Los vecinos del segundo piso.» no?</li>
+    <li>¿Puedes corregir «Hacía calor, abrimos las ventanas» de dos maneras distintas?</li>
+    <li>¿Sabes por qué una coma sola no puede unir dos oraciones completas?</li>
+  </ul>
+</div>
+<div class="tip"><strong>🏁 Terminaste el Tema 1.</strong> En el próximo tema trabajarás la puntuación avanzada y el vocabulario académico: <a href="https://zhemaria.github.io/clases_leng3/clase_2-1.html" style="color:var(--cp-oscuro);font-weight:700">Lección 2.1, primera del Tema 2</a>.</div>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 1 · Lección 1.3</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+clasificador('clasif-tipo','puntaje-tipo',[
+  {p:'El autobús llegó tarde, los pasajeros estaban furiosos.',c:2,n:'Dos oraciones completas unidas solo con una coma.'},
+  {p:'Aunque la tienda abre a las nueve.',c:1,n:'Una cláusula con <em>aunque</em> sola: falta la idea principal.'},
+  {p:'Mi hija estudia enfermería y mi hijo trabaja en un taller.',c:0,n:'Dos oraciones unidas con el conector <em>y</em>.'},
+  {p:'Mañana empieza el curso de computación no tengo computadora.',c:2,n:'Dos oraciones completas pegadas sin nada entre ellas.'},
+  {p:'Los trabajadores del turno de la noche.',c:1,n:'Hay un sujeto, pero falta el verbo conjugado.'},
+  {p:'Hace mucho frío; ponte el abrigo.',c:0,n:'El punto y coma separa bien dos oraciones muy relacionadas.'}
+],['Correcta','Fragmento','Corrida'],false);
+
+clasificador('clasif-lectura','puntaje-lectura',[
+  {p:'«Desde el lunes pasado. El radiador no calienta, mis hijos tienen frío.»',ops:['Desde el lunes pasado, el radiador no calienta, y mis hijos tienen frío.','Desde el lunes pasado el radiador. No calienta, mis hijos tienen frío.','Desde el lunes, pasado el radiador no calienta mis hijos tienen frío.'],c:0,n:'El fragmento se une a la oración siguiente, y la coma con <em>y</em> separa las dos ideas.'},
+  {p:'«Llamé dos veces a la oficina nadie contestó. Porque el buzón de voz estaba lleno.»',ops:['Llamé dos veces a la oficina, pero nadie contestó porque el buzón de voz estaba lleno.','Llamé dos veces a la oficina, nadie contestó, porque el buzón de voz estaba lleno.','Llamé dos veces. A la oficina nadie contestó. Porque el buzón de voz estaba lleno.'],c:0,n:'<em>Pero</em> separa la oración corrida, y el fragmento con <em>porque</em> se une a la idea que explica.'},
+  {p:'«Esperando la pieza desde entonces.»',ops:['Desde entonces estamos esperando la pieza.','Esperando, la pieza desde entonces.','Desde entonces. Esperando la pieza.'],c:0,n:'Se completa con un verbo conjugado: <em>estamos esperando</em>.'},
+  {p:'«Le pido que resuelva el problema pronto, el pronóstico anuncia temperaturas bajo cero.»',ops:['Le pido que resuelva el problema pronto, ya que el pronóstico anuncia temperaturas bajo cero.','Le pido que resuelva el problema pronto, el pronóstico, anuncia temperaturas bajo cero.','Le pido que resuelva el problema pronto el pronóstico anuncia temperaturas bajo cero.'],c:0,n:'<em>Ya que</em> une las dos ideas y muestra la causa de la urgencia.'}
+],null,false);
+
+clasificador('clasif-corr','puntaje-corr',[
+  {p:'«El examen fue difícil, todos aprobaron.»',ops:['El examen fue difícil, pero todos aprobaron.','El examen fue difícil, por eso todos aprobaron.','El examen fue difícil todos, aprobaron.'],c:0,n:'Las ideas se oponen: <em>pero</em>. «Por eso» cambiaría el sentido.'},
+  {p:'«Me quedé en casa. Porque estaba enfermo.»',ops:['Me quedé en casa porque estaba enfermo.','Me quedé en casa, estaba enfermo.','Me quedé. En casa porque estaba enfermo.'],c:0,n:'El fragmento se une a la idea que explica.'},
+  {p:'«Hacía calor abrimos las ventanas.»',ops:['Como hacía calor, abrimos las ventanas.','Hacía calor, abrimos las ventanas.','Hacía calor abrimos, las ventanas.'],c:0,n:'La conjunción <em>como</em> muestra la causa y separa las dos ideas.'},
+  {p:'«Los estudiantes del programa de inglés.»',ops:['Los estudiantes del programa de inglés hicieron una fiesta.','Los estudiantes, del programa de inglés.','Los estudiantes del programa. De inglés.'],c:0,n:'Faltaba el verbo conjugado: <em>hicieron</em>.'},
+  {p:'«Mi tía cocina muy bien, sus tamales son famosos en el barrio.»',ops:['Mi tía cocina muy bien; sus tamales son famosos en el barrio.','Mi tía cocina muy bien, sus tamales, son famosos en el barrio.','Mi tía cocina muy bien sus tamales son famosos en el barrio.'],c:0,n:'El punto y coma separa dos oraciones muy relacionadas.'}
+],null,false);
+
+(function(){
+  var t=document.getElementById('lectura'), v=document.getElementById('ver-err');
+  document.getElementById('leer-lectura').addEventListener('click',function(){hablar(t.textContent.trim(),0.9);});
+  v.addEventListener('click',function(){var on=t.classList.toggle('ver-err');v.setAttribute('aria-pressed',on?'true':'false');v.textContent=on?'Ocultar los errores':'Mostrar los errores';});
+})();
+
+iniciarQuiz([
+  {t:'¿Qué es un fragmento?',o:['Palabras con punto que no forman una idea completa','Dos oraciones completas unidas con una coma','Una oración con sujeto, verbo y sentido'],c:0,r:'<a href="#s-2-fragmentos">Sección 2</a>'},
+  {t:'¿Cuál es un fragmento?',o:['Después de la reunión de padres.','Después de la reunión, fuimos a cenar.','Fuimos a cenar después de la reunión.'],c:0,r:'<a href="#s-2-fragmentos">Sección 2</a>'},
+  {t:'¿Cuál es una oración corrida?',o:['Llovía mucho, la calle se inundó.','Llovía mucho y la calle se inundó.','Como llovía mucho, la calle se inundó.'],c:0,r:'<a href="#s-3-corridas">Sección 3</a>'},
+  {t:'¿Cuál corrige mejor «El examen fue difícil, todos aprobaron»?',o:['El examen fue difícil, pero todos aprobaron.','El examen fue difícil, por eso todos aprobaron.','El examen fue difícil todos aprobaron.'],c:0,r:'<a href="#s-3-corridas">Sección 3: conservar el sentido</a>'},
+  {t:'¿Cómo se corrige «Porque no tenía dinero.»?',o:['No compré el libro porque no tenía dinero.','Porque no tenía dinero, y no lo compré.','Porque, no tenía dinero para el libro.'],c:0,r:'<a href="#s-2-fragmentos">Sección 2</a>'},
+  {t:'¿Qué signo puede separar dos oraciones completas muy relacionadas?',o:['El punto y coma','La coma sola','El guion'],c:0,r:'<a href="#s-3-corridas">Sección 3</a>'},
+  {t:'¿Cuál oración está bien escrita?',o:['Me levanté, me bañé y salí al trabajo.','Me levanté me bañé salí al trabajo.','Me levanté, me bañé, salí, al trabajo.'],c:0,r:'<a href="#s-3-corridas">Sección 3: la serie de acciones</a>'},
+  {t:'«Esperando el autobús en la esquina.» ¿Qué le falta?',o:['Un verbo conjugado','Una coma después de «esperando»','Un punto y coma al final'],c:0,r:'<a href="#s-2-fragmentos">Sección 2</a>'},
+  {t:'¿Cuál es una oración corrida sin ningún signo entre las dos ideas?',o:['Mi tía cocina muy bien sus tamales son famosos.','Mi tía cocina muy bien; sus tamales son famosos.','Mi tía cocina muy bien y sus tamales son famosos.'],c:0,r:'<a href="#s-3-corridas">Sección 3</a>'},
+  {t:'¿Cuál corrige mejor «El banco cerró temprano, no pude depositar el cheque»?',o:['Como el banco cerró temprano, no pude depositar el cheque.','El banco cerró temprano, entonces, no pude depositar el cheque.','El banco, cerró temprano no pude depositar el cheque.'],c:0,r:'<a href="#s-3-corridas">Sección 3</a>'},
+  {t:'¿Cuál es un fragmento?',o:['Los vecinos del segundo piso.','Los vecinos llegaron anoche.','Llegaron.'],c:0,r:'<a href="#s-1-repaso">Sección 1</a>'},
+  {t:'¿Por qué «Llegaron.» es una oración completa?',o:['Tiene un verbo conjugado y el sujeto se entiende','Porque empieza con mayúscula y tiene un punto','Porque es tan corta que no puede tener errores'],c:0,r:'<a href="#s-1-repaso">Sección 1</a>'}
+],{meta:10,
+   bien:'Ya encuentras y corriges fragmentos y oraciones corridas. ¡Terminaste el Tema 1!',
+   repaso:'Vuelve a las secciones 2 y 3 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

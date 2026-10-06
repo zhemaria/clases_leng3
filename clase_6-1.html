@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<!-- Lección 6.1 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 6.1 · Gráficas complejas y tablas de varias columnas</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+  figure.graf{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:12px 14px;margin:14px 0;text-align:center}
+  figure.graf figcaption{font-weight:700;color:var(--cp-oscuro);margin-bottom:6px;text-align:left}
+  figure.graf .fuente{font-size:.85rem;color:#555;text-align:left;margin:4px 0 0}
+  .ver-datos{text-align:left;margin-top:6px}
+  .ver-datos summary{padding:8px 12px;font-size:.95rem}
+  .mini{border-collapse:collapse;margin:6px 0;font-size:.95rem;font-weight:400}
+  .mini th,.mini td{border:1px solid #9aa9b7;padding:4px 10px}
+  .mini th{background:#4c1d95;color:#fff}
+  .leyenda-txt{font-size:.92rem;text-align:left;margin:4px 0 0}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .tabla-ancha{overflow-x:auto}
+  .enun figure.graf{margin:8px 0}
+  @media (max-width:600px){#tabla-censo{font-size:.74rem}#tabla-censo th,#tabla-censo td{padding:6px 3px}#tabla-censo td.num{white-space:nowrap}}
+</style>
+</head>
+<body>
+<h1>Lección 6.1 · Gráficas complejas y tablas de varias columnas</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 6: Leer en las materias: datos, procedimientos y multimedia · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Leer valores en gráficas con <strong>dos o más series</strong>: doble barra y líneas múltiples.</li>
+    <li>Interpretar una <strong>tabla de varias columnas</strong> y distinguir el cambio en números del cambio en porcentaje.</li>
+    <li><strong>Comparar series</strong> antes de concluir y elegir la conclusión que los datos sí respaldan.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: RST.6-8.7 · RH.6-8.7</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-repaso">Repaso: las partes de una gráfica</a></li>
+    <li><a href="#s-2-doble">La gráfica de doble barra</a></li>
+    <li><a href="#s-3-lineas">La gráfica de líneas múltiples</a></li>
+    <li><a href="#s-4-tabla">La tabla de varias columnas</a></li>
+    <li><a href="#s-5-conclusion">Conclusiones que los datos respaldan</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>En el Nivel 2 leíste gráficas con <strong>una sola serie</strong> de datos: una barra por ciudad, una línea por año. Pero las gráficas de los periódicos, de los libros de ciencias y del GED casi siempre ponen <strong>dos o más series juntas</strong> para que las compares: este año frente al anterior, hombres frente a mujeres, la temperatura máxima frente a la mínima. En esta lección vas a aprender a leerlas sin confundir una serie con otra, y a sacar solo las conclusiones que los datos permiten.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-repaso">
+<summary>1. Repaso: las partes de una gráfica <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>Antes de mirar las barras o las líneas, lee siempre el «marco» de la gráfica. Así sabes <strong>qué</strong> se mide, <strong>en qué unidad</strong> y <strong>de dónde</strong> salen los datos.</p>
+<table class="tabla">
+  <caption class="sr-solo">Partes de una gráfica y la pregunta que responde cada una</caption>
+  <thead><tr><th scope="col">Parte</th><th scope="col">Pregunta que responde</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Título</strong></td><td>¿De qué trata la gráfica?</td></tr>
+    <tr><td><strong>Eje horizontal</strong></td><td>¿Qué se compara? (ciudades, meses, años)</td></tr>
+    <tr><td><strong>Eje vertical y escala</strong></td><td>¿Cuánto? ¿En qué unidad? ¿De cuánto en cuánto sube la escala?</td></tr>
+    <tr><td><strong>Leyenda</strong></td><td>¿Qué representa cada barra, color, trama o tipo de línea?</td></tr>
+    <tr><td><strong>Fuente</strong></td><td>¿Quién reunió los datos? ¿Es confiable?</td></tr>
+  </tbody>
+</table>
+<p>La parte nueva en este nivel es la <span class="palabra-clave">leyenda</span>. Cuando hay varias series, la leyenda es la llave: sin leerla, no sabes cuál barra es cuál. Cada <span class="palabra-clave">serie</span> es un grupo de datos que se mide igual (por ejemplo, la población de 2010 de todas las ciudades).</p>
+<div class="tip"><strong>💡 ¿Necesitas repasar?</strong> La <a href="https://zhemaria.github.io/clases_leng2/clase_6-1.html" target="_blank" rel="noopener noreferrer" style="color:var(--cp-oscuro);font-weight:700">Lección 6.1 del Nivel 2</a> explica las gráficas de barras, de líneas y circulares con una sola serie. Se abre en una pestaña nueva.</div>
+</div>
+</details>
+
+<details id="s-2-doble">
+<summary>2. La gráfica de doble barra <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Una <span class="palabra-clave">gráfica de doble barra</span> pone dos barras juntas para cada categoría. Sirve para comparar <strong>dos momentos</strong> o <strong>dos grupos</strong>. En esta gráfica, la barra lisa es 2010 y la barra rayada es 2020.</p>
+<figure class="graf" id="fig-doble">
+  <figcaption>Población de las cinco ciudades más grandes de Estados Unidos, 2010 y 2020 (en millones)</figcaption>
+  <div id="graf-doble"></div>
+  <p class="fuente">Fuente: Oficina del Censo de los Estados Unidos, censos de 2010 y 2020. Cifras redondeadas a una décima de millón.</p>
+</figure>
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura de datos</span> Cómo leerla, paso a paso</h4>
+  <ol style="margin:0">
+    <li>Lee la leyenda: <strong>lisa = 2010</strong>, <strong>rayada = 2020</strong>.</li>
+    <li>Compara <strong>dentro</strong> de cada ciudad: ¿creció o bajó? (las dos barras de Houston).</li>
+    <li>Compara <strong>entre</strong> ciudades: ¿cuál es la más grande en cada año? (todas las barras del mismo tipo).</li>
+    <li>Busca lo que <strong>llama la atención</strong>: en Chicago las dos barras se ven iguales, porque creció muy poco.</li>
+  </ol>
+</div>
+<div class="clasificador apilado" id="clasif-doble"></div>
+<div class="puntaje" id="puntaje-doble" role="status" aria-live="polite"></div>
+<div class="tip"><strong>⚠️ Ojo con el redondeo:</strong> la gráfica dice 2.7 millones para Chicago en los dos años, pero no quiere decir que no creciera nada. Con cifras redondeadas, los cambios pequeños desaparecen. Para el dato exacto hay que ir a la tabla (sección 4).</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-1.html#doble-barra" target="_blank" rel="noopener noreferrer">📊 Practica más: gráficas de doble barra
+  <span>Gráficas nuevas con dos series para leer valores y comparar. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-3-lineas">
+<summary>3. La gráfica de líneas múltiples <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Una <span class="palabra-clave">gráfica de líneas múltiples</span> muestra cómo cambian dos o más series <strong>a lo largo del tiempo</strong>. Además de leer cada línea, puedes leer la <strong>distancia entre ellas</strong>. Aquí, la línea continua con círculos es la temperatura máxima y la línea discontinua con cuadrados es la mínima.</p>
+<figure class="graf" id="fig-lineas">
+  <figcaption>Temperatura promedio en Chicago (aeropuerto O'Hare), por mes, en grados Fahrenheit (°F)</figcaption>
+  <div id="graf-lineas"></div>
+  <p class="fuente">Fuente: Administración Nacional Oceánica y Atmosférica (NOAA), promedios climáticos de 1991 a 2020. Cifras redondeadas.</p>
+</figure>
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura de datos</span> Tres cosas que se leen en dos líneas</h4>
+  <ul class="lista-bonita" style="margin:0">
+    <li><strong>Un valor:</strong> en julio, la máxima promedio es 85 °F.</li>
+    <li><strong>La tendencia:</strong> las dos líneas suben de enero a julio y bajan de julio a diciembre.</li>
+    <li><strong>La diferencia entre las series:</strong> en julio, entre la máxima y la mínima hay 85 − 66 = 19 grados.</li>
+  </ul>
+</div>
+<div class="clasificador apilado" id="clasif-lineas"></div>
+<div class="puntaje" id="puntaje-lineas" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-1.html#lineas" target="_blank" rel="noopener noreferrer">📈 Practica más: líneas múltiples
+  <span>Gráficas de dos líneas para leer valores, tendencias y diferencias. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-4-tabla">
+<summary>4. La tabla de varias columnas <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Una tabla da los <strong>números exactos</strong> que la gráfica redondea. Para leerla, primero lee los <strong>encabezados</strong> de las columnas: dicen qué hay debajo. Después cruza una <strong>fila</strong> (una ciudad) con una <strong>columna</strong> (un dato).</p>
+<div class="tabla-ancha">
+<table class="tabla" id="tabla-censo">
+  <caption>Población de las cinco ciudades más grandes de Estados Unidos, 2010 y 2020</caption>
+  <thead><tr><th scope="col">Ciudad</th><th scope="col">Población 2010</th><th scope="col">Población 2020</th><th scope="col">Cambio en personas</th><th scope="col">Cambio en %</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Nueva York</th><td class="num">8 175 133</td><td class="num">8 804 190</td><td class="num">+629 057</td><td class="num">+7.7 %</td></tr>
+    <tr><th scope="row">Los Ángeles</th><td class="num">3 792 621</td><td class="num">3 898 747</td><td class="num">+106 126</td><td class="num">+2.8 %</td></tr>
+    <tr><th scope="row">Chicago</th><td class="num">2 695 598</td><td class="num">2 746 388</td><td class="num">+50 790</td><td class="num">+1.9 %</td></tr>
+    <tr><th scope="row">Houston</th><td class="num">2 099 451</td><td class="num">2 304 580</td><td class="num">+205 129</td><td class="num">+9.8 %</td></tr>
+    <tr><th scope="row">Phoenix</th><td class="num">1 445 632</td><td class="num">1 608 139</td><td class="num">+162 507</td><td class="num">+11.2 %</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="leyenda-txt">Fuente: Oficina del Censo de los Estados Unidos. El porcentaje está redondeado a una décima.</p>
+<h3>Dos maneras de medir un cambio</h3>
+<p>Fíjate en las dos últimas columnas. No dicen lo mismo:</p>
+<ul class="lista-bonita">
+  <li>El <span class="palabra-clave">cambio en números</span> (o cambio absoluto) dice <strong>cuántas personas</strong> se sumaron. Nueva York sumó más que nadie: más de 600 000.</li>
+  <li>El <span class="palabra-clave">cambio en porcentaje</span> (o cambio relativo) dice <strong>cuánto creció comparado con lo que tenía</strong>. Phoenix creció más que nadie: 11.2 %.</li>
+</ul>
+<div class="tip"><strong>💡 Por eso Houston y Phoenix son un buen ejemplo:</strong> Houston sumó más personas (205 129 frente a 162 507), pero Phoenix creció más en porcentaje (11.2 % frente a 9.8 %), porque partía de una población más pequeña. Antes de decir «creció más», pregúntate: ¿en números o en porcentaje?</div>
+<div class="clasificador apilado" id="clasif-tabla"></div>
+<div class="puntaje" id="puntaje-tabla" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-1.html#tabla" target="_blank" rel="noopener noreferrer">🗂️ Practica más: tablas de varias columnas
+  <span>Tablas nuevas para cruzar filas y columnas y comparar cambios. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-5-conclusion">
+<summary>5. Conclusiones que los datos respaldan <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>En el GED, muchas preguntas de gráficas terminan igual: «¿Qué conclusión apoyan los datos?». Las opciones incorrectas suelen caer en una de estas trampas:</p>
+<table class="tabla">
+  <caption class="sr-solo">Trampas comunes al sacar conclusiones de una gráfica</caption>
+  <thead><tr><th scope="col">Trampa</th><th scope="col">Ejemplo con los datos del censo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Va más allá de los datos</strong></td><td>«Chicago seguirá creciendo hasta 2030.» Los datos llegan a 2020; no dicen nada del futuro.</td></tr>
+    <tr><td><strong>Inventa una causa</strong></td><td>«Phoenix creció porque tiene mejor clima.» La tabla dice cuánto creció, no por qué.</td></tr>
+    <tr><td><strong>Confunde números y porcentaje</strong></td><td>«Houston creció más que Phoenix.» En personas, sí; en porcentaje, no.</td></tr>
+    <tr><td><strong>Generaliza de más</strong></td><td>«Todas las ciudades de Estados Unidos crecieron.» La tabla solo tiene cinco ciudades.</td></tr>
+  </tbody>
+</table>
+<p>Una <strong>conclusión válida</strong> dice solo lo que se puede comprobar en la gráfica o en la tabla, y muchas veces <strong>compara dos series</strong>: «Las cinco ciudades crecieron entre 2010 y 2020, pero Chicago fue la que menos creció, tanto en personas como en porcentaje».</p>
+<div class="clasificador apilado" id="clasif-conclusion"></div>
+<div class="puntaje" id="puntaje-conclusion" role="status" aria-live="polite"></div>
+<h3>Una nota sobre los mapas temáticos</h3>
+<p>Un <span class="palabra-clave">mapa temático</span> pinta cada estado o condado según un dato, por ejemplo, de claro a oscuro según su población. Se lee igual que una gráfica: primero el título y la <strong>leyenda</strong> (qué valor corresponde a cada tono), y después el mapa. Las mismas trampas valen: un mapa dice <strong>dónde</strong>, no <strong>por qué</strong>.</p>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-1.html#conclusion" target="_blank" rel="noopener noreferrer">✅ Practica más: la conclusión válida
+  <span>Gráficas y tablas nuevas con cuatro conclusiones: eliges la que los datos respaldan.</span></a>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> «Compara las series». Cada uno elige una ciudad de la tabla y le cuenta al otro cómo cambió, en personas y en porcentaje. Después escriban juntos una conclusión que compare las dos ciudades sin caer en ninguna trampa.</div>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>6. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Tu comparación.</strong> Elige dos ciudades de la tabla y escribe un párrafo que compare su cambio en personas y en porcentaje.</li>
+  <li><strong>Tu gráfica.</strong> Con la temperatura máxima y mínima de Chicago, escribe tres oraciones: un valor, una tendencia y una diferencia entre las dos series.</li>
+  <li><strong>Una gráfica real.</strong> Busca en un periódico o en internet una gráfica con dos o más series (la palabra clave es «gráfica» más un tema que te interese). Escribe qué representa cada serie y una conclusión que los datos respalden.</li>
+</ul>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>7. Quiz de la lección <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Varias preguntas se refieren a la gráfica de doble barra, a la de líneas y a la tabla de la lección: puedes volver a mirarlas. Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>8. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Con varias series, la leyenda es la llave para saber qué barra o qué línea es cuál.</li>
+  <li>En una doble barra se compara dentro de cada categoría y entre categorías.</li>
+  <li>En líneas múltiples se leen valores, tendencias y la diferencia entre las series.</li>
+  <li>El cambio en números y el cambio en porcentaje pueden dar ganadores distintos.</li>
+  <li>Una conclusión válida no va más allá de los datos, no inventa causas y no generaliza de más.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Qué ciudad sumó más personas y cuál creció más en porcentaje?</li>
+    <li>¿En qué mes es mayor la diferencia entre la máxima y la mínima en Chicago?</li>
+    <li>¿Puedes explicar por qué «Phoenix creció por su clima» no es una conclusión válida?</li>
+  </ul>
+</div>
+<div class="tip"><strong>➡️ Sigue con la próxima lección:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_6-2.html" style="color:var(--cp-oscuro);font-weight:700">Lección 6.2 · Texto con datos; hechos, juicios y especulaciones</a>.</div>
+<p style="font-size:.9rem"><strong>Fuentes de los datos:</strong> Oficina del Censo de los Estados Unidos, censos decenales de 2010 y 2020 (población de las ciudades); NOAA, Centros Nacionales de Información Ambiental, promedios climáticos 1991–2020 para Chicago O'Hare.</p>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 6 · Lección 6.1</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+/* ===== Gráficas en SVG (barras, barras dobles, líneas múltiples) =====
+   Basado en la biblioteca del Nivel 2. Las series se distinguen por color Y por trazo o trama
+   (línea continua / discontinua / punteada; barra lisa / rayada), lleva valores escritos o en la
+   descripción, y una tabla con los datos: nada depende solo del color. */
+var GCOL=['#6d28d9','#c2410c','#0e7490','#a16207'];
+var GDASH=['','8 5','2 5','12 4 2 4'], GID=0;
+function anchoG(){return Math.round(Math.min(600,Math.max(320,(window.innerWidth||600)-56)));}
+function etiq(s,x,y,t,W){var p=String(t).indexOf('|')>=0?String(t).split('|'):String(t).split(' ');if(String(t).indexOf('|')>=0||(W<480&&p.length>1)){txtSvg(s,x,y-2,p[0],{tam:11});txtSvg(s,x,y+11,p.slice(1).join(' '),{tam:11});}else txtSvg(s,x,y,t,{tam:W<480?11:12});}
+function svgEl(t,a,txt){var e=document.createElementNS('http://www.w3.org/2000/svg',t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
+function marcoSvg(caja,ancho,alto,desc){
+  var s=svgEl('svg',{viewBox:'0 0 '+ancho+' '+alto,width:ancho,height:alto,role:'img','aria-label':desc});
+  s.style.maxWidth='100%'; s.style.height='auto'; caja.innerHTML=''; caja.appendChild(s); return s;
+}
+function txtSvg(s,x,y,t,o){o=o||{};s.appendChild(svgEl('text',{x:x,y:y,'text-anchor':o.ancla||'middle','font-size':o.tam||12,'font-weight':o.peso||'normal',fill:o.color||'#333','font-family':'Arial'},t));}
+function cuadricula(s,W,L,R,T,B,H,min,max,paso,fmt){
+  for(var v=min;v<=max+0.0001;v+=paso){var y=T+(H-T-B)*(1-(v-min)/(max-min));
+    s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:y,y2:y,stroke:'#dfe5ea','stroke-width':1}));
+    txtSvg(s,L-8,y+4,fmt?fmt(v):(Math.round(v*10)/10),{ancla:'end',color:'#555'});}
+}
+function rotulos(s,W,H,L,R,T,B,o){
+  if(o.ejeY)s.appendChild(svgEl('text',{x:14,y:(H-B+T)/2,transform:'rotate(-90 14 '+((H-B+T)/2)+')','text-anchor':'middle','font-size':12,fill:'#333','font-family':'Arial'},o.ejeY));
+  if(o.ejeX)txtSvg(s,(W-R+L)/2,H-6,o.ejeX);
+}
+function leyenda(s,x,y,series,tipo,pid){
+  series.forEach(function(se,k){
+    var yy=y+k*20;
+    if(tipo==='barra'){s.appendChild(svgEl('rect',{x:x,y:yy-11,width:22,height:14,fill:k===1?'url(#'+pid+')':GCOL[k],stroke:GCOL[k],'stroke-width':1.5}));}
+    else{s.appendChild(svgEl('line',{x1:x,x2:x+26,y1:yy-4,y2:yy-4,stroke:GCOL[k],'stroke-width':3,'stroke-dasharray':GDASH[k]}));}
+    txtSvg(s,x+32,yy,se.nombre,{ancla:'start',peso:'bold',color:'#1a2332'});
+  });
+}
+/* barrasDobles(caja, {titulo, etiquetas, series:[{nombre, valores}], min, max, paso, ejeY, ejeX, fmt}) */
+function graficaBarrasDobles(caja,o){
+  var W=anchoG(),H=W<480?300:330,L=50,R=10,T=48,B=W<480?52:48,min=o.min||0,max=o.max,n=o.etiquetas.length;
+  var desc=o.titulo+(o.series.length===1?'. Gráfica de barras. ':'. Gráfica de barras dobles. ')+o.etiquetas.map(function(e,i){return String(e).replace('|',' ')+': '+o.series.map(function(se){return se.nombre+' '+se.valores[i];}).join(', ');}).join('; ');
+  var s=marcoSvg(caja,W,H,desc);
+  var d=svgEl('defs',{}),pid='rayas'+(++GID),p=svgEl('pattern',{id:pid,width:6,height:6,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'});
+  p.appendChild(svgEl('rect',{width:6,height:6,fill:'#fff'}));p.appendChild(svgEl('line',{x1:0,y1:0,x2:0,y2:6,stroke:GCOL[1],'stroke-width':4}));d.appendChild(p);s.appendChild(d);
+  cuadricula(s,W,L,R,T,B,H,min,max,o.paso,o.fmt);
+  var ancho=(W-L-R)/n,bw=o.series.length===1?Math.min(56,ancho*0.6):Math.min(30,ancho*0.36);
+  o.etiquetas.forEach(function(e,i){
+    o.series.forEach(function(se,k){
+      var v=se.valores[i],x=L+ancho*i+ancho/2-(o.series.length===1?(bw-2)/2:bw)+k*bw,h=(H-T-B)*(v-min)/(max-min),y=H-B-h;
+      var r=svgEl('rect',{x:x,y:y,width:bw-2,height:h,fill:k===1?'url(#'+pid+')':GCOL[k],stroke:GCOL[k],'stroke-width':1.5});
+      r.appendChild(svgEl('title',{},String(e).replace('|',' ')+', '+se.nombre+': '+v+(o.unidad||'')));s.appendChild(r);
+      txtSvg(s,x+(bw-2)/2,y-5,v,{tam:11,peso:'bold',color:'#1a2332'});
+    });
+    etiq(s,L+ancho*i+ancho/2,H-B+18,e,W);
+  });
+  s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:'#555','stroke-width':1.5}));
+  rotulos(s,W,H,L,R,T,B,o); leyenda(s,L+10,18,o.series,'barra',pid);
+}
+/* lineas(caja, {titulo, etiquetas, series:[{nombre, valores}], min, max, paso, ejeY, ejeX, unidad, valoresVisibles}) */
+function graficaLineas(caja,o){
+  var W=anchoG(),H=W<480?300:320,L=50,R=W<480?14:24,T=52,B=48,min=o.min||0,max=o.max,n=o.etiquetas.length;
+  var s=marcoSvg(caja,W,H,o.titulo+'. Gráfica de líneas. '+o.series.map(function(se){return se.nombre+': '+o.etiquetas.map(function(e,i){return e+' '+se.valores[i];}).join(', ');}).join('. '));
+  function Y(v){return T+(H-T-B)*(1-(v-min)/(max-min));} function X(i){return L+(W-L-R)*i/(n-1);}
+  cuadricula(s,W,L,R,T,B,H,min,max,o.paso);
+  o.etiquetas.forEach(function(e,i){txtSvg(s,X(i),H-B+18,e,{tam:W<480?10:11});});
+  o.series.forEach(function(se,k){
+    var c=GCOL[k],d=se.valores.map(function(v,i){return (i?'L':'M')+X(i)+','+Y(v);}).join(' ');
+    s.appendChild(svgEl('path',{d:d,fill:'none',stroke:c,'stroke-width':3,'stroke-linejoin':'round','stroke-dasharray':GDASH[k]}));
+    se.valores.forEach(function(v,i){
+      var m=k%2===0?svgEl('circle',{cx:X(i),cy:Y(v),r:4.5,fill:c,stroke:'#fff','stroke-width':1.5}):svgEl('rect',{x:X(i)-4.5,y:Y(v)-4.5,width:9,height:9,fill:c,stroke:'#fff','stroke-width':1.5});
+      m.appendChild(svgEl('title',{},se.nombre+', '+o.etiquetas[i]+': '+v+(o.unidad||'')));s.appendChild(m);
+      if(o.valoresVisibles&&(W>=480||n<=7))txtSvg(s,X(i),Y(v)+(k===0?-9:18),v,{tam:10.5,color:'#1a2332'});
+    });
+  });
+  s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:'#555','stroke-width':1.5}));
+  rotulos(s,W,H,L,R,T,B,o); leyenda(s,L+10,18,o.series,'linea');
+}
+/* Tabla de datos accesible, plegada debajo de la gráfica */
+function tablaDatos(caja,titulo,cabeceras,filas){
+  var h='<details class="ver-datos"><summary>Ver los datos en una tabla</summary><div class="tabla-ancha"><table class="tabla"><caption class="sr-solo">'+titulo+'</caption><thead><tr>'+cabeceras.map(function(c){return '<th scope="col">'+c+'</th>';}).join('')+'</tr></thead><tbody>'+
+    filas.map(function(f){return '<tr>'+f.map(function(c){return '<td>'+c+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div></details>';
+  caja.insertAdjacentHTML('beforeend',h);
+}
+/* Devuelve el SVG como texto (para los ejercicios) */
+function svgTexto(fn,o){var d=document.createElement('div');fn(d,o);return d.innerHTML;}
+
+/* ===== Gráficas de la lección ===== */
+var CIUD=['Nueva York','Los Ángeles','Chicago','Houston','Phoenix'];
+graficaBarrasDobles(document.getElementById('graf-doble'),{
+  titulo:'Población de las cinco ciudades más grandes de Estados Unidos, 2010 y 2020, en millones',
+  etiquetas:CIUD,series:[{nombre:'2010 (lisa)',valores:[8.2,3.8,2.7,2.1,1.4]},{nombre:'2020 (rayada)',valores:[8.8,3.9,2.7,2.3,1.6]}],
+  max:10,paso:2,ejeY:'Millones de habitantes',unidad:' millones'});
+tablaDatos(document.getElementById('graf-doble'),'Población 2010 y 2020 en millones',['Ciudad','2010','2020'],
+  CIUD.map(function(c,i){return [c,[8.2,3.8,2.7,2.1,1.4][i],[8.8,3.9,2.7,2.3,1.6][i]];}));
+
+var MES=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+var MAX=[32,36,47,59,71,80,85,83,76,63,48,37], MIN=[19,22,31,40,51,61,66,65,57,45,34,24];
+graficaLineas(document.getElementById('graf-lineas'),{
+  titulo:'Temperatura promedio en Chicago por mes, en grados Fahrenheit',etiquetas:MES,
+  series:[{nombre:'Máxima (continua, ●)',valores:MAX},{nombre:'Mínima (discontinua, ■)',valores:MIN}],
+  min:10,max:90,paso:10,ejeY:'Grados Fahrenheit',unidad:' °F',valoresVisibles:true});
+tablaDatos(document.getElementById('graf-lineas'),'Temperatura máxima y mínima promedio por mes',['Mes','Máx. (°F)','Mín. (°F)'],
+  ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'].map(function(m,i){return [m,MAX[i],MIN[i]];}));
+
+/* ===== Ejercicios ===== */
+clasificador('clasif-doble','puntaje-doble',[
+  {p:'¿Qué representa la barra <strong>rayada</strong>?',ops:['La población de cada ciudad en 2020','La población de cada ciudad en 2010','El cambio de población entre los dos censos'],c:0,n:'Lo dice la leyenda: rayada = 2020.'},
+  {p:'¿Cuántos habitantes tenía Houston en 2020, según la gráfica?',ops:['Unos 2.3 millones','Unos 2.1 millones','Unos 3.9 millones'],c:0,n:'Barra rayada de Houston: 2.3. La lisa (2.1) es 2010; 3.9 es Los Ángeles.'},
+  {p:'¿Qué ciudad era la más grande en los dos censos?',ops:['Nueva York','Los Ángeles','Chicago'],c:0,n:'Sus dos barras son las más altas de la gráfica.'},
+  {p:'¿Qué ciudad aumentó más su población, según las barras?',ops:['Nueva York: de 8.2 a 8.8 millones','Phoenix: de 1.4 a 1.6 millones','Chicago: se quedó en 2.7 millones'],c:0,n:'Seis décimas de millón: la diferencia más grande entre dos barras. (En porcentaje es otra historia: lo verás en la sección 4.)'}
+],null,false);
+
+clasificador('clasif-lineas','puntaje-lineas',[
+  {p:'¿Cuál es la temperatura <strong>mínima</strong> promedio de enero?',ops:['19 °F','32 °F','24 °F'],c:0,n:'Línea discontinua (cuadrados), enero: 19. El 32 es la máxima de enero y el 24 es la mínima de diciembre.'},
+  {p:'¿En qué mes llegan las dos líneas a su punto más alto?',ops:['En julio','En agosto','En junio'],c:0,n:'Máxima 85 y mínima 66: los valores más altos de cada serie.'},
+  {p:'En enero, ¿cuántos grados hay entre la máxima y la mínima?',ops:['13 grados','19 grados','32 grados'],c:0,n:'32 − 19 = 13. Se resta un valor de una serie menos el de la otra, en el mismo mes.'},
+  {p:'¿Qué describe mejor la relación entre las dos series a lo largo del año?',ops:['Suben y bajan juntas, con la máxima siempre por encima','La máxima sube mientras la mínima baja durante el verano','Las dos líneas se cruzan en los meses de primavera'],c:0,n:'Las dos tienen la misma forma y nunca se cruzan.'}
+],null,false);
+
+clasificador('clasif-tabla','puntaje-tabla',[
+  {p:'¿Cuántas personas sumó Los Ángeles entre 2010 y 2020?',ops:['106 126','3 898 747','2.8 %'],c:0,n:'Fila de Los Ángeles, columna «Cambio en personas». 3 898 747 es su población total de 2020 y 2.8 % es el cambio en porcentaje.'},
+  {p:'¿Qué ciudad creció más <strong>en porcentaje</strong>?',ops:['Phoenix','Nueva York','Houston'],c:0,n:'Phoenix: 11.2 %, el porcentaje más alto de la columna.'},
+  {p:'¿Qué ciudad sumó más <strong>personas</strong>?',ops:['Nueva York','Phoenix','Los Ángeles'],c:0,n:'Nueva York: +629 057, la cifra más alta de esa columna.'},
+  {p:'Houston sumó más personas que Phoenix, pero Phoenix creció más en porcentaje. ¿Por qué?',ops:['Phoenix partía de una población más pequeña','La tabla de datos tiene un error en esa fila','Houston perdió habitantes en esos diez años'],c:0,n:'El porcentaje compara el cambio con lo que había al principio: 162 507 es mucho para 1.4 millones.'}
+],null,false);
+
+clasificador('clasif-conclusion','puntaje-conclusion',[
+  {p:'¿Qué conclusión respaldan los datos del censo?',ops:['Las cinco ciudades crecieron, y Chicago fue la que menos creció.','Chicago creció poco porque mucha gente se mudó a Phoenix.','Las cinco ciudades seguirán creciendo igual hasta el año 2030.'],c:0,n:'Se comprueba en la tabla. La segunda inventa una causa; la tercera habla de un futuro que los datos no muestran.'},
+  {p:'¿Qué conclusión respaldan los datos de temperatura?',ops:['En Chicago, el mes más caluroso del año es julio.','En Chicago hace más calor cada año que pasa.','Los veranos de Chicago son más calurosos que los de Phoenix.'],c:0,n:'La gráfica muestra julio como el mes más alto. No compara años distintos ni otras ciudades.'},
+  {p:'«Todas las grandes ciudades de Estados Unidos crecieron más de un 1 %.» ¿Qué trampa tiene?',ops:['Generaliza de más: la tabla solo tiene cinco ciudades','Inventa una causa que la tabla no da en ningún lado','Confunde el cambio en números con el de porcentaje'],c:0,n:'Para las cinco ciudades de la tabla es cierto, pero no se sabe nada de las demás.'}
+],null,false);
+
+iniciarQuiz([
+  {t:'En una gráfica con varias series, ¿qué parte dice qué representa cada barra o línea?',o:['La leyenda','El título','La fuente'],c:0,r:'<a href="#s-1-repaso">Sección 1</a>'},
+  {t:'En la gráfica de doble barra, ¿cuántos habitantes tenía Phoenix en 2010?',o:['Unos 1.4 millones','Unos 1.6 millones','Unos 2.1 millones'],c:0,r:'<a href="#s-2-doble">Sección 2</a>'},
+  {t:'¿Para qué sirve una gráfica de doble barra?',o:['Para comparar dos momentos o dos grupos en cada categoría','Para mostrar las partes de un total que suman cien por ciento','Para mostrar una sola serie de datos a lo largo del tiempo'],c:0,r:'<a href="#s-2-doble">Sección 2</a>'},
+  {t:'En la gráfica, las dos barras de Chicago se ven iguales (2.7). ¿Qué muestra la tabla?',o:['Que creció un poco: 50 790 personas','Que no cambió nada en esos diez años','Que perdió unas 50 000 personas'],c:0,r:'<a href="#s-2-doble">Sección 2, el redondeo</a>'},
+  {t:'¿Cuál es la temperatura máxima promedio de julio en Chicago?',o:['85 °F','66 °F','83 °F'],c:0,r:'<a href="#s-3-lineas">Sección 3</a>'},
+  {t:'¿En qué mes es <strong>mayor</strong> la diferencia entre la máxima y la mínima?',o:['Mayo (20 grados)','Julio (19 grados)','Enero (13 grados)'],c:0,r:'<a href="#s-3-lineas">Sección 3: resta mes por mes</a>'},
+  {t:'¿Qué muestra el cambio <strong>en porcentaje</strong>?',o:['Cuánto creció algo comparado con lo que tenía','Cuántas personas exactas se sumaron en total','La población total que había al final del periodo'],c:0,r:'<a href="#s-4-tabla">Sección 4</a>'},
+  {t:'Según la tabla, ¿qué ciudad creció menos en porcentaje?',o:['Chicago','Los Ángeles','Phoenix'],c:0,r:'<a href="#s-4-tabla">Sección 4</a>'},
+  {t:'¿Cuál es el primer paso para leer una tabla de varias columnas?',o:['Leer los encabezados de las columnas','Sumar todos los números de la tabla','Buscar el número más grande de todos'],c:0,r:'<a href="#s-4-tabla">Sección 4</a>'},
+  {t:'«Phoenix creció porque tiene mucho sol.» ¿Por qué no es una conclusión válida?',o:['Los datos dicen cuánto creció, no por qué','Phoenix no creció entre 2010 y 2020','La tabla dice que Phoenix tiene poco sol'],c:0,r:'<a href="#s-5-conclusion">Sección 5</a>'},
+  {t:'¿Qué conclusión respalda la tabla del censo?',o:['Houston sumó más personas que Phoenix, pero creció menos en porcentaje.','Houston creció más que Phoenix en personas y también en porcentaje.','Houston y Phoenix serán más grandes que Chicago en el año 2030.'],c:0,r:'<a href="#s-5-conclusion">Sección 5</a>'},
+  {t:'En un mapa temático que pinta los estados de claro a oscuro, ¿qué se lee primero?',o:['El título y la leyenda de los tonos','El estado que tiene el color más oscuro','El nombre de la capital de cada estado'],c:0,r:'<a href="#s-5-conclusion">Sección 5, mapas temáticos</a>'}
+],{meta:10,
+   bien:'Ya lees gráficas con varias series y tablas de varias columnas, y eliges conclusiones que los datos respaldan. Sigue con la Lección 6.2.',
+   repaso:'Vuelve a las secciones 2 a 5 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

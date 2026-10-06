@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!-- Lección 6.3 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 6.3 · Seguir y analizar procedimientos científicos</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+  figure.graf{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:12px 14px;margin:14px 0;text-align:center}
+  figure.graf figcaption{font-weight:700;color:var(--cp-oscuro);margin-bottom:6px;text-align:left}
+  figure.graf .fuente{font-size:.85rem;color:#555;text-align:left;margin:4px 0 0}
+  .ver-datos{text-align:left;margin-top:6px}
+  .ver-datos summary{padding:8px 12px;font-size:.95rem}
+  .mini{border-collapse:collapse;margin:6px 0;font-size:.95rem;font-weight:400}
+  .mini th,.mini td{border:1px solid #9aa9b7;padding:4px 10px}
+  .mini th{background:#4c1d95;color:#fff}
+  .leyenda-txt{font-size:.92rem;text-align:left;margin:4px 0 0}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .tabla-ancha{overflow-x:auto}
+  .enun figure.graf{margin:8px 0}
+  /* ── Lección 6.3: pasos del procedimiento y diagrama de flujo ── */
+  .pasos-proc{margin:6px 0 10px;padding-left:1.6em}
+  .pasos-proc li{margin:6px 0}
+  .flujo{list-style:none;margin:14px auto;padding:0;max-width:520px;counter-reset:fl}
+  .flujo>li{counter-increment:fl;position:relative;background:#fff;border:2px solid #6d28d9;border-radius:10px;padding:10px 12px 10px 46px;margin:0 0 34px;font-weight:600;color:#1a2332}
+  .flujo>li::before{content:counter(fl);position:absolute;left:10px;top:9px;width:26px;height:26px;border-radius:50%;background:#6d28d9;color:#fff;font-weight:700;text-align:center;line-height:26px;font-size:.9rem}
+  .flujo>li:not(:last-child)::after{content:"↓" / "";position:absolute;left:50%;bottom:-31px;transform:translateX(-50%);font-size:1.5rem;color:#4c1d95;line-height:1}
+  .flujo>li.decision,.flujo>li.ciclo{counter-increment:none}
+  .flujo>li{text-align:left}
+  .flujo>li.decision{border-style:dashed;border-color:#b45309;background:#fff8ee}
+  .flujo>li.decision::before{content:"?";background:#b45309}
+  .flujo>li.ciclo{border-style:double;border-width:4px}
+  .flujo>li.ciclo::before{content:"↻";}
+  .flujo .ramas{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;font-weight:400;font-size:.93rem}
+  .flujo .ramas span{flex:1 1 140px;background:#fff;border:1px solid #9aa9b7;border-radius:6px;padding:5px 8px}
+  .pendiente{border:2px dashed #6d28d9;background:#f5f3ff;border-radius:10px;padding:12px 14px;margin:12px 0}
+  figure.infografia img{display:block;border-radius:6px}
+</style>
+</head>
+<body>
+<h1>Lección 6.3 · Seguir y analizar procedimientos científicos</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 6: Leer en las materias: datos, procedimientos y multimedia · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Seguir un <strong>procedimiento de varios pasos</strong> y saber qué resultado da cada paso.</li>
+    <li>Analizar cómo está <strong>organizado</strong> un texto técnico: materiales, pasos, variables, medidas y advertencias.</li>
+    <li>Representar los pasos en un <strong>diagrama de flujo</strong> y <strong>comparar</strong> el texto con su versión en infografía y en video.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: RST.6-8.3 · RST.6-8.5 · RST.6-8.7 · RST.6-8.9</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-estructura">Cómo está hecho un procedimiento</a></li>
+    <li><a href="#s-2-lectura">Lectura: el efecto de la luz en una planta</a></li>
+    <li><a href="#s-3-seguir">Seguir los pasos</a></li>
+    <li><a href="#s-4-diagrama">Del texto al diagrama de flujo</a></li>
+    <li><a href="#s-5-multimedia">El texto, la infografía y el video</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Una receta, las instrucciones para armar un mueble, la forma de tomar un medicamento, un experimento de ciencias: todos son <strong>procedimientos</strong>. Si te saltas un paso o cambias el orden, el resultado sale mal. En el examen de Ciencias del GED hay preguntas sobre experimentos: qué se hizo primero, qué se mide, qué se mantiene igual. En esta lección vas a leer un experimento real, uno que tu maestro hizo con tres macetas de frijol, y lo vas a ver en texto, en infografía y en video.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-estructura">
+<summary>1. Cómo está hecho un procedimiento <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Los textos de procedimiento tienen una estructura muy reconocible. Cada parte responde una pregunta:</p>
+<table class="tabla">
+  <caption class="sr-solo">Partes de un procedimiento científico y la pregunta que responde cada una</caption>
+  <thead><tr><th scope="col">Parte</th><th scope="col">Responde a…</th><th scope="col">Cómo se reconoce</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Pregunta o propósito</strong></td><td>¿Qué queremos averiguar?</td><td>Va al principio, muchas veces en forma de pregunta.</td></tr>
+    <tr><td><strong>Materiales</strong></td><td>¿Qué necesito?</td><td>Una lista con cantidades exactas.</td></tr>
+    <tr><td><strong>Pasos</strong></td><td>¿Qué hago y en qué orden?</td><td>Números, verbos en imperativo (<em>remoje, siembre, mida</em>) y marcas de tiempo (<em>la noche antes, el día 0, cada dos días</em>).</td></tr>
+    <tr><td><strong>Medidas</strong></td><td>¿Cuánto? ¿Cuándo? ¿Cómo?</td><td>Cifras con unidad: <em>60 ml, 2 a 3 cm, de 8 a 12 horas</em>.</td></tr>
+    <tr><td><strong>Advertencias y notas</strong></td><td>¿Qué puede salir mal?</td><td>Recuadros con ⚠️ o 💡, o palabras como <em>ojo, importante, si…</em></td></tr>
+  </tbody>
+</table>
+<h3>Las variables de un experimento</h3>
+<p>Un experimento <strong>controlado</strong> cambia una sola cosa a la vez para saber qué efecto tiene. Por eso todo procedimiento científico separa tres tipos de variable:</p>
+<ul class="lista-bonita">
+  <li><span class="palabra-clave">Variable independiente</span>: la que <strong>tú cambias</strong> a propósito. En nuestro experimento, la cantidad de luz.</li>
+  <li><span class="palabra-clave">Variable dependiente</span>: la que <strong>mides</strong> para ver el efecto. Aquí, la altura de la planta.</li>
+  <li><span class="palabra-clave">Variables controladas</span>: las que <strong>se mantienen iguales</strong> para que la comparación sea justa: la semilla, la tierra, la maceta, el agua, la temperatura.</li>
+</ul>
+<div class="tip"><strong>💡 Usted o tú:</strong> el procedimiento que vas a leer da las órdenes con <em>usted</em> (<em>remoje, siembre, riegue</em>), como casi todos los manuales e instrucciones en español. Con <em>tú</em> sería <em>remoja, siembra, riega</em>. Las dos formas son correctas; lo importante es no mezclarlas en un mismo texto.</div>
+</div>
+</details>
+
+<details id="s-2-lectura">
+<summary>2. Lectura: el efecto de la luz en una planta <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura</span> Individual · lectura procedimental</h4>
+  <p style="margin:0">Lee el procedimiento completo antes de empezar, como hacen los científicos. Mientras lees, fíjate en los verbos del principio de cada paso y en las medidas.</p>
+</div>
+<div class="texto-lectura" id="lectura">
+  <h3 style="margin-top:0">El efecto de la luz en el crecimiento de una planta</h3>
+  <p><strong>Pregunta:</strong> ¿Cómo afecta la cantidad de luz al crecimiento de una planta de frijol?</p>
+  <p><strong>Materiales:</strong> 9 semillas de frijol del mismo paquete · 3 macetas iguales con platito · tierra para macetas de la misma bolsa · un vaso medidor · una regla con centímetros · una caja de cartón con tapa · cinta y marcador · la hoja de registro.</p>
+  <p><strong>Procedimiento:</strong></p>
+  <ol class="pasos-proc">
+    <li><strong>Remoje las semillas.</strong> La noche antes de sembrar, ponga las 9 semillas en un vaso con agua de 8 a 12 horas. Así germinan más rápido y todas a la vez.</li>
+    <li><strong>Prepare y marque las macetas.</strong> Llene las tres con la misma cantidad de tierra y póngales las etiquetas A, B y C.</li>
+    <li><strong>Siembre tres semillas por maceta,</strong> a una profundidad de 2 a 3 cm, y cúbralas con tierra.</li>
+    <li><strong>Riegue por primera vez</strong> con la misma cantidad de agua en cada maceta, por ejemplo, 60 ml. Será la misma cantidad durante todo el experimento.</li>
+    <li><strong>Deje germinar las tres macetas juntas,</strong> en el mismo lugar y con luz indirecta, hasta que salgan los brotes en las tres (de 5 a 8 días).</li>
+    <li><strong>Mida y separe (día 0).</strong> Mida cada plantita y coloque cada maceta en su lugar: A, junto a una ventana soleada; B, en un rincón lejos de la ventana; C, dentro de la caja cerrada.</li>
+    <li><strong>Riegue igual a las tres</strong> cada dos días, a la misma hora. Con la maceta C, abra la caja, riegue y ciérrela enseguida.</li>
+    <li><strong>Mida y anote cada dos días,</strong> antes de regar: la altura desde la tierra hasta el punto más alto del tallo, el color y el número de hojas. Tome una foto con la regla al lado.</li>
+    <li><strong>Compare el día final</strong> (día 20 o 21). Ponga las tres macetas juntas, calcule el promedio de altura de cada una y compárelo con su hipótesis.</li>
+  </ol>
+  <p><strong>⚠️ Ojo:</strong> si en alguna maceta no sale ninguna semilla en diez días, vuelva a sembrar las tres a la vez. Es mejor empezar de nuevo que comparar plantas de distinta edad.</p>
+  <p style="font-size:.9rem;margin-bottom:0"><em>Versión breve del procedimiento que siguió el maestro José M. Fernández para el video de esta lección.</em> <a href="https://zhemaria.github.io/clases_leng3/procedimiento-experimento-luz.html" target="_blank" rel="noopener noreferrer">Ver el procedimiento completo, con la hoja de registro</a> (se abre en una pestaña nueva).</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar el procedimiento</button>
+</div>
+<div class="clasificador apilado" id="clasif-estructura"></div>
+<div class="puntaje" id="puntaje-estructura" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-3-seguir">
+<summary>3. Seguir los pasos <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Seguir un procedimiento no es solo leer los pasos: es <strong>imaginar</strong> cómo queda todo después de cada uno. Antes de hacer algo, pregúntate: ¿qué paso va antes?, ¿qué tengo cuando termino este paso?, ¿qué pasaría si me lo salto?</p>
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Ejecución mental</span> «Sigue los pasos»</h4>
+  <p style="margin:0">Cierra los ojos un momento e imagina que tienes las tres macetas delante. Recorre los pasos 1 a 6 en voz alta: ¿qué tienes en las manos en cada uno? Después responde.</p>
+</div>
+<div class="clasificador apilado" id="clasif-seguir"></div>
+<div class="puntaje" id="puntaje-seguir" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-3.html#ordena" target="_blank" rel="noopener noreferrer">🔢 Practica más: ordena los pasos
+  <span>Procedimientos de ciencias y de la vida diaria para decidir qué paso va después. Se abre en una pestaña nueva.</span></a>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-3.html#paso-falta" target="_blank" rel="noopener noreferrer">🧩 Practica más: ¿qué paso falta?
+  <span>Procedimientos incompletos: encuentras el paso que se saltaron.</span></a>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> uno lee en voz alta un procedimiento de la vida diaria (una receta, cómo poner una lavadora) saltándose un paso a propósito. El otro tiene que descubrir cuál falta.</div>
+</div>
+</details>
+
+<details id="s-4-diagrama">
+<summary>4. Del texto al diagrama de flujo <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Un <span class="palabra-clave">diagrama de flujo</span> representa un procedimiento con cajas y flechas: cada caja es un paso y cada flecha dice «después». Algunas cajas tienen una <strong>pregunta</strong>, y según la respuesta, el camino sigue por un lado o por otro.</p>
+<ol class="flujo" aria-label="Diagrama de flujo del experimento">
+  <li>Remojar las semillas (8 a 12 horas)</li>
+  <li>Preparar las macetas A, B y C</li>
+  <li>Sembrar 3 semillas por maceta y regar 60 ml</li>
+  <li>Dejar germinar las tres juntas</li>
+  <li class="decision">¿Salieron brotes en las tres macetas?
+    <span class="ramas"><span><strong>No, y ya pasaron 10 días:</strong> volver a sembrar las tres.</span><span><strong>No, todavía no:</strong> esperar y mantener la tierra húmeda.</span><span><strong>Sí:</strong> es el día 0; seguir.</span></span></li>
+  <li>Medir y separar: A ventana, B rincón, C caja</li>
+  <li class="ciclo">Cada 2 días: medir, anotar, fotografiar y regar
+    <span class="ramas"><span><strong>Se repite</strong> hasta el día 20 o 21.</span></span></li>
+  <li>Comparar los promedios con la hipótesis</li>
+</ol>
+<div class="tip"><strong>💡 Fíjate en lo que hace el diagrama:</strong> convierte la advertencia del texto (⚠️ «si no sale ninguna semilla en diez días…») en una <strong>decisión</strong> con dos caminos, y convierte «cada dos días» en un <strong>ciclo</strong> que se repite. Es lo que mejor sabe hacer un diagrama de flujo.</div>
+<div class="clasificador apilado" id="clasif-diagrama"></div>
+<div class="puntaje" id="puntaje-diagrama" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-5-multimedia">
+<summary>5. El texto, la infografía y el video <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<p>El mismo experimento puede contarse de varias formas. Cada una muestra unas cosas mejor que otras. Compararlas es parte del estándar: <strong>¿qué da el texto que no da la imagen?, ¿qué da la imagen que no da el texto?</strong></p>
+<h3>La infografía</h3>
+<figure class="graf infografia">
+  <figcaption>Guía paso a paso: el efecto de la luz en el crecimiento de una planta</figcaption>
+  <a href="infografia-experimento-luz.svg" target="_blank" rel="noopener noreferrer"><img src="infografia-experimento-luz.svg" alt="Infografía del experimento en dos fases. Fase 1, preparación y germinación: remojar las semillas, sembrar y regar igual las tres macetas, dejarlas germinar juntas. Día 0. Fase 2, ubicación, registro y análisis: maceta A junto a la ventana, B lejos de la ventana, C en una caja cerrada; regar y medir cada dos días del día 1 al 20; comparar las alturas, que aparecen con signos de interrogación." width="1600" height="1000" style="width:100%;height:auto"></a>
+  <p class="fuente">Infografía hecha para esta lección (GEDparaHispanos). Toca la imagen para verla en grande en una pestaña nueva.</p>
+</figure>
+<table class="tabla">
+  <caption>Comparación: el texto del procedimiento y la infografía</caption>
+  <thead><tr><th scope="col">Aspecto</th><th scope="col">El texto</th><th scope="col">La infografía</th></tr></thead>
+  <tbody>
+    <tr><td>Número de pasos</td><td>9 pasos numerados seguidos.</td><td>6 pasos en dos fases, separadas por el día 0.</td></tr>
+    <tr><td>Medidas exactas</td><td>Las da todas: 8 a 12 horas, 2 a 3 cm, 60 ml, 5 a 8 días.</td><td>Da casi todas, pero no la cantidad de agua.</td></tr>
+    <tr><td>Dónde va cada maceta</td><td>Lo dice en una oración.</td><td>Lo <strong>muestra</strong>: se ve la ventana, el rincón y la caja.</td></tr>
+    <tr><td>Hasta qué día se mide</td><td>Hasta el día 20 o 21.</td><td>Del día 1 al día 20.</td></tr>
+    <tr><td>Qué hacer si no germinan</td><td>Lo explica en la advertencia.</td><td>No lo menciona.</td></tr>
+  </tbody>
+</table>
+<h3>El video</h3>
+<div class="pendiente" id="video-pendiente">
+  <p><strong>🎬 Muy pronto: el video del experimento.</strong> Tu maestro está haciendo el experimento con sus tres macetas y lo está grabando. Cuando esté listo, aparecerá aquí, con subtítulos en español y la transcripción completa.</p>
+  <p style="margin-bottom:0">Mientras tanto, piensa: ¿qué crees que mostrará el video mejor que el texto y que la infografía? ¿Qué podría faltar en el video?</p>
+</div>
+<div class="clasificador apilado" id="clasif-multimedia"></div>
+<div class="puntaje" id="puntaje-multimedia" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-3.html#texto-diagrama" target="_blank" rel="noopener noreferrer">🖼️ Practica más: texto y diagrama
+  <span>Procedimientos cortos en texto y en diagrama: comparas qué da cada uno. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>6. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Tu hipótesis.</strong> ¿Qué maceta crees que crecerá más alta, A, B o C? ¿Y cuál estará más sana? Escríbelo con una oración que empiece con «Si…, entonces…, porque…».</li>
+  <li><strong>Tu procedimiento.</strong> Escribe en pasos numerados algo que sepas hacer bien (una receta, cambiar una llanta, preparar un biberón). Usa verbos en imperativo y al menos dos medidas exactas.</li>
+  <li><strong>Tu diagrama.</strong> Convierte tu procedimiento en un diagrama de flujo con al menos una pregunta de decisión.</li>
+  <li><strong>Si te animas:</strong> haz el experimento en tu casa y compara tus resultados con los del video cuando se publique.</li>
+</ul>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>7. Quiz de la lección <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Las preguntas se refieren al procedimiento de la sección 2, al diagrama de la sección 4 y a la infografía de la sección 5. Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>8. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Un procedimiento tiene pregunta, materiales, pasos en orden, medidas exactas y advertencias.</li>
+  <li>Un experimento controlado cambia una sola variable (la independiente) y mide su efecto (la dependiente).</li>
+  <li>Seguir los pasos es imaginar qué resultado da cada uno y qué pasa si se salta.</li>
+  <li>Un diagrama de flujo convierte las condiciones en decisiones y las repeticiones en ciclos.</li>
+  <li>El texto, la infografía y el video cuentan lo mismo, pero cada uno muestra mejor unas cosas que otras.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Cuál es la variable independiente del experimento? ¿Y la dependiente?</li>
+    <li>¿Por qué las tres macetas germinan juntas antes de separarlas?</li>
+    <li>¿Qué información da el texto que no da la infografía?</li>
+  </ul>
+</div>
+<div class="tip"><strong>🎉 Terminaste el Tema 6.</strong> <strong>➡️ Sigue con el Tema 7:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_7-1.html" style="color:var(--cp-oscuro);font-weight:700">Lección 7.1 · Texto argumentado: tesis, razones con hechos y transiciones</a>.</div>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 6 · Lección 6.3</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+document.getElementById('leer-lectura').addEventListener('click',function(){hablar(document.getElementById('lectura').textContent.replace('Ver el procedimiento completo, con la hoja de registro','').trim(),0.9);});
+
+clasificador('clasif-estructura','puntaje-estructura',[
+  {p:'¿Cuál es la <strong>variable independiente</strong>, la que se cambia a propósito?',ops:['La cantidad de luz que recibe cada maceta','La altura de la planta medida en centímetros','La cantidad de agua que se echa en cada riego'],c:0,n:'A recibe luz plena, B poca luz y C oscuridad: es lo único que cambia.'},
+  {p:'¿Cuál es la <strong>variable dependiente</strong>, la que se mide?',ops:['La altura de las plantas','El tamaño de las macetas','El tipo de semilla de frijol'],c:0,n:'Se mide para ver el efecto de la luz.'},
+  {p:'¿Por qué las tres macetas reciben <strong>la misma</strong> cantidad de agua?',ops:['Para que la luz sea lo único diferente entre ellas','Porque el frijol necesita exactamente 60 ml de agua','Porque así las plantas crecen más rápido y sanas'],c:0,n:'El agua es una variable controlada: si cambiara, no sabríamos si el efecto es de la luz o del agua.'},
+  {p:'¿Qué tienen en común las palabras <em>remoje, prepare, siembre, riegue, mida</em>?',ops:['Son verbos en imperativo que abren cada paso','Son los materiales que pide el experimento','Son las variables que se miden en el experimento'],c:0,n:'Los procedimientos dan órdenes: cada paso empieza con un verbo en imperativo.'}
+],null,false);
+
+clasificador('clasif-seguir','puntaje-seguir',[
+  {p:'¿Qué paso va justo <strong>después</strong> de sembrar las semillas?',ops:['Regar por primera vez con 60 ml','Medir las plantitas con la regla','Meter la maceta C en la caja'],c:0,n:'Paso 4. Medir y separar es el paso 6, cuando ya hay brotes.'},
+  {p:'Al terminar el paso 5, ¿qué tienes?',ops:['Tres macetas con brotes, juntas en el mismo lugar','Tres macetas separadas según la luz que reciben','Nueve semillas remojadas en un vaso con agua'],c:0,n:'Las macetas se separan en el paso 6, el día 0.'},
+  {p:'¿Por qué se dejan germinar las tres macetas <strong>juntas</strong> antes de separarlas?',ops:['Para que las tres empiecen el experimento en igualdad','Porque la caja de cartón todavía no está lista para usarse','Porque así se gasta menos agua al regar las tres macetas'],c:0,n:'Si una empezara con otra luz, compararíamos plantas que no salieron en las mismas condiciones.'},
+  {p:'¿Qué pasaría si mides <strong>después</strong> de regar, y no antes?',ops:['La tierra mojada podría mover las plantitas y cambiar la medida','No pasaría nada: el orden de esos dos pasos da exactamente igual','Las plantas crecerían más rápido ese día por el agua fresca'],c:0,n:'Por eso el paso 8 dice «antes de regar»: así siempre se mide en las mismas condiciones.'},
+  {p:'Una semilla de la maceta B no germinó, pero las otras dos sí. ¿Qué dice el procedimiento?',ops:['Nada obliga a empezar de nuevo: solo si no sale ninguna en diez días','Hay que volver a sembrar las tres macetas el mismo día, desde cero','Hay que pasar una de las plantitas de la maceta A a la maceta B'],c:0,n:'La advertencia habla de cuando no sale <strong>ninguna</strong> semilla en una maceta.'}
+],null,false);
+
+clasificador('clasif-diagrama','puntaje-diagrama',[
+  {p:'¿Qué parte del texto se convirtió en la caja de <strong>decisión</strong> (la del signo de interrogación)?',ops:['La advertencia sobre las semillas que no germinan','La lista de materiales del principio del texto','La pregunta que el experimento quiere responder'],c:0,n:'El ⚠️ del texto se convierte en una pregunta con caminos distintos.'},
+  {p:'¿Qué indica la caja del <strong>ciclo</strong> (↻)?',ops:['Que esos pasos se repiten cada dos días','Que hay que volver a empezar todo el experimento','Que ese paso se puede saltar si no hay tiempo'],c:0,n:'Medir, anotar, fotografiar y regar se repite hasta el día 20 o 21.'},
+  {p:'Si en la caja de decisión la respuesta es «Sí», ¿qué sigue?',ops:['Medir y separar las macetas: es el día 0','Volver a sembrar las tres macetas','Comparar los promedios con la hipótesis'],c:0,n:'Cuando las tres tienen brotes, empieza el día 0.'}
+],null,false);
+
+clasificador('clasif-multimedia','puntaje-multimedia',[
+  {p:'¿Qué información da el <strong>texto</strong> que <strong>no</strong> da la infografía?',ops:['La cantidad exacta de agua: 60 ml','Que la maceta C va dentro de una caja','Que las semillas se remojan de 8 a 12 horas'],c:0,n:'La infografía dice «la misma cantidad de agua», pero no cuánta.'},
+  {p:'¿Qué muestra <strong>mejor</strong> la infografía que el texto?',ops:['Dónde se coloca cada maceta, con dibujos','Qué hacer si no germina ninguna semilla','La lista completa de materiales'],c:0,n:'La ventana, el rincón y la caja se ven de un vistazo.'},
+  {p:'En la infografía hay 6 pasos y en el texto hay 9. ¿Por qué?',ops:['La infografía junta varios pasos del texto en uno','La infografía se saltó tres pasos del experimento','El texto repite tres pasos dos veces seguidas'],c:0,n:'Por ejemplo, «Siembre y riegue igual» junta los pasos 2, 3 y 4 del texto.'},
+  {p:'¿Qué podría mostrar el <strong>video</strong> mejor que el texto y que la infografía?',ops:['Cómo se ven de verdad las plantas al crecer','La cantidad exacta de horas del remojo','La definición de la variable dependiente'],c:0,n:'El video enseña el resultado real: el color, el grosor del tallo, cómo se inclinan hacia la luz.'}
+],null,false);
+
+iniciarQuiz([
+  {t:'¿Cuál es el <strong>primer</strong> paso del procedimiento?',o:['Remojar las semillas','Sembrar tres semillas por maceta','Preparar y marcar las macetas'],c:0,r:'<a href="#s-2-lectura">Sección 2</a>'},
+  {t:'¿Qué paso va justo <strong>antes</strong> de medir y separar las macetas?',o:['Dejar germinar las tres juntas','Regar por primera vez las macetas','Comparar los promedios de altura'],c:0,r:'<a href="#s-3-seguir">Sección 3</a>'},
+  {t:'¿Qué es el <strong>día 0</strong>?',o:['El día en que las tres macetas ya tienen brotes','El día en que se ponen las semillas en agua','El día en que se compara con la hipótesis'],c:0,r:'<a href="#s-2-lectura">Sección 2, paso 6</a>'},
+  {t:'¿Dónde se coloca la maceta B?',o:['En un rincón, lejos de la ventana','Junto a una ventana muy soleada','Dentro de una caja de cartón cerrada'],c:0,r:'<a href="#s-2-lectura">Sección 2, paso 6</a>'},
+  {t:'¿Cuál es una <strong>variable controlada</strong> del experimento?',o:['La cantidad de agua de cada riego','La cantidad de luz de cada maceta','La altura de cada planta al final'],c:0,r:'<a href="#s-1-estructura">Sección 1</a>'},
+  {t:'¿Por qué el experimento cambia <strong>solo la luz</strong>?',o:['Para saber que el efecto se debe a la luz','Para que el experimento dure menos días','Porque es la variable más fácil de medir'],c:0,r:'<a href="#s-1-estructura">Sección 1</a>'},
+  {t:'¿Desde dónde hasta dónde se mide la altura de la planta?',o:['Desde la tierra hasta el punto más alto del tallo','Desde el platito de abajo hasta la hoja más estirada','Desde el borde de la maceta hasta la punta de una hoja'],c:0,r:'<a href="#s-2-lectura">Sección 2, paso 8</a>'},
+  {t:'Al terminar el paso 3, ¿qué tienes?',o:['Tres macetas con semillas sembradas, todavía sin regar','Tres macetas con brotes de unos pocos centímetros','Nueve semillas dentro de un vaso con agua'],c:0,r:'<a href="#s-3-seguir">Sección 3</a>'},
+  {t:'En el diagrama de flujo, ¿qué representa una caja con una pregunta?',o:['Una decisión con dos o más caminos','Un paso que se repite varias veces','Un material que hace falta comprar'],c:0,r:'<a href="#s-4-diagrama">Sección 4</a>'},
+  {t:'¿Qué dice la infografía sobre el riego que el texto dice de otra forma?',o:['Dice «la misma cantidad de agua», sin dar la cifra','Dice que hay que regar todos los días a la misma hora','Dice que la maceta C no se riega nunca porque está en la caja'],c:0,r:'<a href="#s-5-multimedia">Sección 5</a>'},
+  {t:'Según la tabla de comparación, ¿hasta qué día se mide en la infografía?',o:['Hasta el día 20','Hasta el día 21','Hasta el día 10'],c:0,r:'<a href="#s-5-multimedia">Sección 5</a>'},
+  {t:'¿Qué muestra mejor la infografía que el texto?',o:['Dónde va cada maceta, de un vistazo','Las medidas exactas de cada paso','Qué hacer si las semillas no germinan'],c:0,r:'<a href="#s-5-multimedia">Sección 5</a>'}
+],{meta:10,
+   bien:'Ya sigues un procedimiento de varios pasos, lo pasas a un diagrama de flujo y comparas el texto con la infografía. ¡Terminaste el Tema 6!',
+   repaso:'Vuelve a las secciones 2 a 5 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

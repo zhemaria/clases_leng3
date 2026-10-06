@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- Procedimiento del experimento «El efecto de la luz en el crecimiento de una planta»
+     Preparado para la Lección 6.3 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Procedimiento · El efecto de la luz en el crecimiento de una planta</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<style>
+  :root{--cp:#6d28d9;--cp-o:#4c1d95;--cp-c:#ede9fe;--tinta:#1a2332;--gris:#555;--linea:#d6dde4}
+  *{box-sizing:border-box}
+  body{font-family:'Segoe UI',Arial,sans-serif;line-height:1.65;color:var(--tinta);background:#fafbfc;max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-o);border-bottom:4px solid var(--cp);padding-bottom:12px;font-size:1.7rem;margin-bottom:6px}
+  .sub{color:var(--gris);margin-top:0}
+  h2{color:var(--cp-o);border-left:6px solid var(--cp);padding-left:12px;font-size:1.3rem;margin-top:34px}
+  h3{color:var(--cp);font-size:1.08rem;margin:20px 0 6px}
+  .indice{background:#fff;border:1px solid var(--linea);border-left:6px solid var(--cp);border-radius:10px;padding:14px 20px;margin:18px 0}
+  .indice ol{margin:6px 0 0;padding-left:1.4em} .indice a{color:var(--cp-o)}
+  .caja{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .pregunta{background:var(--cp-c);border-left:6px solid var(--cp);border-radius:8px;padding:12px 16px;font-size:1.1rem}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:10px 16px;border-radius:6px;margin:12px 0}
+  .tip strong{color:#6b5400}
+  .alerta{background:#fff3e0;border-left:5px solid #ff8c42;padding:10px 16px;border-radius:6px;margin:12px 0}
+  table{width:100%;border-collapse:collapse;background:#fff;margin:8px 0 14px;font-size:.95rem}
+  th{background:var(--cp-o);color:#fff;text-align:left;padding:8px 10px;font-weight:600}
+  td{border:1px solid var(--linea);padding:8px 10px;vertical-align:top}
+  ol.pasos{counter-reset:paso;list-style:none;padding:0}
+  ol.pasos > li{counter-increment:paso;position:relative;padding:10px 12px 10px 54px;margin:8px 0;background:#fff;border:1px solid var(--linea);border-radius:10px}
+  ol.pasos > li::before{content:counter(paso);position:absolute;left:12px;top:10px;width:30px;height:30px;border-radius:50%;background:var(--cp);color:#fff;font-weight:700;text-align:center;line-height:30px}
+  ol.pasos .fase{display:block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--cp-o)}
+  .check{list-style:none;padding:0;columns:2;column-gap:24px}
+  .check li{padding:3px 0 3px 26px;position:relative;break-inside:avoid}
+  .check li::before{content:'☐';position:absolute;left:0;color:var(--cp-o);font-size:1.1rem;line-height:1.4}
+  .registro td{height:38px}
+  .registro th,.registro td{text-align:center;font-size:.88rem;padding:6px 4px}
+  .registro th.grupo{background:var(--cp)}
+  p{overflow-wrap:anywhere}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .btn{cursor:pointer;font-family:inherit;font-weight:600;border:none;border-radius:8px;padding:10px 18px;background:var(--cp-o);color:#fff;font-size:.95rem}
+  a:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .tabla-wrap{overflow-x:auto;max-width:100%;width:100%}
+  .registro{min-width:620px}
+  .tabla-wrap:focus{outline:3px solid #b35316}
+  footer{margin-top:34px;border-top:2px solid var(--linea);padding-top:14px;text-align:center;color:var(--gris);font-size:.9rem}
+  footer p{margin:4px 0} footer a{color:var(--cp-o)}
+  @media(max-width:640px){.check{columns:1}}
+  @media print{
+    body{background:#fff;padding:0;max-width:none;font-size:11pt}
+    .indice,.no-imprimir{display:none}
+    h2{break-after:avoid}
+    ol.pasos > li,.caja,table{break-inside:avoid}
+    #hoja{break-before:page}
+    th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    ol.pasos > li::before{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<h1>El efecto de la luz en el crecimiento de una planta</h1>
+<p class="sub">Procedimiento para el experimento y el video de la Lección 6.3 · Artes del Lenguaje · Nivel 3 · Duración: unas 3 semanas</p>
+
+<nav class="indice" aria-labelledby="t-ind">
+  <strong id="t-ind">Contenido</strong>
+  <ol>
+    <li><a href="#pregunta">La pregunta y las variables</a></li>
+    <li><a href="#materiales">Materiales</a></li>
+    <li><a href="#procedimiento">Procedimiento paso a paso</a></li>
+    <li><a href="#medir">Cómo medir</a></li>
+    <li><a href="#video">Guion de tomas para el video</a></li>
+    <li><a href="#entregar">Qué enviarme al terminar</a></li>
+    <li><a href="#hoja">Hoja de registro para imprimir</a></li>
+  </ol>
+  <p style="margin:10px 0 0"><button type="button" class="btn" onclick="window.print()">🖨️ Imprimir el procedimiento y la hoja</button></p>
+</nav>
+
+<h2 id="pregunta">1. La pregunta y las variables</h2>
+<p class="pregunta"><strong>Pregunta:</strong> ¿Cómo afecta la cantidad de luz al crecimiento de una planta de frijol?</p>
+<div class="caja">
+  <p style="margin-top:0"><strong>Hipótesis.</strong> Antes de sembrar, escriba (y diga en el video) qué cree que pasará y por qué. Por ejemplo: <em>«Si una planta recibe más luz, crecerá más sana, porque usa la luz para fabricar su alimento.»</em> No importa si al final resulta equivocada: comparar la hipótesis con el resultado es parte de la lección.</p>
+  <table>
+    <caption class="sr">Variables del experimento</caption>
+    <thead><tr><th scope="col">Variable</th><th scope="col">En este experimento</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Independiente</strong> (la que usted cambia)</td><td>La cantidad de luz: <strong>A</strong> luz plena · <strong>B</strong> poca luz · <strong>C</strong> oscuridad.</td></tr>
+      <tr><td><strong>Dependiente</strong> (la que usted mide)</td><td>La altura de la planta en centímetros. También se observan el color y el número de hojas.</td></tr>
+      <tr><td><strong>Controladas</strong> (las que se mantienen iguales)</td><td>El tipo de semilla, la tierra, el tamaño de la maceta, la cantidad de agua, el horario de riego y la temperatura del cuarto.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="materiales">2. Materiales</h2>
+<ul class="check">
+  <li>9 semillas de frijol del mismo paquete (pinto o negro; se consiguen en cualquier supermercado)</li>
+  <li>3 macetas iguales, de unos 10 a 12 cm, con agujeros abajo</li>
+  <li>3 platitos para debajo de las macetas</li>
+  <li>Tierra para macetas, la misma bolsa para las tres</li>
+  <li>Un vaso medidor o una cuchara de medir</li>
+  <li>Una regla con centímetros</li>
+  <li>Una caja de cartón con tapa, más alta que las macetas (o un clóset)</li>
+  <li>Cinta adhesiva y marcador para las etiquetas <strong>A</strong>, <strong>B</strong> y <strong>C</strong></li>
+  <li>Un vaso con agua para remojar las semillas</li>
+  <li>La hoja de registro de la sección 7 y un lápiz</li>
+  <li>El celular para las fotos y el video</li>
+</ul>
+
+<h2 id="procedimiento">3. Procedimiento paso a paso</h2>
+<ol class="pasos">
+  <li><span class="fase">Preparación · la noche antes de sembrar</span><strong>Remoje las semillas.</strong> Ponga las 9 semillas en un vaso con agua durante toda la noche (entre 8 y 12 horas). Así germinan más rápido y todas a la vez.</li>
+  <li><span class="fase">Preparación</span><strong>Prepare y marque las macetas.</strong> Llene las tres macetas con la misma cantidad de tierra, hasta 2 cm del borde. Póngales las etiquetas <strong>A</strong>, <strong>B</strong> y <strong>C</strong>.</li>
+  <li><span class="fase">Siembra</span><strong>Siembre tres semillas por maceta.</strong> Haga tres hoyitos de unos 2 a 3 cm de profundidad, separados entre sí. Coloque una semilla en cada uno y cúbrala con tierra.</li>
+  <li><span class="fase">Siembra</span><strong>Riegue por primera vez.</strong> Eche la misma cantidad de agua en cada maceta (por ejemplo, 60 ml, que es un cuarto de taza). Anote la cantidad: será la misma durante todo el experimento.</li>
+  <li><span class="fase">Germinación · unos 5 a 8 días</span><strong>Deje germinar las tres macetas juntas.</strong> Póngalas en el mismo lugar, con luz indirecta, hasta que en cada maceta hayan salido los brotes. Mantenga la tierra húmeda, sin encharcar. Así las tres plantas empiezan el experimento en igualdad de condiciones.</li>
+  <li><span class="fase">Día 0</span><strong>Mida y separe.</strong> El día en que las tres macetas tengan brotes es el <strong>día 0</strong>. Mida cada plantita (sección 4), anote los datos, tome una foto de las tres juntas con la regla al lado, y coloque cada maceta en su lugar:
+    <ul>
+      <li><strong>A · luz plena:</strong> junto a una ventana soleada.</li>
+      <li><strong>B · poca luz:</strong> en un rincón del mismo cuarto, lejos de la ventana.</li>
+      <li><strong>C · oscuridad:</strong> dentro de la caja cerrada (o del clóset), en el mismo cuarto si es posible, para que la temperatura sea parecida.</li>
+    </ul></li>
+  <li><span class="fase">Días 1 a 21</span><strong>Riegue igual a las tres.</strong> Cada dos días, eche la misma cantidad de agua en cada maceta, a la misma hora. Con la maceta C, abra la caja, riegue y ciérrela enseguida.</li>
+  <li><span class="fase">Días 2, 4, 6… hasta el 20 o 21</span><strong>Mida y anote.</strong> Cada dos días, antes de regar, mida las plantas de las tres macetas, anote la altura, el color de las hojas y el número de hojas, y tome una foto de cada maceta con la regla al lado.</li>
+  <li><span class="fase">Día final</span><strong>Compare.</strong> Ponga las tres macetas juntas, una al lado de la otra, con la regla, y tome la foto final. Calcule el promedio de altura de cada maceta y compárelo con su hipótesis.</li>
+</ol>
+<div class="alerta"><strong>⚠️ Un resultado que puede sorprender:</strong> la planta de la maceta C (oscuridad) suele crecer <strong>más alta</strong> que las otras, pero muy delgada, con el tallo débil y las hojas amarillentas o pálidas. Se estira buscando la luz. No es un error del experimento: es el resultado más interesante para la lección, porque permite preguntar si la planta más alta es la que mejor creció.</div>
+<div class="tip"><strong>💡 Si en una maceta no germinan las tres semillas:</strong> trabaje con las que salieron y anótelo. Si en alguna no sale ninguna en diez días, vuelva a sembrar las tres macetas a la vez; es mejor empezar de nuevo que comparar plantas de distinta edad.</div>
+
+<h2 id="medir">4. Cómo medir</h2>
+<div class="caja">
+  <ul>
+    <li>Ponga la regla <strong>derecha, apoyada en la tierra</strong>, junto al tallo.</li>
+    <li>Mida desde la tierra hasta el <strong>punto más alto del tallo</strong> (donde nacen las hojas de arriba), no hasta la punta de una hoja estirada.</li>
+    <li>Mida las tres plantas de cada maceta y anote las tres alturas. Al final se calcula el promedio, que es más confiable que una sola planta.</li>
+    <li>Use siempre la misma regla y anote los centímetros con un decimal (por ejemplo, 4.5 cm).</li>
+    <li>Para el color de las hojas, use siempre las mismas palabras: <em>verde oscuro, verde claro, amarillento, pálido</em>.</li>
+  </ul>
+</div>
+
+<h2 id="video">5. Guion de tomas para el video</h2>
+<p>Con 3 a 5 minutos basta. Grabe con el celular en <strong>horizontal</strong>, con buena luz y en un lugar sin ruido.</p>
+<table>
+  <caption class="sr">Tomas sugeridas para el video</caption>
+  <thead><tr><th scope="col">Toma</th><th scope="col">Qué mostrar o decir</th><th scope="col">Duración</th></tr></thead>
+  <tbody>
+    <tr><td>1 · Presentación</td><td>La pregunta del experimento y su hipótesis.</td><td>20 s</td></tr>
+    <tr><td>2 · Materiales</td><td>Los materiales sobre la mesa, nombrándolos.</td><td>20 s</td></tr>
+    <tr><td>3 · Siembra</td><td>Remojo, tierra, etiquetas, profundidad de siembra y primer riego medido.</td><td>40 s</td></tr>
+    <tr><td>4 · Día 0</td><td>La primera medición en primer plano y dónde se coloca cada maceta (A, B y C).</td><td>40 s</td></tr>
+    <tr><td>5 · Durante</td><td>Dos o tres mediciones intermedias, o las fotos seguidas como presentación.</td><td>40 s</td></tr>
+    <tr><td>6 · Resultado</td><td>Las tres macetas juntas con la regla; los promedios.</td><td>40 s</td></tr>
+    <tr><td>7 · Conclusión</td><td>Qué pasó, si se cumplió la hipótesis y qué le sorprendió.</td><td>30 s</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 Subtítulos:</strong> al subirlo a YouTube (como «no listado»), active los subtítulos automáticos en español y corríjalos. Son necesarios para la accesibilidad (DUA) y me sirven para preparar la transcripción de la lección.</div>
+<div class="tip"><strong>💡 Una diferencia a propósito:</strong> la lección pide comparar la información del texto con la del video. Si en el video menciona algún detalle que no está en este procedimiento (por ejemplo, la temperatura del cuarto, o algo que hizo distinto), anótelo y me lo cuenta: con eso preparo las preguntas de comparación.</div>
+
+<h2 id="entregar">6. Qué enviarme al terminar</h2>
+<ul class="check">
+  <li>El enlace del video en YouTube</li>
+  <li>La hoja de registro llena (una foto clara basta)</li>
+  <li>Tres o cuatro fotos: día 0, mitad y final</li>
+  <li>Cualquier cosa que haya salido distinta a lo previsto</li>
+</ul>
+<p>Con eso preparo la lectura del procedimiento, el diagrama de flujo, la gráfica de líneas de las tres macetas y las preguntas de la Lección 6.3, y los datos pueden servir también en las lecciones 6.1 y 6.2.</p>
+
+<h2 id="hoja">7. Hoja de registro</h2>
+<p>Altura de cada planta en centímetros (plantas 1, 2 y 3 de cada maceta) y color de las hojas. Riego: ______ ml cada dos días. Hipótesis: ____________________________________________</p>
+<div class="tabla-wrap" role="region" aria-label="Hoja de registro" tabindex="0">
+<table class="registro">
+  <caption class="sr">Hoja de registro de alturas y color por día y por maceta</caption>
+  <thead>
+    <tr><th scope="col" rowspan="2">Día</th><th scope="col" rowspan="2">Fecha</th><th scope="colgroup" colspan="4" class="grupo">A · Luz plena</th><th scope="colgroup" colspan="4" class="grupo">B · Poca luz</th><th scope="colgroup" colspan="4" class="grupo">C · Oscuridad</th></tr>
+    <tr><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">Color</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">Color</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">Color</th></tr>
+  </thead>
+  <tbody id="filas"></tbody>
+</table>
+</div>
+<p><strong>Notas</strong> (germinación, cambios, algo que salió distinto): ________________________________________________<br>________________________________________________________________________________</p>
+
+<footer>
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3 · Material de preparación de la Lección 6.3</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Licencia CC BY-NC-SA 4.0</a>.</p>
+</footer>
+<script>
+(function(){
+  var t=document.getElementById('filas'),h='';
+  for(var d=0;d<=20;d+=2){h+='<tr><th scope="row" style="background:#ede9fe;color:#4c1d95">'+d+'</th>'+new Array(14).join('<td></td>')+'</tr>';}
+  h+='<tr><th scope="row" style="background:#ede9fe;color:#4c1d95">Final</th>'+new Array(14).join('<td></td>')+'</tr>';
+  h+='<tr><th scope="row" style="background:#ede9fe;color:#4c1d95">Promedio final</th><td></td><td colspan="4"></td><td colspan="4"></td><td colspan="4"></td></tr>';
+  t.innerHTML=h;
+})();
+</script>
+</body>
+</html>

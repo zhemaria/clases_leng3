@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!-- Lección 2.1 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 2.1 · Comillas, cursiva, dos puntos y punto y coma</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+
+  /* ── Nivel 3 · Lección 2.1: marcas de puntuación ── */
+  .ver-pm .pm{background:#ede9fe;color:#4c1d95;border-bottom:3px solid #6d28d9;padding:0 3px;border-radius:3px;font-weight:700}
+  .ver-pm .pm::before{content:attr(data-et);font-family:'Segoe UI',Arial,sans-serif;font-size:.6em;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-right:3px;vertical-align:super;color:#4c1d95}
+</style>
+</head>
+<body>
+<h1>Lección 2.1 · Comillas, cursiva, dos puntos y punto y coma</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 2: Puntuación avanzada y vocabulario académico · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Escribir bien los <strong>títulos</strong>: en <em>cursiva</em> los de las obras completas y «entre comillas» los de sus partes.</li>
+    <li>Usar las <strong>comillas</strong> para citar las palabras exactas de alguien, con el punto en su sitio.</li>
+    <li>Usar los <strong>dos puntos</strong> y el <strong>punto y coma</strong> para organizar oraciones largas.</li>
+    <li>Aplicar las <strong>mayúsculas</strong> según la norma española, que en varios casos es distinta de la del inglés.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.W.CS.2</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-repaso">Repaso: lo que ya sabes</a></li>
+    <li><a href="#s-2-titulos">Los títulos: cursiva o comillas</a></li>
+    <li><a href="#s-3-comillas">Las comillas para citar</a></li>
+    <li><a href="#s-4-dos-puntos">Los dos puntos</a></li>
+    <li><a href="#s-5-punto-coma">El punto y coma</a></li>
+    <li><a href="#s-6-mayusculas">Mayúsculas: la norma española</a></li>
+    <li><a href="#s-7-lectura">Lectura: «Recomendaciones de la biblioteca»</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Mira este título como lo escribiría alguien acostumbrado al inglés: <em>«El Viejo Y El Mar»</em>. En español se escribe <em>El viejo y el mar</em>: en cursiva y con mayúscula solo en la primera palabra. La puntuación y las mayúsculas cambian de un idioma a otro, y quien escribe en los dos suele mezclarlas. Esta lección te da las reglas del español para los casos que más se equivocan.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-repaso">
+<summary>1. Repaso: lo que ya sabes <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>En el Nivel 2 aprendiste que en español:</p>
+<ul class="lista-bonita">
+  <li>El saludo de una carta lleva <strong>dos puntos</strong>, no coma: <em>Estimada señora Morales:</em></li>
+  <li>El diálogo se marca con <strong>raya</strong>: <em>—¿Vienes mañana? —preguntó Ana.</em></li>
+  <li>Las mayúsculas van al principio de la oración y en los nombres propios.</li>
+</ul>
+<p>Y en la Lección 1.3 viste que el <strong>punto y coma</strong> puede separar dos oraciones completas muy relacionadas. Hoy amplías esas herramientas.</p>
+<div class="tip"><strong>💡 ¿Necesitas repasar?</strong> La <a href="https://zhemaria.github.io/clases_leng2/clase_3-1.html" target="_blank" rel="noopener noreferrer" style="color:var(--cp-oscuro);font-weight:700">Lección 3.1 del Nivel 2</a> explica las mayúsculas, las comas, los dos puntos y la raya. Se abre en una pestaña nueva.</div>
+</div>
+</details>
+
+<details id="s-2-titulos">
+<summary>2. Los títulos: cursiva o comillas <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>La regla depende de si el título es de una <strong>obra completa</strong> o de una <strong>parte</strong> de ella:</p>
+<table class="tabla">
+  <caption class="sr-solo">Cuándo se escribe un título en cursiva y cuándo entre comillas</caption>
+  <thead><tr><th scope="col">Se escribe en…</th><th scope="col">Para…</th><th scope="col">Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Cursiva</strong></td><td>Obras completas: libros, películas, periódicos, revistas, discos, programas de televisión, cuadros.</td><td><em>Platero y yo</em> · <em>La Opinión</em> · <em>Cien años de soledad</em></td></tr>
+    <tr><td><strong>«Comillas»</strong></td><td>Partes de una obra: un artículo de un periódico, un capítulo, un poema de un libro, una canción de un disco, un episodio.</td><td>el poema «Los zapaticos de rosa», de <em>La Edad de Oro</em></td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>✍️ ¿Y si escribes a mano?</strong> A mano no hay cursiva: en su lugar se <u>subraya</u> el título. En la computadora, en el celular o en el GED, usa la cursiva (o las comillas, si el programa no la permite).</div>
+<div class="tip"><strong>⚠️ La mayúscula del título:</strong> en español solo lleva mayúscula la <strong>primera palabra</strong> del título y los nombres propios que contenga: <em>El amor en los tiempos del cólera</em>, no <em><s>El Amor en los Tiempos del Cólera</s></em>. La única excepción son los nombres de periódicos y revistas, que llevan mayúscula en las palabras importantes: <em>El Nuevo Herald</em>, <em>La Opinión</em>.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l2-1.html#titulos" target="_blank" rel="noopener noreferrer">🧩 Practica más: los títulos
+  <span>¿Cursiva o comillas? ¿Dónde va la mayúscula? Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-3-comillas">
+<summary>3. Las comillas para citar <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Las comillas encierran las <strong>palabras exactas</strong> de otra persona. Es lo que harás en el GED cuando cites la evidencia de un texto:</p>
+<p class="ejemplo">En su discurso de 1891, José Martí pidió una república «con todos, y para el bien de todos».</p>
+<p>En español hay tres clases de comillas. Se usan primero las <strong>angulares</strong> « », y las otras sirven para una cita dentro de otra cita:</p>
+<p class="ejemplo">« » angulares · “ ” inglesas · ‘ ’ simples</p>
+<p class="ejemplo">Rosa me contó: «Mi abuela siempre decía “más vale tarde que nunca”».</p>
+<div class="tip"><strong>⚠️ El punto va después de las comillas:</strong> en español el punto, la coma y el punto y coma van <strong>fuera</strong>, después de cerrar las comillas: <em>«…para el bien de todos»<strong>.</strong></em> En inglés es al revés (<em>"…of all<strong>."</strong></em>), y por eso se confunde mucho.</div>
+<div class="tip"><strong>💡 Otros usos:</strong> las comillas también marcan una palabra usada con un sentido especial o irónico: <em>Su «ayuda» fue dejarme todo el trabajo.</em> Las palabras de otro idioma, en cambio, van en cursiva, sin comillas: Trabajo en el <em>deli</em> de la esquina.</div>
+</div>
+</details>
+
+<details id="s-4-dos-puntos">
+<summary>4. Los dos puntos <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Los dos puntos <strong>anuncian</strong> lo que viene después. Se usan en cuatro casos:</p>
+<table class="tabla">
+  <caption class="sr-solo">Usos de los dos puntos</caption>
+  <thead><tr><th scope="col">Uso</th><th scope="col">Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td>Antes de una <strong>enumeración</strong> anunciada.</td><td>Para el trámite necesitas tres documentos<strong>:</strong> el pasaporte, la factura de la luz y una foto.</td></tr>
+    <tr><td>Antes de una <strong>cita</strong> textual.</td><td>El letrero decía<strong>:</strong> «Prohibido estacionar».</td></tr>
+    <tr><td>Antes de una <strong>explicación</strong> o una conclusión.</td><td>No fui a la fiesta por una razón<strong>:</strong> tenía que trabajar.</td></tr>
+    <tr><td>En el <strong>saludo</strong> de una carta.</td><td>Estimado señor Ramírez<strong>:</strong></td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>⚠️ No entre el verbo y lo que sigue:</strong> <em><s>Compré: pan, leche y huevos.</s></em> Los dos puntos van solo si antes se anuncia la lista: <em>Compré <strong>tres cosas</strong>: pan, leche y huevos.</em> o, sin anunciarla, <em>Compré pan, leche y huevos.</em></div>
+<div class="tip"><strong>💡 Después de los dos puntos</strong> se sigue en minúscula, salvo que venga una cita (<em>dijo: «Ya voy»</em>) o el texto de una carta, que empieza en otra línea con mayúscula.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l2-1.html#dos-puntos" target="_blank" rel="noopener noreferrer">✏️ Practica más: los dos puntos
+  <span>Decides si los dos puntos están bien usados.</span></a>
+</div>
+</details>
+
+<details id="s-5-punto-coma">
+<summary>5. El punto y coma <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>El punto y coma es una pausa más fuerte que la coma y más débil que el punto. Tiene tres usos:</p>
+<table class="tabla">
+  <caption class="sr-solo">Usos del punto y coma</caption>
+  <thead><tr><th scope="col">Uso</th><th scope="col">Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td>Separar dos oraciones completas muy relacionadas (Lección 1.3).</td><td>Llovió toda la noche<strong>;</strong> la calle amaneció inundada.</td></tr>
+    <tr><td>Separar los elementos de una lista que <strong>ya tienen comas</strong> dentro.</td><td>Vinieron Ana, de Puebla<strong>;</strong> Luis, de Lima<strong>;</strong> y Rosa, de Cali.</td></tr>
+    <tr><td>Antes de <em>sin embargo, por lo tanto, por eso, además</em> cuando unen dos oraciones (después va coma).</td><td>Estudió mucho<strong>;</strong> sin embargo<strong>,</strong> no aprobó el examen.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 ¿Por qué en la lista?</strong> Sin punto y coma, «Vinieron Ana, de Puebla, Luis, de Lima, y Rosa, de Cali» parece una lista de seis cosas. El punto y coma agrupa a cada persona con su ciudad.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l2-1.html#punto-y-coma" target="_blank" rel="noopener noreferrer">🔗 Practica más: el punto y coma
+  <span>Eliges entre coma, punto y coma y dos puntos.</span></a>
+</div>
+</details>
+
+<details id="s-6-mayusculas">
+<summary>6. Mayúsculas: la norma española <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>El inglés usa muchas más mayúsculas que el español. Estas palabras van en <strong>minúscula</strong> en español:</p>
+<table class="tabla">
+  <caption class="sr-solo">Palabras que van en minúscula en español y en mayúscula en inglés</caption>
+  <thead><tr><th scope="col">En minúscula</th><th scope="col">Ejemplo en español</th><th scope="col">En inglés sería…</th></tr></thead>
+  <tbody>
+    <tr><td>Días de la semana y meses</td><td>el <strong>l</strong>unes 5 de <strong>o</strong>ctubre</td><td>Monday, October</td></tr>
+    <tr><td>Idiomas y nacionalidades</td><td>habla <strong>e</strong>spañol; es <strong>m</strong>exicana</td><td>Spanish, Mexican</td></tr>
+    <tr><td>Cargos y títulos</td><td>el <strong>a</strong>lcalde, la <strong>d</strong>octora Pérez, el <strong>p</strong>residente</td><td>the Mayor, Doctor Pérez</td></tr>
+    <tr><td>Puntos cardinales</td><td>vivo en el <strong>n</strong>orte de la ciudad</td><td>the North Side</td></tr>
+    <tr><td>Las palabras de un título, menos la primera</td><td><em>El viejo y el mar</em></td><td><em>The Old Man and the Sea</em></td></tr>
+  </tbody>
+</table>
+<p>Van en <strong>mayúscula</strong>: los nombres de instituciones (<em>el Concejo Municipal</em>, <em>la Universidad de Chicago</em>), las siglas (<em>GED</em>, <em>ONU</em>) y los puntos cardinales cuando forman parte de un nombre (<em>América del Norte</em>).</p>
+<div class="tip"><strong>⚠️ Las mayúsculas llevan tilde:</strong> <em><strong>Á</strong>frica</em>, <em><strong>Ó</strong>scar</em>, <em>ATENCI<strong>Ó</strong>N</em>. Quitarle la tilde a una mayúscula es un error.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l2-1.html#mayusculas" target="_blank" rel="noopener noreferrer">🔠 Practica más: ¿mayúscula o minúscula?
+  <span>Eliges la forma correcta de cada oración.</span></a>
+</div>
+</details>
+
+<details id="s-7-lectura">
+<summary>7. Lectura: «Recomendaciones de la biblioteca» <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura</span> Individual · lectura con justificación</h4>
+  <p style="margin:0">Lee el boletín de una biblioteca de barrio. Después pulsa <strong>Mostrar la puntuación</strong>: verás marcados los títulos, las comillas, los dos puntos y los puntos y coma. Para cada marca, explica en tu cuaderno qué regla de esta lección se aplica.</p>
+</div>
+<div class="texto-lectura" id="lectura">
+  <p>Este mes, la biblioteca de la calle 26 recomienda tres clásicos en español<span class="pm" data-et="Dos puntos">:</span> <span class="pm" data-et="Cursiva"><em>Platero y yo</em></span>, de Juan Ramón Jiménez<span class="pm" data-et="Punto y coma">;</span> <span class="pm" data-et="Cursiva"><em>La Edad de Oro</em></span>, de José Martí<span class="pm" data-et="Punto y coma">;</span> y <span class="pm" data-et="Cursiva"><em>Cuentos de la selva</em></span>, de Horacio Quiroga.</p>
+  <p>En <em>La Edad de Oro</em>, que Martí escribió para los niños de América en 1889, aparece el poema <span class="pm" data-et="Comillas">«Los zapaticos de rosa»</span>. La bibliotecaria, la señora Delgado, lo explica así<span class="pm" data-et="Dos puntos">:</span> <span class="pm" data-et="Cita">«Es un libro para niños que los adultos también disfrutan»</span>.</p>
+  <p>Los libros se pueden pedir de <span class="pm" data-et="Minúscula">lunes</span> a <span class="pm" data-et="Minúscula">sábado</span>; los préstamos duran tres semanas. Además, el boletín del <span class="pm" data-et="Minúscula">mes de octubre</span> trae un artículo titulado <span class="pm" data-et="Comillas">«Cómo leer con tus hijos»</span>, escrito por una maestra de la escuela del barrio.</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar el texto</button>
+  <button type="button" class="btn btn-secundario" id="ver-pm" aria-pressed="false">Mostrar la puntuación</button>
+</div>
+<h3>¿Por qué se escribe así?</h3>
+<div class="clasificador apilado" id="clasif-lectura"></div>
+<div class="puntaje" id="puntaje-lectura" role="status" aria-live="polite"></div>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> busquen juntos en casa un libro, una revista o un periódico en español. Escriban en una hoja el título como debe ir (a mano, subrayado) y el título de una de sus partes entre comillas.</div>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>8. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Mis títulos.</strong> Escribe a mano el título de tu libro favorito (subrayado), de una película (subrayado) y de una canción (entre comillas). Revisa las mayúsculas.</li>
+  <li><strong>Una cita.</strong> Escribe una oración que cite algo que te dijo alguien de tu familia, con los dos puntos y las comillas en su sitio, y el punto después de las comillas.</li>
+  <li><strong>Corrige.</strong> «Mi hijo nació el Martes 3 de Marzo» · «El Alcalde habló en Inglés y en Español» · «Para el viaje llevo: ropa, comida y agua» · «Leí "Cien Años De Soledad."»</li>
+</ul>
+<details style="margin-top:6px"><summary>Ver las respuestas de «Corrige»</summary><div class="contenido-detalle">
+«Mi hijo nació el <strong>m</strong>artes 3 de <strong>m</strong>arzo.» · «El <strong>a</strong>lcalde habló en <strong>i</strong>nglés y en <strong>e</strong>spañol.» · «Para el viaje llevo ropa, comida y agua.» (o «Para el viaje llevo tres cosas: ropa, comida y agua.») · «Leí <em>Cien años de soledad</em>.» (en cursiva o, a mano, subrayado; con mayúscula solo en la primera palabra; y el punto, al final).
+</div></details>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>9. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>10. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Las obras completas van en cursiva (a mano, subrayadas); sus partes, entre comillas. Solo la primera palabra del título lleva mayúscula.</li>
+  <li>Las comillas encierran las palabras exactas de alguien, y el punto va después de cerrarlas.</li>
+  <li>Los dos puntos anuncian una lista, una cita o una explicación; no van entre el verbo y lo que sigue.</li>
+  <li>El punto y coma separa oraciones relacionadas y los elementos de una lista que ya tiene comas.</li>
+  <li>Días, meses, idiomas, nacionalidades y cargos van en minúscula, y las mayúsculas llevan tilde.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Sabes cómo escribir el título de un libro y el de uno de sus capítulos?</li>
+    <li>¿Dónde va el punto cuando una oración termina con una cita?</li>
+    <li>¿Puedes decir tres palabras que en inglés llevan mayúscula y en español no?</li>
+  </ul>
+</div>
+<div class="tip"><strong>➡️ Sigue con la próxima lección:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_2-2.html" style="color:var(--cp-oscuro);font-weight:700">Lección 2.2 · Raíces griegas y latinas</a>.</div>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 2 · Lección 2.1</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+clasificador('clasif-lectura','puntaje-lectura',[
+  {p:'¿Por qué <em>Platero y yo</em> va en cursiva?',ops:['Es el título de un libro completo','Es el nombre de un personaje famoso','Es una cita textual del autor'],c:0,n:'Las obras completas van en cursiva.'},
+  {p:'¿Por qué «Los zapaticos de rosa» va entre comillas?',ops:['Es un poema dentro de un libro','Es el título de un libro completo','Son palabras de la bibliotecaria'],c:0,n:'Las partes de una obra van entre comillas.'},
+  {p:'¿Por qué hay punto y coma en la lista de los tres libros?',ops:['Cada libro lleva su autor separado por coma','Porque la lista tiene más de dos libros','Porque cada libro es una oración completa'],c:0,n:'La lista ya tiene comas dentro (libro, autor): el punto y coma agrupa cada libro con su autor.'},
+  {p:'«…lo explica así: «Es un libro…»». ¿Por qué hay dos puntos?',ops:['Anuncian una cita textual','Separan dos listas de libros','Siempre van antes de comillas'],c:0,n:'Los dos puntos anuncian las palabras exactas de la señora Delgado.'},
+  {p:'¿Dónde va el punto en la cita de la bibliotecaria?',ops:['Después de cerrar las comillas','Antes de cerrar las comillas','No lleva punto porque es una cita'],c:0,n:'En español, el punto va después de las comillas de cierre.'},
+  {p:'¿Por qué <em>lunes</em> y <em>octubre</em> van en minúscula?',ops:['Los días y los meses van en minúscula en español','Porque no están al principio de la oración','Porque son palabras de uso muy frecuente'],c:0,n:'En español, a diferencia del inglés, los días y los meses van en minúscula.'}
+],null,false);
+
+(function(){
+  var t=document.getElementById('lectura'), v=document.getElementById('ver-pm');
+  document.getElementById('leer-lectura').addEventListener('click',function(){hablar(t.textContent.trim(),0.9);});
+  v.addEventListener('click',function(){var on=t.classList.toggle('ver-pm');v.setAttribute('aria-pressed',on?'true':'false');v.textContent=on?'Ocultar la puntuación':'Mostrar la puntuación';});
+})();
+
+iniciarQuiz([
+  {t:'¿Cómo se escribe correctamente el título de un libro en la computadora?',o:['<em>Cuentos de la selva</em>','«Cuentos De La Selva»','<em>Cuentos De La Selva</em>'],c:0,r:'<a href="#s-2-titulos">Sección 2</a>'},
+  {t:'¿Cómo se escribe el título de un artículo de periódico?',o:['Entre comillas','En cursiva','En mayúsculas'],c:0,r:'<a href="#s-2-titulos">Sección 2</a>'},
+  {t:'Si escribes a mano, ¿qué sustituye a la cursiva de un título?',o:['El subrayado','Las comillas simples','Las mayúsculas'],c:0,r:'<a href="#s-2-titulos">Sección 2</a>'},
+  {t:'¿Cuál está bien puntuada?',o:['Martí pidió una república «con todos, y para el bien de todos».','Martí pidió una república «con todos, y para el bien de todos.»','Martí pidió una república: con todos, y para el bien de todos.'],c:0,r:'<a href="#s-3-comillas">Sección 3: el punto después de las comillas</a>'},
+  {t:'¿Qué comillas se usan primero en español?',o:['Las angulares « »','Las inglesas “ ”','Las simples ‘ ’'],c:0,r:'<a href="#s-3-comillas">Sección 3</a>'},
+  {t:'¿Cuál usa bien los dos puntos?',o:['Necesito tres cosas: pan, leche y huevos.','Necesito: pan, leche y huevos.','Necesito pan: leche y huevos.'],c:0,r:'<a href="#s-4-dos-puntos">Sección 4</a>'},
+  {t:'¿Qué anuncian los dos puntos en «No fui por una razón: tenía fiebre»?',o:['Una explicación','Una cita textual','Una lista de cosas'],c:0,r:'<a href="#s-4-dos-puntos">Sección 4</a>'},
+  {t:'¿Cuál está bien puntuada?',o:['Estudió mucho; sin embargo, no aprobó.','Estudió mucho, sin embargo no aprobó.','Estudió mucho: sin embargo; no aprobó.'],c:0,r:'<a href="#s-5-punto-coma">Sección 5</a>'},
+  {t:'¿Por qué hay punto y coma en «Vinieron Ana, de Puebla; Luis, de Lima; y Rosa, de Cali»?',o:['La lista ya tiene comas dentro','Separa dos oraciones completas','Siempre se usa antes de la y'],c:0,r:'<a href="#s-5-punto-coma">Sección 5</a>'},
+  {t:'¿Cuál está bien escrita?',o:['El lunes 5 de octubre hablé con el alcalde.','El Lunes 5 de Octubre hablé con el Alcalde.','El lunes 5 de Octubre hablé con el Alcalde.'],c:0,r:'<a href="#s-6-mayusculas">Sección 6</a>'},
+  {t:'¿Cuál está bien escrita?',o:['Mi vecina es colombiana y habla inglés.','Mi vecina es Colombiana y habla Inglés.','Mi vecina es colombiana y habla Inglés.'],c:0,r:'<a href="#s-6-mayusculas">Sección 6</a>'},
+  {t:'¿Cómo se escribe correctamente en mayúsculas?',o:['ATENCIÓN AL CLIENTE','ATENCION AL CLIENTE','ATENCIÒN AL CLIENTE'],c:0,r:'<a href="#s-6-mayusculas">Sección 6: las mayúsculas llevan tilde</a>'}
+],{meta:10,
+   bien:'Ya escribes títulos, citas y listas con la puntuación española. Sigue con la Lección 2.2.',
+   repaso:'Vuelve a las secciones 2 a 6 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

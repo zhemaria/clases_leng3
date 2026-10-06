@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!-- Lección 3.1 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 3.1 · Tema central, ideas principales y resumen objetivo</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+</style>
+</head>
+<body>
+<h1>Lección 3.1 · Tema central, ideas principales y resumen objetivo</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 3: Comprensión inferencial y evidencia textual · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Distinguir el <strong>tema</strong> de un texto (de qué trata) de su <strong>tema central</strong> (lo que el autor dice sobre él).</li>
+    <li>Reconocer las <strong>ideas principales</strong> de cada parte de un texto y cómo construyen el tema central.</li>
+    <li>Escribir un <strong>resumen objetivo</strong>: breve, con tus palabras, sin opiniones y respondiendo quién, qué y cómo.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.R.CL.1 · 3.R.CI.1</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-repaso">Repaso: la idea principal</a></li>
+    <li><a href="#s-2-tema">Tema, tema central e ideas principales</a></li>
+    <li><a href="#s-3-encontrar">Cómo encontrar el tema central</a></li>
+    <li><a href="#s-4-lectura">Lectura: «El agua que bebe Chicago»</a></li>
+    <li><a href="#s-5-resumen">El resumen objetivo</a></li>
+    <li><a href="#s-6-compara">Práctica: compara tres resúmenes</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Si alguien te pregunta de qué trata una película, puedes contestar «de una familia» o «de una familia que lo pierde todo y aprende a empezar de nuevo». La primera respuesta dice el <strong>tema</strong>; la segunda, el <strong>tema central</strong>: lo que la película quiere decir sobre ese tema. En el GED, las preguntas sobre la idea central y el resumen piden siempre la segunda clase de respuesta. Esta lección te enseña a encontrarla y a contarla sin añadir nada tuyo.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-repaso">
+<summary>1. Repaso: la idea principal <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>En el Nivel 2 aprendiste que la <span class="palabra-clave">idea principal</span> de un párrafo es lo más importante que dice, y que los <strong>detalles de apoyo</strong> la explican con datos, ejemplos o razones. Muchas veces la idea principal está en la primera oración del párrafo, pero puede estar al final o no estar escrita.</p>
+<p>Ahora los textos son más largos: tienen varias partes, y cada una tiene su propia idea principal. El trabajo de esta lección es ver cómo esas ideas se juntan en una sola.</p>
+<div class="tip"><strong>💡 ¿Necesitas repasar?</strong> La <a href="https://zhemaria.github.io/clases_leng2/clase_4-1.html" target="_blank" rel="noopener noreferrer" style="color:var(--cp-oscuro);font-weight:700">Lección 4.1 del Nivel 2</a> explica la idea principal en varios párrafos. Se abre en una pestaña nueva.</div>
+</div>
+</details>
+
+<details id="s-2-tema">
+<summary>2. Tema, tema central e ideas principales <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<table class="tabla">
+  <caption class="sr-solo">Diferencia entre tema, tema central e idea principal</caption>
+  <thead><tr><th scope="col">Concepto</th><th scope="col">Qué es</th><th scope="col">Cómo se dice</th><th scope="col">Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Tema</strong></td><td>El asunto del texto: de qué trata.</td><td>Unas pocas palabras.</td><td>el agua de Chicago</td></tr>
+    <tr><td><strong>Tema central</strong> (o idea central)</td><td>Lo que el autor dice sobre ese asunto en todo el texto.</td><td>Una oración completa.</td><td>El agua limpia de Chicago es el resultado de muchos años de soluciones a la contaminación, y el trabajo todavía no termina.</td></tr>
+    <tr><td><strong>Ideas principales</strong></td><td>Lo más importante de cada párrafo o sección.</td><td>Una oración por parte.</td><td>En el siglo XIX, el agua de la ciudad estaba contaminada.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 Una imagen:</strong> piensa en una mesa. Las ideas principales son las patas y el tema central es la tabla que se apoya en todas ellas. Si una idea no sostiene la tabla, probablemente es un detalle.</div>
+<div class="tip"><strong>⚠️ El error más común:</strong> elegir como tema central un detalle llamativo (una fecha, una cifra, un nombre) o una idea que solo aparece en un párrafo. El tema central tiene que valer para <strong>todo</strong> el texto.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l3-1.html#tema-central" target="_blank" rel="noopener noreferrer">🧩 Practica más: el tema central
+  <span>Textos cortos de varios párrafos: eliges la idea que vale para todo el texto. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-3-encontrar">
+<summary>3. Cómo encontrar el tema central <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<ol>
+  <li><strong>Mira el título</strong> y, si hay, los subtítulos: casi siempre dicen el tema.</li>
+  <li><strong>Lee el primer y el último párrafo</strong> con atención: allí el autor suele presentar y cerrar su idea.</li>
+  <li><strong>Anota la idea principal de cada párrafo</strong> en una oración corta, al margen o en tu cuaderno.</li>
+  <li><strong>Busca lo que tienen en común</strong> esas ideas y escríbelo en una oración: <em>«El autor quiere que entienda que…»</em>.</li>
+  <li><strong>Comprueba:</strong> ¿tu oración vale para todos los párrafos? ¿Hay alguno que no encaje? Si lo hay, ajústala.</li>
+</ol>
+</div>
+</details>
+
+<details id="s-4-lectura">
+<summary>4. Lectura: «El agua que bebe Chicago» <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura</span> Individual · lectura guiada</h4>
+  <p style="margin:0">Lee el texto y escribe en tu cuaderno la idea principal de cada párrafo, en una oración. Luego pulsa <strong>Mostrar las ideas principales</strong> y compara. Por último, escribe el tema central.</p>
+</div>
+<div class="texto-lectura oculta-idea" id="lectura">
+  <p><span class="num-p" aria-hidden="true">1</span>Cada vez que alguien abre una llave en Chicago, el agua que sale ha hecho un largo viaje desde el lago Michigan. <span class="idea">Que esa agua llegue limpia a las casas es el resultado de más de ciento cincuenta años de ingeniería y de lecciones aprendidas, muchas veces a un alto precio.</span></p>
+  <p><span class="num-p" aria-hidden="true">2</span><span class="idea">A mediados del siglo XIX, la ciudad tomaba el agua cerca de la orilla, en el mismo lago donde echaba sus aguas negras.</span> Las enfermedades que viajan por el agua, como el cólera y la fiebre tifoidea, eran frecuentes. Para alejarse de la contaminación, la ciudad construyó una toma de agua a unos tres kilómetros de la costa, unida a la tierra por un túnel bajo el lago. Se terminó en 1867.</p>
+  <p><span class="num-p" aria-hidden="true">3</span>Pero el problema seguía, porque las aguas negras llegaban al lago por el río Chicago. <span class="idea">En 1900, la ciudad tomó una medida atrevida: con un gran canal, invirtió el curso del río para que corriera lejos del lago.</span> Desde entonces, el río fluye hacia el interior, rumbo a la cuenca del río Misisipi.</p>
+  <p><span class="num-p" aria-hidden="true">4</span><span class="idea">Hoy el sistema es mucho más grande y seguro.</span> Dos tomas de agua, a más de tres kilómetros de la orilla, envían el agua por túneles a unos sesenta metros bajo el fondo del lago. Llega a dos plantas de purificación, una de ellas junto a Navy Pier, considerada la más grande del mundo. Allí el agua se filtra y se desinfecta antes de llegar a la ciudad y a más de cien suburbios.</p>
+  <p><span class="num-p" aria-hidden="true">5</span><span class="idea">Sin embargo, el trabajo no ha terminado.</span> Muchas casas antiguas todavía reciben el agua por tuberías de plomo, un metal que puede dañar la salud, sobre todo la de los niños. Chicago es una de las ciudades del país con más tuberías de este tipo. La ciudad tiene un plan para reemplazarlas, pero tardará muchos años en completarlo.</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar el texto</button>
+  <button type="button" class="btn btn-secundario" id="ver-ideas" aria-pressed="false">Mostrar las ideas principales</button>
+</div>
+<h3>Comprueba tu lectura</h3>
+<div class="clasificador apilado" id="clasif-lectura"></div>
+<div class="puntaje" id="puntaje-lectura" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-5-resumen">
+<summary>5. El resumen objetivo <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Un <span class="palabra-clave">resumen objetivo</span> cuenta lo esencial de un texto como lo contaría un testigo imparcial. Tiene cinco reglas:</p>
+<table class="tabla">
+  <caption class="sr-solo">Reglas del resumen objetivo</caption>
+  <thead><tr><th scope="col">Sí</th><th scope="col">No</th></tr></thead>
+  <tbody>
+    <tr><td>Empieza con el <strong>tema central</strong>.</td><td>Empezar con un detalle o una fecha.</td></tr>
+    <tr><td>Responde <strong>quién, qué y cómo</strong> (y cuándo o por qué, si importa).</td><td>Copiar todas las cifras y los nombres.</td></tr>
+    <tr><td>Usa <strong>tus palabras</strong>.</td><td>Copiar oraciones del texto.</td></tr>
+    <tr><td>Sigue el <strong>orden</strong> del texto.</td><td>Saltar de una parte a otra.</td></tr>
+    <tr><td>Es <strong>neutral</strong>: dice lo que dice el autor.</td><td>Dar tu opinión (<em>me parece, es increíble, deberían</em>) o añadir cosas que el texto no dice.</td></tr>
+  </tbody>
+</table>
+<h3>Una plantilla para empezar</h3>
+<p class="ejemplo">El texto «___» explica que ___ [tema central]. Primero, ___. Después, ___. Por último, ___.</p>
+<div class="tip"><strong>💡 ¿Qué tan largo?</strong> Para un texto como el de la lectura, de tres a cinco oraciones. Si tu resumen tiene casi el mismo largo que el texto, no es un resumen: es una copia.</div>
+<div class="tip"><strong>⚠️ Las palabras que delatan una opinión:</strong> <em>increíble, mejor, peor, genial, injusto, debería, me parece, por suerte, lamentablemente</em>. Si alguna aparece en tu resumen, pregúntate si la dice el autor o la dices tú.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l3-1.html#objetivo" target="_blank" rel="noopener noreferrer">⚖️ Practica más: ¿objetivo o con opinión?
+  <span>Decides si cada oración de un resumen es objetiva o mete la opinión de quien lo escribe.</span></a>
+</div>
+</details>
+
+<details id="s-6-compara">
+<summary>6. Práctica: compara tres resúmenes <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Tres personas resumieron «El agua que bebe Chicago». Léelos y responde.</p>
+<div class="texto-lectura">
+  <p><strong>Resumen A.</strong> El texto explica cómo Chicago llegó a tener agua limpia. En el siglo XIX, la ciudad tomaba agua contaminada cerca de la orilla, y para resolverlo construyó una toma lejos de la costa y, en 1900, invirtió el curso del río. Hoy dos tomas y dos plantas purifican el agua para la ciudad y sus suburbios, aunque todavía falta reemplazar las tuberías de plomo.</p>
+  <p><strong>Resumen B.</strong> Es increíble lo que hizo Chicago con su agua. Los ingenieros del siglo XIX fueron unos genios, sobre todo los que invirtieron el río. Hoy tenemos la mejor planta del mundo, pero la ciudad debería darse prisa con las tuberías de plomo, porque es injusto que los niños sigan en peligro.</p>
+  <p><strong>Resumen C.</strong> En 1867 se terminó una toma de agua a tres kilómetros de la costa. En 1900 se invirtió el río Chicago. Los túneles están a sesenta metros bajo el fondo del lago. Una planta está junto a Navy Pier. El plomo puede dañar la salud de los niños.</p>
+</div>
+<div class="clasificador apilado" id="clasif-resumen"></div>
+<div class="puntaje" id="puntaje-resumen" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l3-1.html#resumen" target="_blank" rel="noopener noreferrer">📝 Practica más: el mejor resumen
+  <span>Textos breves con tres resúmenes: eliges el objetivo y completo.</span></a>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> después de ver una noticia en la televisión, cada uno la resume en tres oraciones sin opinar. Luego comparen: ¿alguien metió una opinión sin darse cuenta?</div>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>7. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Tu resumen.</strong> Escribe tu propio resumen objetivo de «El agua que bebe Chicago» con la plantilla de la sección 5. Revisa que no tenga ninguna palabra de opinión.</li>
+  <li><strong>Tema y tema central.</strong> Piensa en una película o un libro que conozcas bien. Escribe su tema en pocas palabras y su tema central en una oración completa.</li>
+  <li><strong>Un artículo real.</strong> Busca un artículo corto en un periódico en español (en papel o en línea). Anota la idea principal de cada párrafo y escribe un resumen de tres oraciones.</li>
+</ul>
+<details style="margin-top:6px"><summary>Ver un ejemplo de tema y tema central</summary><div class="contenido-detalle">
+Película: <em>Coco</em>. Tema: la familia y la memoria. Tema central: recordar a quienes ya murieron mantiene viva a la familia, y los sueños propios no deben costar el amor de los nuestros.
+</div></details>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>8. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>9. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>El tema dice de qué trata un texto; el tema central, lo que el autor dice sobre ese tema, en una oración completa.</li>
+  <li>Cada parte del texto tiene su idea principal, y juntas sostienen el tema central.</li>
+  <li>El tema central vale para todo el texto, no solo para un párrafo o un detalle llamativo.</li>
+  <li>Un resumen objetivo empieza con el tema central, usa tus palabras, sigue el orden del texto y no opina.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Puedes explicar con un ejemplo la diferencia entre tema y tema central?</li>
+    <li>¿Qué tiene de malo el resumen B? ¿Y el resumen C?</li>
+    <li>¿Puedes decir tres palabras que delatan una opinión?</li>
+  </ul>
+</div>
+<div class="tip"><strong>➡️ Sigue con la próxima lección:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_3-2.html" style="color:var(--cp-oscuro);font-weight:700">Lección 3.2 · Lo explícito y lo inferido</a>.</div>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 3 · Lección 3.1</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+clasificador('clasif-lectura','puntaje-lectura',[
+  {p:'¿Cuál es el <strong>tema</strong> del texto?',ops:['El agua potable de Chicago','La historia del lago Michigan','Las enfermedades del siglo XIX'],c:0,n:'El tema se dice en pocas palabras: de qué trata todo el texto.'},
+  {p:'¿Cuál es el <strong>tema central</strong>?',ops:['El agua limpia de Chicago es fruto de muchos años de soluciones a la contaminación, y el trabajo continúa.','Chicago tiene la planta de purificación de agua más grande del mundo, que está junto a Navy Pier.','En 1900 Chicago invirtió el curso del río con un canal para que corriera lejos del lago Michigan.'],c:0,n:'Es la única idea que vale para los cinco párrafos. Las otras dos son detalles de un solo párrafo.'},
+  {p:'¿Cuál es la idea principal del párrafo 2?',ops:['En el siglo XIX la ciudad tomaba agua contaminada cerca de la orilla.','El cólera y la fiebre tifoidea son enfermedades que viajan por el agua.','La primera toma de agua lejos de la costa se terminó en 1867.'],c:0,n:'Las enfermedades y la fecha son detalles que apoyan esa idea.'},
+  {p:'¿Para qué sirve el párrafo 5 dentro del texto?',ops:['Muestra que el problema del agua todavía no está resuelto del todo','Explica cómo funcionan por dentro las plantas de purificación','Cuenta la historia de las primeras tuberías de la ciudad'],c:0,n:'Con «Sin embargo, el trabajo no ha terminado» el autor añade la última parte del tema central.'},
+  {p:'«La planta junto a Navy Pier es la más grande del mundo.» ¿Qué es esta información en el texto?',ops:['Un detalle de apoyo del párrafo 4','El tema central del texto','La idea principal del párrafo 1'],c:0,n:'Apoya la idea de que hoy el sistema es más grande y seguro.'}
+],null,false);
+
+clasificador('clasif-resumen','puntaje-resumen',[
+  {p:'¿Qué resumen es objetivo y completo?',ops:['El resumen A','El resumen B','El resumen C'],c:0,fijo:true,n:'Empieza con el tema central, sigue el orden del texto, usa otras palabras y no opina.'},
+  {p:'¿Qué problema tiene el resumen B?',ops:['Mete opiniones que el texto no dice','Copia todas las fechas del texto','Está escrito en un orden distinto'],c:0,n:'<em>Increíble, genios, la mejor, debería, injusto</em>: son opiniones de quien escribe.'},
+  {p:'¿Qué problema tiene el resumen C?',ops:['Es una lista de detalles sin tema central','Tiene muchas opiniones de quien lo escribe','Habla de cosas que el texto nunca dice'],c:0,n:'Son datos ciertos, pero no dice de qué trata el texto ni cómo se relacionan.'}
+],null,false);
+
+(function(){
+  var t=document.getElementById('lectura'), v=document.getElementById('ver-ideas');
+  document.getElementById('leer-lectura').addEventListener('click',function(){hablar(t.textContent.trim(),0.9);});
+  v.addEventListener('click',function(){var on=!t.classList.toggle('oculta-idea');v.setAttribute('aria-pressed',on?'true':'false');v.textContent=on?'Ocultar las ideas principales':'Mostrar las ideas principales';});
+})();
+
+iniciarQuiz([
+  {t:'¿Cuál es la diferencia entre <strong>tema</strong> y <strong>tema central</strong>?',o:['El tema dice de qué trata; el tema central, lo que se dice de ello','El tema es largo y el tema central es corto','El tema está al principio y el tema central siempre al final'],c:0,r:'<a href="#s-2-tema">Sección 2</a>'},
+  {t:'¿Cuál podría ser un <strong>tema</strong>?',o:['La migración de las aves','Las aves migran para sobrevivir al invierno.','Muchas aves viajan miles de kilómetros cada año.'],c:0,r:'<a href="#s-2-tema">Sección 2</a>'},
+  {t:'¿Cómo se expresa el tema central?',o:['En una oración completa','En una o dos palabras','Con una pregunta'],c:0,r:'<a href="#s-2-tema">Sección 2</a>'},
+  {t:'¿Cuál es el error más común al buscar el tema central?',o:['Elegir un detalle llamativo de un solo párrafo','Leer el título antes de empezar el texto','Anotar la idea principal de cada párrafo'],c:0,r:'<a href="#s-2-tema">Sección 2</a>'},
+  {t:'¿Qué partes del texto conviene leer con más atención para encontrar el tema central?',o:['El título, el primer párrafo y el último','Solo las oraciones que tienen números','Las palabras en negrita del medio'],c:0,r:'<a href="#s-3-encontrar">Sección 3</a>'},
+  {t:'Un texto habla, párrafo por párrafo, de los beneficios del ejercicio para el corazón, el sueño y el ánimo. ¿Cuál es su tema central?',o:['El ejercicio beneficia la salud de varias maneras.','El ejercicio ayuda a dormir mejor por la noche.','Hay que caminar al menos treinta minutos al día.'],c:0,r:'<a href="#s-2-tema">Sección 2</a>'},
+  {t:'¿Con qué empieza un buen resumen objetivo?',o:['Con el tema central','Con el dato más curioso','Con tu opinión sobre el texto'],c:0,r:'<a href="#s-5-resumen">Sección 5</a>'},
+  {t:'¿Qué oración <strong>no</strong> debe ir en un resumen objetivo?',o:['Es increíble lo que lograron los ingenieros.','El texto explica cómo se limpia el agua.','Después, la ciudad invirtió el curso del río.'],c:0,r:'<a href="#s-5-resumen">Sección 5: las palabras que delatan una opinión</a>'},
+  {t:'¿Qué preguntas responde un resumen objetivo?',o:['Quién, qué y cómo','Qué me gustó y qué no','Cuántas palabras tiene el texto'],c:0,r:'<a href="#s-5-resumen">Sección 5</a>'},
+  {t:'¿Cuál de estas reglas es correcta para un resumen?',o:['Seguir el orden del texto','Copiar las oraciones más largas','Incluir todas las cifras'],c:0,r:'<a href="#s-5-resumen">Sección 5</a>'},
+  {t:'Un resumen tiene casi el mismo largo que el texto original. ¿Qué pasa?',o:['No resume: es casi una copia','Es el mejor resumen posible','Tiene demasiadas opiniones'],c:0,r:'<a href="#s-5-resumen">Sección 5</a>'},
+  {t:'Las ideas principales de cada párrafo y el tema central se relacionan así:',o:['Las ideas principales sostienen el tema central','El tema central es un detalle de cada idea','No tienen ninguna relación entre sí'],c:0,r:'<a href="#s-2-tema">Sección 2: la imagen de la mesa</a>'}
+],{meta:10,
+   bien:'Ya encuentras el tema central y resumes sin opinar. Sigue con la Lección 3.2.',
+   repaso:'Vuelve a las secciones 2, 3 y 5 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

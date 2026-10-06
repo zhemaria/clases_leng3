@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<!-- Lección 1.2 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 1.2 · Tiempos compuestos y la forma progresiva</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+
+  /* ── Nivel 3 · Lección 1.2: verbos y línea del tiempo ── */
+  .vc{color:#4c1d95;font-weight:700;border-bottom:3px solid #6d28d9}
+  .vp{background:#fff3cd;color:#5c3900;font-weight:700;border-bottom:3px dotted #8a5a00;padding:0 2px;border-radius:3px}
+  .texto-lectura .vc,.texto-lectura .vp{color:inherit;font-weight:inherit;border:none;background:none;padding:0}
+  .ver-vb .vc{color:#4c1d95;font-weight:700;border-bottom:3px solid #6d28d9}
+  .ver-vb .vp{background:#fff3cd;color:#5c3900;font-weight:700;border-bottom:3px dotted #8a5a00;padding:0 2px;border-radius:3px}
+  .linea-grupo{background:#fff;border:1px solid #d6dde4;border-radius:10px;padding:12px 14px;margin:12px 0}
+  .linea-ej{font-family:Georgia,serif;font-style:italic;margin:0 0 10px}
+  ol.linea{list-style:none;padding:0;margin:0;display:flex;gap:0;position:relative}
+  ol.linea li{flex:1;position:relative;padding:30px 10px 4px;font-size:.95rem;border-top:4px solid #6d28d9}
+  ol.linea li::before{content:'';position:absolute;top:-11px;left:10px;width:18px;height:18px;border-radius:50%;background:#6d28d9;border:3px solid #fff;box-shadow:0 0 0 2px #6d28d9}
+  ol.linea li.ahora{border-top-style:dashed}
+  ol.linea li.ahora::before{background:#ff8c42;box-shadow:0 0 0 2px #8a3d0c}
+  ol.linea .paso{position:absolute;top:8px;left:10px;font-weight:700;font-size:.8rem;color:#4c1d95;text-transform:uppercase;letter-spacing:.03em}
+  ol.linea li.ahora .paso{color:#8a3d0c}
+  @media(max-width:560px){
+    ol.linea{flex-direction:column}
+    ol.linea li{border-top:none;border-left:4px solid #6d28d9;padding:4px 10px 12px 34px}
+    ol.linea li.ahora{border-left-style:dashed}
+    ol.linea li::before{top:2px;left:-11px}
+    ol.linea .paso{position:static;display:block}
+  }
+</style>
+</head>
+<body>
+<h1>Lección 1.2 · Tiempos compuestos y la forma progresiva</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 1: Gramática avanzada de la oración · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Formar los <strong>tiempos compuestos</strong> con <em>haber</em> + participio: <em>he comido, había comido, habré comido</em>.</li>
+    <li>Formar la <strong>forma progresiva</strong> con <em>estar</em> + gerundio: <em>estoy comiendo, estaba comiendo</em>.</li>
+    <li>Elegir el tiempo que muestra <strong>qué pasó antes y qué pasó después</strong>, y evitar el uso del gerundio que viene del inglés.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.W.CS.1</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-repaso">Repaso: los tiempos simples</a></li>
+    <li><a href="#s-2-compuestos">Los tiempos compuestos: haber + participio</a></li>
+    <li><a href="#s-3-progresiva">La forma progresiva: estar + gerundio</a></li>
+    <li><a href="#s-4-linea">La línea del tiempo: ¿qué pasó primero?</a></li>
+    <li><a href="#s-5-gerundio">Cuidado con el gerundio que viene del inglés</a></li>
+    <li><a href="#s-6-lectura">Lectura: «La entrevista de Rosa»</a></li>
+    <li><a href="#s-7-practica">Práctica: elige la forma correcta</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Lee estas dos oraciones: <em>«Cuando llegué a la parada, el autobús <strong>salió</strong>.»</em> y <em>«Cuando llegué a la parada, el autobús ya <strong>había salido</strong>.»</em> En la primera, llegaste justo a tiempo de verlo irse. En la segunda, cuando llegaste ya no había autobús. Un solo verbo cambia toda la historia. Esta lección te enseña a usar los tiempos que ordenan las acciones, una destreza que el GED pone a prueba en las preguntas de edición.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-repaso">
+<summary>1. Repaso: los tiempos simples <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>Los tiempos <span class="palabra-clave">simples</span> se forman con <strong>una sola palabra</strong>. Ya los conoces:</p>
+<table class="tabla">
+  <caption class="sr-solo">Tiempos simples del verbo trabajar</caption>
+  <thead><tr><th scope="col">Tiempo</th><th scope="col">Ejemplo</th><th scope="col">Se usa para…</th></tr></thead>
+  <tbody>
+    <tr><td>Presente</td><td>Yo <strong>trabajo</strong> en un almacén.</td><td>Lo que pasa ahora o de costumbre.</td></tr>
+    <tr><td>Pretérito</td><td>Ayer <strong>trabajé</strong> diez horas.</td><td>Una acción terminada en el pasado.</td></tr>
+    <tr><td>Imperfecto</td><td>De joven <strong>trabajaba</strong> en el campo.</td><td>Una costumbre o una descripción en el pasado.</td></tr>
+    <tr><td>Futuro</td><td>Mañana <strong>trabajaré</strong> temprano.</td><td>Lo que pasará.</td></tr>
+  </tbody>
+</table>
+<p>Los tiempos <span class="palabra-clave">compuestos</span> y la <span class="palabra-clave">forma progresiva</span> usan <strong>dos palabras</strong>: un verbo que ayuda (<em>haber</em> o <em>estar</em>) y el verbo principal. Esa segunda palabra añade un matiz: si la acción ya estaba terminada o si estaba en marcha.</p>
+</div>
+</details>
+
+<details id="s-2-compuestos">
+<summary>2. Los tiempos compuestos: haber + participio <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<p>Un tiempo compuesto se forma con el verbo <strong>haber</strong> conjugado y el <strong>participio</strong> del verbo principal. El participio termina en <em>-ado</em> (<em>trabajado</em>) o en <em>-ido</em> (<em>comido, vivido</em>) y nunca cambia.</p>
+<table class="tabla">
+  <caption class="sr-solo">Los tres tiempos compuestos más usados</caption>
+  <thead><tr><th scope="col">Tiempo</th><th scope="col">Haber</th><th scope="col">Se usa para…</th><th scope="col">Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Pretérito perfecto</strong></td><td>he, has, ha, hemos, han</td><td>Algo que pasó dentro de un tiempo que todavía sigue (<em>hoy, este año, en mi vida</em>).</td><td>Este año <span class="vc">he ahorrado</span> mil dólares.</td></tr>
+    <tr><td><strong>Pluscuamperfecto</strong></td><td>había, habías, había, habíamos, habían</td><td>Algo que pasó <strong>antes</strong> de otra acción pasada.</td><td>Cuando llegué, el autobús ya <span class="vc">había salido</span>.</td></tr>
+    <tr><td><strong>Futuro perfecto</strong></td><td>habré, habrás, habrá, habremos, habrán</td><td>Algo que estará terminado <strong>antes</strong> de un momento futuro.</td><td>Para diciembre <span class="vc">habré terminado</span> el curso.</td></tr>
+  </tbody>
+</table>
+<h3>Participios irregulares que debes conocer</h3>
+<p class="ejemplo">hacer → <strong>hecho</strong> · decir → <strong>dicho</strong> · escribir → <strong>escrito</strong> · ver → <strong>visto</strong> · poner → <strong>puesto</strong> · volver → <strong>vuelto</strong> · abrir → <strong>abierto</strong> · romper → <strong>roto</strong> · morir → <strong>muerto</strong> · resolver → <strong>resuelto</strong> · cubrir → <strong>cubierto</strong></p>
+<div class="tip"><strong>💡 ¿«Comí» o «he comido»?</strong> En casi toda América Latina se usa más el pretérito (<em>Hoy comí poco</em>), y es correcto. El pretérito perfecto (<em>Hoy he comido poco</em>) subraya que el tiempo del que hablas no ha terminado. Las dos formas son válidas; lo importante es reconocer el pretérito perfecto cuando lo leas y formarlo bien cuando lo uses.</div>
+<div class="tip"><strong>⚠️ «Habían muchas personas»:</strong> cuando <em>haber</em> significa «existir», se usa siempre en singular: <em><strong>Había</strong> muchas personas</em>, <em><strong>Hubo</strong> tres accidentes</em>, <em>Va a <strong>haber</strong> problemas</em>. Lo mismo vale para <em>Habíamos diez en la reunión</em>: se escribe <em>Éramos diez en la reunión</em>. Este error aparece mucho en el GED.</div>
+<div class="tip"><strong>⚠️ <em>Ha</em> y <em>a</em>:</strong> <em>ha</em> (con <em>h</em>) es el verbo <em>haber</em> y va antes de un participio: <em>Mi hija <strong>ha</strong> llegado</em>. <em>A</em> es la preposición: <em>Voy <strong>a</strong> la tienda</em>. Y la forma correcta es <em>haya</em>, nunca <em>haiga</em>: <em>Espero que <strong>haya</strong> llegado bien</em>.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-2.html#compuestos" target="_blank" rel="noopener noreferrer">🧩 Practica más: los tiempos compuestos
+  <span>Participios irregulares, el verbo <em>haber</em> y el tiempo que va en cada oración. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-3-progresiva">
+<summary>3. La forma progresiva: estar + gerundio <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>La forma progresiva muestra una acción <strong>en marcha</strong>, que todavía no ha terminado en el momento del que hablas. Se forma con <strong>estar</strong> conjugado y el <strong>gerundio</strong>, que termina en <em>-ando</em> (<em>trabajando</em>) o en <em>-iendo</em> (<em>comiendo, viviendo</em>).</p>
+<table class="tabla">
+  <caption class="sr-solo">La forma progresiva en presente, pasado y futuro</caption>
+  <thead><tr><th scope="col">Forma</th><th scope="col">Ejemplo</th><th scope="col">Qué muestra</th></tr></thead>
+  <tbody>
+    <tr><td>Presente progresivo</td><td><span class="vp">Estoy estudiando</span> para el GED.</td><td>Algo en marcha ahora mismo o en esta etapa de tu vida.</td></tr>
+    <tr><td>Pasado progresivo</td><td><span class="vp">Estaba cocinando</span> cuando sonó el teléfono.</td><td>Algo en marcha cuando otra acción lo interrumpió.</td></tr>
+    <tr><td>Futuro progresivo</td><td>A esta hora mañana <span class="vp">estaré manejando</span> a Texas.</td><td>Algo que estará en marcha en un momento futuro.</td></tr>
+  </tbody>
+</table>
+<h3>Gerundios que cambian</h3>
+<p class="ejemplo">leer → <strong>leyendo</strong> · oír → <strong>oyendo</strong> · traer → <strong>trayendo</strong> · ir → <strong>yendo</strong> · dormir → <strong>durmiendo</strong> · pedir → <strong>pidiendo</strong> · decir → <strong>diciendo</strong> · venir → <strong>viniendo</strong></p>
+<div class="tip"><strong>💡 Interrumpida e interruptora:</strong> en el pasado, la acción larga va en progresivo (o en imperfecto) y la acción corta que la corta va en pretérito: <em><span class="vp">Estaba durmiendo</span> cuando <strong>sonó</strong> la alarma</em>. La alarma interrumpió el sueño.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-2.html#progresivo" target="_blank" rel="noopener noreferrer">✏️ Practica más: la forma progresiva
+  <span>Gerundios que cambian y oraciones con una acción en marcha.</span></a>
+</div>
+</details>
+
+<details id="s-4-linea">
+<summary>4. La línea del tiempo: ¿qué pasó primero? <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Imagina el tiempo como una línea. Los tiempos compuestos te dicen qué acción ocurrió <strong>antes</strong>; la forma progresiva, qué acción estaba <strong>en marcha</strong>. Lee cada línea en orden, del primer punto al último:</p>
+<div class="linea-grupo">
+  <p class="linea-ej">«Cuando llegué a la parada, el autobús ya había salido.»</p>
+  <ol class="linea" aria-label="Orden de las acciones">
+    <li><span class="paso">1.º</span>El autobús <span class="vc">había salido</span>.</li>
+    <li><span class="paso">2.º</span>Yo <strong>llegué</strong> a la parada.</li>
+    <li class="ahora"><span class="paso">Ahora</span>Lo cuento.</li>
+  </ol>
+</div>
+<div class="linea-grupo">
+  <p class="linea-ej">«Estaba cocinando cuando sonó el teléfono.»</p>
+  <ol class="linea" aria-label="Orden de las acciones">
+    <li><span class="paso">1.º</span>Empecé a cocinar: <span class="vp">estaba cocinando</span>…</li>
+    <li><span class="paso">2.º</span>…y en medio <strong>sonó</strong> el teléfono.</li>
+    <li class="ahora"><span class="paso">Ahora</span>Lo cuento.</li>
+  </ol>
+</div>
+<div class="linea-grupo">
+  <p class="linea-ej">«Para diciembre habré terminado el curso.»</p>
+  <ol class="linea" aria-label="Orden de las acciones">
+    <li class="ahora"><span class="paso">Ahora</span>Estoy en el curso.</li>
+    <li><span class="paso">1.º</span>El curso <span class="vc">habrá terminado</span>…</li>
+    <li><span class="paso">2.º</span>…antes de que llegue <strong>diciembre</strong>.</li>
+  </ol>
+</div>
+<div class="tip"><strong>💡 La palabra <em>ya</em></strong> suele acompañar al pluscuamperfecto y al futuro perfecto: <em>ya había salido</em>, <em>ya habré terminado</em>. Es una pista de que una acción terminó antes que otra.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-2.html#linea-tiempo" target="_blank" rel="noopener noreferrer">⏱️ Practica más: ¿qué pasó primero?
+  <span>Lees una oración con dos acciones y decides cuál ocurrió antes.</span></a>
+</div>
+</details>
+
+<details id="s-5-gerundio">
+<summary>5. Cuidado con el gerundio que viene del inglés <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>En inglés la forma <em>-ing</em> se usa muchísimo. Quienes viven entre los dos idiomas a veces la pasan al español donde no corresponde. En la escritura formal, y en el GED, estas son las formas correctas:</p>
+<table class="tabla">
+  <caption class="sr-solo">Usos del gerundio que vienen del inglés y su forma correcta en español</caption>
+  <thead><tr><th scope="col">Se oye…</th><th scope="col">En buen español</th><th scope="col">Por qué</th></tr></thead>
+  <tbody>
+    <tr><td><s>Le estaremos enviando la factura.</s></td><td>Le <strong>enviaremos</strong> la factura.</td><td>Para el futuro basta el futuro simple.</td></tr>
+    <tr><td><s>Estoy llamando para preguntar por mi pedido.</s></td><td><strong>Llamo</strong> para preguntar por mi pedido.</td><td>Una acción que ocurre ahora mismo se dice en presente.</td></tr>
+    <tr><td><s>Mañana estoy saliendo de viaje.</s></td><td>Mañana <strong>salgo</strong> de viaje.</td><td>En español el progresivo no anuncia planes futuros.</td></tr>
+    <tr><td><s>Una caja conteniendo libros.</s></td><td>Una caja <strong>que contiene</strong> libros.</td><td>El gerundio no describe a un sustantivo; se usa un relativo.</td></tr>
+    <tr><td><s>Chocó contra un poste, rompiéndose el brazo.</s></td><td>Chocó contra un poste <strong>y se rompió</strong> el brazo.</td><td>El gerundio no expresa algo que pasó después.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 La prueba:</strong> si el gerundio se puede cambiar por un tiempo simple sin perder nada, usa el tiempo simple. <em>Estoy estudiando para el GED</em> sí pasa la prueba, porque la acción está en marcha en esta etapa; <em>le estaremos enviando</em> no la pasa.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l1-2.html#gerundio" target="_blank" rel="noopener noreferrer">🚦 Practica más: ¿cuál suena en buen español?
+  <span>Comparas dos versiones y eliges la que usa bien el gerundio.</span></a>
+</div>
+</details>
+
+<details id="s-6-lectura">
+<summary>6. Lectura: «La entrevista de Rosa» <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura</span> Individual · lectura con línea de tiempo</h4>
+  <p style="margin:0">Lee la historia. Después pulsa <strong>Mostrar los verbos</strong>: verás <span class="vc">los tiempos compuestos</span> y <span class="vp">las formas progresivas</span>. En tu cuaderno, dibuja una línea de tiempo y coloca en orden cinco acciones de la historia.</p>
+</div>
+<div class="texto-lectura" id="lectura">
+  <p>Rosa se despertó a las seis. La noche anterior <span class="vc">había planchado</span> su mejor blusa y <span class="vc">había repasado</span> las preguntas más comunes de una entrevista. Cuando llegó a la oficina, otros tres candidatos ya <span class="vp">estaban esperando</span>. Mientras esperaba su turno, <span class="vp">estaba pensando</span> en todo lo que <span class="vc">había aprendido</span> en sus clases.</p>
+  <p>—¿<span class="vc">Ha trabajado</span> antes en un almacén? —le preguntó la gerente.</p>
+  <p>—Sí. <span class="vc">He trabajado</span> cinco años en almacenes. En el último, <span class="vp">estuve manejando</span> el montacargas casi todo el tiempo.</p>
+  <p>—¿Y qué hace ahora?</p>
+  <p>—<span class="vp">Estoy estudiando</span> para el GED. Para junio <span class="vc">habré terminado</span> los cuatro exámenes.</p>
+  <p>La gerente sonrió y le dio las gracias. Dos días después, Rosa <span class="vp">estaba cocinando</span> cuando sonó el teléfono: le <span class="vc">habían dado</span> el trabajo.</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar la historia</button>
+  <button type="button" class="btn btn-secundario" id="ver-vb" aria-pressed="false">Mostrar los verbos</button>
+</div>
+<h3>¿Cuándo pasó cada cosa?</h3>
+<div class="clasificador apilado" id="clasif-lectura"></div>
+<div class="puntaje" id="puntaje-lectura" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-7-practica">
+<summary>7. Práctica: elige la forma correcta <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<div class="clasificador" id="clasif-forma"></div>
+<div class="puntaje" id="puntaje-forma" role="status" aria-live="polite"></div>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> túrnense para decir una oración con <em>cuando</em> y dos acciones del día («Cuando llegué a casa, mi hijo ya había comido»). El otro dice cuál pasó primero.</div>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>8. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Mi historia en dos tiempos.</strong> Escribe un párrafo de cinco o seis oraciones sobre un día importante de tu vida (tu llegada a este país, tu primer trabajo, el nacimiento de un hijo). Usa al menos un pluscuamperfecto (<em>había…</em>) y un pasado progresivo (<em>estaba…</em>).</li>
+  <li><strong>Mis metas.</strong> Escribe tres oraciones con el futuro perfecto sobre lo que habrás logrado en un año: <em>Para octubre del año que viene, habré…</em></li>
+  <li><strong>Corrige.</strong> Reescribe bien: «Habían muchos niños en el parque» · «Le estaremos llamando la próxima semana» · «Mi hijo ha rompido la ventana» · «Espero que haiga suficiente comida».</li>
+</ul>
+<details style="margin-top:6px"><summary>Ver las respuestas de «Corrige»</summary><div class="contenido-detalle">
+«<strong>Había</strong> muchos niños en el parque.» · «Le <strong>llamaremos</strong> la próxima semana.» · «Mi hijo ha <strong>roto</strong> la ventana.» · «Espero que <strong>haya</strong> suficiente comida.»
+</div></details>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>9. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>10. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Los tiempos compuestos se forman con <em>haber</em> + participio y muestran que una acción ya había terminado.</li>
+  <li>El pluscuamperfecto (<em>había salido</em>) cuenta lo que pasó antes de otra acción pasada; el futuro perfecto (<em>habré terminado</em>), lo que estará hecho antes de un momento futuro.</li>
+  <li>La forma progresiva, <em>estar</em> + gerundio, muestra una acción en marcha.</li>
+  <li><em>Había</em> no tiene plural cuando significa «existir», y el gerundio no sirve para el futuro ni para describir un sustantivo.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Puedes decir el participio de <em>hacer, escribir, poner</em> y <em>volver</em>?</li>
+    <li>¿Puedes explicar la diferencia entre «el autobús salió» y «el autobús ya había salido»?</li>
+    <li>¿Sabes por qué «Le estaremos enviando» no es la mejor forma?</li>
+  </ul>
+</div>
+<div class="tip"><strong>➡️ Sigue con la próxima lección:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_1-3.html" style="color:var(--cp-oscuro);font-weight:700">Lección 1.3 · Corregir fragmentos y oraciones corridas</a>.</div>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 1 · Lección 1.2</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+clasificador('clasif-lectura','puntaje-lectura',[
+  {p:'«La noche anterior había planchado su blusa.» ¿Qué pasó primero?',ops:['Planchar la blusa','Despertarse a las seis','Llegar a la oficina'],c:0,n:'El pluscuamperfecto <em>había planchado</em> indica que fue antes de despertarse.'},
+  {p:'Cuando Rosa llegó, los otros candidatos «ya estaban esperando». Eso significa que…',ops:['esperaban desde antes de que ella llegara','empezaron a esperar después que ella','se fueron en cuanto ella llegó'],c:0,n:'La forma progresiva muestra una acción en marcha cuando ella llegó.'},
+  {p:'«He trabajado cinco años en almacenes»: ¿de qué habla Rosa?',ops:['De su experiencia hasta hoy','De un trabajo que hará pronto','De algo que hizo una sola vez'],c:0,n:'El pretérito perfecto conecta el pasado con el presente: es la experiencia que tiene hoy.'},
+  {p:'«Para junio habré terminado los cuatro exámenes» significa que…',ops:['en junio los exámenes ya estarán terminados','en junio empezará los cuatro exámenes','terminó los exámenes el junio pasado'],c:0,n:'El futuro perfecto: algo terminado antes de un momento futuro.'},
+  {p:'«Rosa estaba cocinando cuando sonó el teléfono.» ¿Qué acción interrumpe a la otra?',ops:['Sonó el teléfono','Estaba cocinando','Ninguna, son a la vez'],c:0,n:'La acción corta (<em>sonó</em>) interrumpe a la que estaba en marcha.'},
+  {p:'«Le habían dado el trabajo.» ¿Cuándo le dieron el trabajo?',ops:['Antes de la llamada','Durante la entrevista','Después de la llamada'],c:0,n:'<em>Habían dado</em>: la decisión ya estaba tomada cuando la llamaron.'}
+],null,false);
+
+clasificador('clasif-forma','puntaje-forma',[
+  {p:'Este año yo ___ mucho dinero.',ops:['he ahorrado','había ahorrado','habré ahorrado'],c:0,n:'<em>Este año</em> todavía no termina: pretérito perfecto.'},
+  {p:'Cuando llegamos al cine, la película ya ___.',ops:['había empezado','ha empezado','habrá empezado'],c:0,n:'Antes de otra acción pasada: pluscuamperfecto.'},
+  {p:'Para las ocho de esta noche, ya ___ la cena.',ops:['habré preparado','había preparado','he preparado'],c:0,n:'Terminado antes de un momento futuro: futuro perfecto.'},
+  {p:'Mi hermano ha ___ una carta al alcalde.',ops:['escrito','escribido','escrita'],c:0,n:'Participio irregular: <em>escrito</em>. Y el participio no cambia.'},
+  {p:'Ayer a esta hora yo ___ en el taller.',ops:['estaba trabajando','estoy trabajando','he trabajando'],c:0,n:'Una acción en marcha en un momento del pasado.'},
+  {p:'___ muchas personas en la fiesta.',ops:['Había','Habían','Habíamos'],c:0,n:'<em>Haber</em> con el sentido de «existir» va en singular.'},
+  {p:'Los niños están ___ un cuento.',ops:['leyendo','leendo','leído'],c:0,n:'Gerundio de <em>leer</em>: <em>leyendo</em>.'}
+],null,false);
+
+(function(){
+  var t=document.getElementById('lectura'), v=document.getElementById('ver-vb');
+  document.getElementById('leer-lectura').addEventListener('click',function(){hablar(t.textContent.trim(),0.9);});
+  v.addEventListener('click',function(){var on=t.classList.toggle('ver-vb');v.setAttribute('aria-pressed',on?'true':'false');v.textContent=on?'Ocultar los verbos':'Mostrar los verbos';});
+})();
+
+iniciarQuiz([
+  {t:'¿Cómo se forma un tiempo compuesto?',o:['haber + participio','estar + gerundio','ser + infinitivo'],c:0,r:'<a href="#s-2-compuestos">Sección 2</a>'},
+  {t:'¿Cuál es el participio de <em>escribir</em>?',o:['escrito','escribido','escribiendo'],c:0,r:'<a href="#s-2-compuestos">Sección 2: participios irregulares</a>'},
+  {t:'Completa: «Cuando llegué a la parada, el autobús ya ___.»',o:['había salido','ha salido','habrá salido'],c:0,r:'<a href="#s-4-linea">Sección 4</a>'},
+  {t:'Completa: «Para el año próximo, ya ___ el GED.»',o:['habré aprobado','había aprobado','he aprobado'],c:0,r:'<a href="#s-2-compuestos">Sección 2: futuro perfecto</a>'},
+  {t:'¿Cuál oración está bien escrita?',o:['Había mucha gente en la tienda.','Habían mucha gente en la tienda.','Habíamos mucha gente en la tienda.'],c:0,r:'<a href="#s-2-compuestos">Sección 2: «habían muchas personas»</a>'},
+  {t:'¿Cuál oración usa la forma progresiva?',o:['Estoy leyendo un libro muy bueno.','He leído un libro muy bueno.','Leí ayer un libro muy bueno.'],c:0,r:'<a href="#s-3-progresiva">Sección 3</a>'},
+  {t:'¿Cuál es el gerundio de <em>leer</em>?',o:['leyendo','leendo','leído'],c:0,r:'<a href="#s-3-progresiva">Sección 3: gerundios que cambian</a>'},
+  {t:'«Estaba durmiendo cuando sonó la alarma.» ¿Qué acción interrumpe a la otra?',o:['Sonó la alarma','Estaba durmiendo','Ninguna, son a la vez'],c:0,r:'<a href="#s-3-progresiva">Sección 3</a>'},
+  {t:'¿Cuál es la forma más natural en español?',o:['Le enviaremos la factura mañana.','Le estaremos enviando la factura mañana.','Le vamos a estar enviando la factura.'],c:0,r:'<a href="#s-5-gerundio">Sección 5</a>'},
+  {t:'¿Cuál dice bien que el viaje es mañana?',o:['Mañana salgo de viaje.','Mañana estoy saliendo de viaje.','Mañana estaré saliendo de viaje.'],c:0,r:'<a href="#s-5-gerundio">Sección 5</a>'},
+  {t:'¿Qué indica «Hoy he comido poco»?',o:['Algo pasó en un día que aún sigue','Algo que va a pasar más tarde hoy','Una costumbre de un tiempo pasado'],c:0,r:'<a href="#s-2-compuestos">Sección 2: pretérito perfecto</a>'},
+  {t:'¿Cuál oración está bien escrita?',o:['Espero que haya llegado bien.','Espero que haiga llegado bien.','Espero que a llegado bien.'],c:0,r:'<a href="#s-2-compuestos">Sección 2: <em>ha</em>, <em>a</em> y <em>haya</em></a>'}
+],{meta:10,
+   bien:'Ya ordenas las acciones con los tiempos compuestos y la forma progresiva. Sigue con la Lección 1.3.',
+   repaso:'Vuelve a las secciones 2 a 5 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

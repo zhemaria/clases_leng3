@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<!-- Lección 3.2 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 3.2 · Citar detalles: lo explícito y lo inferido</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+
+</style>
+</head>
+<body>
+<h1>Lección 3.2 · Citar detalles: lo explícito y lo inferido</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 3: Comprensión inferencial y evidencia textual · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Distinguir lo que un texto dice de forma <strong>explícita</strong> de lo que se <strong>infiere</strong> a partir de él.</li>
+    <li>Encontrar la <strong>evidencia</strong> exacta que apoya una respuesta.</li>
+    <li><strong>Citar</strong> esa evidencia correctamente, con comillas o con tus palabras.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.R.CL.1 · 3.R.CI.1</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-por-que">¿Por qué importa la evidencia?</a></li>
+    <li><a href="#s-2-explicito">Lo explícito y lo inferido</a></li>
+    <li><a href="#s-3-lectura">Lectura: «Los libros de la lavandería»</a></li>
+    <li><a href="#s-4-mejor">Elegir la mejor evidencia</a></li>
+    <li><a href="#s-5-citar">Cómo citar la evidencia</a></li>
+    <li><a href="#s-6-practica">Práctica: ¿dónde lo dice?</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Si alguien te dice «Tu vecino está de vacaciones», puedes preguntar: «¿Cómo lo sabes?». Si te contesta «Me lo dijo él», la información es <strong>explícita</strong>. Si te contesta «Hace una semana que no recoge el periódico y su carro no está», es una <strong>inferencia</strong>: no te lo dijeron, pero lo deduces de las pistas. Las dos pueden ser ciertas, pero se apoyan en cosas distintas. En el GED, casi todas las preguntas de lectura te piden saber cuál de las dos es, y señalar la frase del texto que lo prueba.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-por-que">
+<summary>1. ¿Por qué importa la evidencia? <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>La <span class="palabra-clave">evidencia textual</span> es la parte del texto que prueba lo que dices sobre él. Responder bien una pregunta de lectura no es adivinar lo que el autor «quiso decir», sino poder señalar <strong>dónde lo dice</strong> o <strong>qué pistas lo muestran</strong>.</p>
+<div class="tip"><strong>🎓 En el GED:</strong> muchas preguntas tienen dos partes. En la parte A eliges una respuesta y en la parte B eliges la oración del texto que la apoya. Otras veces te preguntan directamente: «¿Qué detalle del texto apoya la idea de que…?». En la Respuesta Extendida del Nivel 4, citar la evidencia será la mitad de la nota.</div>
+<div class="tip"><strong>💡 El hábito de esta lección:</strong> cada vez que respondas algo sobre un texto, pregúntate «¿dónde lo dice?». Si no puedes señalarlo, revisa tu respuesta.</div>
+</div>
+</details>
+
+<details id="s-2-explicito">
+<summary>2. Lo explícito y lo inferido <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<table class="tabla">
+  <caption class="sr-solo">Diferencia entre información explícita e inferida</caption>
+  <thead><tr><th scope="col"></th><th scope="col">Explícito</th><th scope="col">Inferido</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Qué es</strong></td><td>Lo que el texto dice con palabras.</td><td>Lo que no dice, pero se deduce de sus pistas.</td></tr>
+    <tr><td><strong>Cómo se prueba</strong></td><td>Señalando la oración que lo dice.</td><td>Señalando las pistas y explicando cómo llevan a la idea.</td></tr>
+    <tr><td><strong>Ejemplo</strong><br><em>«Ana se puso el abrigo, los guantes y la bufanda antes de salir.»</em></td><td>Ana se puso el abrigo antes de salir.</td><td>Hace frío afuera.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 La prueba:</strong> busca la idea en el texto. Si la encuentras escrita, aunque sea con otras palabras, es <strong>explícita</strong>. Si tienes que juntar pistas para llegar a ella, es <strong>inferida</strong>.</div>
+<div class="tip"><strong>⚠️ Inferido no es inventado:</strong> una inferencia sale de las pistas del texto. «Ana va a esquiar» no es una inferencia válida: el texto no da ninguna pista de eso. En la Lección 3.3 practicarás cómo distinguir una inferencia bien apoyada de una que va demasiado lejos.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l3-2.html#explicito-inferido" target="_blank" rel="noopener noreferrer">🧩 Practica más: ¿explícito o inferido?
+  <span>Lees un texto corto y decides cómo se sabe cada idea. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-3-lectura">
+<summary>3. Lectura: «Los libros de la lavandería» <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura</span> Individual · lectura con evidencia</h4>
+  <p style="margin:0">Lee la historia. Los párrafos están numerados para que puedas citarlos. Después responde las preguntas: para cada una, piensa si la respuesta está escrita en el texto o si la deduces de las pistas.</p>
+</div>
+<div class="texto-lectura" id="lectura">
+  <p><span class="num-p" aria-hidden="true">1</span>Carmen Rivas llegó a Chicago desde Guatemala en 1998. Durante veinte años trabajó en una lavandería de Albany Park, doblando ropa ajena de seis de la mañana a seis de la tarde.</p>
+  <p><span class="num-p" aria-hidden="true">2</span>Mientras las máquinas giraban, los clientes esperaban sentados, mirando el celular o la pared. Un día, Carmen llevó de su casa una caja con diez libros en español y la puso junto a las sillas, con un letrero escrito a mano: «Llévate uno, trae otro».</p>
+  <p><span class="num-p" aria-hidden="true">3</span>Durante dos semanas nadie tocó la caja. Pero un mes después, los diez libros habían desaparecido y en su lugar había treinta que Carmen no conocía. Algunos clientes empezaron a llegar con bolsas de libros de sus casas.</p>
+  <p><span class="num-p" aria-hidden="true">4</span>Pronto hubo que poner un estante. La dueña de la lavandería, que al principio había dicho que los libros «estorbaban», terminó comprando dos estantes más. Por las tardes, los niños hacían la tarea entre los libros mientras sus madres esperaban la ropa, y a veces Carmen les leía un cuento en voz alta.</p>
+  <p><span class="num-p" aria-hidden="true">5</span>Carmen se jubiló en 2019, pero los estantes siguen allí, con más de trescientos libros. Cuando le preguntan por qué empezó, contesta: «Yo aprendí a leer de grande. Sé lo que es tener hambre de un libro y no tener ninguno».</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar la historia</button>
+</div>
+<h3>¿Lo dice el texto o se infiere?</h3>
+<div class="clasificador" id="clasif-ei"></div>
+<div class="puntaje" id="puntaje-ei" role="status" aria-live="polite"></div>
+<p style="font-size:.95rem">Esta historia y sus personajes son inventados, para practicar.</p>
+</div>
+</details>
+
+<details id="s-4-mejor">
+<summary>4. Elegir la mejor evidencia <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Imagina la pregunta: <em>«¿Qué detalle muestra que los clientes valoraron la idea de Carmen?»</em>. Mira tres posibles respuestas:</p>
+<table class="tabla">
+  <caption class="sr-solo">Tres posibles evidencias y por qué sirven o no</caption>
+  <thead><tr><th scope="col">Evidencia</th><th scope="col">¿Sirve?</th></tr></thead>
+  <tbody>
+    <tr><td>«Algunos clientes empezaron a llegar con bolsas de libros de sus casas.» (párrafo 3)</td><td>✓ <strong>Sí.</strong> Prueba directamente que los clientes participaron por su cuenta.</td></tr>
+    <tr><td>«Mientras las máquinas giraban, los clientes esperaban sentados.» (párrafo 2)</td><td>✗ Habla de los clientes, pero no de lo que pensaban de los libros. Está <strong>relacionada</strong>, pero no <strong>prueba</strong>.</td></tr>
+    <tr><td>«Durante dos semanas nadie tocó la caja.» (párrafo 3)</td><td>✗ Muestra lo contrario: al principio no les interesó.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 Tres trampas de las respuestas falsas:</strong> la evidencia que <strong>solo habla del mismo tema</strong>, la que es <strong>demasiado general</strong> y la que <strong>contradice</strong> la idea. La buena evidencia prueba la idea sin que tengas que añadir nada.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l3-2.html#donde-lo-dice" target="_blank" rel="noopener noreferrer">🔎 Practica más: ¿dónde lo dice?
+  <span>Una idea y tres oraciones del texto: eliges la que la prueba.</span></a>
+</div>
+</details>
+
+<details id="s-5-citar">
+<summary>5. Cómo citar la evidencia <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Hay dos maneras de usar la evidencia en tus respuestas escritas:</p>
+<table class="tabla">
+  <caption class="sr-solo">Cita textual y paráfrasis</caption>
+  <thead><tr><th scope="col">Manera</th><th scope="col">Cómo se hace</th><th scope="col">Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Cita textual</strong></td><td>Copias las palabras exactas entre comillas (Lección 2.1).</td><td>Carmen explica que sabe «lo que es tener hambre de un libro y no tener ninguno».</td></tr>
+    <tr><td><strong>Paráfrasis</strong></td><td>Dices la idea con tus palabras, sin comillas, y señalas de dónde sale.</td><td>Según el párrafo 4, la dueña cambió de opinión y compró más estantes.</td></tr>
+  </tbody>
+</table>
+<h3>Frases para introducir la evidencia</h3>
+<p class="ejemplo">Según el texto, … · En el párrafo 3, el autor dice que … · Como afirma Carmen, «…» · El texto muestra que … cuando dice «…»</p>
+<div class="tip"><strong>⚠️ Tres cuidados:</strong> la cita debe ser <strong>exacta</strong> (no cambies ni una palabra dentro de las comillas), <strong>corta</strong> (solo la parte que prueba) y <strong>explicada</strong> (después de citar, di en una oración por qué prueba tu idea). Y recuerda: el punto va después de cerrar las comillas.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l3-2.html#cita" target="_blank" rel="noopener noreferrer">✏️ Practica más: la cita bien escrita
+  <span>Eliges la manera correcta de citar o parafrasear.</span></a>
+</div>
+</details>
+
+<details id="s-6-practica">
+<summary>6. Práctica: ¿dónde lo dice? <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Vuelve a «Los libros de la lavandería» y elige la mejor evidencia para cada idea.</p>
+<div class="clasificador apilado" id="clasif-donde"></div>
+<div class="puntaje" id="puntaje-donde" role="status" aria-live="polite"></div>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> lean juntos una noticia. Uno dice algo sobre ella («el alcalde está preocupado») y el otro pregunta «¿dónde lo dice?». Hay que señalar la frase o explicar las pistas.</div>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>7. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Responde con evidencia.</strong> En tu cuaderno, responde con dos o tres oraciones y una cita de «Los libros de la lavandería»: ¿Por qué crees que Carmen puso los libros en la lavandería?</li>
+  <li><strong>Dos columnas.</strong> Divide una página en dos columnas, <em>Explícito</em> e <em>Inferido</em>, y escribe tres ideas sobre la dueña de la lavandería en cada una, con el número de párrafo que las apoya.</li>
+  <li><strong>Una noticia real.</strong> Busca una noticia corta y escribe una paráfrasis y una cita textual de ella, con su frase de introducción.</li>
+</ul>
+<details style="margin-top:6px"><summary>Ver una respuesta posible a la primera pregunta</summary><div class="contenido-detalle">
+Carmen puso los libros porque quería que otros tuvieran lo que a ella le faltó. Ella misma explica: «Yo aprendí a leer de grande. Sé lo que es tener hambre de un libro y no tener ninguno» (párrafo 5). Esa cita muestra que conocía por experiencia la falta de libros y quería evitársela a los demás.
+</div></details>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>8. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Las preguntas se refieren a «Los libros de la lavandería» (sección 3). Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>9. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Lo explícito está escrito en el texto; lo inferido se deduce de sus pistas, sin inventar.</li>
+  <li>La buena evidencia prueba la idea directamente; no basta con que hable del mismo tema.</li>
+  <li>Se puede citar con comillas (palabras exactas) o parafrasear (con tus palabras), siempre diciendo de dónde sale.</li>
+  <li>Una cita debe ser exacta, corta y explicada.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Puedes decir algo explícito y algo inferido sobre Carmen?</li>
+    <li>¿Por qué «los clientes esperaban sentados» no prueba que les gustaran los libros?</li>
+    <li>¿Cuál es la diferencia entre una cita textual y una paráfrasis?</li>
+  </ul>
+</div>
+<div class="tip"><strong>➡️ Sigue con la próxima lección:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_3-3.html" style="color:var(--cp-oscuro);font-weight:700">Lección 3.3 · Hacer inferencias con evidencia</a>.</div>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 3 · Lección 3.2</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+clasificador('clasif-ei','puntaje-ei',[
+  {p:'Carmen trabajó veinte años en la lavandería.',c:0,n:'Lo dice el párrafo 1.'},
+  {p:'A Carmen le importaba que otras personas pudieran leer.',c:1,n:'No lo dice con esas palabras, pero se deduce de lo que hizo y de su respuesta del párrafo 5.'},
+  {p:'El letrero decía «Llévate uno, trae otro».',c:0,n:'Está escrito en el párrafo 2.'},
+  {p:'La dueña cambió de opinión sobre los libros.',c:1,n:'Se deduce: primero dijo que «estorbaban» y después compró estantes.'},
+  {p:'Carmen se jubiló en 2019.',c:0,n:'Lo dice el párrafo 5.'},
+  {p:'De niña, Carmen no tuvo acceso a libros.',c:1,n:'Se deduce de «aprendí a leer de grande» y «tener hambre de un libro y no tener ninguno».'}
+],['Explícito','Inferido'],false);
+
+clasificador('clasif-donde','puntaje-donde',[
+  {p:'Idea: <em>Al principio, a los clientes no les interesaron los libros.</em>',ops:['«Durante dos semanas nadie tocó la caja.»','«Los clientes esperaban sentados, mirando el celular.»','«Carmen llevó de su casa una caja con diez libros.»'],c:0,n:'Prueba directamente la falta de interés al principio.'},
+  {p:'Idea: <em>La lavandería se convirtió en un lugar para las familias.</em>',ops:['«Los niños hacían la tarea entre los libros mientras sus madres esperaban la ropa.»','«Carmen se jubiló en 2019, pero los estantes siguen allí, con más libros.»','«Algunos clientes empezaron a llegar con bolsas de libros de sus casas.»'],c:0,n:'Muestra a madres e hijos usando el lugar.'},
+  {p:'Idea: <em>El proyecto de Carmen continúa después de que ella se fue.</em>',ops:['«Los estantes siguen allí, con más de trescientos libros.»','«Pronto hubo que poner un estante para los libros.»','«La dueña de la lavandería terminó comprando dos estantes más.»'],c:0,n:'Párrafo 5: los estantes siguen allí aunque Carmen ya se jubiló.'},
+  {p:'Idea: <em>El trabajo de Carmen era largo y pesado.</em>',ops:['«Doblando ropa ajena de seis de la mañana a seis de la tarde.»','«Mientras las máquinas giraban, los clientes esperaban.»','«Carmen llegó a Chicago desde Guatemala en 1998.»'],c:0,n:'Doce horas al día doblando ropa: prueba lo largo de la jornada.'}
+],null,false);
+
+document.getElementById('leer-lectura').addEventListener('click',function(){hablar(document.getElementById('lectura').textContent.trim(),0.9);});
+
+iniciarQuiz([
+  {t:'¿Qué información es <strong>explícita</strong> en el texto?',o:['Carmen llegó de Guatemala en 1998.','Carmen extrañaba mucho su país.','Carmen era la mejor empleada del lugar.'],c:0,r:'<a href="#s-2-explicito">Sección 2</a>'},
+  {t:'¿Qué información es <strong>inferida</strong>?',o:['Los clientes se aburrían mientras esperaban.','El letrero estaba escrito a mano.','Los estantes tienen más de trescientos libros.'],c:0,r:'<a href="#s-2-explicito">Sección 2</a>'},
+  {t:'¿Qué pista del párrafo 2 apoya que los clientes se aburrían?',o:['Esperaban «mirando el celular o la pared»','Carmen llevó «una caja con diez libros»','El letrero decía «Llévate uno, trae otro»'],c:0,r:'<a href="#s-4-mejor">Sección 4</a>'},
+  {t:'¿Qué detalle prueba que la dueña cambió de opinión?',o:['Primero dijo que estorbaban y luego compró estantes.','La dueña era la persona que mandaba en el lugar.','Los niños hacían la tarea entre los libros.'],c:0,r:'<a href="#s-4-mejor">Sección 4</a>'},
+  {t:'¿Por qué «Pronto hubo que poner un estante» es una buena evidencia de que el proyecto creció?',o:['Muestra que ya no cabían los libros en la caja','Muestra que a la dueña le gustaban los muebles','Muestra que Carmen compraba muchos libros'],c:0,r:'<a href="#s-4-mejor">Sección 4</a>'},
+  {t:'¿Cuál de estas ideas <strong>no</strong> tiene evidencia en el texto?',o:['Carmen abrió una biblioteca pública.','Carmen les leía cuentos a los niños.','Carmen trajo los primeros libros.'],c:0,r:'<a href="#s-2-explicito">Sección 2: inferido no es inventado</a>'},
+  {t:'¿Cuál es una cita textual bien escrita?',o:['Carmen dice que sabe «lo que es tener hambre de un libro».','Carmen dice que sabe "lo que es tener hambre de libros."','Carmen dice que sabe lo que es tener hambre de un libro».'],c:0,r:'<a href="#s-5-citar">Sección 5</a>'},
+  {t:'¿Cuál es una paráfrasis?',o:['Según el párrafo 3, los clientes trajeron libros de sus casas.','«Algunos clientes empezaron a llegar con bolsas de libros.»','Algunos clientes «empezaron a llegar con bolsas».'],c:0,r:'<a href="#s-5-citar">Sección 5</a>'},
+  {t:'Al citar, ¿qué no puedes hacer dentro de las comillas?',o:['Cambiar las palabras','Escribir más de una palabra','Usar la cita en una respuesta'],c:0,r:'<a href="#s-5-citar">Sección 5: tres cuidados</a>'},
+  {t:'¿Qué se infiere de «Yo aprendí a leer de grande»?',o:['De niña, Carmen no pudo estudiar mucho.','Carmen nunca llegó a aprender a leer.','Carmen trabajó de maestra en Guatemala.'],c:0,r:'<a href="#s-2-explicito">Sección 2</a>'},
+  {t:'¿Qué es la evidencia textual?',o:['La parte del texto que prueba lo que dices','Tu opinión personal sobre lo que dice el texto','El título y los subtítulos que tiene el texto'],c:0,r:'<a href="#s-1-por-que">Sección 1</a>'},
+  {t:'Una evidencia que habla del mismo tema pero no prueba la idea es…',o:['una trampa: está relacionada, pero no prueba','la mejor evidencia que se puede elegir','una cita textual perfecta para responder'],c:0,r:'<a href="#s-4-mejor">Sección 4: tres trampas</a>'}
+],{meta:10,
+   bien:'Ya distingues lo explícito de lo inferido y citas la evidencia. Sigue con la Lección 3.3.',
+   repaso:'Vuelve a las secciones 2, 4 y 5 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

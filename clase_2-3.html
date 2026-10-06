@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<!-- Lección 2.3 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 2.3 · Vocabulario académico: sinónimos, antónimos y relaciones</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+
+  /* ── Nivel 3 · Lección 2.3: vocabulario marcado ── */
+  .ver-voc .w{color:#4c1d95;font-weight:700;background:#ede9fe;border-bottom:3px solid #6d28d9;border-radius:3px;padding:0 3px}
+</style>
+</head>
+<body>
+<h1>Lección 2.3 · Vocabulario académico: sinónimos, antónimos y relaciones</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 2: Puntuación avanzada y vocabulario académico · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Elegir entre varios <strong>sinónimos</strong> el que tiene el <strong>matiz</strong> preciso para el contexto.</li>
+    <li>Reconocer los <strong>verbos que usa un autor para citar</strong> a otros y lo que revelan de su postura.</li>
+    <li>Distinguir clases de <strong>antónimos</strong> y otras <strong>relaciones entre palabras</strong>: categoría, parte y todo, causa y efecto, analogías.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: 3.R.VA.2 · 3.R.VA.3 · 3.W.VU.1</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-repaso">Repaso: sinónimos y antónimos</a></li>
+    <li><a href="#s-2-matiz">Sinónimos con matiz</a></li>
+    <li><a href="#s-3-citar">Los verbos para citar a un autor</a></li>
+    <li><a href="#s-4-antonimos">Tres clases de antónimos</a></li>
+    <li><a href="#s-5-relaciones">Otras relaciones entre palabras</a></li>
+    <li><a href="#s-6-lectura">Lectura: «El viaje de la mariposa monarca»</a></li>
+    <li><a href="#s-7-precisa">Práctica: la palabra precisa</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Compara: <em>«El alcalde <strong>dijo</strong> que bajarán los impuestos.»</em> · <em>«El alcalde <strong>prometió</strong> que bajarán los impuestos.»</em> · <em>«El alcalde <strong>admitió</strong> que bajarán los impuestos.»</em> Las tres cuentan lo mismo, pero cada verbo deja ver algo distinto: una información, un compromiso o algo que el alcalde preferiría no tener que decir. En el GED, muchas preguntas de vocabulario preguntan justamente eso: qué <strong>matiz</strong> añade una palabra y por qué el autor la eligió.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-repaso">
+<summary>1. Repaso: sinónimos y antónimos <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li>Los <span class="palabra-clave">sinónimos</span> tienen un significado <strong>parecido</strong>: <em>empezar</em> y <em>comenzar</em>; <em>bonito</em> y <em>lindo</em>.</li>
+  <li>Los <span class="palabra-clave">antónimos</span> tienen un significado <strong>opuesto</strong>: <em>subir</em> y <em>bajar</em>; <em>aumentar</em> y <em>disminuir</em>.</li>
+</ul>
+<p>En el Nivel 2 viste que algunas palabras parecidas cambian la <strong>intensidad</strong>: <em>tibio, caliente, ardiente</em>. Hoy das un paso más: en los textos académicos casi nunca hay dos sinónimos que digan exactamente lo mismo, y elegir bien es parte de escribir con precisión.</p>
+</div>
+</details>
+
+<details id="s-2-matiz">
+<summary>2. Sinónimos con matiz <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Los sinónimos se parecen, pero cada uno tiene su <strong>matiz</strong>: más fuerte o más suave, más formal o más cotidiano, o un uso propio.</p>
+<table class="tabla">
+  <caption class="sr-solo">Grupos de sinónimos con su matiz</caption>
+  <thead><tr><th scope="col">Sinónimos</th><th scope="col">El matiz</th></tr></thead>
+  <tbody>
+    <tr><td><em>pedir · solicitar · exigir</em></td><td><em>Pedir</em> es lo común; <em>solicitar</em>, lo formal (una beca, un permiso); <em>exigir</em>, pedir con fuerza, como un derecho.</td></tr>
+    <tr><td><em>mirar · observar · vigilar</em></td><td><em>Observar</em> es mirar con atención para aprender; <em>vigilar</em>, mirar para cuidar o controlar.</td></tr>
+    <tr><td><em>empezar · iniciar · inaugurar</em></td><td><em>Iniciar</em> es más formal; <em>inaugurar</em> se usa para algo nuevo que se abre con un acto público.</td></tr>
+    <tr><td><em>causar · provocar · ocasionar</em></td><td><em>Provocar</em> sugiere algo repentino o negativo; <em>ocasionar</em> es formal y neutro.</td></tr>
+    <tr><td><em>disminuir · reducir · desplomarse</em></td><td><em>Disminuir</em> y <em>reducir</em> son neutros; <em>desplomarse</em> es caer de golpe y mucho.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 La prueba del cambio:</strong> pon cada sinónimo en la oración y pregúntate si dice exactamente lo que quieres. <em>«Los trabajadores <strong>exigen</strong> un aumento»</em> no es lo mismo que <em>«Los trabajadores <strong>piden</strong> un aumento»</em>.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l2-3.html#sinonimos" target="_blank" rel="noopener noreferrer">🧩 Practica más: sinónimos
+  <span>Eliges el sinónimo de una palabra académica. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-3-citar">
+<summary>3. Los verbos para citar a un autor <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Cuando un texto cuenta lo que dijo otra persona, el verbo que elige el autor revela <strong>cómo</strong> lo dijo, y a veces lo que el autor piensa de ello. Estos verbos son muy frecuentes en las lecturas del GED:</p>
+<table class="tabla">
+  <caption class="sr-solo">Verbos para citar y lo que revelan</caption>
+  <thead><tr><th scope="col">Verbo</th><th scope="col">Qué revela</th><th scope="col">Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td><em>afirma, sostiene</em></td><td>Lo presenta como algo seguro; <em>sostiene</em> añade que lo defiende.</td><td>La investigadora <strong>sostiene</strong> que el plan funcionará.</td></tr>
+    <tr><td><em>sugiere, plantea</em></td><td>Lo propone con menos seguridad.</td><td>El estudio <strong>sugiere</strong> una relación entre sueño y memoria.</td></tr>
+    <tr><td><em>admite, reconoce</em></td><td>Acepta algo, a veces a su pesar.</td><td>El gerente <strong>admitió</strong> que hubo errores.</td></tr>
+    <tr><td><em>niega, rechaza</em></td><td>Dice que algo no es cierto o no lo acepta.</td><td>La empresa <strong>niega</strong> haber contaminado el río.</td></tr>
+    <tr><td><em>advierte, alerta</em></td><td>Anuncia un peligro.</td><td>El médico <strong>advierte</strong> que el calor es peligroso.</td></tr>
+    <tr><td><em>critica, cuestiona</em></td><td>Muestra desacuerdo o duda.</td><td>El concejal <strong>cuestiona</strong> el costo del proyecto.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>🎓 En el GED:</strong> si una pregunta dice «¿Qué sugiere la palabra <em>admitió</em> sobre el gerente?», la respuesta casi siempre tiene que ver con este matiz: que reconoció algo que no le convenía.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l2-3.html#palabra-precisa" target="_blank" rel="noopener noreferrer">🎯 Practica más: la palabra precisa
+  <span>Eliges el verbo o el sinónimo que dice exactamente lo que pide el contexto.</span></a>
+</div>
+</details>
+
+<details id="s-4-antonimos">
+<summary>4. Tres clases de antónimos <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<table class="tabla">
+  <caption class="sr-solo">Clases de antónimos</caption>
+  <thead><tr><th scope="col">Clase</th><th scope="col">Cómo funcionan</th><th scope="col">Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Complementarios</strong></td><td>Si es uno, no puede ser el otro. No hay punto medio.</td><td>vivo / muerto · aprobado / reprobado</td></tr>
+    <tr><td><strong>Graduales</strong></td><td>Hay puntos intermedios entre los dos extremos.</td><td>frío / (tibio) / caliente · barato / caro</td></tr>
+    <tr><td><strong>Recíprocos</strong></td><td>Uno no existe sin el otro: son las dos caras de una misma acción.</td><td>comprar / vender · prestar / pedir prestado · maestro / alumno</td></tr>
+  </tbody>
+</table>
+<p>Muchos antónimos se forman con un <strong>prefijo</strong>: <em><strong>in</strong>útil</em>, <em><strong>i</strong>legal</em>, <em><strong>des</strong>conocido</em>, <em><strong>a</strong>normal</em>.</p>
+<div class="tip"><strong>💡 Por qué importa:</strong> si un texto dice que una medida «no es cara», no quiere decir que sea «barata»: <em>caro</em> y <em>barato</em> son graduales, y puede estar en el medio. Leer con precisión es no saltar al extremo contrario.</div>
+</div>
+</details>
+
+<details id="s-5-relaciones">
+<summary>5. Otras relaciones entre palabras <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<table class="tabla">
+  <caption class="sr-solo">Relaciones entre palabras</caption>
+  <thead><tr><th scope="col">Relación</th><th scope="col">Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Categoría y ejemplo</strong>: una palabra general incluye a otras.</td><td><em>mamífero</em> → perro, ballena, murciélago · <em>vivienda</em> → casa, apartamento</td></tr>
+    <tr><td><strong>Parte y todo</strong></td><td><em>página</em> → libro · <em>estado</em> → país · <em>capítulo</em> → novela</td></tr>
+    <tr><td><strong>Causa y efecto</strong></td><td><em>sequía</em> → escasez · <em>ejercicio</em> → cansancio</td></tr>
+    <tr><td><strong>Instrumento y uso</strong></td><td><em>termómetro</em> → medir la temperatura · <em>tijeras</em> → cortar</td></tr>
+  </tbody>
+</table>
+<h3>Las analogías</h3>
+<p>Una <span class="palabra-clave">analogía</span> compara dos pares de palabras que tienen la <strong>misma relación</strong>. Se lee «A es a B como C es a D»:</p>
+<p class="ejemplo"><em>Página</em> es a <em>libro</em> como <em>ladrillo</em> es a <em>pared</em>.</p>
+<div class="tip"><strong>💡 El truco:</strong> di la relación del primer par en una oración («una página es una parte de un libro») y busca el par que cabe en la misma oración («un ladrillo es una parte de una pared»).</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l2-3.html#relaciones" target="_blank" rel="noopener noreferrer">🔗 Practica más: relaciones y analogías
+  <span>Descubres qué relación une a dos palabras y completas analogías.</span></a>
+</div>
+</details>
+
+<details id="s-6-lectura">
+<summary>6. Lectura: «El viaje de la mariposa monarca» <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura</span> Individual · lectura con mapa de palabras</h4>
+  <p style="margin:0">Lee el texto. Después pulsa <strong>Mostrar el vocabulario</strong> y copia en tu cuaderno el mapa de palabras de abajo: para cada palabra marcada, escribe un sinónimo y, si lo tiene, un antónimo.</p>
+</div>
+<div class="texto-lectura" id="lectura">
+  <p>Cada otoño, millones de mariposas monarca <span class="w">emprenden</span> uno de los viajes más largos del mundo de los insectos. <span class="w">Parten</span> del sureste de Canadá y del noreste de los Estados Unidos y <span class="w">recorren</span> más de 4800 kilómetros hasta los bosques de oyamel del centro de México, en los estados de Michoacán y de México. Allí pasan el invierno agrupadas en los árboles, en <span class="w">reposo</span>.</p>
+  <p>La generación que migra es muy <span class="w">distinta</span> de las demás: mientras las mariposas del verano viven entre cinco y siete semanas, las que hacen el viaje pueden vivir hasta ocho meses. En primavera inician el regreso, pero ninguna mariposa completa sola el viaje de ida y vuelta: hacen falta cuatro o cinco generaciones para volver a Canadá.</p>
+  <p>Los científicos <span class="w">sostienen</span> que las monarcas se orientan por la posición del sol. También <span class="w">advierten</span> que su número ha <span class="w">disminuido</span> en las últimas décadas, en parte por la <span class="w">pérdida</span> de su hábitat. Por eso muchas personas siembran algodoncillo en sus jardines: es la única planta de la que se alimentan las orugas de la monarca.</p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar el texto</button>
+  <button type="button" class="btn btn-secundario" id="ver-voc" aria-pressed="false">Mostrar el vocabulario</button>
+</div>
+<details style="margin-top:10px"><summary>Ver el mapa de palabras</summary><div class="contenido-detalle">
+<table class="tabla">
+  <caption class="sr-solo">Mapa de palabras de la lectura</caption>
+  <thead><tr><th scope="col">Palabra</th><th scope="col">Sinónimo</th><th scope="col">Antónimo</th></tr></thead>
+  <tbody>
+    <tr><td>emprenden</td><td>comienzan, inician</td><td>terminan, concluyen</td></tr>
+    <tr><td>parten</td><td>salen</td><td>llegan</td></tr>
+    <tr><td>recorren</td><td>atraviesan, viajan</td><td>—</td></tr>
+    <tr><td>reposo</td><td>descanso, quietud</td><td>actividad, movimiento</td></tr>
+    <tr><td>distinta</td><td>diferente</td><td>igual, parecida</td></tr>
+    <tr><td>sostienen</td><td>afirman, defienden</td><td>niegan</td></tr>
+    <tr><td>advierten</td><td>alertan, avisan</td><td>—</td></tr>
+    <tr><td>disminuido</td><td>reducido, bajado</td><td>aumentado, crecido</td></tr>
+    <tr><td>pérdida</td><td>desaparición</td><td>recuperación</td></tr>
+  </tbody>
+</table>
+</div></details>
+<h3>Preguntas de vocabulario</h3>
+<div class="clasificador apilado" id="clasif-lectura"></div>
+<div class="puntaje" id="puntaje-lectura" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-7-precisa">
+<summary>7. Práctica: la palabra precisa <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<div class="clasificador" id="clasif-precisa"></div>
+<div class="puntaje" id="puntaje-precisa" role="status" aria-live="polite"></div>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> tomen una noticia corta de un periódico en español y busquen juntos los verbos que usa para contar lo que dijo cada persona (<em>dijo, afirmó, negó, admitió</em>…). ¿Qué piensa el periodista de cada uno?</div>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>8. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Tres matices.</strong> Escribe tres oraciones sobre tu trabajo o tu barrio con <em>pedir</em>, <em>solicitar</em> y <em>exigir</em>, de modo que cada una necesite ese verbo y no otro.</li>
+  <li><strong>Cuenta lo que dijo.</strong> Piensa en algo que te dijo alguien esta semana y cuéntalo tres veces, con <em>afirmó</em>, <em>admitió</em> y <em>sugirió</em>. Explica qué cambia.</li>
+  <li><strong>Inventa analogías.</strong> Completa con tus palabras: «<em>Pétalo</em> es a <em>flor</em> como ___ es a ___» · «<em>Lluvia</em> es a <em>inundación</em> como ___ es a ___» · «<em>Comprar</em> es a <em>vender</em> como ___ es a ___».</li>
+</ul>
+<details style="margin-top:6px"><summary>Ver respuestas posibles de las analogías</summary><div class="contenido-detalle">
+Parte y todo: <em>hoja</em> es a <em>árbol</em>, <em>rueda</em> es a <em>carro</em>. · Causa y efecto: <em>sequía</em> es a <em>escasez</em>, <em>fuego</em> es a <em>humo</em>. · Antónimos recíprocos: <em>prestar</em> es a <em>pedir prestado</em>, <em>enseñar</em> es a <em>aprender</em>.
+</div></details>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>9. Quiz de la lección <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>10. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Los sinónimos se parecen, pero cada uno tiene su matiz: de fuerza, de formalidad o de uso.</li>
+  <li>Los verbos para citar (<em>afirma, sugiere, admite, niega, advierte</em>) muestran cómo habló alguien y a veces lo que piensa el autor.</li>
+  <li>Hay antónimos complementarios, graduales y recíprocos; «no caro» no siempre es «barato».</li>
+  <li>Las analogías comparan dos pares de palabras con la misma relación.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Puedes explicar la diferencia entre <em>pedir</em> y <em>exigir</em>?</li>
+    <li>¿Qué revela un autor cuando escribe que alguien <em>admitió</em> algo?</li>
+    <li>¿Puedes completar «<em>Capítulo</em> es a <em>novela</em> como ___ es a ___»?</li>
+  </ul>
+</div>
+<div class="tip"><strong>🏁 Terminaste el Tema 2.</strong> En el próximo tema empieza el análisis de textos: el tema central, el resumen objetivo y las inferencias. <a href="https://zhemaria.github.io/clases_leng3/clase_3-1.html" style="color:var(--cp-oscuro);font-weight:700">Lección 3.1, primera del Tema 3</a>.</div>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 2 · Lección 2.3</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+clasificador('clasif-lectura','puntaje-lectura',[
+  {p:'En el texto, <em>emprenden</em> el viaje significa que…',ops:['lo comienzan','lo terminan','lo evitan'],c:0,n:'<em>Emprender</em> es comenzar algo grande o difícil.'},
+  {p:'¿Qué palabra del texto es un antónimo de <em>llegan</em>?',ops:['parten','recorren','sostienen'],c:0,n:'<em>Parten</em> (salen) es lo contrario de <em>llegan</em>.'},
+  {p:'Los científicos «sostienen» que se orientan por el sol. El verbo indica que…',ops:['lo afirman y lo defienden','lo dudan y lo cuestionan todavía','lo niegan con mucha firmeza'],c:0,n:'<em>Sostener</em> es afirmar algo y defenderlo.'},
+  {p:'Los científicos «advierten» que su número ha disminuido. ¿Qué añade el verbo?',ops:['Que es un peligro y hay que prestar atención','Que es un dato curioso pero sin ninguna importancia','Que los científicos todavía no están seguros de ello'],c:0,n:'<em>Advertir</em> es avisar de un peligro.'},
+  {p:'«Su número ha <em>disminuido</em>». ¿Qué sinónimo cambia menos el sentido?',ops:['se ha reducido','se ha desplomado','ha desaparecido'],c:0,n:'<em>Desplomarse</em> sería caer de golpe y mucho; <em>desaparecer</em>, dejar de existir. El texto no dice eso.'},
+  {p:'<em>Mariposa</em> es a <em>insecto</em> como <em>oyamel</em> es a…',ops:['árbol','bosque','México'],c:0,n:'Relación de ejemplo y categoría: la mariposa es un insecto y el oyamel es un árbol.'}
+],null,false);
+
+clasificador('clasif-precisa','puntaje-precisa',[
+  {p:'Para pedir una beca por escrito: «Le escribo para ___ una beca.»',ops:['solicitar','exigir','mendigar'],c:0,n:'<em>Solicitar</em> es pedir de manera formal.'},
+  {p:'«La empresa ___ haber contaminado el río; dice que no es responsable.»',ops:['niega','admite','sugiere'],c:0,n:'Dice que no es cierto: <em>niega</em>.'},
+  {p:'«Después de la investigación, el gerente ___ que hubo errores.»',ops:['admitió','prometió','advirtió'],c:0,n:'Aceptó algo que no le convenía: <em>admitió</em>.'},
+  {p:'«El meteorólogo ___ que viene una tormenta muy fuerte.»',ops:['advierte','admite','niega'],c:0,n:'Anuncia un peligro: <em>advierte</em>.'},
+  {p:'«La científica ___ los pájaros durante horas para estudiar su conducta.»',ops:['observa','vigila','ve'],c:0,n:'Mirar con atención para aprender: <em>observar</em>.'},
+  {p:'«El estudio ___ que podría haber una relación, pero falta investigar más.»',ops:['sugiere','afirma','demuestra'],c:0,n:'Lo propone con poca seguridad: <em>sugiere</em>.'}
+],null,false);
+
+(function(){
+  var t=document.getElementById('lectura'), v=document.getElementById('ver-voc');
+  document.getElementById('leer-lectura').addEventListener('click',function(){hablar(t.textContent.trim(),0.9);});
+  v.addEventListener('click',function(){var on=t.classList.toggle('ver-voc');v.setAttribute('aria-pressed',on?'true':'false');v.textContent=on?'Ocultar el vocabulario':'Mostrar el vocabulario';});
+})();
+
+iniciarQuiz([
+  {t:'¿Cuál es la diferencia entre <em>pedir</em> y <em>exigir</em>?',o:['Exigir es pedir con fuerza, como un derecho','Exigir es una forma más cortés y amable de pedir','No hay ninguna diferencia: significan lo mismo'],c:0,r:'<a href="#s-2-matiz">Sección 2</a>'},
+  {t:'¿Qué palabra es más adecuada en una carta formal: «Quisiera ___ información sobre el curso»?',o:['solicitar','exigir','agarrar'],c:0,r:'<a href="#s-2-matiz">Sección 2</a>'},
+  {t:'«El alcalde <strong>admitió</strong> que el proyecto costó más de lo previsto.» El verbo sugiere que el alcalde…',o:['reconoció algo que no le convenía','anunció algo de lo que estaba muy orgulloso','prometió algo que piensa hacer en el futuro'],c:0,r:'<a href="#s-3-citar">Sección 3</a>'},
+  {t:'¿Qué verbo muestra que alguien dice que algo <strong>no</strong> es cierto?',o:['niega','sostiene','advierte'],c:0,r:'<a href="#s-3-citar">Sección 3</a>'},
+  {t:'¿Qué verbo presenta una idea con <strong>menos seguridad</strong>?',o:['sugiere','afirma','sostiene'],c:0,r:'<a href="#s-3-citar">Sección 3</a>'},
+  {t:'<em>Vivo</em> y <em>muerto</em> son antónimos…',o:['complementarios: no hay punto medio','graduales: hay puntos intermedios','recíprocos: uno no existe sin el otro'],c:0,r:'<a href="#s-4-antonimos">Sección 4</a>'},
+  {t:'<em>Comprar</em> y <em>vender</em> son antónimos…',o:['recíprocos','complementarios','graduales'],c:0,r:'<a href="#s-4-antonimos">Sección 4</a>'},
+  {t:'Un texto dice que el plan «no es caro». ¿Qué se puede concluir con seguridad?',o:['Que no cuesta mucho, aunque no sea barato','Que es el plan más barato de todos los que hay','Que es totalmente gratis para todos los participantes'],c:0,r:'<a href="#s-4-antonimos">Sección 4: los antónimos graduales</a>'},
+  {t:'¿Qué relación hay entre <em>capítulo</em> y <em>novela</em>?',o:['Parte y todo','Causa y efecto','Antónimos'],c:0,r:'<a href="#s-5-relaciones">Sección 5</a>'},
+  {t:'Completa: «<em>Tijeras</em> es a <em>cortar</em> como <em>termómetro</em> es a ___.»',o:['medir','calentar','fiebre'],c:0,r:'<a href="#s-5-relaciones">Sección 5: analogías</a>'},
+  {t:'Completa: «<em>Sequía</em> es a <em>escasez</em> como <em>lluvia</em> es a ___.»',o:['inundación','nube','paraguas'],c:0,r:'<a href="#s-5-relaciones">Sección 5: causa y efecto</a>'},
+  {t:'¿Qué palabra es una categoría que incluye a <em>casa</em> y <em>apartamento</em>?',o:['vivienda','cocina','barrio'],c:0,r:'<a href="#s-5-relaciones">Sección 5</a>'}
+],{meta:10,
+   bien:'Ya eliges la palabra precisa y reconoces las relaciones entre palabras. ¡Terminaste el Tema 2!',
+   repaso:'Vuelve a las secciones 2 a 5 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>

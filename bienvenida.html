@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!-- Bienvenida · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bienvenida al Nivel 3 · Exploración del Análisis y la Argumentación</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+
+  /* Bienvenida */
+  .temas{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:14px 0}
+  .tema{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:12px 16px}
+  .tema h4{margin:0 0 4px;color:var(--cp-oscuro)}
+  .tema p{margin:0;font-size:.95rem}
+  .tema ul{margin:6px 0 0;padding-left:1.1em;font-size:.93rem}
+  .tema a{color:var(--cp-oscuro);font-weight:600}
+  .boton-grande{display:inline-block;background:var(--cp-oscuro);color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:10px;font-size:1.05rem}
+  .boton-grande:hover{background:var(--cp)}
+</style>
+</head>
+<body>
+<h1>Bienvenida al Nivel 3 · Exploración del Análisis y la Argumentación</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Antes de empezar · Unos 30 minutos</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 En esta página</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Conocerás lo que vas a aprender en el Nivel 3 y cómo te acerca al examen GED.</li>
+    <li>Sabrás cómo está organizada cada lección y qué hay de nuevo respecto al Nivel 2.</li>
+    <li>Comprobarás, con un repaso rápido, si tienes las bases del Nivel 2 para empezar con seguridad.</li>
+  </ul>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la página</h2>
+  <ol>
+    <li><a href="#s-1-nivel">¿Qué es el Nivel 3?</a></li>
+    <li><a href="#s-2-temas">Los ocho temas del nivel</a></li>
+    <li><a href="#s-3-lecciones">Cómo funciona cada lección</a></li>
+    <li><a href="#s-4-repaso">¿Estás listo? Repaso del Nivel 2</a></li>
+    <li><a href="#s-5-consejos">Consejos para estudiar por tu cuenta</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<details open id="s-1-nivel">
+<summary>1. ¿Qué es el Nivel 3? <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<p>En el Nivel 2 aprendiste a <strong>conectar</strong>: unir oraciones con conectores, encontrar la idea principal de un texto de varios párrafos, comparar dos textos y leer gráficas sencillas.</p>
+<p>El Nivel 3 se llama <strong>«Exploración del Análisis y la Argumentación»</strong> porque te pide un paso más: ya no basta con entender lo que el texto dice; ahora aprenderás a <strong>analizar</strong> cómo lo dice y por qué. Leerás entre líneas, citarás la evidencia que apoya tus respuestas, evaluarás si las razones de un autor convencen, juntarás la información de dos fuentes y escribirás textos que defienden una idea con hechos.</p>
+<div class="tip"><strong>🎓 ¿Y el GED?</strong> Casi todas las preguntas de lectura del examen GED piden una de estas cuatro cosas: hacer una inferencia, encontrar la evidencia, evaluar un argumento o comparar dos textos. El Nivel 3 trabaja las cuatro. La Respuesta Extendida (el ensayo del examen) se prepara en el Nivel 4, pero las herramientas para escribirla se aprenden aquí.</div>
+</div>
+</details>
+
+<details id="s-2-temas">
+<summary>2. Los ocho temas del nivel <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<p>El nivel tiene <strong>ocho temas</strong> con <strong>tres lecciones</strong> cada uno. Conviene seguirlos en orden: los dos primeros afinan la gramática y el vocabulario que vas a necesitar para analizar y escribir en los demás.</p>
+<div class="temas">
+  <div class="tema"><h4>Tema 1 · Gramática avanzada de la oración</h4><p>Relativos y conjunciones, tiempos compuestos y cómo corregir oraciones mal construidas.</p>
+    <ul><li><a href="https://zhemaria.github.io/clases_leng3/clase_1-1.html">1.1 · Pronombres relativos y conjunciones subordinantes</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_1-2.html">1.2 · Tiempos compuestos y la forma progresiva</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_1-3.html">1.3 · Fragmentos y oraciones corridas</a></li></ul></div>
+  <div class="tema"><h4>Tema 2 · Puntuación avanzada y vocabulario académico</h4><p>Comillas, cursiva y punto y coma; raíces griegas y latinas; la palabra precisa.</p>
+    <ul><li><a href="https://zhemaria.github.io/clases_leng3/clase_2-1.html">2.1 · Comillas, cursiva, dos puntos y punto y coma</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_2-2.html">2.2 · Raíces griegas y latinas</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_2-3.html">2.3 · Sinónimos, antónimos y relaciones</a></li></ul></div>
+  <div class="tema"><h4>Tema 3 · Comprensión inferencial y evidencia</h4><p>El tema central, el resumen objetivo, leer entre líneas y citar lo que lo prueba.</p>
+    <ul><li><a href="https://zhemaria.github.io/clases_leng3/clase_3-1.html">3.1 · Tema central y resumen objetivo</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_3-2.html">3.2 · Lo explícito y lo inferido</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_3-3.html">3.3 · Inferencias con evidencia</a></li></ul></div>
+  <div class="tema"><h4>Tema 4 · Estructura del texto y lenguaje literario</h4><p>Cómo se organiza un texto, el poema, el drama y la prosa, y el lenguaje figurado.</p>
+    <ul><li><a href="https://zhemaria.github.io/clases_leng3/clase_4-1.html">4.1 · Estructuras del texto</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_4-2.html">4.2 · Poema, drama y prosa</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_4-3.html">4.3 · Símiles, metáforas, modismos y refranes</a></li></ul></div>
+  <div class="tema"><h4>Tema 5 · Evaluar argumentos e integrar fuentes</h4><p>Razones y evidencias de un autor, dos textos sobre lo mismo y fuentes de historia.</p>
+    <ul><li><a href="https://zhemaria.github.io/clases_leng3/clase_5-1.html">5.1 · Razones y evidencias del autor</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_5-2.html">5.2 · Integrar dos textos</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_5-3.html">5.3 · Fuentes primarias y secundarias</a></li></ul></div>
+  <div class="tema"><h4>Tema 6 · Leer en las materias</h4><p>Gráficas complejas, datos dentro de un texto y procedimientos científicos.</p>
+    <ul><li><a href="https://zhemaria.github.io/clases_leng3/clase_6-1.html">6.1 · Gráficas complejas y tablas</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_6-2.html">6.2 · Hechos, juicios y especulaciones</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_6-3.html">6.3 · Procedimientos científicos</a></li></ul></div>
+  <div class="tema"><h4>Tema 7 · Escritura argumentada e informativa</h4><p>Tesis y transiciones, vocabulario de cada materia y tono objetivo.</p>
+    <ul><li><a href="https://zhemaria.github.io/clases_leng3/clase_7-1.html">7.1 · Texto argumentado</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_7-2.html">7.2 · Texto informativo con análisis</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_7-3.html">7.3 · Escribir en las materias</a></li></ul></div>
+  <div class="tema"><h4>Tema 8 · Investigación, oralidad y proyecto final</h4><p>Fuentes y paráfrasis, discusiones con normas, el proyecto final y la evaluación del nivel.</p>
+    <ul><li><a href="https://zhemaria.github.io/clases_leng3/clase_8-1.html">8.1 · Investigación corta</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_8-2.html">8.2 · Discusiones y comprensión auditiva</a></li>
+        <li><a href="https://zhemaria.github.io/clases_leng3/clase_8-3.html">8.3 · Proyecto final y evaluación</a></li></ul></div>
+</div>
+</div>
+</details>
+
+<details id="s-3-lecciones">
+<summary>3. Cómo funciona cada lección <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<p>Las lecciones tienen la misma organización que en el Nivel 2. Si ya la conoces, solo fíjate en el color: <strong>violeta</strong> es el color del Nivel 3.</p>
+<table class="tabla">
+  <caption class="sr-solo">Partes de una lección</caption>
+  <thead><tr><th scope="col">Parte</th><th scope="col">Para qué sirve</th></tr></thead>
+  <tbody>
+    <tr><td>🎯 Objetivos</td><td>Lo que sabrás hacer al terminar.</td></tr>
+    <tr><td>📑 Índice</td><td>Te lleva directo a cualquier sección. El botón «↑ Índice», abajo a la derecha, te devuelve a él.</td></tr>
+    <tr><td>Secciones en acordeón</td><td>La explicación, con ejemplos y ejercicios que se corrigen solos. Cada una indica los minutos que suele llevar.</td></tr>
+    <tr><td>🧩 Practica más</td><td>Tarjetas que abren el interactivo de la lección, con ejercicios nuevos cada vez que pulsas «Otro ejercicio».</td></tr>
+    <tr><td>📝 Tarea</td><td>Trabajo en tu cuaderno para afianzar lo aprendido.</td></tr>
+    <tr><td>✅ Quiz</td><td>Doce preguntas que puedes repetir; la meta es acertar al menos <strong>10 de 12</strong> antes de pasar a la lección siguiente.</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>🆕 Lo nuevo en el Nivel 3:</strong> los textos son más largos y muchas lecturas traen un botón que <strong>marca</strong> lo que estás estudiando (las cláusulas, los verbos, la evidencia). Úsalo después de leer, no antes: primero intenta encontrarlo tú, y luego comprueba.</div>
+</div>
+</details>
+
+<details id="s-4-repaso">
+<summary>4. ¿Estás listo? Repaso del Nivel 2 <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Repaso · 12 preguntas · no cuenta como nota</h4>
+  <p style="margin:0">Estas preguntas recogen lo esencial del Nivel 2. Si fallas alguna, verás debajo el enlace a la lección del Nivel 2 que explica ese punto. Si aciertas <strong>9 o más</strong>, estás listo para empezar.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-5-consejos">
+<summary>5. Consejos para estudiar por tu cuenta <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Ten un cuaderno solo para este nivel.</strong> Ahí van las tareas, las palabras nuevas y tus dudas. Al final será tu mejor material de repaso.</li>
+  <li><strong>Lee dos veces.</strong> La primera, para entender; la segunda, con la pregunta en mente. En el Nivel 3 casi todas las respuestas se encuentran en la segunda lectura.</li>
+  <li><strong>Pregúntate «¿dónde lo dice?».</strong> Cada vez que respondas algo sobre un texto, busca la frase que lo prueba. Ese hábito es la mitad del examen GED.</li>
+  <li><strong>Pon un horario.</strong> Media hora todos los días rinde más que tres horas un solo día.</li>
+  <li><strong>Repite los quizzes.</strong> Equivocarse es parte de aprender: lee la pregunta que fallaste, vuelve a la sección que la explica e inténtalo otra vez.</li>
+  <li><strong>Explícale a alguien.</strong> Contarle a alguien de tu casa lo que leíste, o por qué una respuesta es la correcta, es la mejor manera de comprobar que lo entendiste.</li>
+</ul>
+<p style="text-align:center;margin-top:20px"><a class="boton-grande" href="https://zhemaria.github.io/clases_leng3/clase_1-1.html">Empezar con la Lección 1.1 →</a></p>
+</div>
+</details>
+
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Bienvenida</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la página"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+(function(){
+  var N2='https://zhemaria.github.io/clases_leng2/';
+  function L(n,t){return '<a href="'+N2+'clase_'+n.replace('.','-')+'.html" target="_blank" rel="noopener noreferrer">Nivel 2 · Lección '+n+' · '+t+'</a>';}
+  iniciarQuiz([
+    {t:'¿En qué palabra hay un <strong>hiato</strong> (dos vocales en sílabas distintas)?',o:['día','cielo','auto'],c:0,r:L('1.1','Vocales, diptongos y sílabas complejas')},
+    {t:'En la palabra <em>deshacer</em>, ¿qué significa <em>des-</em>?',o:['Lo contrario','Otra vez','Antes de'],c:0,r:L('1.2','Prefijos y sufijos comunes')},
+    {t:'¿Qué tipo de oración es «Quería salir, pero llovía»?',o:['Compuesta','Simple','Compleja'],c:0,fijo:true,r:L('2.3','Oraciones simples, compuestas y complejas')},
+    {t:'¿Cuál oración está bien escrita?',o:['Me lavo las manos antes de comer.','Me lavo mis manos antes de comer.','Lavo a mí las manos antes de comer.'],c:0,r:L('2.2','Pronombres reflexivos y concordancia')},
+    {t:'¿Cómo empieza correctamente una carta formal en español?',o:['Estimada señora López:','Estimada señora López,','Estimada señora López;'],c:0,r:L('3.1','Mayúsculas, comas, dos puntos y raya')},
+    {t:'¿Cuál palabra está bien escrita?',o:['canción','cancion','cánción'],c:0,r:L('3.2','La tilde y la ortografía convencional')},
+    {t:'¿Qué frase es más adecuada para un correo a tu supervisora?',o:['Le escribo para pedirle un día libre.','Oye, ¿me das un día libre o qué?','Necesito un día libre, ¿va? Gracias.'],c:0,r:L('3.3','Registro formal e informal')},
+    {t:'Lee: «Caminar treinta minutos al día fortalece el corazón. También ayuda a dormir mejor y reduce el estrés.» ¿Cuál es la idea principal?',o:['Caminar trae varios beneficios a la salud.','El estrés impide dormir bien por la noche.','El corazón necesita treinta minutos de descanso.'],c:0,r:L('4.1','Idea principal y detalles de apoyo')},
+    {t:'«¡Compra hoy el cereal Sol y llévate otra caja gratis!» ¿Cuál es el propósito del autor?',o:['Persuadir','Informar','Entretener'],c:0,r:L('4.2','Estructura de la historia y propósito del autor')},
+    {t:'«La sopa estaba tan <em>insípida</em> que tuvimos que agregarle sal.» ¿Qué significa <em>insípida</em>?',o:['Sin sabor','Muy salada','Muy caliente'],c:0,r:L('5.2','Vocabulario por contexto')},
+    {t:'«Hoy no te puedo explicar nada: <em>estoy en las nubes</em>.» ¿Qué quiere decir?',o:['Estoy distraído','Estoy en un avión','Estoy muy feliz'],c:0,r:L('5.3','Literal frente a figurado; modismos')},
+    {t:'¿Cuál es una fuente <strong>primaria</strong>?',o:['Una carta escrita por un soldado en 1863','Un libro de historia escrito en el año 2010','Un artículo que resume la guerra civil'],c:0,r:L('6.2','Fuentes primarias y secundarias')}
+  ],{meta:9,
+     bien:'Tienes las bases del Nivel 2. ¡Adelante con la Lección 1.1!',
+     repaso:'Te conviene repasar antes de empezar: abre los enlaces que aparecen debajo de cada pregunta fallada y vuelve a intentarlo.'});
+})();
+</script>
+</body>
+</html>

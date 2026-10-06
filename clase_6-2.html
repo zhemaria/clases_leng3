@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<!-- Lección 6.2 · Artes del Lenguaje Nivel 3 · GEDparaHispanos
+     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+     Licencia CC BY-NC-SA 4.0 · https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección 6.2 · Texto con datos; hechos, juicios y especulaciones</title>
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root{
+    --cp:#6d28d9;--cp-claro:#ede9fe;--cp-oscuro:#4c1d95;
+    --acento:#ff8c42;--texto:#1a2332;--fondo:#fafbfc;
+    --gris:#555;--gris-claro:#eef1f4;
+    --dip:#1565c0;--dip-claro:#e3f2fd;
+    --hia:#ad1457;--hia-claro:#fce4ec;
+    --grp:#5c3900;--grp-claro:#fff3cd;
+    --exito:#2e7d32;--error:#c62828;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins','Segoe UI',Arial,sans-serif;line-height:1.7;color:var(--texto);background:var(--fondo);max-width:960px;margin:0 auto;padding:24px 18px}
+  h1{color:var(--cp-oscuro);border-bottom:4px solid var(--cp);padding-bottom:14px;font-size:1.85rem;margin-bottom:8px}
+  .subtitulo{color:var(--gris);font-style:italic;margin-top:0;margin-bottom:24px;font-size:1.05rem}
+  h2{color:var(--cp-oscuro);border-left:6px solid var(--cp);padding-left:14px;margin-top:32px;font-size:1.4rem}
+  h3{color:var(--cp);margin-top:24px;font-size:1.15rem}
+  .caja-objetivos{background:var(--cp-claro);border-left:6px solid var(--cp);padding:18px 22px;border-radius:8px;margin:18px 0 28px 0}
+  .caja-objetivos h2{margin-top:0;color:var(--cp-oscuro);border-left:none;padding-left:0;font-size:1.2rem}
+  .caja-tiempo{display:inline-block;background:var(--acento);color:#1a2332;padding:4px 12px;border-radius:14px;font-size:0.85rem;font-weight:600;margin-left:10px;vertical-align:middle}
+  details{background:#fff;border:1px solid #d6dde4;border-radius:10px;margin:14px 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  details[open]{border-color:var(--cp);box-shadow:0 3px 10px rgba(109,40,217,0.12)}
+  summary{cursor:pointer;padding:16px 20px;font-weight:600;color:var(--cp-oscuro);background:var(--gris-claro);list-style:none;user-select:none;font-size:1.05rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--cp);transition:transform 0.25s;font-size:0.85rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  details[open] summary{background:var(--cp-claro);border-bottom:2px solid var(--cp)}
+  .contenido-detalle{padding:18px 22px}
+  .tip{background:#fffbe6;border-left:5px solid #f4c430;padding:12px 18px;border-radius:6px;margin:14px 0}
+  .tip strong{color:#6b5400}
+  .botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .btn{padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.95rem;transition:background 0.2s}
+  .btn-primario{background:var(--cp);color:#fff}
+  .btn-primario:hover{background:var(--cp-oscuro)}
+  .btn-secundario{background:var(--gris-claro);color:var(--texto)}
+  .btn-secundario:hover{background:#d6dde4}
+  .btn[aria-pressed="true"]{background:var(--cp-oscuro);color:#fff}
+  ul.lista-bonita{list-style:none;padding-left:0}
+  ul.lista-bonita li{padding:8px 0 8px 30px;position:relative}
+  ul.lista-bonita li::before{content:'➜';position:absolute;left:0;color:var(--cp);font-weight:700}
+  .palabra-clave{background:linear-gradient(transparent 60%,#ffeb3b 60%);padding:0 4px;font-weight:600}
+  .ejemplo{font-family:Georgia,serif;font-size:1.15rem}
+  .sil{font-family:Georgia,serif;letter-spacing:.5px;color:var(--cp-oscuro);font-weight:700}
+  table.tabla{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+  table.tabla th{background:var(--cp-oscuro);color:#fff;padding:10px 12px;text-align:left}
+  table.tabla td{padding:10px 12px;border-bottom:1px solid var(--gris-claro);vertical-align:top}
+  table.tabla tr:last-child td{border-bottom:none}
+  .actividad{background:#fff;border:2px solid var(--acento);border-radius:10px;padding:16px 20px;margin:14px 0}
+  .actividad h4{color:#8a3d0c;margin-top:0}
+  .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:6px}
+  .badge-lectura{background:#e3f2fd;color:#0d47a1}
+  .badge-actividad{background:#f3e5f5;color:#6a1b9a}
+  /* Clasificadores */
+  .clasificador{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px 18px;margin:18px 0}
+  .item{border:2px solid var(--gris-claro);border-radius:8px;padding:10px 14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .item-pal{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--cp-oscuro);display:flex;align-items:center;gap:10px}
+  .item-ops{display:flex;gap:8px;flex-wrap:wrap}
+  .item-fb{flex-basis:100%;font-size:.95rem;min-height:0}
+  .item-fb:empty{display:none}
+  .btn-op{padding:7px 14px;border:2px solid var(--cp);background:#fff;color:var(--cp-oscuro);border-radius:8px;cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem}
+  .btn-op:hover:not(:disabled){background:var(--cp-claro)}
+  .btn-op.correcta{background:#d4edda;border-color:var(--exito);color:#155724}
+  .btn-op.incorrecta{background:#f8d7da;border-color:var(--error);color:#721c24}
+  .btn-op:disabled{cursor:default}
+  .oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:3px 10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+  .puntaje{text-align:center;margin-top:12px;font-weight:600;color:var(--cp-oscuro)}
+  /* Lectura con marcas */
+  .texto-lectura{background:#fff;border:2px solid var(--gris-claro);border-radius:8px;padding:18px 22px;margin:14px 0;font-family:Georgia,serif;font-size:1.12rem;line-height:2.1}
+  .texto-lectura p{margin:0 0 10px}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem;margin:8px 0}
+  .leyenda span{display:inline-flex;align-items:center;gap:6px}
+  .mk{width:14px;height:14px;border-radius:3px;display:inline-block}
+  .ver-dip .dip{background:var(--dip-claro);color:var(--dip);font-weight:700;box-shadow:0 -3px 0 var(--dip) inset;border-radius:3px}
+  .ver-dip .hia{background:var(--hia-claro);color:var(--hia);font-weight:700;box-shadow:0 -3px 0 var(--hia) inset;border-radius:3px}
+  .ver-dip .muda{color:#555;text-decoration:underline dotted 2px}
+  .ver-grp .grp{background:var(--grp-claro);color:var(--grp);font-weight:700;box-shadow:0 -3px 0 var(--grp) inset;border-radius:3px}
+  /* Índice */
+  .indice{background:#fff;border:1px solid #d6dde4;border-left:6px solid var(--cp);border-radius:10px;padding:16px 20px;margin:22px 0}
+  .indice h2{font-size:1.1rem;margin:0 0 8px;border:none;padding:0}
+  .indice ol{margin:0;padding-left:1.4em}
+  .indice li{margin:4px 0}
+  .indice a{color:var(--cp-oscuro)}
+  .abrir-cerrar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .volver-indice{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--cp-oscuro);color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:.92rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+  .volver-indice:hover{background:var(--cp);color:#fff}
+  a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #b35316;outline-offset:2px}
+  .sr-solo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .enlace-practica{display:block;background:#fff;border:2px solid var(--cp);border-radius:10px;padding:14px 18px;margin:16px 0;text-decoration:none;color:var(--cp-oscuro);font-weight:600}
+  .enlace-practica:hover{background:var(--cp-claro)}
+  .enlace-practica span{display:block;font-weight:400;color:var(--texto);font-size:.95rem}
+  .aviso-voz{font-size:.9rem;color:#5c3900;background:#fff3cd;border-radius:6px;padding:6px 10px;display:none}
+  .aviso-voz.visible{display:block}
+  /* Quiz */
+  .qz-intro{background:var(--cp-claro);border-radius:10px;padding:14px 18px;margin:0 0 14px}
+  .qz-intro h4{margin:0 0 6px;color:var(--cp-oscuro)}
+  .qz-preg{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:14px 18px;margin:12px 0}
+  .qz-enun{font-weight:600;margin:0 0 10px}
+  .qz-num{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:12px;padding:1px 10px;font-size:.8rem;margin-right:8px}
+  .qz-extra{display:block;text-align:center;margin:6px 0 10px;font-weight:400}
+  .qz-extra .qz-grande{font-family:Georgia,serif;font-size:1.3rem}
+  .qz-oir{background:var(--cp-claro);border:2px solid var(--cp);color:var(--cp-oscuro);border-radius:8px;padding:6px 14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .qz-ops{display:flex;flex-direction:column;gap:8px}
+  .qz-op{text-align:left;background:#fff;border:2px solid #c9d2db;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:1rem;cursor:pointer;color:var(--texto)}
+  .qz-op:hover:not(:disabled){border-color:var(--cp)}
+  .qz-op.elegida{background:var(--cp-claro);border-color:var(--cp-oscuro);color:var(--cp-oscuro);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--cp)}
+  .qz-op.correcta{background:#d4edda;border-color:#2e7d32;color:#155724}
+  .qz-op.correcta::before{content:'✓ '}
+  .qz-op.incorrecta{background:#f8d7da;border-color:#c62828;color:#721c24}
+  .qz-op.incorrecta::before{content:'✗ '}
+  .qz-op:disabled{cursor:default}
+  .qz-resultado{display:none;margin:16px 0;padding:16px;border-radius:10px;text-align:center;font-weight:600}
+  .qz-resultado.visible{display:block}
+  footer.pie{margin-top:40px;padding-top:18px;border-top:2px solid var(--gris-claro);text-align:center;color:#555;font-size:.9rem}
+  footer.pie p{margin:4px 0}
+  footer.pie a{color:var(--cp-oscuro)}
+  @media print{.indice,.volver-indice,.abrir-cerrar{display:none}}
+  @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+
+  .qz-repaso{margin:10px 0 0;padding:8px 12px;background:#fff3cd;border-radius:6px;color:#3d2600;font-size:.95rem}
+  .qz-repaso a{color:#4c1d95;font-weight:700}
+  /* ── Comunes desde el Tema 4 ── */
+  .item-ops{flex-wrap:wrap}
+  .apilado .item{flex-direction:column;align-items:stretch}
+  .apilado .item-ops{flex-direction:column}
+  .apilado .btn-op{text-align:left;font-weight:400}
+  .apilado .item-pal{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;color:#1a2332;font-weight:600}
+  .pasaje{display:block;background:#fff8ee;border-left:5px solid var(--acento);border-radius:6px;padding:10px 14px;margin:8px 0;font-family:Georgia,serif;font-weight:400;line-height:1.75}
+  .pasaje p{margin:0 0 6px}
+  .num-p{display:inline-block;background:var(--cp-oscuro);color:#fff;border-radius:50%;width:1.6em;height:1.6em;text-align:center;line-height:1.6em;font-size:.8rem;font-family:'Segoe UI',Arial,sans-serif;margin-right:6px;vertical-align:middle}
+  .idea{background:#e3f2fd;color:#0d3c78;font-weight:700;box-shadow:0 -3px 0 #1565c0 inset;border-radius:3px}
+  .oculta-idea .idea{background:none;color:inherit;font-weight:inherit;box-shadow:none}
+  /* Taller de escritura (Tema 7) */
+  .taller{background:#fff;border:2px solid var(--cp);border-radius:12px;padding:14px;margin:14px 0}
+  .tl-etq{display:block;font-weight:700;color:var(--cp-oscuro);margin-bottom:6px}
+  .tl-txt{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;line-height:1.7;padding:10px 12px;border:2px solid #9aa9b7;border-radius:8px;resize:vertical;min-height:180px}
+  .tl-txt:focus{outline:3px solid var(--cp);outline-offset:1px;border-color:var(--cp-oscuro)}
+  .tl-cuenta{font-size:.92rem;color:#333;margin:6px 0}
+  .tl-conect{font-size:.95rem;margin:4px 0 8px}
+  .tl-chip{display:inline-block;background:var(--cp-claro,#ede9fe);color:var(--cp-oscuro);border:1px solid var(--cp);border-radius:12px;padding:1px 10px;margin:2px 2px;font-weight:700}
+  .tl-aviso{min-height:1.4em;font-weight:700;color:var(--cp-oscuro)}
+  .tl-lista{border:2px dashed var(--cp);border-radius:10px;padding:8px 14px;margin-top:10px}
+  .tl-lista legend{font-weight:700;color:var(--cp-oscuro);padding:0 6px}
+  .tl-lista label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .tl-lista input{width:22px;height:22px;flex-shrink:0;margin-top:2px;accent-color:var(--cp-oscuro)}
+  .tl-listo{font-weight:700;color:var(--cp-oscuro);margin:6px 0 0}
+  .rubrica{font-size:.92rem}
+  .rubrica td,.rubrica th{vertical-align:top}
+  .marca{border-radius:3px;padding:0 2px;font-weight:700}
+  .m-postura{background:#e3f2fd;color:#0d3c78}
+  .m-razon{background:#fff3e0;color:#7a3a00}
+  .m-conector{background:#ede9fe;color:#4c1d95;text-decoration:underline}
+  .m-conclusion{background:#f3e5f5;color:#5a1a6b}
+  .leyenda-m{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;margin:6px 0}
+  .marca::before{content:attr(data-et);font-size:.68em;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px;vertical-align:super}
+  .oculta-marcas .marca{background:none;color:inherit;font-weight:inherit;text-decoration:none;padding:0}
+  .oculta-marcas .marca::before{content:none}
+  @media(max-width:640px){
+    .rubrica thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .rubrica,.rubrica tbody,.rubrica tr,.rubrica th,.rubrica td{display:block;width:auto}
+    .rubrica tr{border:2px solid var(--cp);border-radius:10px;margin:0 0 10px;overflow:hidden}
+    .rubrica tbody th{background:var(--cp-oscuro);color:#fff;border:none}
+    .rubrica td{border:none;border-top:1px solid #d5dde3}
+    .rubrica td::before{content:attr(data-et);display:block;font-weight:700;color:var(--cp-oscuro)}
+  }
+
+  .vb{color:#1565c0;font-weight:700;border-bottom:3px solid #1565c0}
+  .cx{background:#fff3cd;color:#5c3900;font-weight:700;padding:0 4px;border-radius:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.dos{grid-template-columns:1fr}}
+  .dos .texto-lectura{margin:6px 0}
+  .ver-cx .cxm{background:#fff3cd;color:#5c3900;font-weight:700;box-shadow:0 -3px 0 #8a5a00 inset;border-radius:3px}
+  figure.graf{background:#fff;border:2px solid var(--gris-claro);border-radius:10px;padding:12px 14px;margin:14px 0;text-align:center}
+  figure.graf figcaption{font-weight:700;color:var(--cp-oscuro);margin-bottom:6px;text-align:left}
+  figure.graf .fuente{font-size:.85rem;color:#555;text-align:left;margin:4px 0 0}
+  .ver-datos{text-align:left;margin-top:6px}
+  .ver-datos summary{padding:8px 12px;font-size:.95rem}
+  .mini{border-collapse:collapse;margin:6px 0;font-size:.95rem;font-weight:400}
+  .mini th,.mini td{border:1px solid #9aa9b7;padding:4px 10px}
+  .mini th{background:#4c1d95;color:#fff}
+  .leyenda-txt{font-size:.92rem;text-align:left;margin:4px 0 0}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .tabla-ancha{overflow-x:auto}
+  .enun figure.graf{margin:8px 0}
+  /* ── Lección 6.2: tipos de enunciado (color + subrayado distinto + etiqueta escrita) ── */
+  .m-he{background:#e3f2fd;color:#0d3c78;border-bottom:3px solid #0d3c78}
+  .m-ju{background:#ede9fe;color:#4c1d95;border-bottom:3px dashed #4c1d95}
+  .m-es{background:#fff3e0;color:#7a3a00;border-bottom:3px dotted #7a3a00}
+  .etq{font-weight:700;font-size:.85em}
+</style>
+</head>
+<body>
+<h1>Lección 6.2 · Texto con datos; hechos, juicios y especulaciones</h1>
+<p class="subtitulo">Artes del Lenguaje · Nivel 3 · Tema 6: Leer en las materias: datos, procedimientos y multimedia · Unas 2 horas, a tu ritmo</p>
+
+<div class="caja-objetivos">
+  <h2>🎯 Objetivos de la lección</h2>
+  <ul class="lista-bonita" style="margin:0">
+    <li>Leer un texto que trae una <strong>gráfica o una tabla</strong> y <strong>cotejar</strong> lo que dice el texto con lo que muestran los datos.</li>
+    <li>Distinguir en un texto los <strong>hechos</strong> comprobables, los <strong>juicios</strong> del autor y las <strong>especulaciones</strong>.</li>
+    <li>Elegir la conclusión que los datos <strong>sí respaldan</strong>.</li>
+  </ul>
+  <p style="margin:8px 0 0;font-size:.92rem">Estándares: RST.6-8.7 · RST.6-8.8 · RH.6-8.8</p>
+</div>
+
+<nav class="indice" id="indice" aria-labelledby="indice-titulo">
+  <h2 id="indice-titulo">Contenido de la lección</h2>
+  <ol>
+    <li><a href="#s-1-texto-datos">El texto y sus datos</a></li>
+    <li><a href="#s-2-lectura">Lectura: «Lo que vale un diploma»</a></li>
+    <li><a href="#s-3-cotejar">Cotejar el texto con la gráfica</a></li>
+    <li><a href="#s-4-hji">Hecho, juicio o especulación</a></li>
+    <li><a href="#s-5-respaldo">La conclusión que respaldan los datos</a></li>
+    <li><a href="#s-tarea">Tarea</a></li>
+    <li><a href="#s-quiz">Quiz de la lección</a></li>
+    <li><a href="#s-cierre">Cierre</a></li>
+  </ol>
+  <div class="abrir-cerrar">
+    <button type="button" class="btn btn-secundario" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn btn-secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+</nav>
+
+<h2>📚 Para empezar</h2>
+<p>Un artículo dice: «Con el GED ganarás mucho más». ¿Es un dato, una opinión o una predicción? ¿Y cuánto es «mucho más»? Los buenos lectores no se quedan con la frase: van a la gráfica, buscan el número y deciden si el texto dice la verdad, si exagera o si adivina. En esta lección vas a leer un artículo sobre algo que te toca de cerca, lo que vale un diploma, y vas a separar lo que se puede comprobar de lo que el autor piensa o imagina.</p>
+<p class="aviso-voz" id="aviso-voz" role="status">Tu navegador no tiene una voz en español disponible, así que los botones 🔊 no sonarán.</p>
+
+<details open id="s-1-texto-datos">
+<summary>1. El texto y sus datos <span class="caja-tiempo">10 min</span></summary>
+<div class="contenido-detalle">
+<p>Los textos de ciencias, de estudios sociales y de los periódicos muchas veces dicen lo mismo <strong>dos veces</strong>: una en palabras y otra en una gráfica o una tabla. Cada forma tiene su ventaja:</p>
+<table class="tabla">
+  <caption class="sr-solo">Qué aporta el texto y qué aporta la gráfica</caption>
+  <thead><tr><th scope="col">El texto…</th><th scope="col">La gráfica o la tabla…</th></tr></thead>
+  <tbody>
+    <tr><td>explica, da el contexto y dice por qué importa.</td><td>muestra todos los números juntos para compararlos de un vistazo.</td></tr>
+    <tr><td>elige unos pocos datos y los destaca.</td><td>enseña también los datos que el texto no menciona.</td></tr>
+    <tr><td>puede redondear, exagerar o equivocarse.</td><td>permite comprobar lo que dice el texto.</td></tr>
+  </tbody>
+</table>
+<p><span class="palabra-clave">Cotejar</span> es leer el texto y la gráfica juntos y comprobar que dicen lo mismo. En el GED hay preguntas como: «¿Qué información de la gráfica apoya la afirmación del párrafo 2?» o «¿Qué dato del texto NO aparece en la gráfica?».</p>
+</div>
+</details>
+
+<details id="s-2-lectura">
+<summary>2. Lectura: «Lo que vale un diploma» <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<div class="actividad">
+  <h4><span class="badge badge-lectura">Lectura</span> Individual · texto con datos</h4>
+  <p style="margin:0">Lee el artículo y mira la gráfica y la tabla. Cada vez que el texto dé un número, búscalo en los datos.</p>
+</div>
+<div class="texto-lectura" id="lectura">
+  <h3 style="margin-top:0">Lo que vale un diploma</h3>
+  <p><span class="num-p" aria-hidden="true">1</span>Cada año, miles de adultos en Estados Unidos vuelven a estudiar para obtener su diploma de secundaria o el GED. ¿Vale la pena el esfuerzo? Los números de la Oficina de Estadísticas Laborales dan una pista.</p>
+  <p><span class="num-p" aria-hidden="true">2</span>En 2024, los trabajadores a tiempo completo que no terminaron la secundaria ganaban una mediana de 738 dólares por semana. Los que tenían el diploma de secundaria o su equivalente, como el GED, ganaban una mediana de 930 dólares: 192 dólares más por semana, casi 10 000 dólares más al año.</p>
+  <p><span class="num-p" aria-hidden="true">3</span>La diferencia también se ve en el empleo. Ese mismo año, la tasa de desempleo de los adultos sin diploma fue de 6.2 %, frente a 4.2 % entre los que sí lo tenían. Y la escalera sigue: con un título de asociado, la mediana subía a 1099 dólares por semana.</p>
+  <p><span class="num-p" aria-hidden="true">4</span>En mi opinión, obtener el GED es una de las mejores inversiones que puede hacer un adulto. Es una decisión inteligente, sobre todo para quien ya trabaja y quiere un puesto mejor.</p>
+  <p><span class="num-p" aria-hidden="true">5</span>Probablemente, en los próximos años habrá cada vez menos empleos para quienes no tienen diploma. Si eso pasa, la diferencia de salarios podría crecer todavía más.</p>
+  <p style="font-size:.9rem;margin-bottom:0"><em>Texto escrito para esta lección con datos reales de la Oficina de Estadísticas Laborales de los Estados Unidos (BLS), promedios de 2024.</em></p>
+</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="leer-lectura">🔊 Escuchar el artículo</button>
+</div>
+<figure class="graf" id="fig-salario">
+  <figcaption>Ingreso semanal (mediana) de los trabajadores a tiempo completo de 25 años o más, según sus estudios, 2024</figcaption>
+  <div id="graf-salario"></div>
+  <p class="fuente">Fuente: Oficina de Estadísticas Laborales de los Estados Unidos (BLS), Encuesta de Población Actual, 2024.</p>
+</figure>
+<table class="tabla" id="tabla-desempleo">
+  <caption>Tasa de desempleo de los adultos de 25 años o más, según sus estudios, 2024</caption>
+  <thead><tr><th scope="col">Nivel de estudios</th><th scope="col">Tasa de desempleo</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Sin diploma de secundaria</th><td>6.2 %</td></tr>
+    <tr><th scope="row">Diploma de secundaria o GED</th><td>4.2 %</td></tr>
+    <tr><th scope="row">Título de asociado</th><td>2.8 %</td></tr>
+    <tr><th scope="row">Licenciatura</th><td>2.5 %</td></tr>
+  </tbody>
+</table>
+<p class="leyenda-txt">Fuente: BLS, 2024. La tasa de desempleo es el porcentaje de las personas que buscan trabajo y no lo encuentran.</p>
+<div class="tip"><strong>💡 ¿Qué es la mediana?</strong> Si pones en fila los salarios de todos, de menor a mayor, la mediana es el que queda en el medio: la mitad gana más y la mitad gana menos. Se usa en lugar del promedio para que unos pocos salarios muy altos no engañen.</div>
+</div>
+</details>
+
+<details id="s-3-cotejar">
+<summary>3. Cotejar el texto con la gráfica <span class="caja-tiempo">20 min</span></summary>
+<div class="contenido-detalle">
+<p>Para cotejar, haz tres preguntas:</p>
+<ol class="lista-bonita">
+  <li><strong>¿Está el dato?</strong> Busca en la gráfica o en la tabla el número que da el texto.</li>
+  <li><strong>¿Coincide?</strong> Comprueba que es el mismo número, del mismo grupo y del mismo año.</li>
+  <li><strong>¿Las cuentas salen?</strong> Si el texto calcula algo («192 dólares más»), haz la cuenta: 930 − 738 = 192. Y 192 × 52 semanas = 9984: «casi 10 000» es correcto.</li>
+</ol>
+<div class="clasificador apilado" id="clasif-coteja"></div>
+<div class="puntaje" id="puntaje-coteja" role="status" aria-live="polite"></div>
+<div class="tip"><strong>⚠️ Lo que el texto no dice:</strong> la gráfica también muestra el ingreso con licenciatura (1543 dólares por semana), pero el artículo no lo menciona. Un texto <strong>elige</strong> sus datos. Por eso conviene mirar siempre la gráfica completa.</div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-2.html#coteja" target="_blank" rel="noopener noreferrer">🔍 Practica más: coteja el texto con los datos
+  <span>Frases que citan una gráfica o una tabla: decides si coinciden o no. Se abre en una pestaña nueva.</span></a>
+</div>
+</details>
+
+<details id="s-4-hji">
+<summary>4. Hecho, juicio o especulación <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<p>Un buen texto informativo mezcla tres clases de enunciados. Saber cuál es cuál te dice <strong>cuánto puedes confiar</strong> en cada uno.</p>
+<table class="tabla">
+  <caption class="sr-solo">Hecho, juicio y especulación: qué son y cómo reconocerlos</caption>
+  <thead><tr><th scope="col">Tipo</th><th scope="col">Qué es</th><th scope="col">Pistas</th><th scope="col">Ejemplo del artículo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Hecho</strong></td><td>Se puede comprobar con datos, documentos o medidas.</td><td>Cifras, fechas, lugares, resultados medidos.</td><td>«La tasa de desempleo de los adultos sin diploma fue de 6.2 %.»</td></tr>
+    <tr><td><strong>Juicio</strong></td><td>Lo que el autor piensa o valora. Puede estar bien razonado, pero no se puede comprobar.</td><td><em>mejor, peor, importante, inteligente, debería, vale la pena, en mi opinión</em></td><td>«Es una decisión inteligente.»</td></tr>
+    <tr><td><strong>Especulación</strong></td><td>Lo que el autor cree que pasará o podría pasar. Todavía no se puede comprobar.</td><td><em>probablemente, quizá, podría, tal vez, en el futuro, si…</em></td><td>«La diferencia de salarios podría crecer todavía más.»</td></tr>
+  </tbody>
+</table>
+<div class="tip"><strong>💡 Dos aclaraciones importantes:</strong><br>• Un hecho es algo que <strong>se puede comprobar</strong>, aunque resulte falso. «El GED tiene diez materias» se presenta como hecho; al comprobarlo, vemos que es falso (tiene cuatro).<br>• Un juicio no es lo mismo que una mentira. Un <strong>juicio razonado</strong> se apoya en hechos: «obtener el GED vale la pena» se apoya en los datos de salario y desempleo. Sigue siendo un juicio, pero uno bien fundamentado.</div>
+<div class="botones" style="justify-content:flex-start">
+  <button type="button" class="btn btn-secundario" id="ver-tipos" aria-pressed="false">Marcar los tipos en el artículo</button>
+</div>
+<div class="texto-lectura" id="lectura-marcada" hidden>
+  <p><span class="num-p" aria-hidden="true">2</span><span class="m-he">En 2024, los trabajadores a tiempo completo que no terminaron la secundaria ganaban una mediana de 738 dólares por semana.<span class="etq"> [hecho]</span></span> <span class="m-he">Los que tenían el diploma de secundaria o su equivalente ganaban una mediana de 930 dólares.<span class="etq"> [hecho]</span></span></p>
+  <p><span class="num-p" aria-hidden="true">4</span><span class="m-ju">En mi opinión, obtener el GED es una de las mejores inversiones que puede hacer un adulto.<span class="etq"> [juicio]</span></span> <span class="m-ju">Es una decisión inteligente.<span class="etq"> [juicio]</span></span></p>
+  <p><span class="num-p" aria-hidden="true">5</span><span class="m-es">Probablemente, en los próximos años habrá cada vez menos empleos para quienes no tienen diploma.<span class="etq"> [especulación]</span></span> <span class="m-es">Si eso pasa, la diferencia de salarios podría crecer todavía más.<span class="etq"> [especulación]</span></span></p>
+</div>
+<div class="clasificador" id="clasif-hji"></div>
+<div class="puntaje" id="puntaje-hji" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-2.html#hecho-juicio" target="_blank" rel="noopener noreferrer">⚖️ Practica más: ¿hecho, juicio o especulación?
+  <span>Enunciados de textos de ciencias, salud y comunidad para clasificar. Se abre en una pestaña nueva.</span></a>
+<div class="tip"><strong>👨‍👩‍👧 Si tienes con quién practicar:</strong> «¿Hecho, juicio o especulación?». Lean juntos una noticia corta. Cada uno subraya un hecho, un juicio y una especulación, y explica al otro qué pista lo delató.</div>
+</div>
+</details>
+
+<details id="s-5-respaldo">
+<summary>5. La conclusión que respaldan los datos <span class="caja-tiempo">15 min</span></summary>
+<div class="contenido-detalle">
+<p>Una conclusión está <strong>respaldada</strong> cuando los datos la muestran directamente. Con los datos del artículo, por ejemplo:</p>
+<ul class="lista-bonita">
+  <li>✔️ <strong>Respaldada:</strong> «En 2024, los adultos con diploma ganaban más y tenían menos desempleo que los adultos sin diploma.»</li>
+  <li>✖️ <strong>No respaldada:</strong> «Quien obtenga el GED ganará 192 dólares más por semana.» La mediana describe a un grupo, no promete nada a cada persona.</li>
+  <li>✖️ <strong>No respaldada:</strong> «El diploma es la única razón de que ganen más.» Los datos muestran que las dos cosas van juntas; no prueban que el diploma sea la única causa (también influyen la experiencia, el oficio, la ciudad…).</li>
+</ul>
+<div class="clasificador apilado" id="clasif-respaldo"></div>
+<div class="puntaje" id="puntaje-respaldo" role="status" aria-live="polite"></div>
+<a class="enlace-practica" href="https://zhemaria.github.io/gramatica/n3-l6-2.html#respaldo" target="_blank" rel="noopener noreferrer">✅ Practica más: ¿qué respaldan los datos?
+  <span>Datos breves con varias conclusiones: eliges la que se puede comprobar.</span></a>
+</div>
+</details>
+
+<details id="s-tarea">
+<summary>6. Tarea <span class="caja-tiempo">30 min</span></summary>
+<div class="contenido-detalle">
+<ul class="lista-bonita">
+  <li><strong>Tres enunciados tuyos.</strong> Escribe sobre tu propia meta de estudio un hecho, un juicio y una especulación. Marca cada uno.</li>
+  <li><strong>Coteja una noticia.</strong> Busca una noticia con una gráfica o una tabla. Copia una frase del texto que dé un número y comprueba si coincide con la gráfica.</li>
+  <li><strong>Tu juicio razonado.</strong> ¿Vale la pena obtener el GED? Escribe un párrafo con tu juicio y apóyalo con dos hechos de la lectura.</li>
+</ul>
+</div>
+</details>
+
+<details id="s-quiz">
+<summary>7. Quiz de la lección <span class="caja-tiempo">25 min</span></summary>
+<div class="contenido-detalle">
+<div class="qz-intro">
+  <h4>✅ Quiz · 12 preguntas · puedes repetirlo las veces que quieras</h4>
+  <p style="margin:0">Varias preguntas se refieren al artículo, la gráfica y la tabla de la sección 2. Elige una respuesta en cada pregunta y, al final, pulsa <strong>Ver mi resultado</strong>. La meta es acertar al menos <strong>10 de 12</strong>.</p>
+</div>
+<div id="qz-cuerpo"></div>
+<div class="botones">
+  <button type="button" class="btn btn-primario" id="qz-calificar">Ver mi resultado</button>
+  <button type="button" class="btn btn-secundario" id="qz-reintentar" style="display:none">Intentar de nuevo</button>
+</div>
+<div class="qz-resultado" id="qz-resultado" role="status" aria-live="polite"></div>
+</div>
+</details>
+
+<details id="s-cierre">
+<summary>8. Cierre <span class="caja-tiempo">5 min</span></summary>
+<div class="contenido-detalle">
+<h3>Lo que aprendiste en esta lección</h3>
+<ul class="lista-bonita">
+  <li>Cotejar es comprobar que el texto y la gráfica dicen lo mismo, y hacer las cuentas.</li>
+  <li>Un hecho se puede comprobar; un juicio dice lo que piensa el autor; una especulación dice lo que podría pasar.</li>
+  <li>Un juicio razonado se apoya en hechos, pero sigue siendo un juicio.</li>
+  <li>Una conclusión respaldada dice solo lo que muestran los datos: no promete, no adivina y no inventa causas.</li>
+</ul>
+<div class="caja-objetivos" style="background:#fff3e0;border-left-color:var(--acento)">
+  <h2 style="color:#8a3d0c;border:none;padding:0;margin-top:0;font-size:1.2rem">✅ Antes de irte, revísate</h2>
+  <ul class="lista-bonita">
+    <li>¿Qué palabras te avisan de que una oración es una especulación?</li>
+    <li>¿Qué dato de la gráfica no menciona el artículo?</li>
+    <li>¿Por qué «quien obtenga el GED ganará 930 dólares» no está respaldado?</li>
+  </ul>
+</div>
+<div class="tip"><strong>➡️ Sigue con la próxima lección:</strong> <a href="https://zhemaria.github.io/clases_leng3/clase_6-3.html" style="color:var(--cp-oscuro);font-weight:700">Lección 6.3 · Seguir y analizar procedimientos científicos</a>.</div>
+<p style="font-size:.9rem"><strong>Fuente de los datos:</strong> Oficina de Estadísticas Laborales de los Estados Unidos (BLS), «Education pays, 2024», <em>Career Outlook</em> (2025), con datos de la Encuesta de Población Actual.</p>
+</div>
+</details>
+
+<footer class="pie">
+  <p><strong>GEDparaHispanos · Artes del Lenguaje · Nivel 3: Exploración del Análisis y la Argumentación · Tema 6 · Lección 6.2</strong></p>
+  <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+  <p>© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+</footer>
+<a class="volver-indice" href="#indice" aria-label="Volver al contenido de la lección"><span aria-hidden="true">↑</span> Índice</a>
+
+<script>
+
+/* ===== Voz: todas las lecturas pasan por hablar(), para poder cambiarla después por audio grabado ===== */
+(function(){
+  var voz=null, hay=('speechSynthesis' in window);
+  function elegir(){
+    if(!hay)return;
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var pref=['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'];
+    voz=null;
+    for(var i=0;i<pref.length&&!voz;i++){voz=vs.find(function(v){return v.lang.replace('_','-').toLowerCase()===pref[i].toLowerCase();})||null;}
+    if(!voz)voz=vs.find(function(v){return !/es[-_]ES/i.test(v.lang);})||vs[0]||null;
+  }
+  function aviso(){var a=document.getElementById('aviso-voz');if(a)a.classList.add('visible');}
+  function frase(t,vel){var u=new SpeechSynthesisUtterance(t);u.lang=voz?voz.lang:'es-US';if(voz)u.voice=voz;u.rate=vel||0.9;return u;}
+  if(hay){elegir(); speechSynthesis.onvoiceschanged=elegir;}
+  /* hablar(texto, velocidad, alTerminar) */
+  window.hablar=function(texto,vel,fin){
+    if(!hay||!texto){aviso();return;}
+    speechSynthesis.cancel();
+    /* Se lee por oraciones: algunos navegadores cortan las lecturas largas a los 15 segundos */
+    var partes=texto.replace(/\s+/g,' ').match(/[^.!?…]+[.!?…]+[»"”)]*\s*|[^.!?…]+$/g)||[texto];
+    partes.forEach(function(t,i){var u=frase(t.trim(),vel); if(fin&&i===partes.length-1)u.onend=fin; speechSynthesis.speak(u);});
+  };
+  /* Lectura entrecortada: cada palabra suena por separado, para comparar con una lectura fluida */
+  window.hablarPalabras=function(texto){
+    if(!hay){aviso();return;}
+    speechSynthesis.cancel();
+    texto.replace(/[.,;:¿?¡!—«»]/g,' ').split(/\s+/).filter(Boolean).forEach(function(p){speechSynthesis.speak(frase(p,0.7));});
+  };
+  window.callar=function(){if(hay)speechSynthesis.cancel();};
+  if(!hay)document.addEventListener('DOMContentLoaded',aviso);
+})();
+
+/* ===== Clasificador: cada elemento con sus botones; al acertar muestra una nota ===== */
+/* Las opciones propias de cada elemento se barajan; las opciones comunes (Simple / Compuesta…) y las marcadas con fijo:true conservan su orden */
+function orden(it,ops){
+  var o=ops.map(function(_,j){return j;});
+  if(it.ops&&!it.fijo){for(var k=o.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=o[k];o[k]=o[r];o[r]=t;}}
+  return o;
+}
+function clasificador(idCaja,idPuntaje,items,opciones,conAudio){
+  var caja=document.getElementById(idCaja), pun=document.getElementById(idPuntaje), bien=0, hechas={};
+  function marcador(){pun.textContent=bien===items.length?(items.length===1?'🎉 ¡Muy bien!':'🎉 ¡Muy bien! Acertaste las '+bien+'.'):(items.length===1?'':'Aciertos: '+bien+' / '+items.length);}
+  items.forEach(function(it,i){
+    var d=document.createElement('div'); d.className='item'; d.setAttribute('role','group'); d.setAttribute('aria-label',it.p.replace(/<[^>]+>/g,''));
+    var ops=it.ops||opciones;
+    d.innerHTML='<span class="item-pal">'+it.p+(conAudio?' <button type="button" class="oir" aria-label="Escuchar">🔊</button>':'')+'</span>'+
+      '<span class="item-ops">'+orden(it,ops).map(function(j){return '<button type="button" class="btn-op" data-j="'+j+'">'+ops[j]+'</button>';}).join('')+'</span>'+
+      '<span class="item-fb" aria-live="polite"></span>';
+    caja.appendChild(d);
+    if(conAudio)d.querySelector('.oir').addEventListener('click',function(){hablar(it.a||it.p.replace(/<[^>]+>/g,''),0.85);});
+    var fb=d.querySelector('.item-fb');
+    d.querySelectorAll('.btn-op').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(hechas[i])return;
+        if(+b.getAttribute('data-j')===it.c){
+          b.classList.add('correcta'); hechas[i]=true; bien++;
+          d.querySelectorAll('.btn-op').forEach(function(x){x.disabled=true;});
+          fb.innerHTML='✓ '+(it.n||'Correcto.'); marcador();
+        }else{
+          b.classList.add('incorrecta'); b.disabled=true;
+          fb.innerHTML='Todavía no. '+(it.pista||'Vuelve a mirar la regla e intenta otra vez.');
+        }
+      });
+    });
+  });
+  marcador();
+}
+
+/* ===== Quiz de la lección =====
+   P: [{t:enunciado, o:[opciones], c:índice correcto, x:texto grande opcional, a:audio opcional,
+        ae:audio entrecortado opcional, fijo:no barajar,
+        r:enlace de repaso que aparece si la respuesta es incorrecta}]
+   cfg: {meta, bien:mensaje si llega a la meta, repaso:mensaje si queda lejos} */
+function iniciarQuiz(P,cfg){
+  var META=cfg.meta, N=P.length, cuerpo=document.getElementById('qz-cuerpo'), elegidas={};
+  P.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='qz-preg'; d.setAttribute('role','group'); d.setAttribute('aria-labelledby','qz-e'+i);
+    var h='<p class="qz-enun" id="qz-e'+i+'"><span class="qz-num">'+(i+1)+'</span>'+p.t+'</p>';
+    if(p.x||p.a||p.ae){
+      h+='<span class="qz-extra">'+(p.x?'<span class="qz-grande">'+p.x+'</span> ':'')+
+         ((p.a||p.ae)?'<button type="button" class="qz-oir" data-oir="'+i+'">🔊 Escuchar</button>':'')+'</span>';
+    }
+    h+='<div class="qz-ops">';
+    var orden=p.o.map(function(_,j){return j;});
+    if(!p.fijo){for(var k=orden.length-1;k>0;k--){var r=Math.floor(Math.random()*(k+1)),t=orden[k];orden[k]=orden[r];orden[r]=t;}}
+    orden.forEach(function(j){h+='<button type="button" class="qz-op" data-i="'+i+'" data-j="'+j+'" aria-pressed="false">'+p.o[j]+'</button>';});
+    d.innerHTML=h+'</div>'; cuerpo.appendChild(d);
+  });
+  cuerpo.addEventListener('click',function(ev){
+    var oir=ev.target.closest('.qz-oir');
+    if(oir){var q=P[+oir.getAttribute('data-oir')]; if(q.ae)hablarPalabras(q.ae); else hablar(q.a,q.v||0.85); return;}
+    var b=ev.target.closest('.qz-op'); if(!b||b.disabled)return;
+    var i=b.getAttribute('data-i');
+    cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){x.classList.remove('elegida');x.setAttribute('aria-pressed','false');});
+    b.classList.add('elegida'); b.setAttribute('aria-pressed','true'); elegidas[i]=+b.getAttribute('data-j');
+  });
+  var res=document.getElementById('qz-resultado');
+  document.getElementById('qz-calificar').addEventListener('click',function(){
+    var bien=0;
+    P.forEach(function(p,i){
+      cuerpo.querySelectorAll('.qz-op[data-i="'+i+'"]').forEach(function(x){
+        var j=+x.getAttribute('data-j'); x.disabled=true; x.classList.remove('elegida');
+        if(j===p.c)x.classList.add('correcta'); else if(elegidas[i]===j)x.classList.add('incorrecta');
+      });
+      if(elegidas[i]===p.c)bien++;
+      else if(p.r){var nota=document.createElement('p');nota.className='qz-repaso';nota.innerHTML='📘 Para repasar: '+p.r;cuerpo.children[i].appendChild(nota);}
+    });
+    var msg,fondo,color;
+    if(bien>=META){msg='¡Excelente! '+bien+' de '+N+'. '+cfg.bien;fondo='#d4edda';color='#155724';}
+    else if(bien>=Math.ceil(N*0.6)){msg='Buen trabajo: '+bien+' de '+N+'. Repasa las preguntas en rojo y vuelve a intentarlo.';fondo='#fff3cd';color='#5c3900';}
+    else{msg='Llevas '+bien+' de '+N+'. '+cfg.repaso;fondo='#f8d7da';color='#721c24';}
+    res.textContent=msg; res.style.background=fondo; res.style.color=color; res.classList.add('visible');
+    this.style.display='none'; document.getElementById('qz-reintentar').style.display='inline-block';
+    res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('qz-reintentar').addEventListener('click',function(){
+    cuerpo.querySelectorAll('.qz-op').forEach(function(x){x.disabled=false;x.classList.remove('correcta','incorrecta','elegida');x.setAttribute('aria-pressed','false');});
+    cuerpo.querySelectorAll('.qz-repaso').forEach(function(n){n.remove();});
+    elegidas={}; res.classList.remove('visible'); res.textContent='';
+    this.style.display='none'; document.getElementById('qz-calificar').style.display='inline-block';
+    cuerpo.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+/* ===== Navegación: el índice y la dirección (#ancla) abren su sección ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  function abrir(id){
+    var el=id&&document.getElementById(id); if(!el)return;
+    var d=el.tagName==='DETAILS'?el:el.closest('details');
+    if(d){d.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){abrir(a.getAttribute('href').slice(1));});});
+  var ab=document.getElementById('abrir-todo'), ce=document.getElementById('cerrar-todo');
+  if(ab)ab.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+  if(ce)ce.addEventListener('click',function(){document.querySelectorAll('details').forEach(function(d){d.open=false;});});
+  window.addEventListener('hashchange',function(){abrir(decodeURIComponent(location.hash.slice(1)));});
+  abrir(decodeURIComponent(location.hash.slice(1)));
+});
+
+
+/* ===== Gráficas en SVG (barras, barras dobles, líneas múltiples) =====
+   Basado en la biblioteca del Nivel 2. Las series se distinguen por color Y por trazo o trama
+   (línea continua / discontinua / punteada; barra lisa / rayada), lleva valores escritos o en la
+   descripción, y una tabla con los datos: nada depende solo del color. */
+var GCOL=['#6d28d9','#c2410c','#0e7490','#a16207'];
+var GDASH=['','8 5','2 5','12 4 2 4'], GID=0;
+function anchoG(){return Math.round(Math.min(600,Math.max(320,(window.innerWidth||600)-56)));}
+function etiq(s,x,y,t,W){var p=String(t).indexOf('|')>=0?String(t).split('|'):String(t).split(' ');if(String(t).indexOf('|')>=0||(W<480&&p.length>1)){txtSvg(s,x,y-2,p[0],{tam:11});txtSvg(s,x,y+11,p.slice(1).join(' '),{tam:11});}else txtSvg(s,x,y,t,{tam:W<480?11:12});}
+function svgEl(t,a,txt){var e=document.createElementNS('http://www.w3.org/2000/svg',t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
+function marcoSvg(caja,ancho,alto,desc){
+  var s=svgEl('svg',{viewBox:'0 0 '+ancho+' '+alto,width:ancho,height:alto,role:'img','aria-label':desc});
+  s.style.maxWidth='100%'; s.style.height='auto'; caja.innerHTML=''; caja.appendChild(s); return s;
+}
+function txtSvg(s,x,y,t,o){o=o||{};s.appendChild(svgEl('text',{x:x,y:y,'text-anchor':o.ancla||'middle','font-size':o.tam||12,'font-weight':o.peso||'normal',fill:o.color||'#333','font-family':'Arial'},t));}
+function cuadricula(s,W,L,R,T,B,H,min,max,paso,fmt){
+  for(var v=min;v<=max+0.0001;v+=paso){var y=T+(H-T-B)*(1-(v-min)/(max-min));
+    s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:y,y2:y,stroke:'#dfe5ea','stroke-width':1}));
+    txtSvg(s,L-8,y+4,fmt?fmt(v):(Math.round(v*10)/10),{ancla:'end',color:'#555'});}
+}
+function rotulos(s,W,H,L,R,T,B,o){
+  if(o.ejeY)s.appendChild(svgEl('text',{x:14,y:(H-B+T)/2,transform:'rotate(-90 14 '+((H-B+T)/2)+')','text-anchor':'middle','font-size':12,fill:'#333','font-family':'Arial'},o.ejeY));
+  if(o.ejeX)txtSvg(s,(W-R+L)/2,H-6,o.ejeX);
+}
+function leyenda(s,x,y,series,tipo,pid){
+  series.forEach(function(se,k){
+    var yy=y+k*20;
+    if(tipo==='barra'){s.appendChild(svgEl('rect',{x:x,y:yy-11,width:22,height:14,fill:k===1?'url(#'+pid+')':GCOL[k],stroke:GCOL[k],'stroke-width':1.5}));}
+    else{s.appendChild(svgEl('line',{x1:x,x2:x+26,y1:yy-4,y2:yy-4,stroke:GCOL[k],'stroke-width':3,'stroke-dasharray':GDASH[k]}));}
+    txtSvg(s,x+32,yy,se.nombre,{ancla:'start',peso:'bold',color:'#1a2332'});
+  });
+}
+/* barrasDobles(caja, {titulo, etiquetas, series:[{nombre, valores}], min, max, paso, ejeY, ejeX, fmt}) */
+function graficaBarrasDobles(caja,o){
+  var W=anchoG(),H=W<480?300:330,L=50,R=10,T=48,B=W<480?52:48,min=o.min||0,max=o.max,n=o.etiquetas.length;
+  var desc=o.titulo+(o.series.length===1?'. Gráfica de barras. ':'. Gráfica de barras dobles. ')+o.etiquetas.map(function(e,i){return String(e).replace('|',' ')+': '+o.series.map(function(se){return se.nombre+' '+se.valores[i];}).join(', ');}).join('; ');
+  var s=marcoSvg(caja,W,H,desc);
+  var d=svgEl('defs',{}),pid='rayas'+(++GID),p=svgEl('pattern',{id:pid,width:6,height:6,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'});
+  p.appendChild(svgEl('rect',{width:6,height:6,fill:'#fff'}));p.appendChild(svgEl('line',{x1:0,y1:0,x2:0,y2:6,stroke:GCOL[1],'stroke-width':4}));d.appendChild(p);s.appendChild(d);
+  cuadricula(s,W,L,R,T,B,H,min,max,o.paso,o.fmt);
+  var ancho=(W-L-R)/n,bw=o.series.length===1?Math.min(56,ancho*0.6):Math.min(30,ancho*0.36);
+  o.etiquetas.forEach(function(e,i){
+    o.series.forEach(function(se,k){
+      var v=se.valores[i],x=L+ancho*i+ancho/2-(o.series.length===1?(bw-2)/2:bw)+k*bw,h=(H-T-B)*(v-min)/(max-min),y=H-B-h;
+      var r=svgEl('rect',{x:x,y:y,width:bw-2,height:h,fill:k===1?'url(#'+pid+')':GCOL[k],stroke:GCOL[k],'stroke-width':1.5});
+      r.appendChild(svgEl('title',{},String(e).replace('|',' ')+', '+se.nombre+': '+v+(o.unidad||'')));s.appendChild(r);
+      txtSvg(s,x+(bw-2)/2,y-5,v,{tam:11,peso:'bold',color:'#1a2332'});
+    });
+    etiq(s,L+ancho*i+ancho/2,H-B+18,e,W);
+  });
+  s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:'#555','stroke-width':1.5}));
+  rotulos(s,W,H,L,R,T,B,o); leyenda(s,L+10,18,o.series,'barra',pid);
+}
+/* lineas(caja, {titulo, etiquetas, series:[{nombre, valores}], min, max, paso, ejeY, ejeX, unidad, valoresVisibles}) */
+function graficaLineas(caja,o){
+  var W=anchoG(),H=W<480?300:320,L=50,R=W<480?14:24,T=52,B=48,min=o.min||0,max=o.max,n=o.etiquetas.length;
+  var s=marcoSvg(caja,W,H,o.titulo+'. Gráfica de líneas. '+o.series.map(function(se){return se.nombre+': '+o.etiquetas.map(function(e,i){return e+' '+se.valores[i];}).join(', ');}).join('. '));
+  function Y(v){return T+(H-T-B)*(1-(v-min)/(max-min));} function X(i){return L+(W-L-R)*i/(n-1);}
+  cuadricula(s,W,L,R,T,B,H,min,max,o.paso);
+  o.etiquetas.forEach(function(e,i){txtSvg(s,X(i),H-B+18,e,{tam:W<480?10:11});});
+  o.series.forEach(function(se,k){
+    var c=GCOL[k],d=se.valores.map(function(v,i){return (i?'L':'M')+X(i)+','+Y(v);}).join(' ');
+    s.appendChild(svgEl('path',{d:d,fill:'none',stroke:c,'stroke-width':3,'stroke-linejoin':'round','stroke-dasharray':GDASH[k]}));
+    se.valores.forEach(function(v,i){
+      var m=k%2===0?svgEl('circle',{cx:X(i),cy:Y(v),r:4.5,fill:c,stroke:'#fff','stroke-width':1.5}):svgEl('rect',{x:X(i)-4.5,y:Y(v)-4.5,width:9,height:9,fill:c,stroke:'#fff','stroke-width':1.5});
+      m.appendChild(svgEl('title',{},se.nombre+', '+o.etiquetas[i]+': '+v+(o.unidad||'')));s.appendChild(m);
+      if(o.valoresVisibles&&(W>=480||n<=7))txtSvg(s,X(i),Y(v)+(k===0?-9:18),v,{tam:10.5,color:'#1a2332'});
+    });
+  });
+  s.appendChild(svgEl('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:'#555','stroke-width':1.5}));
+  rotulos(s,W,H,L,R,T,B,o); leyenda(s,L+10,18,o.series,'linea');
+}
+/* Tabla de datos accesible, plegada debajo de la gráfica */
+function tablaDatos(caja,titulo,cabeceras,filas){
+  var h='<details class="ver-datos"><summary>Ver los datos en una tabla</summary><div class="tabla-ancha"><table class="tabla"><caption class="sr-solo">'+titulo+'</caption><thead><tr>'+cabeceras.map(function(c){return '<th scope="col">'+c+'</th>';}).join('')+'</tr></thead><tbody>'+
+    filas.map(function(f){return '<tr>'+f.map(function(c){return '<td>'+c+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div></details>';
+  caja.insertAdjacentHTML('beforeend',h);
+}
+/* Devuelve el SVG como texto (para los ejercicios) */
+function svgTexto(fn,o){var d=document.createElement('div');fn(d,o);return d.innerHTML;}
+
+/* ===== Gráfica de la lección (datos reales: BLS, 2024) ===== */
+graficaBarrasDobles(document.getElementById('graf-salario'),{
+  titulo:'Ingreso semanal mediano según los estudios, 2024, en dólares',
+  etiquetas:['Sin|diploma','Diploma|o GED','Título de|asociado','Licen-|ciatura'],
+  series:[{nombre:'Dólares por semana (mediana)',valores:[738,930,1099,1543]}],
+  max:1600,paso:400,ejeY:'Dólares por semana',unidad:' dólares'});
+tablaDatos(document.getElementById('graf-salario'),'Ingreso semanal mediano según los estudios, 2024',['Nivel de estudios','Dólares por semana'],
+  [['Sin diploma de secundaria',738],['Diploma de secundaria o GED',930],['Título de asociado',1099],['Licenciatura',1543]]);
+
+(function(){
+  var t=document.getElementById('lectura'), m=document.getElementById('lectura-marcada'), v=document.getElementById('ver-tipos');
+  document.getElementById('leer-lectura').addEventListener('click',function(){hablar(t.textContent.trim(),0.9);});
+  v.addEventListener('click',function(){var on=m.hidden;m.hidden=!on;v.setAttribute('aria-pressed',on?'true':'false');v.textContent=on?'Ocultar el artículo marcado':'Marcar los tipos en el artículo';});
+})();
+
+/* ===== Ejercicios ===== */
+clasificador('clasif-coteja','puntaje-coteja',[
+  {p:'El párrafo 2 dice que sin diploma se ganaba una mediana de 738 dólares por semana. ¿Coincide con la gráfica?',ops:['Sí: la primera barra marca 738','No: la gráfica marca 930 para ese grupo','No: la gráfica no tiene ese dato'],c:0,n:'Primera barra, «Sin diploma»: 738. El 930 es del grupo con diploma.'},
+  {p:'El párrafo 3 dice que la tasa de desempleo con diploma fue de 4.2 %. ¿Dónde se comprueba?',ops:['En la tabla de desempleo, segunda fila','En la gráfica de ingresos, segunda barra','No se puede comprobar con estos datos'],c:0,n:'La gráfica habla de dinero; el desempleo está en la tabla.'},
+  {p:'Un mensaje en redes sociales dice: «Con el GED ganas el doble que sin él». ¿Lo respaldan los datos?',ops:['No: 930 no es el doble de 738','Sí: la barra de 930 es el doble de alta','Sí: el texto del artículo lo dice así'],c:0,n:'El doble de 738 sería 1476. Con diploma se gana más, pero no el doble.'},
+  {p:'¿Qué dato muestra la gráfica que el artículo <strong>no</strong> menciona?',ops:['El ingreso con licenciatura: 1543 dólares','El ingreso sin diploma: 738 dólares','El ingreso con título de asociado: 1099 dólares'],c:0,n:'Los otros tres datos sí están en el texto. El autor eligió no mencionar la licenciatura.'},
+  {p:'El artículo dice «casi 10 000 dólares más al año». ¿Es correcta la cuenta?',ops:['Sí: 192 por 52 semanas da 9984','No: 192 por 12 meses da solo 2304','No: la diferencia anual es 930 dólares'],c:0,n:'Hay 52 semanas en un año: 192 × 52 = 9984, casi 10 000.'}
+],null,false);
+
+clasificador('clasif-hji','puntaje-hji',[
+  {p:'«En 2024, la tasa de desempleo de los adultos con licenciatura fue de 2.5 %.»',c:0,n:'Hecho: una cifra que se comprueba en la tabla.'},
+  {p:'«Todos los adultos deberían terminar la secundaria.»',c:1,n:'Juicio: «deberían» dice lo que piensa el autor.'},
+  {p:'«Quizá en diez años el GED se pueda tomar con un teléfono.»',c:2,n:'Especulación: «quizá» y «en diez años» hablan de un futuro posible.'},
+  {p:'«Estudiar de adulto es la decisión más valiente que hay.»',c:1,n:'Juicio: «la más valiente» es una valoración.'},
+  {p:'«El examen GED tiene cuatro materias.»',c:0,n:'Hecho: se comprueba en la página oficial del GED.'},
+  {p:'«Si suben los salarios, podrían volver a estudiar más adultos.»',c:2,n:'Especulación: «si…» y «podrían» anuncian algo que no ha pasado.'},
+  {p:'«Con título de asociado, la mediana era de 1099 dólares por semana.»',c:0,n:'Hecho: el dato está en la gráfica.'},
+  {p:'«Ese aumento de salario es muy importante para una familia.»',c:1,n:'Juicio: «muy importante» es la valoración del autor, aunque sea razonable.'}
+],['Hecho','Juicio','Especulación'],true);
+
+clasificador('clasif-respaldo','puntaje-respaldo',[
+  {p:'¿Qué conclusión respaldan los datos del artículo?',ops:['En 2024, a más estudios, mayor ingreso mediano y menor desempleo.','Quien obtenga el GED ganará 930 dólares por semana desde el principio.','Los adultos sin diploma ganan menos porque trabajan menos horas.'],c:0,n:'La gráfica y la tabla lo muestran. La segunda promete algo a cada persona; la tercera inventa una causa.'},
+  {p:'¿Qué conclusión <strong>no</strong> está respaldada?',ops:['Dentro de diez años, el desempleo sin diploma superará el 10 %.','Con título de asociado se ganaba más que con diploma de secundaria.','El desempleo era más alto entre los adultos sin diploma.'],c:0,n:'Es una especulación sobre el futuro: los datos son solo de 2024.'},
+  {p:'¿Cuál es un juicio razonado, apoyado en los datos?',ops:['Obtener el GED puede mejorar las oportunidades de trabajo de un adulto.','El GED es el examen más difícil que existe en todo el país.','Los empleos para personas sin diploma van a desaparecer muy pronto.'],c:0,n:'Es un juicio («puede mejorar»), pero se apoya en el ingreso y el desempleo de los datos.'}
+],null,false);
+
+iniciarQuiz([
+  {t:'¿Qué significa <strong>cotejar</strong> un texto con una gráfica?',o:['Comprobar que los dos dicen lo mismo','Copiar los números del texto en la gráfica','Leer solo la gráfica y no leer el texto'],c:0,r:'<a href="#s-1-texto-datos">Sección 1</a>'},
+  {t:'Según la gráfica, ¿cuál era el ingreso semanal mediano con diploma o GED en 2024?',o:['930 dólares','738 dólares','1099 dólares'],c:0,r:'<a href="#s-2-lectura">Sección 2</a>'},
+  {t:'¿Qué significa que la <strong>mediana</strong> sea de 930 dólares?',o:['La mitad gana más de 930 y la mitad gana menos','Todos los trabajadores con diploma ganan 930','Es el salario más alto que hay en ese grupo'],c:0,r:'<a href="#s-2-lectura">Sección 2</a>'},
+  {t:'¿Dónde se comprueba la tasa de desempleo que da el artículo?',o:['En la tabla','En la gráfica de barras','En el título del artículo'],c:0,r:'<a href="#s-3-cotejar">Sección 3</a>'},
+  {t:'«Con el GED ganas el doble.» ¿Por qué no coincide con los datos?',o:['Porque el doble de 738 sería 1476, no 930','Porque la gráfica no muestra a quienes tienen GED','Porque el artículo dice que se gana lo mismo'],c:0,r:'<a href="#s-3-cotejar">Sección 3</a>'},
+  {t:'«En mi opinión, el GED es una de las mejores inversiones.» Este enunciado es…',o:['un juicio','un hecho','una especulación'],c:0,fijo:true,r:'<a href="#s-4-hji">Sección 4</a>'},
+  {t:'«La diferencia de salarios podría crecer todavía más.» Este enunciado es…',o:['un hecho','un juicio','una especulación'],c:2,fijo:true,r:'<a href="#s-4-hji">Sección 4</a>'},
+  {t:'«En 2024, la tasa de desempleo sin diploma fue de 6.2 %.» Este enunciado es…',o:['un hecho','un juicio','una especulación'],c:0,fijo:true,r:'<a href="#s-4-hji">Sección 4</a>'},
+  {t:'¿Qué grupo de palabras suele anunciar una <strong>especulación</strong>?',o:['probablemente, quizá, podría','en 2024, según la tabla, mediana','mejor, inteligente, debería'],c:0,r:'<a href="#s-4-hji">Sección 4</a>'},
+  {t:'«El GED tiene diez materias.» ¿Por qué se considera un enunciado de hecho, aunque sea falso?',o:['Porque se puede comprobar si es verdad o no','Porque lo dice alguien que sabe del tema','Porque usa un número y todos los números son verdad'],c:0,r:'<a href="#s-4-hji">Sección 4</a>'},
+  {t:'¿Qué conclusión respaldan los datos de la lectura?',o:['En 2024, el desempleo fue menor entre quienes tenían diploma.','Quien obtenga el GED encontrará trabajo en una sola semana.','El diploma es la única razón por la que se gana más.'],c:0,r:'<a href="#s-5-respaldo">Sección 5</a>'},
+  {t:'¿Qué es un <strong>juicio razonado</strong>?',o:['Una valoración del autor que se apoya en hechos','Un hecho que se puede comprobar en una gráfica','Una predicción que ya se cumplió en el pasado'],c:0,r:'<a href="#s-4-hji">Sección 4</a>'}
+],{meta:10,
+   bien:'Ya cotejas un texto con sus datos y separas hechos, juicios y especulaciones. Sigue con la Lección 6.3.',
+   repaso:'Vuelve a las secciones 3 a 5 y repite el quiz: con práctica sale.'});
+</script>
+</body>
+</html>
