@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora de Experimento: Crecimiento y Luz</title>
+    <style>
+        :root {
+            --primary-color: #2c7a7b;
+            --secondary-color: #234e52;
+            --bg-color: #f7fafc;
+            --border-color: #e2e8f0;
+            --row-alt: #edf2f7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: #2d3748;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos del Acordeón */
+        details {
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        summary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '▼';
+            font-size: 0.9em;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary {
+            background-color: var(--secondary-color);
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #fff;
+            overflow-x: auto;
+            /* Para tablas en móviles */
+        }
+
+        /* Estilos de Tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.95em;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--row-alt);
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--bg-color);
+        }
+
+        tr:hover {
+            background-color: #e6fffa;
+        }
+
+        /* Etiquetas de color para macetas */
+        .maceta-a {
+            border-left: 4px solid #48bb78;
+        }
+
+        .maceta-b {
+            border-left: 4px solid #ecc94b;
+        }
+
+        .maceta-c {
+            border-left: 4px solid #718096;
+        }
+
+        /* Estilos para las imágenes de la bitácora */
+        .img-bitacora {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            border: 1px solid #cbd5e0;
+            display: block;
+        }
+
+        .img-center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🌱 Bitácora de Experimento:<br> Efecto de la luz en la germinación y crecimiento</h1>
+        <h2>Elaborado por el prof. José M. Fernández</h2>
+
+        <!-- SECCIÓN 1: PREPARACIÓN -->
+        <details>
+            <summary>Preparación</summary>
+            <div class="content">
+                <p><strong>Objetivo:</strong> Acondicionar los materiales la noche antes de sembrar.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 12%">Fecha</th>
+                            <th style="width: 10%">Hora</th>
+                            <th style="width: 38%">Actividad</th>
+                            <th style="width: 40%">Resultado / Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>14/09/2026</td>
+                            <td>20:00</td>
+                            <td>Remojo de semillas</td>
+                            <td>Se sumergieron 9 semillas en un vaso con agua a temperatura ambiente. Quedarán en remojo
+                                por 12 horas.</td>
+                        </tr>
+                        <tr>
+                            <td>14/09/2026</td>
+                            <td>20:15</td>
+                            <td>Preparación y marcado de macetas</td>
+                            <td>Se llenaron 3 macetas iguales con el mismo sustrato hasta 2 cm del borde. Se etiquetaron
+                                claramente como A, B y C.
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <img src="https://zhemaria.github.io/clases_leng3/foto_preparacion.jpg" alt="Materiales de preparación"
+                    class="img-bitacora">
+            </div>
+        </details>
+
+        <!-- SECCIÓN 2: SIEMBRA -->
+        <details>
+            <summary>Siembra y Germinación</summary>
+            <div class="content">
+                <p><strong>Objetivo:</strong> Plantar las semillas y mantenerlas juntas hasta brotar.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 12%">Fecha</th>
+                            <th style="width: 10%">Hora</th>
+                            <th style="width: 38%">Actividad</th>
+                            <th style="width: 40%">Resultado / Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15/09/2026</td>
+                            <td>08:00</td>
+                            <td>Siembra de semillas</td>
+                            <td>Semillas retiradas del agua (se ven hidratadas). Se hicieron 3 hoyitos de 2 cm en cada
+                                maceta, separados entre sí. 1 semilla por hoyo cubierta con tierra.</td>
+                        </tr>
+                        <tr>
+                            <td>15/09/2026</td>
+                            <td>08:15</td>
+                            <td>Primer Riego</td>
+                            <td>Se aplicaron exactamente <strong>60 ml de agua</strong> a cada maceta. La tierra
+                                absorbió bien sin encharcar.</td>
+                        </tr>
+                        <tr>
+                            <td>18/09/2026</td>
+                            <td>09:00</td>
+                            <td>Revisión de humedad</td>
+                            <td>Tierra ligeramente seca en la superficie. Se aplicaron 60 ml a todas las macetas. Aún no
+                                hay brotes.</td>
+                        </tr>
+                        <tr>
+                            <td>20/09/2026</td>
+                            <td>08:30</td>
+                            <td>Revisión de germinación</td>
+                            <td>Comienzan a asomarse pequeños puntos verdes en las macetas A y C. Se espera un día más
+                                para uniformidad.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <img src="https://zhemaria.github.io/clases_leng3/foto_germinacion.jpg" alt="Primeros brotes asomando"
+                    class="img-bitacora">
+            </div>
+        </details>
+
+        <!-- SECCIÓN 3: DÍA 0 -->
+        <details>
+            <summary>Día 0 (Inicio del experimento)</summary>
+            <div class="content">
+                <p><strong>Objetivo:</strong> Medición inicial, separación de macetas y toma de fotografía de
+                    referencia.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%">Fecha</th>
+                            <th style="width: 8%">Hora</th>
+                            <th style="width: 15%">Actividad</th>
+                            <th class="maceta-a" style="width: 18%">Maceta A (Luz Plena)</th>
+                            <th class="maceta-b" style="width: 18%">Maceta B (Poca Luz)</th>
+                            <th class="maceta-c" style="width: 18%">Maceta C (Oscuridad)</th>
+                            <th style="width: 13%">Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>21/09/2026</td>
+                            <td>10:00</td>
+                            <td>Medición de brotes y separación</td>
+                            <td>Promedio: 1.2 cm.<br>Color: Verde claro.<br>2 hojas iniciales (cotiledones).</td>
+                            <td>Promedio: 1.1 cm.<br>Color: Verde claro.<br>2 hojas iniciales.</td>
+                            <td>Promedio: 1.3 cm.<br>Color: Verde pálido.<br>2 hojas iniciales.</td>
+                            <td>Se tomó foto con regla. Se colocaraán: maceta A a la ventana, B al rincón y C al clóset
+                                en caja cerrada.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <td>Se tomó foto con regla. Maceta A a la ventana, B al rincón, C al clóset en caja cerrada.
+                    <img src="https://zhemaria.github.io/clases_leng3/foto_dia0.png" alt="Medición alturas día 0"
+                        class="img-bitacora img-center">
+                </td>
+            </div>
+        </details>
+
+        <!-- SECCIÓN 4: DÍAS 1 A 21 -->
+        <details>
+            <summary>Días 1 a 21 (Mediciones periódicas)</summary>
+            <div class="content">
+                <p><strong>Riego continuo:</strong> Cada dos días se aplican 60 ml por maceta (En la maceta C se abre la
+                    caja, se riega y se cierra rápidamente).</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 8%">Día</th>
+                            <th style="width: 15%">Fecha / Hora</th>
+                            <th class="maceta-a" style="width: 20%">Maceta A (Luz Plena)</th>
+                            <th class="maceta-b" style="width: 20%">Maceta B (Poca Luz)</th>
+                            <th class="maceta-c" style="width: 20%">Maceta C (Oscuridad)</th>
+                            <th style="width: 17%">Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Día 2</strong></td>
+                            <td>23/09/2026<br>10:00 am</td>
+                            <td>Altura prom: 1.8 cm<br>Hojas: 2<br>Color: Verde intenso</td>
+                            <td>Altura prom: 2.1 cm<br>Hojas: 2<br>Color: Verde pálido</td>
+                            <td>Altura prom: 2.8 cm<br>Hojas: 2<br>Color: Amarillo/Blanco</td>
+                            <td>Maceta C crece más rápido buscando luz. A y B riego 60ml.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Día 4</strong></td>
+                            <td>25/09/2026<br>10:00 am</td>
+                            <td>Altura prom: 2.5 cm<br>Hojas: 4<br>Color: Verde intenso, tallo grueso</td>
+                            <td>Altura prom: 3.5 cm<br>Hojas: 2<br>Color: Verde claro, tallo delgado</td>
+                            <td>Altura prom: 5.2 cm<br>Hojas: 2 (pequeñas)<br>Color: Amarillento</td>
+                            <td>La maceta A desarrolla hojas verdaderas. Riego de 60ml.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Día 6</strong></td>
+                            <td>27/09/2026<br>10:00 am</td>
+                            <td>Altura prom: 3.4 cm<br>Hojas: 4<br>Color: Verde fuerte</td>
+                            <td>Altura prom: 5.0 cm<br>Hojas: 4 (pequeñas)<br>Color: Verde claro</td>
+                            <td>Altura prom: 8.5 cm<br>Hojas: 2 (no crecen)<br>Color: Blanco/Amarillo</td>
+                            <td>Maceta C muestra clara etiolación (tallo largo y débil).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Día 8</strong></td>
+                            <td>29/09/2026<br>10:00 am</td>
+                            <td>Altura prom: 4.5 cm<br>Hojas: 6<br>Color: Verde intenso</td>
+                            <td>Altura prom: 7.2 cm<br>Hojas: 4<br>Color: Verde amarillento</td>
+                            <td>Altura prom: 11.0 cm<br>Hojas: 2<br>Color: Blanco opaco</td>
+                            <td>Una planta de la maceta C se dobla por el peso, tallo muy frágil.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Día 10</strong></td>
+                            <td>01/10/2026<br>10:00 am</td>
+                            <td>Altura prom: 5.8 cm<br>Hojas: 8<br>Tallo firme, erecto</td>
+                            <td>Altura prom: 9.1 cm<br>Hojas: 4<br>Tallo lánguido hacia la luz</td>
+                            <td>Altura prom: 13.5 cm<br>Hojas: 2<br>Tallos caídos, sin clorofila</td>
+                            <td>Maceta B empieza a inclinarse hacia la ventana distante.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Día 14</strong></td>
+                            <td>05/10/2026<br>10:00 am</td>
+                            <td>Altura prom: 7.5 cm<br>Hojas: 10<br>Color: Verde oscuro</td>
+                            <td>Altura prom: 11.5 cm<br>Hojas: 6<br>Color: Verde pálido</td>
+                            <td>Altura prom: 16.2 cm<br>Hojas: 2 (marchitas)<br>Color: Blanco</td>
+                            <td>Riego de 60ml. Crecimiento de A es compacto y saludable.
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Día 20</strong></td>
+                            <td>11/10/2026<br>10:00 am</td>
+                            <td>Altura prom: 9.5 cm<br>Hojas: 12<br>Planta robusta</td>
+                            <td>Altura prom: 13.8 cm<br>Hojas: 6<br>Planta estirada, débil</td>
+                            <td>Altura prom: 18.1 cm<br>Hojas: 2 (secas)<br>Planta casi sin vida</td>
+                            <td>Última medición regular. Preparación para el día final.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <img src="https://zhemaria.github.io/clases_leng3/foto_luces.jpg"
+                    alt="Comparación del crecimiento a medio proceso" class="img-bitacora">
+            </div>
+        </details>
+
+        <!-- SECCIÓN 5: DÍA FINAL -->
+        <details>
+            <summary>Día final (Conclusiones)</summary>
+            <div class="content">
+                <p><strong>Objetivo:</strong> Reunir las plantas, comparar el promedio de altura y evaluar la hipótesis
+                    del experimento.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%">Fecha</th>
+                            <th style="width: 8%">Hora</th>
+                            <th style="width: 15%">Actividad</th>
+                            <th class="maceta-a" style="width: 18%">Maceta A (Luz Plena)</th>
+                            <th class="maceta-b" style="width: 18%">Maceta B (Poca Luz)</th>
+                            <th class="maceta-c" style="width: 18%">Maceta C (Oscuridad)</th>
+                            <th style="width: 13%">Análisis Final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12/10/2026</td>
+                            <td>10:00</td>
+                            <td>Comparación Final y Fotografía</td>
+                            <td><strong>Promedio Final: 10.2 cm</strong><br>Hojas: 12 a 14.<br>La más corta, pero con
+                                tallos gruesos, hojas grandes y verde oscuro (fotosíntesis óptima).</td>
+                            <td><strong>Promedio Final: 14.5 cm</strong><br>Hojas: 6 a 8.<br>Tallo alargado y delgado,
+                                inclinado hacia la fuente de luz. Hojas pequeñas verde claro.</td>
+                            <td><strong>Promedio Final: 18.8 cm</strong><br>Hojas: 2 (muy pequeñas).<br>La más alta pero
+                                no se sostiene sola. Color blanco/amarillo por falta de clorofila (etiolación).</td>
+                            <td><strong>Conclusión:</strong> La falta de luz provoca que la planta crezca rápidamente
+                                buscando el sol, pero debilita su estructura y le impide producir clorofila.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <img src="https://zhemaria.github.io/clases_leng3/foto_final.jpg"
+                    alt="Comparación final con regla de medición" class="img-bitacora img-center">
+            </div>
+        </details>
+
+    </div>
+</body>
+
+</html>
